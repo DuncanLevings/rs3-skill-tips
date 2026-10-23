@@ -7,11 +7,13 @@ local function setup(root, verb, skill)
     local clock = fake.load("src/game/clock")
     local watch = fake.load("src/game/activity_watch")
     local ticks = 0
+    -- changes the backpack and tells the plugin, like the client's InventoryUpdated
     local function slots(used)
         fake.inventories[93] = {}
         for index = 1, used do
             fake.inventories[93][index] = { item = "ORE" }
         end
+        fake.fire("InventoryUpdated", { inv = { id = 93 } })
     end
     local function advance(count)
         for _ = 1, count do

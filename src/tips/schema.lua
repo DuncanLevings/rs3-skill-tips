@@ -105,10 +105,12 @@ local function check_requirements(tip, problems)
         problems[#problems + 1] = "skill requirements must be a table"
         return
     end
+
     if requirements.quests ~= nil and type(requirements.quests) ~= "table" then
         problems[#problems + 1] = "quest requirements must be a list"
         return
     end
+
     for name, level in pairs(requirements.skills or {}) do
         if not skills.is_skill(name) or not is_level(level) then
             problems[#problems + 1] = "bad skill requirement " .. tostring(name)
@@ -187,19 +189,23 @@ function schema.problems(tip)
         if tip.level_range then
             problems[#problems + 1] = "quest tips do not use method brackets"
         end
+
         if not is_text(tip.quest) then
             problems[#problems + 1] = "quest tips need a quest config name"
         end
+
         local required = (type(tip.requirements) == "table" and tip.requirements.skills) or {}
         if type(required) ~= "table" or next(required) == nil then
             problems[#problems + 1] = "quest tips need all skill requirements"
         end
+
         local readiness = false
         for _, trigger in ipairs(type(tip.triggers) == "table" and tip.triggers or {}) do
             if type(trigger) == "table" and trigger.type == "requirements_met" then
                 readiness = true
             end
         end
+
         if not readiness then
             problems[#problems + 1] = "quest tips need a requirements_met trigger"
         end

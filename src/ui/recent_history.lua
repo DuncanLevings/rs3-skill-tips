@@ -12,6 +12,7 @@ function recent_history.rows()
             rows[#rows + 1] = {
                 id = tip.id,
                 title = tip.title,
+                icon_item = tip.icon_item,
                 body = tip.hook,
                 order = entry.order,
                 icon = "pin",
@@ -23,6 +24,7 @@ function recent_history.rows()
             }
         end
     end
+
     return rows
 end
 
@@ -34,6 +36,7 @@ function recent_history.text()
             lines[#lines + 1] = tip.title .. "<br>" .. tip.hook
         end
     end
+
     return #lines > 0 and table.concat(lines, "<br><br>") or "No tips shown yet."
 end
 

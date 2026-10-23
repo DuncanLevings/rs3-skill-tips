@@ -7,6 +7,7 @@ local function specific(tip, skill)
             return true
         end
     end
+
     return false
 end
 
@@ -22,14 +23,17 @@ function ranking.best(candidates, skill, level)
         if left_specific ~= right_specific then
             return left_specific
         end
+
         if left.priority ~= right.priority then
             return left.priority < right.priority
         end
+
         local left_distance, right_distance =
             distance(left, skill, level), distance(right, skill, level)
         if left_distance ~= right_distance then
             return left_distance < right_distance
         end
+
         return left.id < right.id
     end)
     return candidates[1]

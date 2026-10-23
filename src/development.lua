@@ -1,2 +1,2 @@
--- Local testing switch. Keep false in shipped builds; never expose as a player setting.
+-- local testing switch. keep false in anything shipped, and never make it a player setting
 return { ENABLED = false }

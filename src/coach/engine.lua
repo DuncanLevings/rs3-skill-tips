@@ -16,6 +16,7 @@ function engine.pick_tip(skill, trigger_type)
     if not session then
         return
     end
+
     local level = session.deps.state.level(skill)
     local context = {
         skill = skill,
@@ -31,6 +32,7 @@ function engine.pick_tip(skill, trigger_type)
     for _, tip in ipairs(catalogue.for_skill(skill)) do
         available[#available + 1] = tip
     end
+
     local considered = {}
     for _, tip in ipairs(available) do
         if
@@ -40,8 +42,10 @@ function engine.pick_tip(skill, trigger_type)
         then
             candidates[#candidates + 1] = tip
         end
+
         considered[tip.id] = true
     end
+
     return ranking.best(candidates, skill, level)
 end
 
@@ -52,7 +56,10 @@ local function show(tip, skill)
     local function active()
         return session == running and running.card == token
     end
-    local displayed = running.deps.show_card(tip, {
+
+    -- if showing the card throws, nothing is open. without the pcall the open card mark stayed
+    -- set and no other tip could show for the rest of the session
+    local shown_ok, displayed = pcall(running.deps.show_card, tip, {
         on_pin = function()
             if active() then
                 progress.pin(tip.id)
@@ -70,12 +77,18 @@ local function show(tip, skill)
             end
         end,
     })
+    if not shown_ok then
+        log("Skilling Coach: couldn't show tip " .. tip.id .. ": " .. tostring(displayed))
+        displayed = false
+    end
+
     if displayed ~= false and session == running then
         running.pacing.shown(running.deps.now())
         progress.mark_shown(tip.id)
         if tip.kind == "quest" then
             progress.clear_quest(tip.id)
         end
+
         if tip.kind == "method" then
             progress.clear_level_up(skill)
         end
@@ -88,12 +101,15 @@ local function on_signal(skill, kind)
     if not session then
         return
     end
+
     if kind == "training" then
         session.catch_up.level(skill, session.deps.state.level(skill))
     end
+
     if session.card or not session.pacing.allows(session.deps.now()) then
         return
     end
+
     local tip = engine.pick_tip(skill, kind)
     if tip then
         show(tip, skill)
@@ -103,9 +119,11 @@ end
 function engine.on_training(skill)
     on_signal(skill, "training")
 end
+
 function engine.on_backpack_full(skill)
     on_signal(skill, "backpack_full")
 end
+
 function engine.on_level_up(skill, old_level, new_level)
     if session then
         progress.queue_level_up(skill, old_level, new_level)
@@ -122,11 +140,13 @@ function engine.on_level_up(skill, old_level, new_level)
         end
     end
 end
--- Quest readiness belongs to its own queue, not whichever skill happens to be trained.
+
+-- quest tips have their own queue, they dont care which skill happens to be trained
 function engine.on_quiet()
     if not session then
         return
     end
+
     local state = session.deps.state
     for _, tip in ipairs(catalogue.quest_tips()) do
         if
@@ -138,9 +158,11 @@ function engine.on_quiet()
             progress.queue_quest(tip.id)
         end
     end
+
     if session.card or not session.pacing.allows(session.deps.now()) then
         return
     end
+
     local candidates = {}
     for id in pairs(progress.queued_quests()) do
         local tip = catalogue.get(id)
@@ -153,6 +175,7 @@ function engine.on_quiet()
             candidates[#candidates + 1] = tip
         end
     end
+
     local tip = ranking.best(candidates, nil, nil)
     if tip then
         show(tip)
@@ -164,12 +187,15 @@ function engine.on_combat()
         session.pacing.combat(session.deps.now())
     end
 end
+
 function engine.start(options)
     session = { deps = options, catch_up = catch_up.new(), pacing = pacing.new() }
 end
+
 function engine.stop()
     session = nil
 end
+
 function engine.reset_pacing()
     if session then
         session.pacing.reset()

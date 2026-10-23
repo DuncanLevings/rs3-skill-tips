@@ -11,7 +11,7 @@ function character_key.from_name(display_name)
         return nil
     end
 
-    -- Filter before lowercasing: %w and lower() can treat UTF-8 bytes as letters in
+    -- filter before lowercasing: %w and lower() can treat utf-8 bytes as letters in
     -- the host's locale. Saved keys must only contain ASCII letters, digits and _.
     return (display_name:gsub("[^A-Za-z0-9]", "_"):lower())
 end

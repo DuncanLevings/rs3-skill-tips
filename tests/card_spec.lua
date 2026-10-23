@@ -79,7 +79,7 @@ return function(root)
         lu.assertEquals(window.options.x, 0)
         lu.assertEquals(window.root.positions[2].x, -360)
 
-        run_frames(fake, 40)
+        run_frames(fake, 50)
 
         lu.assertEquals(window.root.x, 0)
         lu.assertEquals(window.root.y, rest_y)
@@ -88,10 +88,10 @@ return function(root)
     function suite:test_pin_slides_the_card_back_out()
         local fake = client.new(root)
         local tip_card, calls, window = open_ore_box_card(fake, true)
-        run_frames(fake, 40)
+        run_frames(fake, 50)
 
         fake.sprites[5].hooks.ONCLICK()
-        run_frames(fake, 40)
+        run_frames(fake, 50)
 
         lu.assertEquals(calls, { "on_pin", "on_closed" })
         lu.assertTrue(window.destroyed)

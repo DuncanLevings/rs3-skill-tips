@@ -5,6 +5,7 @@ local skills = require("src/data/skills")
 local coach_window = require("src/ui/coach_window")
 local card_placement = require("src/ui/card_placement")
 local event_owner = require("src/game/event_owner")
+local internals = require("src/ui/prettyui_internals")
 local settings_page = {}
 local owner, view
 local NAME = "skilling_coach_settings"
@@ -27,6 +28,7 @@ local function populate(component, options)
     local function alive()
         return view == current
     end
+
     local function checks(choices)
         current:AddCheckboxButton(choices, {
             onChange = function(_, _, key, selected)
@@ -39,9 +41,11 @@ local function populate(component, options)
             end,
         })
     end
+
     local function choice(key, text)
         return { text = text, value = key, selected = settings.get(key) }
     end
+
     current:AddText("Skilling Coach")
     checks({ choice("tips_enabled", "Show tips"), choice("animate_card", "Animate popup") })
     current:AddText("Tip categories")
@@ -63,6 +67,7 @@ local function populate(component, options)
         local function text(value)
             return label .. ": " .. tostring(value) .. (suffix or "")
         end
+
         local caption = current:AddText(text(settings.get(key)))
         current:AddSlider({
             min = minimum,
@@ -73,11 +78,12 @@ local function populate(component, options)
                 if alive() then
                     value = math.floor(value + 0.5)
                     settings.set(key, value)
-                    caption.content = text(value)
+                    internals.set_text(caption, text(value))
                 end
             end,
         })
     end
+
     current:AddText("Pacing")
     slider("cooldown_minutes", "Time between tips", 2, 60, " min")
     slider("session_cap", "Tips per session (0 = unlimited)", 0, 50)
@@ -87,12 +93,17 @@ local function populate(component, options)
     local muted = settings.get("muted_skills")
     for number = 0, #skills.NAMES do
         local name = skills.NAMES[number]
-        choices[#choices + 1] = {
-            text = name:sub(1, 1) .. name:sub(2):lower(),
-            value = name,
-            selected = muted[name] == true,
-        }
+
+        -- combat skills never get tips, so a mute box for them would do nothing
+        if not skills.COMBAT[name] then
+            choices[#choices + 1] = {
+                text = name:sub(1, 1) .. name:sub(2):lower(),
+                value = name,
+                selected = muted[name] == true,
+            }
+        end
     end
+
     current:AddCheckboxButton(choices, {
         onChange = function(_, _, skill, selected)
             if alive() then
@@ -146,6 +157,7 @@ function settings_page.stop()
         owner.destroy()
         owner = nil
     end
+
     destroy_view()
 end
 

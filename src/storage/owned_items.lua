@@ -69,8 +69,27 @@ function owned_items.category_in_bank(category)
     return ensure_loaded().categories[tostring(category)] == true
 end
 
+local function same_set(left, right)
+    for key in pairs(left) do
+        if not right[key] then
+            return false
+        end
+    end
+
+    for key in pairs(right) do
+        if not left[key] then
+            return false
+        end
+    end
+
+    return true
+end
+
 -- replaces the snapshot with what the bank holds now. count_item / count_category are given
--- the item name or category and return how many the bank has
+-- the item name or category and return how many the bank has.
+--
+-- the bank sends an update for every deposit and withdrawal, so this only saves when the
+-- answer actually changed (or on the first visit), not on every click in the bank
 function owned_items.update_from_bank(
     relevant_items,
     relevant_categories,
@@ -78,23 +97,30 @@ function owned_items.update_from_bank(
     count_category
 )
     local loaded = ensure_loaded()
-    loaded.bank_seen = true
-    loaded.items = {}
-    loaded.categories = {}
+    local items = {}
+    local categories = {}
 
     for item in pairs(relevant_items) do
         if (count_item(item) or 0) > 0 then
-            loaded.items[item] = true
+            items[item] = true
         end
     end
 
     for category in pairs(relevant_categories) do
         if (count_category(category) or 0) > 0 then
-            loaded.categories[tostring(category)] = true
+            categories[tostring(category)] = true
         end
     end
 
-    if current_character then
+    local changed = not loaded.bank_seen
+        or not same_set(items, loaded.items)
+        or not same_set(categories, loaded.categories)
+
+    loaded.bank_seen = true
+    loaded.items = items
+    loaded.categories = categories
+
+    if changed and current_character then
         saved_table.save(KEY_PREFIX .. current_character, loaded)
     end
 end

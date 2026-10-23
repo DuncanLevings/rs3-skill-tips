@@ -48,6 +48,15 @@ function inventories.backpack_free_slots()
     end
 end
 
+-- is this inventory event about the backpack. events only carry a proxy with an id
+function inventories.is_backpack(proxy)
+    local ok, matches = pcall(function()
+        return proxy.id == config.Inv.INV.id
+    end)
+
+    return ok and matches == true
+end
+
 function inventories.bank_is_open()
     return find("BANK") ~= nil
 end
@@ -98,7 +107,7 @@ local function snapshot_bank()
     end
 
     local relevant_items, relevant_categories = catalogue.relevant_items()
-    -- Inventory updates can arrive before the app's next character poll.
+    -- inventory updates can beat the app to noticing a character change
     owned_items.use_character(character)
 
     owned_items.update_from_bank(relevant_items, relevant_categories, function(item)

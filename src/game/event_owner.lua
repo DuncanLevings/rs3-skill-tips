@@ -25,6 +25,7 @@ function event_owner.new(name)
         for _, event in ipairs(owner.events) do
             event.Unsubscribe(name)
         end
+
         owner.events = {}
     end
 

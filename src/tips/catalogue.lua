@@ -44,9 +44,11 @@ local function add_tip(tip, file)
             add_to_skill(skill, tip)
         end
     end
+
     for _, skill in ipairs(tip.skills) do
         index(skill)
     end
+
     if tip.kind == "quest" then
         for skill in pairs(tip.requirements.skills) do
             index(skill)
@@ -96,7 +98,7 @@ function catalogue.for_skill(skill)
     return tips
 end
 
--- A quest may become ready through a combat/reward level, then surface on another skill.
+-- a quest can become ready from a combat or reward level, so these arent tied to one skill
 function catalogue.quest_tips()
     catalogue.load()
     local tips = {}
@@ -105,6 +107,7 @@ function catalogue.quest_tips()
             tips[#tips + 1] = tip
         end
     end
+
     return tips
 end
 

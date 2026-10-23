@@ -2,11 +2,11 @@
 --
 -- docked cards (right up against an edge) start fully off screen, floating ones only move a
 -- short way in from that side while fading in. theres no built in tween, so the position is
--- set by hand every frame from Event.Draw. 0.5s was picked in game, 0.18 looked rushed
+-- set by hand every frame from Event.Draw. 0.65s gives the card a gentler entrance and exit
 
 local card_motion = {}
 
-card_motion.SLIDE_SECONDS = 0.5
+card_motion.SLIDE_SECONDS = 0.65
 -- within this many pixels of an edge counts as docked to it
 card_motion.DOCK_DISTANCE = 40
 card_motion.FLOAT_DISTANCE = 24

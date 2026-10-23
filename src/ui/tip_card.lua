@@ -19,6 +19,7 @@ local card_placement = require("src/ui/card_placement")
 local theme = require("src/ui/theme")
 local requirement_list = require("src/ui/requirement_list")
 local card_header = require("src/ui/card_header")
+local internals = require("src/ui/prettyui_internals")
 
 local tip_card = {}
 
@@ -128,9 +129,13 @@ local function destroy_window()
         -- destroying it ourselves isnt the player closing it
         card.destroying = true
         if card.pin then
-            card.pin:Destroy()
+            local pin = card.pin
             card.pin = nil
+            pcall(function()
+                pin:Destroy()
+            end)
         end
+
         pcall(function()
             window:Destroy()
         end)
@@ -147,6 +152,13 @@ local function close(action)
     action()
 
     local closing = card
+
+    -- slide out from where the card really is. the saved rect only catches up about a second
+    -- after a drag, so dragging then pressing Later straight away used to snap it back first
+    pcall(function()
+        closing.rect.x = closing.window.root.x
+        closing.rect.y = closing.window.root.y
+    end)
 
     local function finished()
         destroy_window()
@@ -166,8 +178,11 @@ local function on_window_closed()
 
     local closed = card
     if closed.pin then
-        closed.pin:Destroy()
+        pcall(function()
+            closed.pin:Destroy()
+        end)
     end
+
     card_placement.stop()
     card_motion.stop()
     card = nil
@@ -186,7 +201,7 @@ local function fill(window, blocks, text_width)
         })
     end
 
-    -- PrettyUI's decorative divider is 60px tall; use a small footer margin instead.
+    -- prettyui's divider is 60px tall, a small margin above the footer looks far better
     local action_width = math.floor((text_width - ICON_GAP) / 2)
     window:AddSimpleButton("Dismiss", function()
         close(card.handlers.on_dismiss)
@@ -209,17 +224,7 @@ local function fill(window, blocks, text_width)
     })
 end
 
--- handlers = { on_pin, on_dismiss, on_later, on_closed }, options = { state, animate }
-function tip_card.show(tip, handlers, options)
-    local area = game_area()
-
-    if not area then
-        handlers.on_closed()
-        return false
-    end
-
-    tip_card.destroy()
-
+local function build(tip, handlers, options, area)
     local blocks = sections(tip, options.state)
     local height_limit = math.min(MAX_HEIGHT, math.floor(area.height * MAX_HEIGHT_SHARE))
     local initial_rect = card_placement.rect_for(area, card_placement.MIN_HEIGHT, height_limit)
@@ -253,25 +258,52 @@ function tip_card.show(tip, handlers, options)
 
     fill(card.window, blocks, text_width)
 
-    -- Prefer the flow layout's real extent over the font-height estimate, and leave
-    -- room for the title bar and footer padding. Long content scrolls at the cap.
-    if type(card.window.contentHeight) == "number" and card.window.contentHeight > 0 then
+    -- the flow layout's real height beats the font estimate when prettyui tells us it, plus
+    -- room for the frame and footer padding. long tips scroll at the cap
+    local laid_out_height = internals.content_height(card.window)
+
+    if laid_out_height then
         rect = card_placement.rect_for(
             area,
-            card.window.contentHeight + WINDOW_CHROME_HEIGHT + PADDING * 2,
+            laid_out_height + WINDOW_CHROME_HEIGHT + PADDING * 2,
             height_limit
         )
         card.rect = rect
-        card.window:SetSize(rect.width, rect.height)
+        internals.set_window_size(card.window, rect.width, rect.height)
         card.window.root:SetPos(rect.x, rect.y)
     end
 
+    local this_card = card
+
     card.pin = card_header.attach(card.window, tip, function()
-        close(card.handlers.on_pin)
-    end, area)
+        close(this_card.handlers.on_pin)
+    end, area, function()
+        return card == this_card and not this_card.closing
+    end)
 
     card_motion.slide_in(card.window.root, rect, area, card.animate)
     card_placement.watch(card.window.root, rect, area, card_motion.is_sliding)
+end
+
+-- handlers = { on_pin, on_dismiss, on_later, on_closed }, options = { state, animate }
+-- returns false when no card could be shown, the caller then knows no card is open
+function tip_card.show(tip, handlers, options)
+    local area = game_area()
+
+    if not area then
+        return false
+    end
+
+    tip_card.destroy()
+
+    local ok, problem = pcall(build, tip, handlers, options, area)
+
+    if not ok then
+        -- whatever got half built goes away, a broken card must not hang around on screen
+        log("Skilling Coach: couldn't show a tip card: " .. tostring(problem))
+        tip_card.destroy()
+        return false
+    end
 
     return true
 end

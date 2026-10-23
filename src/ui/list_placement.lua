@@ -7,6 +7,7 @@ local function ratio(value, fallback)
     if type(value) ~= "number" or value ~= value or math.abs(value) == math.huge then
         return fallback
     end
+
     return math.max(0, math.min(1, value))
 end
 
@@ -20,11 +21,14 @@ function placement.rect(area, content_height, options)
             if type(value) ~= "number" or value ~= value or math.abs(value) == math.huge then
                 value = fallback
             end
+
             return math.max(math.min(minimum, maximum), math.min(value, maximum))
         end
+
         width = dimension(saved.width, options.width or 360, 260, area.width)
         height = dimension(saved.height, options.height or 400, 180, area.height)
     end
+
     return {
         width = width,
         height = height,

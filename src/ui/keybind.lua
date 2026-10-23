@@ -12,7 +12,7 @@ function keybind.start(toggle)
         local binding = settings.get("pinned_keybind")
         local down = prettyui.KeybindField.IsDown(binding)
         local pressed = down and not was_down
-        -- Consume the press before opening: a UI error must not retrigger every held tick.
+        -- count the press before opening, so a ui error cant make it fire again every held tick
         was_down = down
         if pressed and Player.IsAvailable() then
             toggle()

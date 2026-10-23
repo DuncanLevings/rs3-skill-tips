@@ -18,5 +18,6 @@ runner:runSuiteByInstances({
     { "TestPhase4", require("tests/coach_phase4_spec")(root) },
     { "TestEngine", require("tests/engine_spec")(root) },
     { "TestCard", require("tests/card_spec")(root) },
+    { "TestReviewFixes", require("tests/review_fixes_spec")(root) },
 })
 os.exit(runner.result.notSuccessCount)

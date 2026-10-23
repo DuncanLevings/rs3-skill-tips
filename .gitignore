@@ -4,3 +4,8 @@
 .DS_Store
 Thumbs.db
 .vscode/*.local.json
+
+# notes and docs stay on this machine, only the README is public
+*.md
+!README.md
+/docs/

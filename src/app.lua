@@ -42,15 +42,17 @@ local function start_engine()
     engine.start({ state = player_state, now = clock.now, show_card = show_card })
 end
 
--- Local testing only: show the saved/live blockers rather than guessing why a card stayed hidden.
+-- local testing only: logs whats blocking the ore box card instead of guessing why it didnt show
 local function report_ore_box(context)
     if not development.ENABLED or not current_character then
         return
     end
+
     local tip = catalogue.get("mining.ore_box")
     if not tip then
         return
     end
+
     log("Skilling Coach [ore-box " .. context .. "]: " .. table.concat({
         "dismissed=" .. tostring(tip_progress.is_dismissed(tip.id)),
         "pinned=" .. tostring(tip_progress.is_pinned(tip.id)),
@@ -61,7 +63,7 @@ local function report_ore_box(context)
     }, ", "))
 end
 
--- Check before activity as well as on server ticks: XP can arrive before the login poll.
+-- checked before every activity event as well as on server ticks, xp can beat the login poll
 local function update_character()
     local character = character_key.current()
     if character == current_character then
@@ -123,6 +125,7 @@ function app.start()
                 if skill == "MINING" then
                     report_ore_box("backpack full")
                 end
+
                 engine.on_backpack_full(skill)
             end
         end,

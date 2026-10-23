@@ -35,6 +35,7 @@ local pinned = compact_list.new({
                 }
             end
         end
+
         return rows
     end,
 })
@@ -101,6 +102,7 @@ function coach_window.start()
                 tooltip = description,
             })
         end
+
         launch("Pinned tips", "Keep the tips you pin beside your game.", pinned.open)
         launch("Recent tips", "Look back at your last 10 tips, or pin one for later.", recent.open)
     end)
@@ -115,6 +117,7 @@ function coach_window.stop()
         owner.destroy()
         owner = nil
     end
+
     progress.stop_listening(NAME)
     pinned.close()
     recent.close()

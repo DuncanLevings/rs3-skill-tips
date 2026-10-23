@@ -41,6 +41,7 @@ local function is_binding(value)
     if type(value) ~= "table" or #value > 2 then
         return false
     end
+
     local seen = {}
     for index, key in pairs(value) do
         if
@@ -54,8 +55,10 @@ local function is_binding(value)
         then
             return false
         end
+
         seen[key] = true
     end
+
     return true
 end
 

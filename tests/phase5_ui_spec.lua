@@ -199,6 +199,11 @@ return function(root)
         local history_window = fake.windows[1]
         lu.assertEquals(history_window.options.title, "Recent tips")
         lu.assertEquals(fake.labels[1].options.text, "Ore box")
+        local item, title, body = fake.sprites[1], fake.labels[1].options, fake.labels[2].options
+        lu.assertEquals(item.object_id, 123)
+        lu.assertEquals(title.x - item.x - item.width, 8)
+        lu.assertEquals(title.y + title.height / 2, item.y + item.height / 2)
+        lu.assertTrue(body.y >= item.y + item.height + 4)
         lu.assertEquals(controls(fake)[1].tooltip.options.text, "Pin tip")
         progress.mark_shown("removed.tip")
         lu.assertEquals(fake.load("src/ui/recent_history").rows()[1].id, "mining.ore_box")

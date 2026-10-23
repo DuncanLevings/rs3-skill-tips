@@ -13,7 +13,8 @@ return {
         title = "Ore box",
         icon_item = "MINING_OREBOX_BRONZE",
         hook = "Backpack full? An ore box lets you keep mining for longer between bank trips.",
-        why = "Fill it with ore to free up backpack space. Upgraded boxes can store higher-tier ores.",
+        why = "Fill it with ore to free up backpack space. "
+            .. "Upgraded boxes can store higher-tier ores.",
         how = {
             "Smith a bronze ore box at an anvil, or buy one on the Grand Exchange.",
         },

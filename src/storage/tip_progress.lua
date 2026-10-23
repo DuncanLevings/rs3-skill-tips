@@ -58,7 +58,7 @@ function tip_progress.stop_listening(name)
     listeners[name] = nil
 end
 
--- Additive version-1 field: older saves simply start with an empty queue.
+-- added to the version 1 save later, older saves just start with an empty queue
 local function clean_pending(saved)
     local result = {}
     for skill, levels in pairs(type(saved) == "table" and saved or {}) do
@@ -74,6 +74,7 @@ local function clean_pending(saved)
             result[skill] = { old = levels.old, new = levels.new }
         end
     end
+
     return result
 end
 
@@ -90,10 +91,11 @@ local function clean_history(saved)
             history[#history + 1] = { id = entry.id, order = entry.order }
         end
     end
+
     table.sort(history, function(a, b)
         return a.order > b.order
     end)
-    -- Keep the newest occurrence before applying the cap, including older saved duplicates.
+    -- keep the newest copy of each tip before cutting to 10, older saves can have duplicates
     local unique, seen = {}, {}
     for _, entry in ipairs(history) do
         if not seen[entry.id] then
@@ -104,6 +106,7 @@ local function clean_history(saved)
             end
         end
     end
+
     return unique
 end
 
@@ -220,15 +223,17 @@ function tip_progress.clear_quest(tip_id)
     end
 end
 
--- Merge reward/training level-ups until a method tip is shown for that skill.
+-- level ups for a skill merge together until a method tip for that skill gets shown
 function tip_progress.queue_level_up(skill, old_level, new_level)
     if not skills.is_skill(skill) then
         return
     end
+
     local checked = clean_pending({ [skill] = { old = old_level, new = new_level } })[skill]
     if not checked then
         return
     end
+
     local loaded = ensure_loaded()
     local pending = loaded.pending_level_ups[skill]
     loaded.pending_level_ups[skill] = {

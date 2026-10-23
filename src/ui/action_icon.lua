@@ -1,7 +1,11 @@
 -- unboxed list actions: native pin artwork and a small red cross for Unpin.
+
+local internals = require("src/ui/prettyui_internals")
+
 local action_icon = {}
+
 function action_icon.new(window, area, row, on_click, options)
-    local root = ui.Layer.new(window.content)
+    local root = ui.Layer.new(internals.content_layer(window))
     root:SetPos(options.x, options.y, options.x_anchor or 0, 0)
     root:SetSize(24, 24)
     root.enabled = true
@@ -18,6 +22,7 @@ function action_icon.new(window, area, row, on_click, options)
             strokes[#strokes + 1] = stroke
         end
     end
+
     image:SetSize(24, 24)
     image.enabled = true
     image.clickthrough = false
@@ -33,11 +38,13 @@ function action_icon.new(window, area, row, on_click, options)
                     or Vector4.new(0.65, 0.25, 0.2, 0.65)
             end
         end
+
         image.alpha = row.disabled and 0.55 or (hovered and 1 or (row.subtle and 0.65 or 1))
     end
+
     draw(false)
     if row.icon == "pin" then
-        -- Match the card: mask only the native sprite's baked-in border, never crop its atlas.
+        -- same as the card: cover the sprite's baked in border, never crop it out of the atlas
         for _, edge in ipairs({
             { 0, 0, 24, 2 },
             { 0, 22, 24, 2 },
@@ -45,13 +52,14 @@ function action_icon.new(window, area, row, on_click, options)
             { 22, 2, 2, 20 },
         }) do
             local mask = ui.Sprite.new(root)
-            mask.sprite = window.background.spriteID
+            mask.sprite = internals.background_sprite(window)
             mask.isTiling = true
             mask:SetPos(edge[1], edge[2])
             mask:SetSize(edge[3], edge[4])
             mask.clickthrough = true
         end
     end
+
     local tooltip = prettyui.Tooltip.attach(image, area, {
         parent = area,
         text = row.tooltip,
@@ -63,32 +71,43 @@ function action_icon.new(window, area, row, on_click, options)
         if not hovered or destroyed then
             return
         end
-        local target, origin, popup = image.xyGlobal, area.xyGlobal, tooltip.root
+
+        local popup = internals.tooltip_root(tooltip)
+        if not popup then
+            return
+        end
+
+        local target, origin = image.xyGlobal, area.xyGlobal
         local x = target.x - origin.x + (image.width - popup.width) / 2
         local y = target.y - origin.y - popup.height - 6
         if y < 8 then
             y = target.y - origin.y + image.height + 6
         end
+
         popup:SetPos(
             math.floor(math.max(8, math.min(x, area.width - popup.width - 8))),
             math.floor(math.max(8, math.min(y, area.height - popup.height - 8)))
         )
     end
+
     image:Subscribe(ui.Hook.ONCLICK, "skilling_coach_list_action", function()
         if destroyed then
             return false
         end
+
         hovered = false
         tooltip:Hide()
         if not row.disabled then
             on_click()
         end
+
         return false
     end)
     image:Subscribe(ui.Hook.ONMOUSEOVER, "skilling_coach_list_action", function()
         if destroyed then
             return
         end
+
         hovered = true
         draw(not row.disabled)
         tooltip:Show()
@@ -98,6 +117,7 @@ function action_icon.new(window, area, row, on_click, options)
         if destroyed then
             return
         end
+
         hovered = false
         draw(false)
         tooltip:Hide()
@@ -106,10 +126,12 @@ function action_icon.new(window, area, row, on_click, options)
         if destroyed then
             return
         end
+
         destroyed, hovered = true, false
         tooltip:Destroy()
         root:Destroy()
     end
+
     return control
 end
 

@@ -39,23 +39,46 @@ local function before_event()
     if listeners.before_activity then
         listeners.before_activity()
     end
+
     if not Player.IsAvailable() then
         activity_watch.reset()
         return false
     end
+
     return true
 end
 
-local function check_backpack()
-    if not listeners or not gathering_skill then
+-- the backpack filling and the gathering xp drop arrive in either order, a moment apart.
+-- when both have happened close enough together, thats a full backpack from gathering
+local function match_full_backpack()
+    if
+        not full_at
+        or not gathering_xp_at
+        or math.abs(full_at - gathering_xp_at) > FULL_MATCH_SECONDS
+    then
         return
     end
+
+    full_at = nil
+    gathering_xp_at = nil
+
+    if listeners.on_backpack_full then
+        listeners.on_backpack_full(gathering_skill)
+    end
+end
+
+-- runs when the backpack changes (the client tells us), not every tick. only cares while a
+-- gathering click is the latest thing the player did
+local function on_backpack_changed(event)
+    if not gathering_skill or not inventories.is_backpack(event.inv) then
+        return
+    end
+
     if not before_event() or not gathering_skill then
         return
     end
 
     local free_slots = inventories.backpack_free_slots()
-    local now = clock.now()
 
     if inventories.bank_is_open() or free_slots == nil then
         previous_free_slots = nil
@@ -64,35 +87,22 @@ local function check_backpack()
         return
     end
 
+    -- only the change from "one slot left" to "full" counts, an already full backpack doesnt
     if free_slots == 0 and previous_free_slots and previous_free_slots > 0 then
-        full_at = now
+        full_at = clock.now()
     elseif free_slots > 0 then
         full_at = nil
     end
 
     previous_free_slots = free_slots
-
-    if full_at and now - full_at > FULL_MATCH_SECONDS then
-        full_at = nil
-    end
-
-    if
-        full_at
-        and gathering_xp_at
-        and math.abs(full_at - gathering_xp_at) <= FULL_MATCH_SECONDS
-    then
-        full_at = nil
-        gathering_xp_at = nil
-        if listeners.on_backpack_full then
-            listeners.on_backpack_full(gathering_skill)
-        end
-    end
+    match_full_backpack()
 end
 
 local function on_entry_selected(event)
     if not before_event() then
         return
     end
+
     local entry = event.entry
     last_activity_at = clock.now()
     gathering_action = entry.locData ~= nil and entry.verbText ~= "Examine"
@@ -106,6 +116,7 @@ local function on_entry_selected(event)
             gathering_skill = "WOODCUTTING"
         end
     end
+
     previous_free_slots = inventories.backpack_free_slots()
     full_at = nil
     gathering_xp_at = nil
@@ -124,6 +135,7 @@ local function on_skill_transmit(event)
     if not before_event() then
         return
     end
+
     local old_xp = event.oldXP or 0
     local gained = (event.newXP or 0) - old_xp
 
@@ -139,8 +151,8 @@ local function on_skill_transmit(event)
         return
     end
 
-    -- These are the same gameplay level fields used by the in-game probe.
-    -- Report crossings even when the reward guard rejects this XP as training.
+    -- same gameplay level fields the in game probe used
+    -- level ups get reported even when the reward guard says this xp wasnt training
     if listeners.on_level_up then
         local old_level, new_level = event.oldGameplayLevel, event.newGameplayLevel
         if
@@ -160,21 +172,24 @@ local function on_skill_transmit(event)
     if tracker.xp(skill, clock.now()) then
         if skill == gathering_skill then
             gathering_xp_at = clock.now()
-            check_backpack()
+            match_full_backpack()
         end
+
         listeners.on_training(skill)
     end
 end
 
--- A quiet pause is conservative: no XP/clicks for 5s and no outstanding gathering click.
--- Walking/non-location clicks release that gathering latch, so a bank run can show queued tips.
+-- a quiet pause is on the careful side: no xp or clicks for 5s and no gathering click still going
+-- walking or any non location click ends the gathering, so a bank run can show queued tips
 local function check_quiet(event)
     if not listeners or not listeners.on_quiet or (event.logicTick or 0) % 25 ~= 0 then
         return
     end
+
     if not before_event() then
         return
     end
+
     local now = clock.now()
     if
         not gathering_action
@@ -190,14 +205,13 @@ function activity_watch.start(handlers)
     if owner then
         owner.destroy()
     end
+
     activity_watch.reset()
     listeners = handlers
     owner = event_owner.new(SUBSCRIPTION)
 
-    owner.subscribe(Event.Logic, function(event)
-        check_backpack()
-        check_quiet(event)
-    end)
+    owner.subscribe(Event.Logic, check_quiet)
+    owner.subscribe(Event.InventoryUpdated, on_backpack_changed)
     owner.subscribe(Event.MiniMenuEntrySelected, on_entry_selected)
     owner.subscribe(Event.SkillTransmit, on_skill_transmit)
 end
@@ -207,6 +221,7 @@ function activity_watch.stop()
         owner.destroy()
         owner = nil
     end
+
     tracker = nil
     listeners = nil
 end
