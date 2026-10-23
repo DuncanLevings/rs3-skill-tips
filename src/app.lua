@@ -4,6 +4,7 @@
 -- it also keeps track of which character is logged in, saved progress and the bank snapshot
 -- are per character and get switched over when that changes
 
+local event_owner = require("src/game/event_owner")
 local clock = require("src/game/clock")
 local inventories = require("src/game/inventories")
 local activity_watch = require("src/game/activity_watch")
@@ -24,29 +25,33 @@ local CHARACTER_SUBSCRIPTION = "skilling_coach_character"
 
 local started = false
 local current_character
-
--- checked once per server tick (about 0.6s), cheap and catches logins and logouts
-local function update_character()
-    local character = character_key.current()
-
-    if character == current_character then
-        return
-    end
-
-    current_character = character
-    activity_watch.reset()
-
-    if character then
-        tip_progress.use_character(character)
-        owned_items.use_character(character)
-    end
-end
+local character_events
 
 local function show_card(tip, handlers)
     tip_card.show(tip, handlers, {
         state = player_state,
         animate = settings.get("animate_card"),
     })
+end
+
+local function start_engine()
+    engine.start({ state = player_state, now = clock.now, show_card = show_card })
+end
+
+-- Check before activity as well as on server ticks: XP can arrive before the login poll.
+local function update_character()
+    local character = character_key.current()
+    if character == current_character then
+        return
+    end
+
+    tip_card.destroy()
+    activity_watch.reset()
+    current_character = character
+    tip_progress.use_character(character)
+    owned_items.use_character(character)
+    start_engine()
+    inventories.refresh_bank()
 end
 
 local function reset_tips()
@@ -68,13 +73,10 @@ function app.start()
     clock.start()
     inventories.start()
 
-    engine.start({
-        state = player_state,
-        now = clock.now,
-        show_card = show_card,
-    })
+    start_engine()
 
     activity_watch.start({
+        before_activity = update_character,
         on_training = function(skill)
             -- nothing to compare against until a character is logged in
             if current_character then
@@ -89,7 +91,9 @@ function app.start()
         end,
     })
 
-    Event.ServerLogic.Subscribe(CHARACTER_SUBSCRIPTION, update_character)
+    update_character()
+    character_events = event_owner.new(CHARACTER_SUBSCRIPTION)
+    character_events.subscribe(Event.ServerLogic, update_character)
     coach_window.start()
     settings_page.start(reset_tips)
 
@@ -107,13 +111,16 @@ function app.stop()
 
     settings_page.stop()
     coach_window.stop()
-    Event.ServerLogic.Unsubscribe(CHARACTER_SUBSCRIPTION)
+    character_events.destroy()
+    character_events = nil
     activity_watch.stop()
     engine.stop()
     tip_card.destroy()
     inventories.stop()
     clock.stop()
     current_character = nil
+    tip_progress.use_character(nil)
+    owned_items.use_character(nil)
 
     log("Skilling Coach stopped.")
 end

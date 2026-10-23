@@ -10,8 +10,14 @@ local owned_items = require("src/storage/owned_items")
 local player_state = {}
 
 local function read(fn)
-    local ok, value = pcall(fn)
-    return ok and value or nil
+    local ok, value = pcall(function()
+        if Player.IsAvailable() then
+            return fn()
+        end
+    end)
+    if ok then
+        return value
+    end
 end
 
 function player_state.level(skill)

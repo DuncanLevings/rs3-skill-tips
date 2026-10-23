@@ -2,20 +2,31 @@
 -- was that click" and doesnt depend on the os clock
 
 local clock = {}
+local event_owner = require("src/game/event_owner")
 
 local SUBSCRIPTION = "skilling_coach_clock"
 local TICKS_PER_SECOND = 50
 
 local current_tick = 0
+local owner
 
 function clock.start()
-    Event.Logic.Subscribe(SUBSCRIPTION, function(event)
+    if owner then
+        return
+    end
+
+    owner = event_owner.new(SUBSCRIPTION)
+    current_tick = 0
+    owner.subscribe(Event.Logic, function(event)
         current_tick = event.logicTick or (current_tick + 1)
     end)
 end
 
 function clock.stop()
-    Event.Logic.Unsubscribe(SUBSCRIPTION)
+    if owner then
+        owner.destroy()
+        owner = nil
+    end
 end
 
 function clock.now()

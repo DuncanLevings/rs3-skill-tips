@@ -54,6 +54,16 @@ return function(root)
         lu.assertEquals(world.shown, { "MINING" })
     end
 
+    function suite:test_geodes_and_other_items_still_count_toward_a_full_backpack()
+        local world = setup(root)
+        world.slots(28)
+        world.fake.inventories[93][27] = { item = "GEODE" }
+        world.fake.inventories[93][28] = { item = "COINS" }
+        world.advance(1)
+        world.xp()
+        lu.assertEquals(world.shown, { "MINING" })
+    end
+
     function suite:test_xp_then_inventory_is_also_detected()
         local world = setup(root)
         world.xp()

@@ -7,6 +7,7 @@ local clock = require("src/game/clock")
 local skills = require("src/data/skills")
 local skill_activity = require("src/game/skill_activity")
 local inventories = require("src/game/inventories")
+local event_owner = require("src/game/event_owner")
 
 local activity_watch = {}
 
@@ -14,6 +15,7 @@ local SUBSCRIPTION = "skilling_coach_activity"
 
 local tracker
 local listeners
+local owner
 local gathering_skill
 local previous_free_slots
 local full_at
@@ -29,8 +31,22 @@ function activity_watch.reset()
     gathering_xp_at = nil
 end
 
+local function before_event()
+    if listeners.before_activity then
+        listeners.before_activity()
+    end
+    if not Player.IsAvailable() then
+        activity_watch.reset()
+        return false
+    end
+    return true
+end
+
 local function check_backpack()
     if not listeners or not gathering_skill then
+        return
+    end
+    if not before_event() or not gathering_skill then
         return
     end
 
@@ -70,6 +86,9 @@ local function check_backpack()
 end
 
 local function on_entry_selected(event)
+    if not before_event() then
+        return
+    end
     local entry = event.entry
 
     -- unrelated clicks (banking, picking up, rewards) must not inherit a mining signal
@@ -96,6 +115,9 @@ local function on_entry_selected(event)
 end
 
 local function on_skill_transmit(event)
+    if not before_event() then
+        return
+    end
     local old_xp = event.oldXP or 0
     local gained = (event.newXP or 0) - old_xp
 
@@ -126,47 +148,25 @@ end
 
 -- handlers = { on_training = function(skill), on_combat = function() }
 function activity_watch.start(handlers)
+    if owner then
+        owner.destroy()
+    end
     activity_watch.reset()
     listeners = handlers
+    owner = event_owner.new(SUBSCRIPTION)
 
-    Event.Logic.Subscribe(SUBSCRIPTION, function()
-        local ok, problem = pcall(function()
-            check_backpack()
-        end)
-        if not ok then
-            log("Skilling Coach: couldn't check backpack space: " .. tostring(problem))
-        end
-    end)
-
-    -- pcall with a closure so a bad event payload is logged, not thrown into the client
-    Event.MiniMenuEntrySelected.Subscribe(SUBSCRIPTION, function(event)
-        local ok, problem = pcall(function()
-            on_entry_selected(event)
-        end)
-
-        if not ok then
-            log("Skilling Coach: couldn't read a click: " .. tostring(problem))
-        end
-    end)
-
-    Event.SkillTransmit.Subscribe(SUBSCRIPTION, function(event)
-        local ok, problem = pcall(function()
-            on_skill_transmit(event)
-        end)
-
-        if not ok then
-            log("Skilling Coach: couldn't read an xp drop: " .. tostring(problem))
-        end
-    end)
+    owner.subscribe(Event.Logic, check_backpack)
+    owner.subscribe(Event.MiniMenuEntrySelected, on_entry_selected)
+    owner.subscribe(Event.SkillTransmit, on_skill_transmit)
 end
 
 function activity_watch.stop()
-    Event.Logic.Unsubscribe(SUBSCRIPTION)
-    Event.MiniMenuEntrySelected.Unsubscribe(SUBSCRIPTION)
-    Event.SkillTransmit.Unsubscribe(SUBSCRIPTION)
+    if owner then
+        owner.destroy()
+        owner = nil
+    end
     tracker = nil
     listeners = nil
-    activity_watch.reset()
 end
 
 return activity_watch

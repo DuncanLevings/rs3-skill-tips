@@ -7,19 +7,23 @@
 
 local catalogue = require("src/tips/catalogue")
 local owned_items = require("src/storage/owned_items")
+local character_key = require("src/storage/character_key")
+local event_owner = require("src/game/event_owner")
 
 local inventories = {}
 
 local SUBSCRIPTION = "skilling_coach_inventories"
 -- inventories that are always around, read live when a tip asks
 local LIVE_INVENTORIES = { "INV", "WORN" }
+local owner
 
 local function find(inv_type_name)
     local ok, inv = pcall(function()
-        return Inventory.Find(config.Inv[inv_type_name])
+        local found = Inventory.Find(config.Inv[inv_type_name])
+        return found and found.isValid and found or nil
     end)
 
-    if ok and inv and inv.isValid then
+    if ok then
         return inv
     end
 
@@ -31,12 +35,17 @@ local function count_item(inv, item)
         return inv:GetTotal(config.Obj[item])
     end)
 
-    return ok and total or 0
+    return ok and type(total) == "number" and total or 0
 end
 
 function inventories.backpack_free_slots()
     local inv = find("INV")
-    return inv and inv.freeSlotCount or nil
+    local ok, free = pcall(function()
+        return inv and inv.freeSlotCount
+    end)
+    if ok and math.type(free) == "integer" and free >= 0 then
+        return free
+    end
 end
 
 function inventories.bank_is_open()
@@ -48,7 +57,7 @@ local function count_category(inv, category)
         return inv:GetCategoryTotal(category)
     end)
 
-    return ok and total or 0
+    return ok and type(total) == "number" and total or 0
 end
 
 -- is it in the backpack or being worn right now
@@ -77,6 +86,11 @@ function inventories.carrying_category(category)
 end
 
 local function snapshot_bank()
+    local character = character_key.current()
+    if not character then
+        return
+    end
+
     local bank = find("BANK")
 
     if not bank then
@@ -84,6 +98,8 @@ local function snapshot_bank()
     end
 
     local relevant_items, relevant_categories = catalogue.relevant_items()
+    -- Inventory updates can arrive before the app's next character poll.
+    owned_items.use_character(character)
 
     owned_items.update_from_bank(relevant_items, relevant_categories, function(item)
         return count_item(bank, item)
@@ -93,11 +109,11 @@ local function snapshot_bank()
 end
 
 local function bank_id()
-    local ok, inv_type = pcall(function()
-        return config.Inv.BANK
+    local ok, id = pcall(function()
+        return config.Inv.BANK.id
     end)
 
-    return ok and inv_type and inv_type.id or nil
+    return ok and id or nil
 end
 
 local function on_inventory_event(event)
@@ -111,13 +127,25 @@ local function on_inventory_event(event)
 end
 
 function inventories.start()
-    Event.InventoryAdded.Subscribe(SUBSCRIPTION, on_inventory_event)
-    Event.InventoryUpdated.Subscribe(SUBSCRIPTION, on_inventory_event)
+    if owner then
+        return
+    end
+
+    owner = event_owner.new(SUBSCRIPTION)
+    owner.subscribe(Event.InventoryAdded, on_inventory_event)
+    owner.subscribe(Event.InventoryUpdated, on_inventory_event)
+    snapshot_bank()
+end
+
+function inventories.refresh_bank()
+    snapshot_bank()
 end
 
 function inventories.stop()
-    Event.InventoryAdded.Unsubscribe(SUBSCRIPTION)
-    Event.InventoryUpdated.Unsubscribe(SUBSCRIPTION)
+    if owner then
+        owner.destroy()
+        owner = nil
+    end
 end
 
 return inventories
