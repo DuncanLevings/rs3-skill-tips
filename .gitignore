@@ -9,3 +9,7 @@ Thumbs.db
 *.md
 !README.md
 /docs/
+
+# python leftovers from running the offline tools
+__pycache__/
+*.pyc

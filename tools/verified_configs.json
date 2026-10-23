@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "source": "In-game skilling-coach-probe, client 951-1, 2026-10-23; all 11 ore-box configs/category confirmed (docs/api-findings.md). This baseline is not a current full client dump.",
+  "items": {
+    "MINING_OREBOX_BRONZE": {
+      "id": 44779,
+      "name": "Bronze ore box",
+      "wiki_page": "Bronze ore box",
+      "category": 4448,
+      "consumable": false
+    },
+    "MINING_OREBOX_IRON": {
+      "id": 44781,
+      "name": "Iron ore box",
+      "wiki_page": "Iron ore box",
+      "category": 4448,
+      "consumable": false
+    },
+    "MINING_OREBOX_STEEL": {
+      "id": 44783,
+      "name": "Steel ore box",
+      "wiki_page": "Steel ore box",
+      "category": 4448,
+      "consumable": false
+    },
+    "MINING_OREBOX_MITHRIL": {
+      "id": 44785,
+      "name": "Mithril ore box",
+      "wiki_page": "Mithril ore box",
+      "category": 4448,
+      "consumable": false
+    },
+    "MINING_OREBOX_ADAMANT": {
+      "id": 44787,
+      "name": "Adamant ore box",
+      "wiki_page": "Adamant ore box",
+      "category": 4448,
+      "consumable": false
+    },
+    "MINING_OREBOX_RUNE": {
+      "id": 44789,
+      "name": "Rune ore box",
+      "wiki_page": "Rune ore box",
+      "category": 4448,
+      "consumable": false
+    },
+    "MINING_OREBOX_ORIKALKUM": {
+      "id": 44791,
+      "name": "Orikalkum ore box",
+      "wiki_page": "Orikalkum ore box",
+      "category": 4448,
+      "consumable": false
+    },
+    "MINING_OREBOX_NECRONIUM": {
+      "id": 44793,
+      "name": "Necronium ore box",
+      "wiki_page": "Necronium ore box",
+      "category": 4448,
+      "consumable": false
+    },
+    "MINING_OREBOX_BANE": {
+      "id": 44795,
+      "name": "Bane ore box",
+      "wiki_page": "Bane ore box",
+      "category": 4448,
+      "consumable": false
+    },
+    "MINING_OREBOX_ELDER_RUNE": {
+      "id": 44797,
+      "name": "Elder rune ore box",
+      "wiki_page": "Elder rune ore box",
+      "category": 4448,
+      "consumable": false
+    },
+    "MINING_OREBOX_PRIMAL": {
+      "id": 57172,
+      "name": "Primal ore box",
+      "wiki_page": "Primal ore box",
+      "category": 4448,
+      "consumable": false
+    }
+  },
+  "quests": {},
+  "varbits": {},
+  "achievements": {}
+}
