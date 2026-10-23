@@ -1,0 +1,18 @@
+Third party notices for Skilling Coach
+======================================
+
+PrettyUI
+--------
+UI library by j3.gg, loaded as a Plugin Hub dependency (mod.io 6398181). It isn't bundled with
+this plugin.
+
+RuneScape Wiki
+--------------
+Tip text will be written from information on the RuneScape Wiki (https://runescape.wiki),
+reworded rather than copied. Wiki content is licensed under CC BY-NC-SA 3.0
+(https://creativecommons.org/licenses/by-nc-sa/3.0/). Each tip names the wiki page it is based on.
+
+LuaUnit (tests only)
+--------------------
+The test suite uses LuaUnit (BSD license), installed separately on the developer's Lua path.
+It isn't shipped with the plugin.

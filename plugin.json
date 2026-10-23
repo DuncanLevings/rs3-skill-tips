@@ -1,0 +1,13 @@
+{
+  "name": "Skilling Coach",
+  "version": "0.0.1",
+  "contactEmailAddress": "tatsuya636@hotmail.com",
+  "hasSettingsIcon": true,
+  "hasRibbonIcon": true,
+  "requiredDependencies": {
+    "prettyui": 6398181
+  },
+  "optionalDependencies": {},
+  "requiredPermissions": [],
+  "optionalPermissions": []
+}
