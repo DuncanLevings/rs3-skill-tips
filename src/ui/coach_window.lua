@@ -1,5 +1,5 @@
 -- the ribbon window. lists the tips the player pinned as goals, each with an Unpin button.
--- Browse and Dismissed tabs come later.
+-- Phase 5 replaces this with narrow title/Unpin rows; dismissed-tip restore lives in settings.
 --
 -- the list redraws itself whenever a pin changes, so pinning a tip while this window is open
 -- shows up straight away
