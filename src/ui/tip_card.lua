@@ -17,6 +17,7 @@
 local card_motion = require("src/ui/card_motion")
 local card_placement = require("src/ui/card_placement")
 local theme = require("src/ui/theme")
+local requirement_list = require("src/ui/requirement_list")
 local card_header = require("src/ui/card_header")
 
 local tip_card = {}
@@ -73,42 +74,6 @@ local function text_height(text, width)
     return math.max(1, lines) * LINE_HEIGHT + 4
 end
 
--- "SMITHING" -> "Smithing"
-local function skill_label(skill)
-    return skill:sub(1, 1) .. skill:sub(2):lower()
-end
-
--- only what the player hasnt got yet, met requirements are just clutter
-local function missing_requirements(tip, state)
-    local lines = {}
-    local required_skills = (tip.requirements or {}).skills or {}
-    local names = {}
-
-    for skill in pairs(required_skills) do
-        names[#names + 1] = skill
-    end
-
-    table.sort(names)
-
-    for _, skill in ipairs(names) do
-        local needed = required_skills[skill]
-        local level = state.level(skill)
-
-        if not level or level < needed then
-            local current = level and (" (you're level " .. level .. ")") or ""
-            lines[#lines + 1] = "- " .. skill_label(skill) .. " " .. needed .. current
-        end
-    end
-
-    for _, quest in ipairs((tip.requirements or {}).quests or {}) do
-        if not state.quest_done(quest) then
-            lines[#lines + 1] = "- " .. (state.quest_name(quest) or quest)
-        end
-    end
-
-    return lines
-end
-
 -- the text blocks on the card, top to bottom
 local function sections(tip, state)
     local steps = {}
@@ -123,7 +88,7 @@ local function sections(tip, state)
         { text = table.concat(steps, "\n"), colour = theme.TEXT_SOFT },
     }
 
-    local missing = missing_requirements(tip, state)
+    local missing = requirement_list.missing(tip, state)
 
     if #missing > 0 then
         list[#list + 1] = {
@@ -317,6 +282,15 @@ function tip_card.destroy()
     card_motion.stop()
     destroy_window()
     card = nil
+end
+
+function tip_card.set_animation(value)
+    if card then
+        card.animate = value
+        if not value then
+            card_motion.finish()
+        end
+    end
 end
 
 function tip_card.is_open()

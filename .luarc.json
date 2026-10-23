@@ -19,7 +19,8 @@
     "Inventory",
     "GameState",
     "Keyboard",
-    "Plugin"
+    "Plugin",
+    "Vector4"
   ],
   "workspace.checkThirdParty": false,
   "workspace.ignoreDir": [

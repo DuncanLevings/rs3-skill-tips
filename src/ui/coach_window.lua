@@ -1,93 +1,124 @@
--- the ribbon window. lists the tips the player pinned as goals, each with an Unpin button.
--- Phase 5 replaces this with narrow title/Unpin rows; read-only recent history lives separately.
---
--- the list redraws itself whenever a pin changes, so pinning a tip while this window is open
--- shows up straight away
-
+-- the ribbon is a launcher only. Pinned tips and recent tips are independent compact windows.
 local catalogue = require("src/tips/catalogue")
-local tip_progress = require("src/storage/tip_progress")
-
+local progress = require("src/storage/tip_progress")
+local compact_list = require("src/ui/compact_list")
+local history = require("src/ui/recent_history")
+local event_owner = require("src/game/event_owner")
 local coach_window = {}
+local NAME = "skilling_coach_content"
+local owner, ribbon
 
-local SUBSCRIPTION = "skilling_coach_content"
-local view
-local layer
-
-local function destroy_view()
-    if view then
-        local old = view
-        view = nil
-        pcall(function()
-            old:Destroy()
-        end)
-    end
-end
-
-local function populate_pinned()
-    view:AddText("Pinned goals")
-
-    local pinned = tip_progress.pinned_ids()
-
-    if #pinned == 0 then
-        view:AddText("Nothing pinned yet. Press Pin on a tip to keep it here as a goal.")
-        return
-    end
-
-    for _, tip_id in ipairs(pinned) do
-        local tip = catalogue.get(tip_id)
-
-        -- a pinned tip that was removed in an update just isnt listed
-        if tip then
-            view:AddText(tip.title .. ": " .. tip.hook)
-            view:AddSimpleButton("Unpin " .. tip.title, function()
-                tip_progress.unpin(tip_id)
-            end)
+local pinned = compact_list.new({
+    name = NAME,
+    key = "skilling_coach_goals", -- Preserve existing saved placement.
+    title = "Pinned tips",
+    min_width = 200,
+    max_width = 320,
+    empty = "No pinned tips.",
+    empty_width = 240,
+    empty_height = 100,
+    rows = function()
+        local rows = {}
+        for _, tip_id in ipairs(progress.pinned_ids()) do
+            local tip = catalogue.get(tip_id)
+            if tip then
+                rows[#rows + 1] = {
+                    id = tip.id,
+                    title = tip.title,
+                    icon_item = tip.icon_item,
+                    icon = "unpin",
+                    subtle = true,
+                    tooltip = "Unpin " .. tip.title,
+                    action = function()
+                        progress.unpin(tip_id)
+                    end,
+                }
+            end
         end
-    end
-end
+        return rows
+    end,
+})
+local recent = compact_list.new({
+    name = "skilling_coach_history",
+    key = "skilling_coach_history",
+    title = "Recent tips",
+    min_width = 240,
+    max_width = 360,
+    default_x = 0,
+    resizable = true,
+    default_width = 360,
+    default_height = 400,
+    dividers = true,
+    empty = "No tips shown yet.",
+    rows = history.rows,
+})
 
-local function populate()
-    destroy_view()
+coach_window.open = pinned.open
+coach_window.close = pinned.close
+coach_window.toggle = pinned.toggle
+coach_window.open_history = recent.open
 
-    if not layer then
-        return
-    end
-
-    -- the client may have thrown the layer away once the ribbon panel closed, in that case
-    -- theres nothing to draw into until it opens again
-    local ok = pcall(function()
-        view = prettyui.SimpleView.new(layer, {
-            width = 0,
-            height = 0,
-            widthAnchor = 1,
-            heightAnchor = 1,
-        })
-
-        view:AddText("Skilling Coach")
-        populate_pinned()
-    end)
-
-    if not ok then
-        destroy_view()
-        layer = nil
+local function destroy_ribbon()
+    if ribbon then
+        local old = ribbon
+        ribbon = nil
+        old:Destroy()
     end
 end
 
 function coach_window.start()
-    -- the client hands over a fresh empty layer each time the ribbon panel opens
-    Event.ContentLayerReady.Subscribe(SUBSCRIPTION, function(event)
-        layer = event.component
-        populate()
+    owner = event_owner.new(NAME)
+    owner.subscribe(Event.ContentLayerReady, function(event)
+        destroy_ribbon()
+        ribbon = prettyui.SimpleView.new(event.component, {
+            x = 12,
+            y = 12,
+            width = -24,
+            height = -24,
+            widthAnchor = 1,
+            heightAnchor = 1,
+        })
+        local current = ribbon
+        ribbon:AddTitle({ text = "Skilling Coach", height = 24, marginTop = 0, marginBottom = 8 })
+        local button_width = math.max(1, math.min(240, (event.component.width or 288) - 48))
+        ribbon:AddText({
+            text = "Your tips and recent discoveries.",
+            colour = 0xC8BDA5FF,
+            height = 24,
+            marginTop = 0,
+            marginBottom = 8,
+        })
+        local function launch(label, description, action)
+            ribbon:AddSimpleButton(label, function()
+                if ribbon == current then
+                    action()
+                end
+            end, {
+                width = button_width,
+                height = 32,
+                marginTop = 8,
+                marginBottom = 4,
+                tooltip = description,
+            })
+        end
+        launch("Pinned tips", "Keep the tips you pin beside your game.", pinned.open)
+        launch("Recent tips", "Look back at your last 10 tips, or pin one for later.", recent.open)
     end)
-
-    tip_progress.listen(SUBSCRIPTION, populate)
+    progress.listen(NAME, function()
+        pinned.refresh()
+        recent.refresh()
+    end)
 end
 
 function coach_window.stop()
-    tip_progress.stop_listening(SUBSCRIPTION)
-    Event.ContentLayerReady.Unsubscribe(SUBSCRIPTION)
-    destroy_view()
-    layer = nil
+    if owner then
+        owner.destroy()
+        owner = nil
+    end
+    progress.stop_listening(NAME)
+    pinned.close()
+    recent.close()
+    destroy_ribbon()
 end
 
 return coach_window

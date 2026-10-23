@@ -9,8 +9,9 @@ local conditions = require("src/coach/conditions")
 
 local schema = {}
 
-local KINDS = { convenience = true, method = true, general = true }
-local TRIGGER_TYPES = { training = true, level_reached = true, backpack_full = true }
+local KINDS = { convenience = true, method = true, general = true, quest = true }
+local TRIGGER_TYPES =
+    { training = true, level_reached = true, backpack_full = true, requirements_met = true }
 
 -- tips are pure data, a function anywhere in one means logic leaked into a tip file
 local function contains_function(value, depth)
@@ -100,6 +101,14 @@ local function check_requirements(tip, problems)
         return
     end
 
+    if requirements.skills ~= nil and type(requirements.skills) ~= "table" then
+        problems[#problems + 1] = "skill requirements must be a table"
+        return
+    end
+    if requirements.quests ~= nil and type(requirements.quests) ~= "table" then
+        problems[#problems + 1] = "quest requirements must be a list"
+        return
+    end
     for name, level in pairs(requirements.skills or {}) do
         if not skills.is_skill(name) or not is_level(level) then
             problems[#problems + 1] = "bad skill requirement " .. tostring(name)
@@ -163,7 +172,7 @@ function schema.problems(tip)
     end
 
     if not KINDS[tip.kind] then
-        problems[#problems + 1] = "kind must be convenience, method or general"
+        problems[#problems + 1] = "kind must be convenience, method, general or quest"
     end
 
     if type(tip.members) ~= "boolean" then
@@ -172,6 +181,28 @@ function schema.problems(tip)
 
     if math.type(tip.priority) ~= "integer" or tip.priority < 1 then
         problems[#problems + 1] = "priority must be a whole number from 1"
+    end
+
+    if tip.kind == "quest" then
+        if tip.level_range then
+            problems[#problems + 1] = "quest tips do not use method brackets"
+        end
+        if not is_text(tip.quest) then
+            problems[#problems + 1] = "quest tips need a quest config name"
+        end
+        local required = (type(tip.requirements) == "table" and tip.requirements.skills) or {}
+        if type(required) ~= "table" or next(required) == nil then
+            problems[#problems + 1] = "quest tips need all skill requirements"
+        end
+        local readiness = false
+        for _, trigger in ipairs(type(tip.triggers) == "table" and tip.triggers or {}) do
+            if type(trigger) == "table" and trigger.type == "requirements_met" then
+                readiness = true
+            end
+        end
+        if not readiness then
+            problems[#problems + 1] = "quest tips need a requirements_met trigger"
+        end
     end
 
     check_text_fields(tip, problems)

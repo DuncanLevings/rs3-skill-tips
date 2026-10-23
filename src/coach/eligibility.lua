@@ -5,8 +5,12 @@ local progress = require("src/storage/tip_progress")
 local owned_items = require("src/storage/owned_items")
 local eligibility = {}
 
-local KIND_SETTINGS =
-    { convenience = "show_convenience", method = "show_methods", general = "show_general" }
+local KIND_SETTINGS = {
+    convenience = "show_convenience",
+    method = "show_methods",
+    general = "show_general",
+    quest = "show_quests",
+}
 local STAGE_SETTINGS = { early = "show_early", mid = "show_mid", late = "show_late" }
 
 function eligibility.stage(tip)
@@ -17,6 +21,19 @@ function eligibility.stage(tip)
         end
     end
     return level < 30 and "early" or (level < 70 and "mid" or "late")
+end
+
+function eligibility.quest_ready(tip, state)
+    if state.quest_done(tip.quest) ~= false then
+        return false
+    end
+    for skill, needed in pairs(tip.requirements.skills) do
+        local level = state.level(skill)
+        if not level or level < needed then
+            return false
+        end
+    end
+    return true
 end
 
 function eligibility.allows(tip, skill, state)
@@ -35,6 +52,17 @@ function eligibility.allows(tip, skill, state)
         or progress.was_shown(tip.id)
     then
         return false
+    end
+    if tip.kind == "quest" then
+        local muted = settings.get("muted_skills")
+        for required_skill in pairs(tip.requirements.skills) do
+            if muted[required_skill] then
+                return false
+            end
+        end
+        if not eligibility.quest_ready(tip, state) then
+            return false
+        end
     end
     if tip.kind == "method" and tip.level_range then
         local level = state.level(skill)

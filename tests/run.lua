@@ -7,6 +7,8 @@ local runner = lu.LuaUnit.new()
 runner:runSuiteByInstances({
     { "TestGameAdapters", require("tests/game_adapters_spec")(root) },
     { "TestActivityWatch", require("tests/activity_watch_spec")(root) },
+    { "TestPhase5UI", require("tests/phase5_ui_spec")(root) },
+    { "TestQuestTips", require("tests/quest_tips_spec")(root) },
     { "TestApp", require("tests/app_spec")(root) },
     { "TestSchema", require("tests/schema_spec")(root) },
     { "TestConditions", require("tests/conditions_spec")(root) },

@@ -37,6 +37,28 @@ local function is_skill_set(value)
     return true
 end
 
+local function is_binding(value)
+    if type(value) ~= "table" or #value > 2 then
+        return false
+    end
+    local seen = {}
+    for index, key in pairs(value) do
+        if
+            math.type(index) ~= "integer"
+            or index < 1
+            or index > #value
+            or math.type(key) ~= "integer"
+            or key < 0
+            or key > 65535
+            or seen[key]
+        then
+            return false
+        end
+        seen[key] = true
+    end
+    return true
+end
+
 local DEFINITIONS = {
     tips_enabled = { default = true, valid = is_boolean },
     cooldown_minutes = { default = 10, valid = whole_number_between(2, 60) },
@@ -45,6 +67,8 @@ local DEFINITIONS = {
     combat_quiet_seconds = { default = 60, valid = whole_number_between(0, 600) },
     show_convenience = { default = true, valid = is_boolean },
     show_methods = { default = true, valid = is_boolean },
+    show_quests = { default = true, valid = is_boolean },
+    pinned_keybind = { default = {}, valid = is_binding },
     show_general = { default = true, valid = is_boolean },
     show_early = { default = true, valid = is_boolean },
     show_mid = { default = true, valid = is_boolean },

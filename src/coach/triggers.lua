@@ -3,6 +3,9 @@ local triggers = {}
 
 function triggers.matches(tip, context)
     for _, trigger in ipairs(tip.triggers) do
+        if trigger.type == "requirements_met" and context.kind == "quest_ready" then
+            return tip.kind == "quest"
+        end
         if trigger.skill == context.skill or trigger.skill == "ANY" then
             if trigger.type == context.kind then
                 return true

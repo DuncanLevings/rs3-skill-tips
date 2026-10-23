@@ -162,5 +162,40 @@ return function(root)
         lu.assertEquals(#levels, 1)
     end
 
+    function suite:test_quiet_pause_fires_at_five_seconds_and_gathering_holds_it()
+        local fake = client.new(root)
+        local clock = fake.load("src/game/clock")
+        local now, quiet = 0, 0
+        clock.now = function()
+            return now
+        end
+        local watch = fake.load("src/game/activity_watch")
+        watch.start({
+            on_training = function() end,
+            on_combat = function() end,
+            on_quiet = function()
+                quiet = quiet + 1
+            end,
+        })
+        now = 4.99
+        fake.fire("Logic", { logicTick = 25 })
+        lu.assertEquals(quiet, 0)
+        now = 5
+        fake.fire("Logic", { logicTick = 50 })
+        lu.assertEquals(quiet, 1)
+        fake.fire("MiniMenuEntrySelected", { entry = { verbText = "Chop down", locData = {} } })
+        now = 100
+        fake.fire("Logic", { logicTick = 75 })
+        lu.assertEquals(quiet, 1)
+        fake.fire("MiniMenuEntrySelected", { entry = { verbText = "Walk here" } })
+        now = 104.99
+        fake.fire("Logic", { logicTick = 100 })
+        lu.assertEquals(quiet, 1)
+        now = 105
+        fake.fire("Logic", { logicTick = 125 })
+        lu.assertEquals(quiet, 2)
+        watch.stop()
+    end
+
     return suite
 end

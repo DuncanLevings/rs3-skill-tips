@@ -27,12 +27,20 @@ function engine.pick_tip(skill, trigger_type)
             or nil,
     }
     local candidates = {}
+    local available = {}
     for _, tip in ipairs(catalogue.for_skill(skill)) do
+        available[#available + 1] = tip
+    end
+    local considered = {}
+    for _, tip in ipairs(available) do
         if
-            triggers.matches(tip, context) and eligibility.allows(tip, skill, session.deps.state)
+            not considered[tip.id]
+            and triggers.matches(tip, context)
+            and eligibility.allows(tip, skill, session.deps.state)
         then
             candidates[#candidates + 1] = tip
         end
+        considered[tip.id] = true
     end
     return ranking.best(candidates, skill, level)
 end
@@ -41,16 +49,10 @@ local function show(tip, skill)
     local running = session
     local token = {}
     running.card = token
-    running.pacing.shown(running.deps.now())
-    progress.mark_shown(tip.id)
-    -- Keep other skills' level-ups queued. Catch-up still handles other current-bracket tips.
-    if tip.kind == "method" then
-        progress.clear_level_up(skill)
-    end
     local function active()
         return session == running and running.card == token
     end
-    running.deps.show_card(tip, {
+    local displayed = running.deps.show_card(tip, {
         on_pin = function()
             if active() then
                 progress.pin(tip.id)
@@ -68,6 +70,18 @@ local function show(tip, skill)
             end
         end,
     })
+    if displayed ~= false and session == running then
+        running.pacing.shown(running.deps.now())
+        progress.mark_shown(tip.id)
+        if tip.kind == "quest" then
+            progress.clear_quest(tip.id)
+        end
+        if tip.kind == "method" then
+            progress.clear_level_up(skill)
+        end
+    elseif session == running then
+        running.card = nil
+    end
 end
 
 local function on_signal(skill, kind)
@@ -95,8 +109,56 @@ end
 function engine.on_level_up(skill, old_level, new_level)
     if session then
         progress.queue_level_up(skill, old_level, new_level)
+        for _, tip in ipairs(catalogue.quest_tips()) do
+            if
+                tip.requirements.skills[skill]
+                and eligibility.quest_ready(tip, session.deps.state)
+                and not progress.is_dismissed(tip.id)
+                and not progress.is_pinned(tip.id)
+                and not progress.was_shown(tip.id)
+            then
+                progress.queue_quest(tip.id)
+            end
+        end
     end
 end
+-- Quest readiness belongs to its own queue, not whichever skill happens to be trained.
+function engine.on_quiet()
+    if not session then
+        return
+    end
+    local state = session.deps.state
+    for _, tip in ipairs(catalogue.quest_tips()) do
+        if
+            eligibility.quest_ready(tip, state)
+            and not progress.was_shown(tip.id)
+            and not progress.is_dismissed(tip.id)
+            and not progress.is_pinned(tip.id)
+        then
+            progress.queue_quest(tip.id)
+        end
+    end
+    if session.card or not session.pacing.allows(session.deps.now()) then
+        return
+    end
+    local candidates = {}
+    for id in pairs(progress.queued_quests()) do
+        local tip = catalogue.get(id)
+        if
+            tip
+            and tip.kind == "quest"
+            and triggers.matches(tip, { kind = "quest_ready" })
+            and eligibility.allows(tip, nil, state)
+        then
+            candidates[#candidates + 1] = tip
+        end
+    end
+    local tip = ranking.best(candidates, nil, nil)
+    if tip then
+        show(tip)
+    end
+end
+
 function engine.on_combat()
     if session then
         session.pacing.combat(session.deps.now())

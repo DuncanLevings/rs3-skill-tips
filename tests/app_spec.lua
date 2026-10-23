@@ -188,5 +188,22 @@ return function(root)
         app.stop()
     end
 
+    function suite:test_development_reports_saved_dismissal_and_manual_reset()
+        local fake = client.new(root)
+        fake.load("src/development").ENABLED = true
+        local app = fake.load("src/app")
+        app.start()
+        lu.assertNotNil(fake.logs[1]:find("ore-box startup", 1, true))
+        local progress = fake.load("src/storage/tip_progress")
+        progress.dismiss("mining.ore_box")
+        fake.fire("SettingsLayerReady", { component = {} })
+        local reset = fake.views[1].buttons[#fake.views[1].buttons]
+        lu.assertEquals(reset.text, "Reset dismissals (development)")
+        reset.action()
+        lu.assertFalse(progress.is_dismissed("mining.ore_box"))
+        lu.assertNotNil(fake.logs[#fake.logs]:find("dismissed=false", 1, true))
+        app.stop()
+    end
+
     return suite
 end

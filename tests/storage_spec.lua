@@ -152,11 +152,13 @@ return function(root)
 
         app.start()
         fake.fire("ContentLayerReady", { component = {} })
+        fake.views[1].buttons[1].action()
         tip_progress.pin("mining.ore_box")
 
-        local latest = fake.views[#fake.views]
-        lu.assertStrContains(table.concat(latest.texts, "\n"), "Ore box")
-        lu.assertEquals(latest.buttons[1].text, "Unpin Ore box")
+        lu.assertTrue(fake.windows[1].destroyed)
+        lu.assertEquals(fake.windows[#fake.windows].options.title, "Pinned tips")
+        lu.assertEquals(fake.tooltips[#fake.tooltips].options.text, "Unpin Ore box")
+        lu.assertEquals(fake.labels[#fake.labels].options.text, "Ore box")
 
         app.stop()
     end
@@ -177,7 +179,7 @@ return function(root)
         local fake = client.new(root)
         fake.saved.skilling_coach_progress_alice = {
             version = 1,
-            pinned = { goal = true },
+            pinned = { tip = true },
             pending_level_ups = {
                 MINING = { old = 69, new = 70 },
                 WOODCUTTING = { old = "bad", new = 30 },
@@ -187,7 +189,7 @@ return function(root)
         }
         local progress = fake.load("src/storage/tip_progress")
         progress.use_character("alice")
-        lu.assertTrue(progress.is_pinned("goal"))
+        lu.assertTrue(progress.is_pinned("tip"))
         lu.assertEquals(progress.pending_level_up("MINING"), { old = 69, new = 70 })
         lu.assertNil(progress.pending_level_up("WOODCUTTING"))
         lu.assertNil(progress.pending_level_up("FAKE"))
@@ -205,7 +207,7 @@ return function(root)
         progress.use_character("bob")
         progress.use_character("alice")
         lu.assertNil(progress.pending_level_up("MINING"))
-        lu.assertTrue(progress.is_pinned("goal"))
+        lu.assertTrue(progress.is_pinned("tip"))
     end
 
     function suite:test_pending_level_ups_survive_reload_and_old_saves_without_the_field()
@@ -222,6 +224,50 @@ return function(root)
         restored.use_character("old")
         lu.assertNil(restored.pending_level_up("MINING"))
         lu.assertTrue(restored.is_dismissed("old_tip"))
+    end
+
+    function suite:test_redisplayed_tip_moves_to_top_without_a_duplicate()
+        local fake = client.new(root)
+        local progress = fake.load("src/storage/tip_progress")
+        progress.use_character("alice")
+        for index = 1, 12 do
+            progress.mark_shown("tip" .. index)
+        end
+        progress.mark_shown("tip5")
+        local recent = progress.recent_tips()
+        lu.assertEquals(#recent, 10)
+        lu.assertEquals(recent[1].id, "tip5")
+        lu.assertEquals(recent[2].id, "tip12")
+        local seen = {}
+        for _, entry in ipairs(recent) do
+            lu.assertNil(seen[entry.id])
+            seen[entry.id] = true
+        end
+        progress.use_character("bob")
+        progress.use_character("alice")
+        lu.assertEquals(progress.recent_tips(), recent)
+    end
+
+    function suite:test_saved_history_duplicates_collapse_to_the_newest_occurrence()
+        local fake = client.new(root)
+        fake.saved.skilling_coach_progress_alice = {
+            version = 1,
+            dismissed = { a = true },
+            pinned = { b = true },
+            recent_tips = {
+                { id = "a", order = 1 },
+                { id = "b", order = 2 },
+                { id = "a", order = 3 },
+            },
+        }
+        local progress = fake.load("src/storage/tip_progress")
+        progress.use_character("alice")
+        lu.assertEquals(
+            progress.recent_tips(),
+            { { id = "a", order = 3 }, { id = "b", order = 2 } }
+        )
+        lu.assertTrue(progress.is_dismissed("a"))
+        lu.assertTrue(progress.is_pinned("b"))
     end
 
     return suite

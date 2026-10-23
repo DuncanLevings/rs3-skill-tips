@@ -19,6 +19,8 @@ local owner
 local gathering_skill
 local previous_free_slots
 local full_at
+local last_activity_at
+local gathering_action
 local gathering_xp_at
 -- inventory and xp updates can arrive in either order within a server tick
 local FULL_MATCH_SECONDS = 1.2
@@ -29,6 +31,8 @@ function activity_watch.reset()
     previous_free_slots = nil
     full_at = nil
     gathering_xp_at = nil
+    last_activity_at = clock.now()
+    gathering_action = false
 end
 
 local function before_event()
@@ -90,6 +94,8 @@ local function on_entry_selected(event)
         return
     end
     local entry = event.entry
+    last_activity_at = clock.now()
+    gathering_action = entry.locData ~= nil and entry.verbText ~= "Examine"
 
     -- unrelated clicks (banking, picking up, rewards) must not inherit a mining signal
     gathering_skill = nil
@@ -126,14 +132,10 @@ local function on_skill_transmit(event)
         return
     end
 
+    last_activity_at = clock.now()
     local skill = skills.name(event.skill)
 
     if not skill then
-        return
-    end
-
-    if skills.COMBAT[skill] then
-        listeners.on_combat()
         return
     end
 
@@ -150,12 +152,36 @@ local function on_skill_transmit(event)
         end
     end
 
+    if skills.COMBAT[skill] then
+        listeners.on_combat()
+        return
+    end
+
     if tracker.xp(skill, clock.now()) then
         if skill == gathering_skill then
             gathering_xp_at = clock.now()
             check_backpack()
         end
         listeners.on_training(skill)
+    end
+end
+
+-- A quiet pause is conservative: no XP/clicks for 5s and no outstanding gathering click.
+-- Walking/non-location clicks release that gathering latch, so a bank run can show queued tips.
+local function check_quiet(event)
+    if not listeners or not listeners.on_quiet or (event.logicTick or 0) % 25 ~= 0 then
+        return
+    end
+    if not before_event() then
+        return
+    end
+    local now = clock.now()
+    if
+        not gathering_action
+        and now - last_activity_at >= 5
+        and not tracker.reward_guard_active(now)
+    then
+        listeners.on_quiet()
     end
 end
 
@@ -168,7 +194,10 @@ function activity_watch.start(handlers)
     listeners = handlers
     owner = event_owner.new(SUBSCRIPTION)
 
-    owner.subscribe(Event.Logic, check_backpack)
+    owner.subscribe(Event.Logic, function(event)
+        check_backpack()
+        check_quiet(event)
+    end)
     owner.subscribe(Event.MiniMenuEntrySelected, on_entry_selected)
     owner.subscribe(Event.SkillTransmit, on_skill_transmit)
 end

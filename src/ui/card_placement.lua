@@ -130,6 +130,19 @@ function card_placement.watch(root, rect, area, is_busy)
     Event.Logic.Subscribe(WATCH_SUBSCRIPTION, check)
 end
 
+function card_placement.reset()
+    local saved = load_saved()
+    saved_table.save(STORAGE_KEY, { version = VERSION, width = saved.width })
+    if watching then
+        local card = watching
+        local x = math.floor(math.max(0, card.area.width - card.root.width) * DEFAULT_X_RATIO)
+        local y = math.floor(math.max(0, card.area.height - card.root.height) * DEFAULT_Y_RATIO)
+        card.root:SetPos(x, y)
+        card.rect.x, card.rect.y = x, y
+        card.pending = nil
+    end
+end
+
 function card_placement.stop()
     watching = nil
     Event.Logic.Unsubscribe(WATCH_SUBSCRIPTION)

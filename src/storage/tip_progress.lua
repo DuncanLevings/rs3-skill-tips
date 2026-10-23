@@ -1,4 +1,4 @@
--- per character memory of what happened to each tip: dismissed for good, or pinned as a goal.
+-- per character memory of what happened to each tip: dismissed for good, or pinned for later.
 --
 -- "already shown this session" is kept in memory only, so a tip the player clicked Later on
 -- can come back another day
@@ -77,6 +77,36 @@ local function clean_pending(saved)
     return result
 end
 
+local function clean_history(saved)
+    local history = {}
+    for _, entry in ipairs(type(saved) == "table" and saved or {}) do
+        if
+            type(entry) == "table"
+            and type(entry.id) == "string"
+            and entry.id ~= ""
+            and math.type(entry.order) == "integer"
+            and entry.order > 0
+        then
+            history[#history + 1] = { id = entry.id, order = entry.order }
+        end
+    end
+    table.sort(history, function(a, b)
+        return a.order > b.order
+    end)
+    -- Keep the newest occurrence before applying the cap, including older saved duplicates.
+    local unique, seen = {}, {}
+    for _, entry in ipairs(history) do
+        if not seen[entry.id] then
+            seen[entry.id] = true
+            unique[#unique + 1] = entry
+            if #unique == 10 then
+                break
+            end
+        end
+    end
+    return unique
+end
+
 local function load_character(character)
     local saved = character and saved_table.load(KEY_PREFIX .. character, VERSION) or {}
 
@@ -87,6 +117,8 @@ local function load_character(character)
         dismissed = clean_set(saved.dismissed),
         pinned = clean_set(saved.pinned),
         pending_level_ups = clean_pending(saved.pending_level_ups),
+        recent_tips = clean_history(saved.recent_tips),
+        queued_quests = clean_set(saved.queued_quests),
     }
 end
 
@@ -124,7 +156,7 @@ function tip_progress.dismiss(tip_id)
     save()
 end
 
--- pinning also takes the tip off the card queue, its a goal in the coach window now
+-- pinning also takes the tip off the card queue, it stays in the pinned window now
 function tip_progress.pin(tip_id)
     ensure_loaded().pinned[tip_id] = true
     save()
@@ -148,11 +180,44 @@ function tip_progress.pinned_ids()
 end
 
 function tip_progress.mark_shown(tip_id)
+    local loaded = ensure_loaded()
     shown_this_session[tip_id] = true
+    local order = #loaded.recent_tips > 0 and loaded.recent_tips[1].order + 1 or 1
+    table.insert(loaded.recent_tips, 1, { id = tip_id, order = order })
+    loaded.recent_tips = clean_history(loaded.recent_tips)
+    save()
+end
+
+function tip_progress.recent_tips()
+    return clean_history(ensure_loaded().recent_tips)
+end
+
+function tip_progress.character()
+    return current_character
 end
 
 function tip_progress.was_shown(tip_id)
     return shown_this_session[tip_id] == true
+end
+
+function tip_progress.queue_quest(tip_id)
+    local loaded = ensure_loaded()
+    if not loaded.queued_quests[tip_id] then
+        loaded.queued_quests[tip_id] = true
+        save()
+    end
+end
+
+function tip_progress.queued_quests()
+    return clean_set(ensure_loaded().queued_quests)
+end
+
+function tip_progress.clear_quest(tip_id)
+    local loaded = ensure_loaded()
+    if loaded.queued_quests[tip_id] then
+        loaded.queued_quests[tip_id] = nil
+        save()
+    end
 end
 
 -- Merge reward/training level-ups until a method tip is shown for that skill.

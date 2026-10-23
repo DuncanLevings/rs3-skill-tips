@@ -165,6 +165,19 @@ function card_motion.is_sliding()
     return active ~= nil
 end
 
+function card_motion.finish()
+    local slide = active
+    active = nil
+    Event.Draw.Unsubscribe(DRAW_SUBSCRIPTION)
+    if slide then
+        slide.root:SetPos(slide.to_x, slide.to_y)
+        set_alpha(slide.root, slide.fade_in == false and 0 or 1)
+        if slide.on_done then
+            slide.on_done()
+        end
+    end
+end
+
 function card_motion.stop()
     active = nil
     Event.Draw.Unsubscribe(DRAW_SUBSCRIPTION)

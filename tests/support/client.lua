@@ -53,9 +53,11 @@ local function create_component(width, height)
     local component = { x = 0, y = 0, width = width or 0, height = height or 0, alpha = 1 }
     component.positions = {}
 
-    function component:SetPos(x, y)
+    function component:SetPos(x, y, x_anchor, y_anchor)
         self.x = x
         self.y = y
+        self.x_anchor = x_anchor
+        self.y_anchor = y_anchor
         self.positions[#self.positions + 1] = { x = x, y = y }
     end
 
@@ -92,12 +94,32 @@ local function create_prettyui(context)
 
         function view:AddText(text)
             self.texts[#self.texts + 1] = text
+            local label = create_component()
+            label.content = type(text) == "table" and text.text or text
+            context.texts[#context.texts + 1] = label.content
+            return label
         end
 
-        function view:AddSimpleButton(text, action)
-            self.buttons[#self.buttons + 1] = { text = text, action = action }
+        function view:AddTitle(text)
+            return self:AddText(text)
+        end
+        function view:AddSimpleButton(text, action, options)
+            self.buttons[#self.buttons + 1] = { text = text, action = action, options = options }
         end
 
+        function view:AddCheckboxButton(choices, options)
+            local control = { choices = choices, options = options }
+            context.checkboxes[#context.checkboxes + 1] = control
+            return control
+        end
+        function view:AddSlider(options)
+            context.sliders[#context.sliders + 1] = options
+            return options
+        end
+        function view:AddKeybindField(options)
+            context.keybind_fields[#context.keybind_fields + 1] = options
+            return options
+        end
         function view:Destroy()
             self.destroyed = true
         end
@@ -179,9 +201,22 @@ local function create_prettyui(context)
             self.root:SetSize(width, height)
         end
 
+        window.content = create_component(options.width, options.height)
+        function window:SetContentHeight(height)
+            self.contentHeight = height
+        end
+        function window:ScrollBy(delta)
+            self.scrollY = (self.scrollY or 0) + delta
+        end
+        function window:Show()
+            self.shown = true
+        end
         function window:Close()
             if options.onClose then
                 options.onClose(self)
+            end
+            if options.destroyOnClose then
+                self.destroyed = true
             end
         end
 
@@ -211,9 +246,15 @@ local function create_prettyui(context)
 
     local SimpleButton = {}
 
-    function SimpleButton.new(_, label, action)
+    function SimpleButton.new(_, label, action, options)
         context.buttons[label] = action
-        return { root = create_component() }
+        local button =
+            { root = create_component(), label = label, action = action, options = options }
+        function button:Destroy()
+            self.destroyed = true
+        end
+        context.native_buttons[#context.native_buttons + 1] = button
+        return button
     end
 
     local SpriteButton = {}
@@ -229,6 +270,19 @@ local function create_prettyui(context)
     end
 
     return {
+        KeybindField = {
+            IsDown = function(binding)
+                if context.capturing or context.input_blocked or #binding == 0 then
+                    return false
+                end
+                for _, key in ipairs(binding) do
+                    if not context.keys[key] then
+                        return false
+                    end
+                end
+                return true
+            end,
+        },
         SimpleView = SimpleView,
         Panel = Panel,
         Window = Window,
@@ -317,6 +371,11 @@ end
 function client.new(root)
     local events, handlers = create_events()
     local context = {
+        keys = {},
+        checkboxes = {},
+        sliders = {},
+        keybind_fields = {},
+        native_buttons = {},
         views = {},
         panels = {},
         windows = {},
@@ -337,16 +396,23 @@ function client.new(root)
     local modules = {}
     local environment = setmetatable({}, { __index = _G })
 
+    environment.Plugin = { resources = {} }
     environment.Event = events
     environment.prettyui = create_prettyui(context)
     environment.PersistentDB = create_persistent_db(context)
     environment.config = create_config(context)
     environment.id = { Component = { TOPLEVEL_V2__GAME_AREA = 1 } }
     environment.id.Sprite = {
+        RS3_ICON_PINNED_24PX_1 = 5,
         RS3_MODAL_WINDOW_1_BOTTOM_TILE = 1,
         RS3_MODAL_WINDOW_1_BOTTOM_CORNER = 2,
         RS3_ICON_PINNED_24PX_2 = 3,
         RS3_ICON_PINNED_24PX_3 = 4,
+    }
+    environment.Vector4 = {
+        new = function(x, y, z, w)
+            return { x = x, y = y, z = z, w = w }
+        end,
     }
     environment.Rect = {
         new = function(x, y, width, height)
@@ -363,11 +429,20 @@ function client.new(root)
             ONSCROLLWHEEL = "ONSCROLLWHEEL",
         },
         Layer = {
-            new = function()
+            new = function(parent)
                 local layer = create_component()
+                layer.parent = parent
                 context.layers = context.layers or {}
                 context.layers[#context.layers + 1] = layer
                 return layer
+            end,
+        },
+        Line = {
+            new = function()
+                local line = create_component()
+                context.lines = context.lines or {}
+                context.lines[#context.lines + 1] = line
+                return line
             end,
         },
         Rectangle = {
@@ -376,8 +451,9 @@ function client.new(root)
             end,
         },
         Sprite = {
-            new = function()
+            new = function(parent)
                 local sprite = create_component()
+                sprite.parent = parent
                 context.sprites = context.sprites or {}
                 context.sprites[#context.sprites + 1] = sprite
                 return sprite
@@ -441,6 +517,10 @@ function client.new(root)
         if modules[path] == nil then
             local chunk = assert(loadfile(root .. "/" .. path .. ".lua", "t", environment))
             modules[path] = chunk()
+            -- Specs default to release behavior, independent of the developer's local switch.
+            if path == "src/development" then
+                modules[path].ENABLED = false
+            end
         end
 
         return modules[path]

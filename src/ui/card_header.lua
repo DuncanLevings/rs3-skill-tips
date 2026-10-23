@@ -100,7 +100,7 @@ function card_header.attach(window, tip, on_pin, area)
     end
     local tooltip = prettyui.Tooltip.attach(pin_image, area, {
         parent = area,
-        text = "Pin as a goal",
+        text = "Pin tip",
         maxWidth = 180,
     })
     local hovered = false

@@ -17,6 +17,10 @@ local catalogue = require("src/tips/catalogue")
 local engine = require("src/coach/engine")
 local tip_card = require("src/ui/tip_card")
 local coach_window = require("src/ui/coach_window")
+local keybind = require("src/ui/keybind")
+local development = require("src/development")
+local eligibility = require("src/coach/eligibility")
+local conditions = require("src/coach/conditions")
 local settings_page = require("src/ui/settings_page")
 
 local app = {}
@@ -28,7 +32,7 @@ local current_character
 local character_events
 
 local function show_card(tip, handlers)
-    tip_card.show(tip, handlers, {
+    return tip_card.show(tip, handlers, {
         state = player_state,
         animate = settings.get("animate_card"),
     })
@@ -36,6 +40,25 @@ end
 
 local function start_engine()
     engine.start({ state = player_state, now = clock.now, show_card = show_card })
+end
+
+-- Local testing only: show the saved/live blockers rather than guessing why a card stayed hidden.
+local function report_ore_box(context)
+    if not development.ENABLED or not current_character then
+        return
+    end
+    local tip = catalogue.get("mining.ore_box")
+    if not tip then
+        return
+    end
+    log("Skilling Coach [ore-box " .. context .. "]: " .. table.concat({
+        "dismissed=" .. tostring(tip_progress.is_dismissed(tip.id)),
+        "pinned=" .. tostring(tip_progress.is_pinned(tip.id)),
+        "seen=" .. tostring(tip_progress.was_shown(tip.id)),
+        "bank_seen=" .. tostring(owned_items.bank_seen()),
+        "owns_box=" .. tostring(conditions.any(tip.known_when, player_state)),
+        "eligible=" .. tostring(eligibility.allows(tip, "MINING", player_state)),
+    }, ", "))
 end
 
 -- Check before activity as well as on server ticks: XP can arrive before the login poll.
@@ -57,6 +80,7 @@ end
 local function reset_tips()
     tip_progress.reset_dismissed()
     engine.reset_pacing()
+    report_ore_box("reset")
 end
 
 function app.start()
@@ -84,6 +108,11 @@ function app.start()
             end
         end,
         on_combat = engine.on_combat,
+        on_quiet = function()
+            if current_character then
+                engine.on_quiet()
+            end
+        end,
         on_level_up = function(skill, old_level, new_level)
             if current_character then
                 engine.on_level_up(skill, old_level, new_level)
@@ -91,16 +120,23 @@ function app.start()
         end,
         on_backpack_full = function(skill)
             if current_character then
+                if skill == "MINING" then
+                    report_ore_box("backpack full")
+                end
                 engine.on_backpack_full(skill)
             end
         end,
     })
 
     update_character()
+    report_ore_box("startup")
     character_events = event_owner.new(CHARACTER_SUBSCRIPTION)
     character_events.subscribe(Event.ServerLogic, update_character)
     coach_window.start()
-    settings_page.start(reset_tips)
+    settings_page.start({
+        reset_tips = development.ENABLED and reset_tips or nil,
+    })
+    keybind.start(coach_window.toggle)
 
     started = true
 
@@ -114,6 +150,7 @@ function app.stop()
 
     started = false
 
+    keybind.stop()
     settings_page.stop()
     coach_window.stop()
     character_events.destroy()

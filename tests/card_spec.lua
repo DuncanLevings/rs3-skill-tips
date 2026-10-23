@@ -135,7 +135,7 @@ return function(root)
         lu.assertTrue(fake.sprites[5].enabled)
         lu.assertEquals(fake.tooltips[1].target, fake.sprites[5])
         lu.assertEquals(fake.tooltips[1].parent, fake.game_area)
-        lu.assertEquals(fake.tooltips[1].options.text, "Pin as a goal")
+        lu.assertEquals(fake.tooltips[1].options.text, "Pin tip")
         fake.game_area.xyGlobal = { x = 100, y = 50 }
         fake.sprites[5].xyGlobal = { x = 500, y = 250 }
         fake.sprites[5].hooks.ONMOUSEOVER()
@@ -249,6 +249,36 @@ return function(root)
         lu.assertEquals(next_window.options.width, 420)
         lu.assertEquals(next_window.options.x, 1400)
 
+        tip_card.destroy()
+    end
+
+    function suite:test_turning_animation_off_finishes_an_opening_or_closing_card()
+        local fake = client.new(root)
+        local tip_card, calls = open_ore_box_card(fake, true)
+        tip_card.set_animation(false)
+        lu.assertEquals(fake.subscription_count("Draw"), 0)
+        fake.buttons.Later()
+        lu.assertFalse(tip_card.is_open())
+        lu.assertEquals(calls, { "on_later", "on_closed" })
+        tip_card = open_ore_box_card(fake, true)
+        fake.buttons.Later()
+        tip_card.set_animation(false)
+        lu.assertFalse(tip_card.is_open())
+        lu.assertEquals(fake.subscription_count("Draw"), 0)
+    end
+
+    function suite:test_reset_position_preserves_width_and_does_not_move_the_pinned_window()
+        local fake = client.new(root)
+        local tip_card, _, window = open_ore_box_card(fake, false)
+        window.root:SetPos(1400, 300)
+        window.root.width = 420
+        run_logic_ticks(fake, 75)
+        fake.saved.skilling_coach_goals = { version = 1, x_ratio = 1, y_ratio = 0.25 }
+        fake.load("src/ui/card_placement").reset()
+        lu.assertEquals(window.root.x, 0)
+        lu.assertEquals(window.root.width, 420)
+        lu.assertEquals(fake.saved.skilling_coach_card.width, 420)
+        lu.assertEquals(fake.saved.skilling_coach_goals.y_ratio, 0.25)
         tip_card.destroy()
     end
 

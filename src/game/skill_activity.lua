@@ -54,6 +54,8 @@ function skill_activity.new()
             or within(tracker.last_reward_item_click, skill_activity.REWARD_ITEM_GUARD_SECONDS, now)
     end
 
+    tracker.reward_guard_active = is_reward_xp
+
     -- forget drops that fell out of the window
     local function trim(drops, now)
         local kept = {}
