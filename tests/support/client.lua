@@ -1,5 +1,8 @@
--- fake client for specs. loads plugin files into a sandbox with stand-ins for Event, prettyui
--- and log, and keeps track of what got subscribed so specs can fire events by hand
+-- fake client for specs. loads plugin files into a sandbox with stand-ins for the client api
+-- (Event, PersistentDB, Player, inventories, prettyui...) and keeps track of what happened so
+-- specs can fire events by hand and check the results.
+--
+-- every client.new() is a fresh sandbox, modules dont leak state between specs
 
 local client = {}
 
@@ -11,7 +14,8 @@ local function create_events()
     setmetatable(events, {
         __index = function(_, event_name)
             handlers[event_name] = handlers[event_name] or {}
-            local event = {
+
+            return {
                 Subscribe = function(reference, handler)
                     handlers[event_name][reference] = handler
                 end,
@@ -19,15 +23,61 @@ local function create_events()
                     handlers[event_name][reference] = nil
                 end,
             }
-
-            return event
         end,
     })
 
     return events, handlers
 end
 
--- just enough of prettyui for views: remembers added text and whether its been destroyed
+local function create_persistent_db(context)
+    local db = {}
+
+    function db:GetStructuredData(key)
+        return context.saved[key]
+    end
+
+    function db:SetStructuredData(key, value)
+        if context.fail_saves then
+            return false
+        end
+
+        context.saved[key] = value
+        return true
+    end
+
+    return db
+end
+
+-- a native-ish component: position and size, SetPos remembers where it was put
+local function create_component(width, height)
+    local component = { x = 0, y = 0, width = width or 0, height = height or 0, alpha = 1 }
+    component.positions = {}
+
+    function component:SetPos(x, y)
+        self.x = x
+        self.y = y
+        self.positions[#self.positions + 1] = { x = x, y = y }
+    end
+
+    function component:SetSize(new_width, new_height)
+        self.width = new_width
+        self.height = new_height
+    end
+
+    component.hooks = {}
+    function component:Subscribe(hook, _, callback)
+        self.hooks[hook] = callback
+    end
+    function component:Destroy()
+        self.destroyed = true
+    end
+    function component:SetAssociatedObject(object_id)
+        self.object_id = object_id
+    end
+
+    return component
+end
+
 local function create_prettyui(context)
     local SimpleView = {}
 
@@ -57,21 +107,331 @@ local function create_prettyui(context)
         return view
     end
 
-    return { SimpleView = SimpleView }
+    local Panel = {}
+
+    function Panel.new(_, options)
+        local panel = {
+            options = options,
+            root = create_component(options.width, options.height),
+            content = create_component(options.width, options.height),
+            destroyed = false,
+        }
+        panel.root:SetPos(options.x, options.y)
+
+        function panel:Destroy()
+            self.destroyed = true
+        end
+
+        context.panels[#context.panels + 1] = panel
+
+        return panel
+    end
+
+    -- flow layout window: remembers its texts and buttons. Destroy calls onClose like a real
+    -- close would, so the card has to tell its own destroy apart from the player closing it
+    local Window = {}
+
+    function Window.new(_, options)
+        local window = {
+            options = options,
+            root = create_component(options.width, options.height),
+            texts = {},
+            closeButton = {},
+            titleDrag = create_component(),
+            titleText = {},
+            background = create_component(),
+            leftBorder = create_component(),
+            rightBorder = create_component(),
+            destroyed = false,
+        }
+        window.root:SetPos(options.x, options.y)
+
+        function window:AddText(text_options)
+            self.texts[#self.texts + 1] = text_options
+            context.texts[#context.texts + 1] = text_options.text
+        end
+
+        function window:AddItemSlot(object, slot_options)
+            self.item_slots = self.item_slots or {}
+            self.item_slots[#self.item_slots + 1] = {
+                object = object,
+                options = slot_options,
+            }
+        end
+
+        function window:AddSimpleButton(label, action, button_options)
+            context.buttons[label] = action
+            self.actions = self.actions or {}
+            self.actions[#self.actions + 1] = { label = label, options = button_options }
+        end
+
+        function window:AddFancyButton(label, action, button_options)
+            context.buttons[label] = action
+            self.actions = self.actions or {}
+            self.actions[#self.actions + 1] = { label = label, options = button_options }
+        end
+
+        function window:AddDivider()
+            self.has_divider = true
+        end
+
+        function window:SetSize(width, height)
+            self.root:SetSize(width, height)
+        end
+
+        function window:Close()
+            if options.onClose then
+                options.onClose(self)
+            end
+        end
+
+        function window:Destroy()
+            self.destroyed = true
+            self:Close()
+        end
+
+        context.windows[#context.windows + 1] = window
+
+        return window
+    end
+
+    local Text = {}
+
+    function Text.new(_, options)
+        context.texts[#context.texts + 1] = options.text
+        local label = create_component(options.width, options.height)
+        label:SetPos(options.x or 0, options.y or 0)
+        label.options = options
+        context.labels = context.labels or {}
+        context.labels[#context.labels + 1] = label
+        return label
+    end
+
+    Text.title = Text.new
+
+    local SimpleButton = {}
+
+    function SimpleButton.new(_, label, action)
+        context.buttons[label] = action
+        return { root = create_component() }
+    end
+
+    local SpriteButton = {}
+    function SpriteButton.new(_, name, action, options)
+        context.buttons[name] = action
+        local button = { options = options, spriteName = name }
+        function button:Destroy()
+            self.destroyed = true
+        end
+        context.sprite_buttons = context.sprite_buttons or {}
+        context.sprite_buttons[#context.sprite_buttons + 1] = button
+        return button
+    end
+
+    return {
+        SimpleView = SimpleView,
+        Panel = Panel,
+        Window = Window,
+        Text = Text,
+        SimpleButton = SimpleButton,
+        SpriteButton = SpriteButton,
+        Tooltip = {
+            attach = function(target, parent, options)
+                local tooltip = {
+                    target = target,
+                    parent = parent,
+                    options = options,
+                    root = create_component(120, 28),
+                }
+                function tooltip:Show()
+                    self.shown = true
+                end
+                function tooltip:Hide()
+                    self.shown = false
+                end
+                function tooltip:Destroy()
+                    self.destroyed = true
+                end
+                context.tooltips = context.tooltips or {}
+                context.tooltips[#context.tooltips + 1] = tooltip
+                return tooltip
+            end,
+        },
+    }
+end
+
+-- inventory with a list of { item = config name, category = number, count = number }
+local function create_inventory(entries, valid)
+    local inv = { isValid = valid ~= false, freeSlotCount = math.max(0, 28 - #entries) }
+
+    function inv:GetTotal(obj)
+        local total = 0
+
+        for _, entry in ipairs(entries) do
+            if obj and entry.item == obj.configName then
+                total = total + (entry.count or 1)
+            end
+        end
+
+        return total
+    end
+
+    function inv:GetCategoryTotal(category)
+        local total = 0
+
+        for _, entry in ipairs(entries) do
+            if entry.category == category then
+                total = total + (entry.count or 1)
+            end
+        end
+
+        return total
+    end
+
+    return inv
+end
+
+local INVENTORY_IDS = { INV = 93, WORN = 94, BANK = 95 }
+
+local function create_config(context)
+    local inv_types = {}
+
+    for name, inv_id in pairs(INVENTORY_IDS) do
+        inv_types[name] = { id = inv_id, configName = name }
+    end
+
+    return {
+        Inv = inv_types,
+        -- any item name exists, it just carries its own config name
+        Obj = setmetatable({}, {
+            __index = function(_, name)
+                return { configName = name, id = 123 }
+            end,
+        }),
+        Quest = context.quests,
+        Achievement = context.achievements,
+        Font = {},
+    }
 end
 
 function client.new(root)
     local events, handlers = create_events()
     local context = {
         views = {},
+        panels = {},
+        windows = {},
+        texts = {},
+        buttons = {},
         logs = {},
         handlers = handlers,
+        saved = {},
+        -- logged in character, nil = at the login screen
+        player = { name = "Test Player", levels = {} },
+        -- inventory id -> list of items, BANK only while "open"
+        inventories = { [93] = {}, [94] = {} },
+        quests = {},
+        achievements = {},
+        varbits = {},
+        game_area = { width = 1920, height = 1009 },
     }
     local modules = {}
     local environment = setmetatable({}, { __index = _G })
 
     environment.Event = events
     environment.prettyui = create_prettyui(context)
+    environment.PersistentDB = create_persistent_db(context)
+    environment.config = create_config(context)
+    environment.id = { Component = { TOPLEVEL_V2__GAME_AREA = 1 } }
+    environment.id.Sprite = {
+        RS3_MODAL_WINDOW_1_BOTTOM_TILE = 1,
+        RS3_MODAL_WINDOW_1_BOTTOM_CORNER = 2,
+        RS3_ICON_PINNED_24PX_2 = 3,
+        RS3_ICON_PINNED_24PX_3 = 4,
+    }
+    environment.Rect = {
+        new = function(x, y, width, height)
+            return { x = x, y = y, width = width, height = height }
+        end,
+    }
+    environment.ui = {
+        Hook = {
+            ONCLICK = "ONCLICK",
+            ONMOUSEOVER = "ONMOUSEOVER",
+            ONMOUSELEAVE = "ONMOUSELEAVE",
+            ONHOLD = "ONHOLD",
+            ONRELEASE = "ONRELEASE",
+            ONSCROLLWHEEL = "ONSCROLLWHEEL",
+        },
+        Layer = {
+            new = function()
+                local layer = create_component()
+                context.layers = context.layers or {}
+                context.layers[#context.layers + 1] = layer
+                return layer
+            end,
+        },
+        Rectangle = {
+            new = function()
+                return create_component()
+            end,
+        },
+        Sprite = {
+            new = function()
+                local sprite = create_component()
+                context.sprites = context.sprites or {}
+                context.sprites[#context.sprites + 1] = sprite
+                return sprite
+            end,
+        },
+        Canvas = {
+            new = function()
+                local canvas = create_component()
+                canvas.lines = {}
+                function canvas:AddLine(...)
+                    self.lines[#self.lines + 1] = { ... }
+                end
+                function canvas:AddSprite(...)
+                    self.sprite_args = { ... }
+                end
+                function canvas:Clear()
+                    self.sprite_args = nil
+                end
+                context.canvases = context.canvases or {}
+                context.canvases[#context.canvases + 1] = canvas
+                return canvas
+            end,
+        },
+        Interfaces = {
+            GetComponent = function()
+                return context.game_area
+            end,
+        },
+    }
+    environment.var = {
+        VarPlayer = setmetatable({}, {
+            __index = function(_, name)
+                local value = context.varbits[name]
+                return value ~= nil and { value = value } or nil
+            end,
+        }),
+    }
+    environment.Inventory = {
+        Find = function(inv_type)
+            local entries = inv_type and context.inventories[inv_type.id]
+            return entries and create_inventory(entries) or nil
+        end,
+    }
+    environment.Player = {
+        IsAvailable = function()
+            return context.player ~= nil
+        end,
+        GetEntity = function()
+            return { displayName = context.player.name }
+        end,
+        GetLevelUncapped = function(skill_number)
+            return context.player.levels[skill_number] or 1
+        end,
+    }
     environment.log = function(message)
         context.logs[#context.logs + 1] = message
     end
@@ -88,6 +448,7 @@ function client.new(root)
 
     context.environment = environment
     context.load = environment.require
+    context.create_inventory = create_inventory
 
     -- calls every handler subscribed to an event, like the client would
     function context.fire(event_name, payload)
@@ -101,6 +462,16 @@ function client.new(root)
 
         for _ in pairs(handlers[event_name] or {}) do
             count = count + 1
+        end
+
+        return count
+    end
+
+    function context.total_subscriptions()
+        local count = 0
+
+        for event_name in pairs(handlers) do
+            count = count + context.subscription_count(event_name)
         end
 
         return count

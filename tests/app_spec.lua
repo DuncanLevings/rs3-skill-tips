@@ -12,6 +12,7 @@ return function(root)
 
         lu.assertEquals(fake.subscription_count("ContentLayerReady"), 1)
         lu.assertEquals(fake.subscription_count("SettingsLayerReady"), 1)
+        lu.assertEquals(fake.subscription_count("SkillTransmit"), 1)
         lu.assertEquals(fake.logs[#fake.logs], "Skilling Coach started.")
 
         app.stop()
@@ -22,15 +23,16 @@ return function(root)
         local app = fake.load("src/app")
 
         app.start()
+        local after_first = fake.total_subscriptions()
         app.start()
 
-        lu.assertEquals(fake.subscription_count("ContentLayerReady"), 1)
+        lu.assertEquals(fake.total_subscriptions(), after_first)
         lu.assertEquals(#fake.logs, 1)
 
         app.stop()
     end
 
-    function suite:test_stop_unsubscribes_and_destroys_open_views()
+    function suite:test_stop_unsubscribes_everything_and_destroys_open_views()
         local fake = client.new(root)
         local app = fake.load("src/app")
 
@@ -39,8 +41,7 @@ return function(root)
         fake.fire("SettingsLayerReady", { component = {} })
         app.stop()
 
-        lu.assertEquals(fake.subscription_count("ContentLayerReady"), 0)
-        lu.assertEquals(fake.subscription_count("SettingsLayerReady"), 0)
+        lu.assertEquals(fake.total_subscriptions(), 0)
         lu.assertEquals(#fake.views, 2)
         lu.assertTrue(fake.views[1].destroyed)
         lu.assertTrue(fake.views[2].destroyed)

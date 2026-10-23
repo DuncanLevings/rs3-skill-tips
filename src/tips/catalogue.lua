@@ -1,0 +1,109 @@
+-- loads every tip file, checks each tip and indexes them by id and skill.
+--
+-- the client cant list folders, so new tip files get added to TIP_FILES by hand. a tip that
+-- fails the schema is logged and skipped, the rest still load
+
+local schema = require("src/tips/schema")
+
+local catalogue = {}
+
+local TIP_FILES = {
+    "src/tips/skills/mining",
+}
+
+local loaded = false
+local by_id = {}
+local by_skill = {}
+local ordered = {}
+
+local function add_to_skill(skill, tip)
+    by_skill[skill] = by_skill[skill] or {}
+    table.insert(by_skill[skill], tip)
+end
+
+local function add_tip(tip, file)
+    local problems = schema.problems(tip)
+
+    if #problems == 0 and by_id[tip.id] then
+        problems = { "id is already used by another tip" }
+    end
+
+    if #problems > 0 then
+        local label = type(tip) == "table" and tostring(tip.id) or "?"
+        log("Skilling Coach: skipped tip " .. label .. " in " .. file .. ": " .. problems[1])
+        return
+    end
+
+    by_id[tip.id] = tip
+    ordered[#ordered + 1] = tip
+
+    for _, skill in ipairs(tip.skills) do
+        add_to_skill(skill, tip)
+    end
+end
+
+function catalogue.load()
+    if loaded then
+        return
+    end
+
+    loaded = true
+
+    for _, file in ipairs(TIP_FILES) do
+        local tips = require(file)
+
+        for _, tip in ipairs(tips or {}) do
+            add_tip(tip, file)
+        end
+    end
+end
+
+function catalogue.get(tip_id)
+    catalogue.load()
+    return by_id[tip_id]
+end
+
+function catalogue.all()
+    catalogue.load()
+    return ordered
+end
+
+-- tips for one skill plus the ANY ones that fit every skill
+function catalogue.for_skill(skill)
+    catalogue.load()
+    local tips = {}
+
+    for _, tip in ipairs(by_skill[skill] or {}) do
+        tips[#tips + 1] = tip
+    end
+
+    for _, tip in ipairs(by_skill.ANY or {}) do
+        tips[#tips + 1] = tip
+    end
+
+    return tips
+end
+
+-- every item config name and category any tip asks about. the bank snapshot only remembers
+-- these, not the whole bank
+function catalogue.relevant_items()
+    catalogue.load()
+    local items = {}
+    local categories = {}
+
+    for _, tip in ipairs(ordered) do
+        for _, condition in ipairs(tip.known_when or {}) do
+            if condition.type == "owns_any" then
+                for _, item in ipairs(condition.items) do
+                    items[item] = true
+                end
+            elseif condition.type == "owns_category" then
+                categories[condition.category] = true
+            end
+        end
+    end
+
+    return items, categories
+end
+
+return catalogue
