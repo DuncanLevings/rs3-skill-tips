@@ -84,6 +84,11 @@ function app.start()
             end
         end,
         on_combat = engine.on_combat,
+        on_level_up = function(skill, old_level, new_level)
+            if current_character then
+                engine.on_level_up(skill, old_level, new_level)
+            end
+        end,
         on_backpack_full = function(skill)
             if current_character then
                 engine.on_backpack_full(skill)

@@ -125,9 +125,11 @@ return function(root)
 
         lu.assertTrue(world.tip_progress.is_pinned("mining.ore_box"))
 
-        world.close_card("on_dismiss")
+        local dismissed = setup(root)
+        dismissed.engine.on_backpack_full("MINING")
+        dismissed.close_card("on_dismiss")
 
-        lu.assertTrue(world.tip_progress.is_dismissed("mining.ore_box"))
+        lu.assertTrue(dismissed.tip_progress.is_dismissed("mining.ore_box"))
     end
 
     function suite:test_quiet_after_combat_xp()

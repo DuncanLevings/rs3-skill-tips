@@ -2,12 +2,16 @@
 
 Skilling Coach shows a useful tip at the moment you can use it. For example, it can suggest an ore box when mining fills your backpack. You can pin a tip as a goal or dismiss it for good.
 
-**Status:** Phase 2 complete; game-adapter hardening is next. The current demo includes one ore-box tip. Broader item, unlock, method and QoL tips are planned.
+**Status:** Phase 4 engine implemented and checked; UI completion is next. The current demo includes one ore-box tip. Broader item, unlock, method and QoL tips are planned.
 
 The ore-box tip waits for sustained Mining XP and a transition to a full backpack.
 Other items, including geodes, count towards occupied slots. Open the bank once so
 the coach can check its snapshot for an existing ore box. Owned, pinned, dismissed
 and already-shown tips are skipped; cooldown and combat quiet time also apply.
+
+The engine ranks tips for the skill being trained by priority and level relevance.
+Method tips use the current bracket; reward level-ups wait for real training. The
+current catalogue still contains only the ore-box demo.
 
 Drag the card from its text or background. The pin saves a goal; Dismiss hides the
 tip permanently, and Later closes it for now. The plugin settings can bring back

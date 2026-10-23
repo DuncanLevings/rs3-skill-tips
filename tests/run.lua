@@ -13,6 +13,7 @@ runner:runSuiteByInstances({
     { "TestSkillActivity", require("tests/skill_activity_spec")(root) },
     { "TestBackpackFull", require("tests/backpack_full_spec")(root) },
     { "TestStorage", require("tests/storage_spec")(root) },
+    { "TestPhase4", require("tests/coach_phase4_spec")(root) },
     { "TestEngine", require("tests/engine_spec")(root) },
     { "TestCard", require("tests/card_spec")(root) },
 })

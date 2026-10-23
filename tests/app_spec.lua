@@ -144,5 +144,49 @@ return function(root)
         lu.assertEquals(fake.total_subscriptions(), 0)
     end
 
+    function suite:test_reward_level_up_only_displays_after_real_training()
+        local fake = client.new(root)
+        local method = {
+            id = "test.method",
+            kind = "method",
+            skills = { "MINING" },
+            priority = 1,
+            level_range = { 70, 79 },
+            members = false,
+            title = "Test method",
+            hook = "Test benefit",
+            why = "Test use",
+            how = { "Test direction" },
+            triggers = { { type = "level_reached", skill = "MINING", level = 70 } },
+        }
+        fake.load("src/tips/catalogue").for_skill = function()
+            return { method }
+        end
+        local app = fake.load("src/app")
+        local progress = fake.load("src/storage/tip_progress")
+        fake.player.levels[14] = 70
+        app.start()
+        fake.fire("MiniMenuEntrySelected", { entry = { actionType = 30, verbText = "Confirm" } })
+        fake.fire("SkillTransmit", {
+            skill = 14,
+            oldXP = 100,
+            newXP = 200,
+            oldGameplayLevel = 69,
+            newGameplayLevel = 70,
+        })
+        lu.assertEquals(#fake.windows, 0)
+        lu.assertEquals(progress.pending_level_up("MINING"), { old = 69, new = 70 })
+        fake.fire("Logic", { logicTick = 1600 })
+        fake.fire("MiniMenuEntrySelected", { entry = { verbText = "Mine", locData = {} } })
+        for index = 1, 3 do
+            fake.fire("Logic", { logicTick = 1600 + index * 150 })
+            fake.fire("SkillTransmit", { skill = 14, oldXP = 200, newXP = 210 })
+        end
+        lu.assertEquals(#fake.windows, 1)
+        lu.assertNil(progress.pending_level_up("MINING"))
+        lu.assertEquals(fake.logs[#fake.logs], "Skilling Coach started.")
+        app.stop()
+    end
+
     return suite
 end

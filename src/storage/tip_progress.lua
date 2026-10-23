@@ -3,6 +3,7 @@
 -- "already shown this session" is kept in memory only, so a tip the player clicked Later on
 -- can come back another day
 
+local skills = require("src/data/skills")
 local saved_table = require("src/storage/saved_table")
 
 local tip_progress = {}
@@ -57,6 +58,25 @@ function tip_progress.stop_listening(name)
     listeners[name] = nil
 end
 
+-- Additive version-1 field: older saves simply start with an empty queue.
+local function clean_pending(saved)
+    local result = {}
+    for skill, levels in pairs(type(saved) == "table" and saved or {}) do
+        if
+            skills.is_skill(skill)
+            and type(levels) == "table"
+            and math.type(levels.old) == "integer"
+            and math.type(levels.new) == "integer"
+            and levels.old >= 1
+            and levels.new <= 120
+            and levels.new > levels.old
+        then
+            result[skill] = { old = levels.old, new = levels.new }
+        end
+    end
+    return result
+end
+
 local function load_character(character)
     local saved = character and saved_table.load(KEY_PREFIX .. character, VERSION) or {}
 
@@ -66,6 +86,7 @@ local function load_character(character)
         version = VERSION,
         dismissed = clean_set(saved.dismissed),
         pinned = clean_set(saved.pinned),
+        pending_level_ups = clean_pending(saved.pending_level_ups),
     }
 end
 
@@ -132,6 +153,37 @@ end
 
 function tip_progress.was_shown(tip_id)
     return shown_this_session[tip_id] == true
+end
+
+-- Merge reward/training level-ups until a method tip is shown for that skill.
+function tip_progress.queue_level_up(skill, old_level, new_level)
+    if not skills.is_skill(skill) then
+        return
+    end
+    local checked = clean_pending({ [skill] = { old = old_level, new = new_level } })[skill]
+    if not checked then
+        return
+    end
+    local loaded = ensure_loaded()
+    local pending = loaded.pending_level_ups[skill]
+    loaded.pending_level_ups[skill] = {
+        old = pending and math.min(pending.old, old_level) or old_level,
+        new = pending and math.max(pending.new, new_level) or new_level,
+    }
+    save()
+end
+
+function tip_progress.pending_level_up(skill)
+    local pending = ensure_loaded().pending_level_ups[skill]
+    return pending and { old = pending.old, new = pending.new } or nil
+end
+
+function tip_progress.clear_level_up(skill)
+    local loaded = ensure_loaded()
+    if loaded.pending_level_ups[skill] then
+        loaded.pending_level_ups[skill] = nil
+        save()
+    end
 end
 
 -- the settings page reset: brings back dismissed tips and anything shown this session

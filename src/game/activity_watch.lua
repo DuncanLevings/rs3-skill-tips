@@ -137,6 +137,19 @@ local function on_skill_transmit(event)
         return
     end
 
+    -- These are the same gameplay level fields used by the in-game probe.
+    -- Report crossings even when the reward guard rejects this XP as training.
+    if listeners.on_level_up then
+        local old_level, new_level = event.oldGameplayLevel, event.newGameplayLevel
+        if
+            type(old_level) == "number"
+            and type(new_level) == "number"
+            and new_level > old_level
+        then
+            listeners.on_level_up(skill, old_level, new_level)
+        end
+    end
+
     if tracker.xp(skill, clock.now()) then
         if skill == gathering_skill then
             gathering_xp_at = clock.now()

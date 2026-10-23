@@ -136,5 +136,31 @@ return function(root)
         lu.assertEquals(w.fake.logs, {})
     end
 
+    function suite:test_reward_level_up_is_reported_but_training_remains_guarded()
+        local w = world()
+        local levels = {}
+        w.handlers.on_level_up = function(skill, old, new)
+            levels[#levels + 1] = { skill, old, new }
+        end
+        w.click({ actionType = 30, verbText = "Confirm" })
+        w.fake.fire("SkillTransmit", {
+            skill = 14,
+            oldXP = 100,
+            newXP = 200,
+            oldGameplayLevel = 19,
+            newGameplayLevel = 20,
+        })
+        lu.assertEquals(levels, { { "MINING", 19, 20 } })
+        lu.assertEquals(w.trained, {})
+        w.fake.fire("SkillTransmit", {
+            skill = 14,
+            oldXP = 0,
+            newXP = 200,
+            oldGameplayLevel = 0,
+            newGameplayLevel = 20,
+        })
+        lu.assertEquals(#levels, 1)
+    end
+
     return suite
 end
