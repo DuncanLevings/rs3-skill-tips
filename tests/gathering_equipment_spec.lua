@@ -174,7 +174,7 @@ return function(root)
             { "hunter.alt.birdhouses", "HUNTER" },
             { "hunter.alt.skillchompas", "HUNTER" },
             { "divination.alt.guthixian_cache", "DIVINATION" },
-            { "farming.alt.beehives", "FARMING" },
+            { "farming.alt.player_owned_farm", "FARMING" },
             { "archaeology.soil_box", "ARCHAEOLOGY" },
         }) do
             lu.assertTrue(eligibility.allows(catalogue.get(case[1]), case[2], state), case[1])
@@ -225,6 +225,7 @@ return function(root)
         for _, tip in ipairs(catalogue.all()) do
             local skill = tip.skills[1]
             if gathering[skill] and tip.kind == "method" and not tip.main_method then
+                levels[skill] = tip.level_range[1]
                 for _, quest in
                     ipairs(tip.require_quests_complete and (tip.requirements or {}).quests or {})
                 do
@@ -232,11 +233,12 @@ return function(root)
                 end
                 lu.assertTrue(eligibility.allows(tip, skill, state), tip.id)
                 for required, minimum in pairs((tip.requirements or {}).skills or {}) do
+                    local original = levels[required]
                     levels[required] = minimum - 1
                     lu.assertFalse(eligibility.allows(tip, skill, state), tip.id .. required)
                     levels[required] = nil
                     lu.assertFalse(eligibility.allows(tip, skill, state), tip.id .. required)
-                    levels[required] = 120
+                    levels[required] = original
                 end
                 for _, quest in
                     ipairs(tip.require_quests_complete and (tip.requirements or {}).quests or {})
@@ -248,6 +250,7 @@ return function(root)
                     quests[quest] = true
                 end
                 checked = checked + 1
+                levels[skill] = 120
             end
         end
         lu.assertTrue(checked >= 37)

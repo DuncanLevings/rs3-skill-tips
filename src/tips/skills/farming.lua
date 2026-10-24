@@ -685,7 +685,7 @@ return {
         icon_item_id = 43945,
         kind = "method",
         skills = { "FARMING" },
-        level_range = { 17, 120 },
+        level_range = { 17, 49 },
         members = true,
         title = "Manor Farm beehives",
         hook = "Beehives offer Farming experience between your regular crop and animal visits.",
@@ -745,9 +745,9 @@ return {
         members = true,
         title = "Fruit tree runs",
         hook = "Fruit tree runs offer extra patches and fruit harvests alongside other crops.",
-        why = "Their health checks give experience, and you can harvest fruit before replacing the tree.",
+        why = "Health checks give experience and fruit can be harvested before replacing a tree. Higher-tier fruit trees unlock as Farming improves.",
         how = {
-            "Start with apple trees in fruit tree patches such as Catherby or the Gnome Stronghold.",
+            "Fruit tree patches include Catherby and the Gnome Stronghold. Choose a tree that suits your level and budget.",
         },
         requirements = {
             skills = {
@@ -772,8 +772,8 @@ return {
         level_range = { 30, 120 },
         members = true,
         title = "Het's Oasis flowers",
-        hook = "Het's Oasis offers active Farming between crop runs.",
-        why = "Grow and gather flowers without waiting for a normal crop cycle, with a chance of finding golden roses.",
+        hook = "Het's Oasis offers flower gathering between farm runs.",
+        why = "Higher-tier flowers open as Farming improves. Flowers can supply whirligig hunting or be sold, with a chance of finding golden roses while gathering.",
         how = {
             "Visit the flower bushes at Het's Oasis, and look for higher-tier flowers as you level.",
         },

@@ -311,7 +311,7 @@ return {
         icon_item_id = 42241,
         kind = "method",
         skills = { "FISHING" },
-        level_range = { 68, 120 },
+        level_range = { 68, 91 },
         members = true,
         title = "Minnow shoals",
         hook = "Minnow shoals offer relaxed Fishing without a quest requirement.",

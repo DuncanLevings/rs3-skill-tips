@@ -44,7 +44,7 @@ return function(root)
                 { 50, 59, "gleaming" },
                 { 60, 64, "vibrant" },
                 { 65, 69, "empty_throne_room" },
-                { 70, 120, "hall_of_memories" },
+                { 70, 99, "hall_of_memories" },
             },
             ARCHAEOLOGY = {
                 { 5, 19, "kharid_et" },
