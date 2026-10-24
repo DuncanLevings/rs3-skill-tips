@@ -5,6 +5,7 @@ local lu = require("luaunit")
 local runner = lu.LuaUnit.new()
 
 runner:runSuiteByInstances({
+    { "TestSupportRollout", require("tests/support_rollout_spec")(root) },
     { "TestArtisan", require("tests/artisan_spec")(root) },
     { "TestMethodWindows", require("tests/method_windows_spec")(root) },
     { "TestGatheringEquipment", require("tests/gathering_equipment_spec")(root) },

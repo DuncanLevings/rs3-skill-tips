@@ -164,11 +164,16 @@ return function(root)
     function suite:test_main_method_marker_is_explicit_and_schema_checked()
         local fake = client.new(root)
         local catalogue = fake.load("src/tips/catalogue")
+        -- classifications can change; saved IDs must survive that change.
+        local legacy_main_ids = {
+            ["thieving.alt.marketeers"] = true,
+            ["thieving.alt.ardougne_knights"] = true,
+        }
         for _, tip in ipairs(catalogue.all()) do
             if tip.kind == "method" then
                 lu.assertEquals(
                     tip.main_method == true,
-                    tip.id:find(".method.", 1, true) ~= nil,
+                    tip.id:find(".method.", 1, true) ~= nil or legacy_main_ids[tip.id] == true,
                     tip.id
                 )
             end

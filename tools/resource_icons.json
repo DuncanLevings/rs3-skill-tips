@@ -274,7 +274,7 @@
     "12160": {
       "name": "Crimson charm",
       "source": "https://runescape.wiki/w/Crimson_charm",
-      "verified_on": "2026-10-23"
+      "verified_on": "2026-10-24"
     },
     "10008": {
       "name": "Box trap",
@@ -789,6 +789,56 @@
     "63190": {
       "name": "Eternal plank",
       "source": "https://runescape.wiki/w/Eternal_plank",
+      "verified_on": "2026-10-24"
+    },
+    "1523": {
+      "name": "Lockpick",
+      "source": "https://runescape.wiki/w/Lockpick",
+      "verified_on": "2026-10-24"
+    },
+    "12163": {
+      "name": "Blue charm",
+      "source": "https://runescape.wiki/w/Blue_charm",
+      "verified_on": "2026-10-24"
+    },
+    "1963": {
+      "name": "Banana",
+      "source": "https://runescape.wiki/w/Banana",
+      "verified_on": "2026-10-24"
+    },
+    "536": {
+      "name": "Dragon bones",
+      "source": "https://runescape.wiki/w/Dragon_bones",
+      "verified_on": "2026-10-24"
+    },
+    "32615": {
+      "name": "Cleansing crystal",
+      "source": "https://runescape.wiki/w/Cleansing_crystal",
+      "verified_on": "2026-10-24"
+    },
+    "48674": {
+      "name": "Extra fine sand",
+      "source": "https://runescape.wiki/w/Extra_fine_sand",
+      "verified_on": "2026-10-24"
+    },
+    "526": {
+      "name": "Bones",
+      "source": "https://runescape.wiki/w/Bones",
+      "verified_on": "2026-10-24"
+    },
+    "12158": {
+      "name": "Gold charm",
+      "source": "https://runescape.wiki/w/Gold_charm",
+      "verified_on": "2026-10-24"
+    },
+    "12183": {
+      "name": "Spirit shards",
+      "source": "https://runescape.wiki/w/Spirit_shards",
+      "verified_on": "2026-10-24"
+    },
+    "47925": {
+      "name": "Codex page",
+      "source": "https://runescape.wiki/w/Codex_page",
       "verified_on": "2026-10-24"
     }
   }

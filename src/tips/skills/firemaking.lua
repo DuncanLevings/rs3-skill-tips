@@ -209,7 +209,7 @@ return {
         hook = "Oak logs offer a bonfire option at this stage.",
         why = "Higher log tiers give more experience, but cheaper logs can be a worthwhile tradeoff.",
         how = {
-            "Add a small batch to an ordinary bonfire near a bank before buying a larger supply.",
+            "Light a log, then add more logs to the fire—or use an existing bonfire near a bank.",
         },
         requirements = {
             skills = {
@@ -239,7 +239,7 @@ return {
         hook = "Willow logs offer a bonfire option at this stage.",
         why = "Higher log tiers give more experience, but cheaper logs can be a worthwhile tradeoff.",
         how = {
-            "Add a small batch to an ordinary bonfire near a bank before buying a larger supply.",
+            "Light a log, then add more logs to the fire—or use an existing bonfire near a bank.",
         },
         requirements = {
             skills = {
@@ -269,7 +269,7 @@ return {
         hook = "Teak logs offer a bonfire option at this stage.",
         why = "Higher log tiers give more experience, but cheaper logs can be a worthwhile tradeoff.",
         how = {
-            "Add a small batch to an ordinary bonfire near a bank before buying a larger supply.",
+            "Light a log, then add more logs to the fire—or use an existing bonfire near a bank.",
         },
         requirements = {
             skills = {
@@ -299,7 +299,7 @@ return {
         hook = "Maple logs offer a bonfire option at this stage.",
         why = "Higher log tiers give more experience, but cheaper logs can be a worthwhile tradeoff.",
         how = {
-            "Add a small batch to an ordinary bonfire near a bank before buying a larger supply.",
+            "Light a log, then add more logs to the fire—or use an existing bonfire near a bank.",
         },
         requirements = {
             skills = {
@@ -329,7 +329,7 @@ return {
         hook = "Mahogany logs offer a bonfire option at this stage.",
         why = "Higher log tiers give more experience, but cheaper logs can be a worthwhile tradeoff.",
         how = {
-            "Add a small batch to an ordinary bonfire near a bank before buying a larger supply.",
+            "Light a log, then add more logs to the fire—or use an existing bonfire near a bank.",
         },
         requirements = {
             skills = {
@@ -359,7 +359,7 @@ return {
         hook = "Eucalyptus logs offer a bonfire option at this stage.",
         why = "Higher log tiers give more experience, but cheaper logs can be a worthwhile tradeoff.",
         how = {
-            "Add a small batch to an ordinary bonfire near a bank before buying a larger supply.",
+            "Light a log, then add more logs to the fire—or use an existing bonfire near a bank.",
         },
         requirements = {
             skills = {
@@ -389,7 +389,7 @@ return {
         hook = "Yew logs offer a bonfire option at this stage.",
         why = "Higher log tiers give more experience, but cheaper logs can be a worthwhile tradeoff.",
         how = {
-            "Add a small batch to an ordinary bonfire near a bank before buying a larger supply.",
+            "Light a log, then add more logs to the fire—or use an existing bonfire near a bank.",
         },
         requirements = {
             skills = {
@@ -419,7 +419,7 @@ return {
         hook = "Magic logs offer a bonfire option at this stage.",
         why = "Higher log tiers give more experience, but cheaper logs can be a worthwhile tradeoff.",
         how = {
-            "Add a small batch to an ordinary bonfire near a bank before buying a larger supply.",
+            "Light a log, then add more logs to the fire—or use an existing bonfire near a bank.",
         },
         requirements = {
             skills = {
@@ -449,7 +449,7 @@ return {
         hook = "Elder logs offer a bonfire option at this stage.",
         why = "Higher log tiers give more experience, but cheaper logs can be a worthwhile tradeoff.",
         how = {
-            "Add a small batch to an ordinary bonfire near a bank before buying a larger supply.",
+            "Light a log, then add more logs to the fire—or use an existing bonfire near a bank.",
         },
         requirements = {
             skills = {
@@ -479,7 +479,7 @@ return {
         hook = "Eternal magic logs offer a bonfire option at this stage.",
         why = "Higher log tiers give more experience, but cheaper logs can be a worthwhile tradeoff.",
         how = {
-            "Add a small batch to an ordinary bonfire near a bank before buying a larger supply.",
+            "Light a log, then add more logs to the fire—or use an existing bonfire near a bank.",
         },
         requirements = {
             skills = {

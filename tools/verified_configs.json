@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "source": "In-game skilling-coach-probe, client 951-1, 2026-10-23: all 11 ore-box configs/category confirmed (docs/api-findings.md), plus the full quest dump and item/varbit lines imported from the probe log. Not a full client item dump: new items still need the probe. Item lookup run 2026-10-23 added 76 durable gathering items (consumable false). Quest dump with deprecated flags added 2026-10-23. Artisan probe on 2026-10-24 verified 335 item IDs including cape audit candidates and the expansive pouch; unused discovery candidates are not item recommendations.",
+  "source": "In-game skilling-coach-probe, client 951-1, 2026-10-23: all 11 ore-box configs/category confirmed (docs/api-findings.md), plus the full quest dump and item/varbit lines imported from the probe log. Not a full client item dump: new items still need the probe. Item lookup run 2026-10-23 added 76 durable gathering items (consumable false). Quest dump with deprecated flags added 2026-10-23. Artisan probe on 2026-10-24 verified 335 item IDs including cape audit candidates and the expansive pouch; unused discovery candidates are not item recommendations. Support probe 2026-10-24: 182 successful discovery lookups plus depleted ectoplasmator and normal Thieving master cape; only relevant non-audit records imported. Silverhawks are not recommended.",
   "items": {
     "MINING_OREBOX_BRONZE": {
       "id": 44779,
@@ -954,7 +954,8 @@
       "name": "Ring of Vitur",
       "category": 656,
       "verified_on": "2026-10-24",
-      "source": "User-submitted gathering probe output"
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "consumable": false
     },
     "PLATINUM_SUNBURST_BRACELET": {
       "id": 59226,
@@ -2249,10 +2250,11 @@
     },
     "SKILLCAPE_INVERTED_SUMMONING_TRIMMED_HOODED": {
       "id": 53850,
-      "name": "Cape ID audit 53850",
+      "name": "Inverted hooded Summoning cape (t)",
       "category": 27,
-      "source": "User-submitted Artisan native item lookup, 2026-10-24",
-      "verified_on": "2026-10-24"
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
     },
     "SKILLCAPE_INVERTED_ARCHAEOLOGY_HOODED": {
       "id": 53823,
@@ -2263,10 +2265,11 @@
     },
     "SKILLCAPE_INVERTED_SUMMONING_HOODED": {
       "id": 53821,
-      "name": "Cape ID audit 53821",
+      "name": "Inverted hooded Summoning cape",
       "category": 27,
-      "source": "User-submitted Artisan native item lookup, 2026-10-24",
-      "verified_on": "2026-10-24"
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
     },
     "SKILLCAPE_INVENTION_HOOD": {
       "id": 36355,
@@ -2284,24 +2287,27 @@
     },
     "SKILLCAPE_INVERTED_AGILITY_TRIMMED_HOODED": {
       "id": 53834,
-      "name": "Cape ID audit 53834",
+      "name": "Inverted hooded Agility cape (t)",
       "category": 27,
-      "source": "User-submitted Artisan native item lookup, 2026-10-24",
-      "verified_on": "2026-10-24"
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
     },
     "SKILLCAPE_INVERTED_AGILITY_HOODED": {
       "id": 53805,
-      "name": "Cape ID audit 53805",
+      "name": "Inverted hooded Agility cape",
       "category": 27,
-      "source": "User-submitted Artisan native item lookup, 2026-10-24",
-      "verified_on": "2026-10-24"
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
     },
     "SKILLCAPE_THIEVING_HOODED": {
       "id": 34268,
-      "name": "Cape ID audit 34268",
+      "name": "Hooded thieving cape",
       "category": 27,
-      "source": "User-submitted Artisan native item lookup, 2026-10-24",
-      "verified_on": "2026-10-24"
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
     },
     "SKILLCAPE_HERBLORE_HOOD_RETRO": {
       "id": 34594,
@@ -2312,10 +2318,11 @@
     },
     "SKILLCAPE_AGILITY_TRIMMED_HOODED": {
       "id": 34265,
-      "name": "Cape ID audit 34265",
+      "name": "Hooded agility cape (t)",
       "category": 27,
-      "source": "User-submitted Artisan native item lookup, 2026-10-24",
-      "verified_on": "2026-10-24"
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
     },
     "SKILLCAPE_SLAYER_HOODED": {
       "id": 34274,
@@ -2389,17 +2396,19 @@
     },
     "SKILLCAPE_INVERTED_THIEVING_TRIMMED_HOODED": {
       "id": 53836,
-      "name": "Cape ID audit 53836",
+      "name": "Inverted hooded Thieving cape (t)",
       "category": 27,
-      "source": "User-submitted Artisan native item lookup, 2026-10-24",
-      "verified_on": "2026-10-24"
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
     },
     "SKILLCAPE_INVERTED_THIEVING_HOODED": {
       "id": 53807,
-      "name": "Cape ID audit 53807",
+      "name": "Inverted hooded Thieving cape",
       "category": 27,
-      "source": "User-submitted Artisan native item lookup, 2026-10-24",
-      "verified_on": "2026-10-24"
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
     },
     "SKILLCAPE_RUNECRAFTING_HOOD_RETRO": {
       "id": 34574,
@@ -2417,10 +2426,11 @@
     },
     "SKILLCAPE_THIEVING_TRIMMED_HOODED": {
       "id": 34269,
-      "name": "Cape ID audit 34269",
+      "name": "Hooded thieving cape (t)",
       "category": 27,
-      "source": "User-submitted Artisan native item lookup, 2026-10-24",
-      "verified_on": "2026-10-24"
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
     },
     "SKILLCAPE_INVERTED_FISHING_TRIMMED_HOODED": {
       "id": 53843,
@@ -4760,6 +4770,978 @@
       "consumable": false,
       "source": "User-submitted Artisan native item lookup, 2026-10-24",
       "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_120_THIEVING": {
+      "id": 31279,
+      "name": "Thieving master cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "HW2012_ECTOPLASMATOR_UPGRADED_EMPTY": {
+      "id": 32340,
+      "name": "Attuned ectoplasmator (degraded)",
+      "category": 4210,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "ATAR_CLOAK_ELITE": {
+      "id": 19748,
+      "name": "Ardougne cloak 4",
+      "category": 753,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "ATAR_CLOAK_HARD": {
+      "id": 15349,
+      "name": "Ardougne cloak 3",
+      "category": 753,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "ATAR_CLOAK_MED": {
+      "id": 15347,
+      "name": "Ardougne cloak 2",
+      "category": 753,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "ATAR_CLOAK_EASY": {
+      "id": 15345,
+      "name": "Ardougne cloak 1",
+      "category": 753,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF51_SKILL_SUMMONING_LEGS": {
+      "id": 28997,
+      "name": "Shaman's leggings",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "WOF51_SKILL_SUMMONING_GLOVES": {
+      "id": 28998,
+      "name": "Shaman's hand wraps",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "WOF36_SKILL_PRAYER_RING": {
+      "id": 27590,
+      "name": "First age ring",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "WOF36_SKILL_PRAYER_AMULET": {
+      "id": 27589,
+      "name": "First age amulet",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SAFES_LOOTING_BAG_TIER1": {
+      "id": 42611,
+      "name": "Small loot bag",
+      "category": 4299,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SAFES_LOOTING_BAG_TIER2": {
+      "id": 42612,
+      "name": "Medium loot bag",
+      "category": 4299,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SAFES_LOOTING_BAG_TIER3": {
+      "id": 42613,
+      "name": "Large loot bag",
+      "category": 4299,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SAFES_LOOTING_BAG_TIER4": {
+      "id": 42614,
+      "name": "Huge loot bag",
+      "category": 4299,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH28_SUMMONING_HEAD_UPGRADED": {
+      "id": 32278,
+      "name": "Modified shaman's headdress",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_PRIFDDINAS_LEGS": {
+      "id": 37350,
+      "name": "Prifddinas camouflage legs",
+      "category": 3857,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_PRIFDDINAS_HEAD": {
+      "id": 37348,
+      "name": "Prifddinas camouflage head",
+      "category": 3857,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_PRIFDDINAS_HANDS": {
+      "id": 37351,
+      "name": "Prifddinas camouflage hands",
+      "category": 3857,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_PRIFDDINAS_FEET": {
+      "id": 37352,
+      "name": "Prifddinas camouflage feet",
+      "category": 3857,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_PRIFDDINAS_BODY": {
+      "id": 37349,
+      "name": "Prifddinas camouflage body",
+      "category": 3857,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_MASTER_LEGS": {
+      "id": 37360,
+      "name": "Master camouflage legs",
+      "category": 3859,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_MASTER_HEAD": {
+      "id": 37358,
+      "name": "Master camouflage head",
+      "category": 3859,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_MASTER_HANDS": {
+      "id": 37361,
+      "name": "Master camouflage hands",
+      "category": 3859,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_MASTER_FEET": {
+      "id": 37362,
+      "name": "Master camouflage feet",
+      "category": 3859,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_MASTER_BODY": {
+      "id": 37359,
+      "name": "Master camouflage body",
+      "category": 3859,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_KELDAGRIM_LEGS": {
+      "id": 37345,
+      "name": "Keldagrim camouflage legs",
+      "category": 3856,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_KELDAGRIM_HEAD": {
+      "id": 37343,
+      "name": "Keldagrim camouflage head",
+      "category": 3856,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_KELDAGRIM_HANDS": {
+      "id": 37346,
+      "name": "Keldagrim camouflage hands",
+      "category": 3856,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_KELDAGRIM_FEET": {
+      "id": 37347,
+      "name": "Keldagrim camouflage feet",
+      "category": 3856,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_KELDAGRIM_BODY": {
+      "id": 37344,
+      "name": "Keldagrim camouflage body",
+      "category": 3856,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_DESERT_LEGS": {
+      "id": 37355,
+      "name": "Desert camouflage legs",
+      "category": 3858,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_DESERT_HEAD": {
+      "id": 37353,
+      "name": "Desert camouflage head",
+      "category": 3858,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_DESERT_HANDS": {
+      "id": 37356,
+      "name": "Desert camouflage hands",
+      "category": 3858,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_DESERT_FEET": {
+      "id": 37357,
+      "name": "Desert camouflage feet",
+      "category": 3858,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH90_DESERT_BODY": {
+      "id": 37354,
+      "name": "Desert camouflage body",
+      "category": 3858,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_INVERTED_120_SUMMONING": {
+      "id": 53793,
+      "name": "Inverted Summoning master cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SUMMONING_TRIMMED_HOODED": {
+      "id": 34297,
+      "name": "Hooded summoning cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_SUMMONING_TRIMMED_HOODED_RETRO": {
+      "id": 34668,
+      "name": "Retro hooded summoning cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_SUMMONING_HOODED_RETRO": {
+      "id": 34666,
+      "name": "Retro hooded summoning cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_SUMMONING_HOODED": {
+      "id": 34296,
+      "name": "Hooded summoning cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "WOF51_SKILL_SUMMONING_BODY": {
+      "id": 28996,
+      "name": "Shaman's poncho",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "WOF51_SKILL_SUMMONING_BOOTS": {
+      "id": 28999,
+      "name": "Shaman's moccasins",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH28_SUMMONING_HEAD_ADDON": {
+      "id": 32274,
+      "name": "Shaman's headdress add-on",
+      "category": 3282,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "WOF51_SKILL_SUMMONING_HEAD": {
+      "id": 28995,
+      "name": "Shaman's headdress",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_INVERTED_PRAYER_TRIMMED_HOODED": {
+      "id": 53829,
+      "name": "Inverted hooded Prayer cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_INVERTED_PRAYER_HOODED": {
+      "id": 53800,
+      "name": "Inverted hooded Prayer cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_INVERTED_120_PRAYER": {
+      "id": 53772,
+      "name": "Inverted Prayer master cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_PRAYER_TRIMMED_HOODED": {
+      "id": 34255,
+      "name": "Hooded prayer cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_PRAYER_TRIMMED_HOODED_RETRO": {
+      "id": 34563,
+      "name": "Retro hooded prayer cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_PRAYER_HOODED_RETRO": {
+      "id": 34561,
+      "name": "Retro hooded prayer cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_PRAYER_HOODED": {
+      "id": 34254,
+      "name": "Hooded prayer cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH58_PRAYER_HEAD_ADDON": {
+      "id": 34921,
+      "name": "First age tiara add-on",
+      "category": 3282,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "WOF36_SKILL_PRAYER_TIARA": {
+      "id": 27587,
+      "name": "First age tiara",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "WOF36_SKILL_PRAYER_CAPE": {
+      "id": 27588,
+      "name": "First age cape",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "WOF36_SKILL_PRAYER_BRACELET": {
+      "id": 27591,
+      "name": "First age bracelet",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_INVERTED_120_THIEVING": {
+      "id": 53779,
+      "name": "Inverted Thieving master cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_THIEVING_TRIMMED_HOODED_RETRO": {
+      "id": 34598,
+      "name": "Retro hooded thieving cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_THIEVING_HOODED_RETRO": {
+      "id": 34596,
+      "name": "Retro hooded thieving cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "HLR4M_SHADOWWRAP_HEAD": {
+      "id": 21534,
+      "name": "Black ibis mask",
+      "category": 4156,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "HLR4M_SHADOWWRAP_LEGS": {
+      "id": 21533,
+      "name": "Black ibis legs",
+      "category": 4156,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "HLR4M_SHADOWWRAP_BOOTS": {
+      "id": 21535,
+      "name": "Black ibis boots",
+      "category": 4156,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "HLR4M_SHADOWWRAP_BODY": {
+      "id": 21532,
+      "name": "Black ibis body",
+      "category": 4156,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_INVERTED_120_AGILITY": {
+      "id": 53777,
+      "name": "Inverted Agility master cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_AGILITY_TRIMMED_HOODED_RETRO": {
+      "id": 34588,
+      "name": "Retro hooded agility cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_AGILITY_HOODED_RETRO": {
+      "id": 34586,
+      "name": "Retro hooded agility cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_AGILITY_HOODED": {
+      "id": 34264,
+      "name": "Hooded agility cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH85_AGILITY_LEGS": {
+      "id": 36892,
+      "name": "Nimble legwear",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH85_AGILITY_HEAD": {
+      "id": 36894,
+      "name": "Nimble headwear",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH85_AGILITY_HANDS": {
+      "id": 36891,
+      "name": "Nimble gloves",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH85_AGILITY_TORSO": {
+      "id": 36893,
+      "name": "Nimble chestpiece",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH85_AGILITY_BOOTS": {
+      "id": 36890,
+      "name": "Nimble boots",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "DINO_TOTEM_LORE": {
+      "id": 48125,
+      "name": "Totem of Summoning",
+      "category": 4520,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_SUMMONING_TRIMMED": {
+      "id": 12170,
+      "name": "Summoning cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_SUMMONING_TRIMMED_RETRO": {
+      "id": 34667,
+      "name": "Retro summoning cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_SUMMONING_RETRO": {
+      "id": 34665,
+      "name": "Retro summoning cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_SUMMONING": {
+      "id": 12169,
+      "name": "Summoning cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "RAND_REWARD_SPIRIT_CAPE": {
+      "id": 19893,
+      "name": "Spirit cape",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "RAND_REWARD_CHARMING_IMP": {
+      "id": 27996,
+      "name": "Charming imp",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_PRAYER_TRIMMED": {
+      "id": 9760,
+      "name": "Prayer cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_PRAYER_TRIMMED_RETRO": {
+      "id": 34562,
+      "name": "Retro prayer cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_PRAYER_RETRO": {
+      "id": 34560,
+      "name": "Retro prayer cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_PRAYER": {
+      "id": 9759,
+      "name": "Prayer cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "OOAK_DRAGONRIDER_AMULET": {
+      "id": 30929,
+      "name": "Dragon Rider amulet",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "HW2012_ECTOPLASMATOR_UPGRADED": {
+      "id": 32339,
+      "name": "Attuned ectoplasmator",
+      "category": 4210,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "HW2012_ECTOPLASMATOR": {
+      "id": 25354,
+      "name": "Ectoplasmator",
+      "category": 4210,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "RAND_REWARD_BONECRUSHER": {
+      "id": 18337,
+      "name": "Bonecrusher",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH58_PRAYER_HEAD_UPGRADED": {
+      "id": 34925,
+      "name": "Modified first age tiara",
+      "category": 2739,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SAFES_REWARD_STETHOSCOPE": {
+      "id": 42618,
+      "name": "Master thief's stethoscope",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SAFES_REWARD_LOCKPICK": {
+      "id": 42617,
+      "name": "Master thief's lockpick",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_THIEVING_TRIMMED": {
+      "id": 9778,
+      "name": "Thieving cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_THIEVING_TRIMMED_RETRO": {
+      "id": 34597,
+      "name": "Retro thieving cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_THIEVING_RETRO": {
+      "id": 34595,
+      "name": "Retro thieving cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_THIEVING": {
+      "id": 9777,
+      "name": "Thieving cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "INVENT_THIEVING_BAG_MUSHROOM_UNCHARGED": {
+      "id": 58906,
+      "name": "Mushroomy pickpocketing bag (uncharged)",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "INVENT_THIEVING_BAG_MUSHROOM_UNUSED": {
+      "id": 58904,
+      "name": "Mushroomy pickpocketing bag (new)",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "INVENT_THIEVING_BAG_MUSHROOM": {
+      "id": 58905,
+      "name": "Mushroomy pickpocketing bag",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "INVENT_THIEVING_BAG_UNCHARGED": {
+      "id": 58903,
+      "name": "Pickpocketing bag (uncharged)",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "INVENT_THIEVING_BAG_UNUSED": {
+      "id": 58901,
+      "name": "Pickpocketing bag (new)",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "INVENT_THIEVING_BAG": {
+      "id": 58902,
+      "name": "Pickpocketing bag",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "NOMEL_SOUL_DISTRACTOR": {
+      "id": 36836,
+      "name": "Soul-in-a-box",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "DINO_TOTEM_ELVES": {
+      "id": 48113,
+      "name": "Totem of Crystal",
+      "category": 4520,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_AGILITY_TRIMMED": {
+      "id": 9772,
+      "name": "Agility cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_AGILITY_TRIMMED_RETRO": {
+      "id": 34587,
+      "name": "Retro agility cape (t)",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_AGILITY_RETRO": {
+      "id": 34585,
+      "name": "Retro agility cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "SKILLCAPE_AGILITY": {
+      "id": 9771,
+      "name": "Agility cape",
+      "category": 27,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "TRH5_PEGASUS_FEATHER": {
+      "id": 30915,
+      "name": "Silverhawk feathers",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": true
+    },
+    "TRH5_PEGASUS_BOOTS_5": {
+      "id": 30924,
+      "name": "Silverhawk boots",
+      "category": 3168,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH5_PEGASUS_BOOTS_4": {
+      "id": 30923,
+      "name": "Silverhawk boots",
+      "category": 3168,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH5_PEGASUS_BOOTS_3": {
+      "id": 30922,
+      "name": "Silverhawk boots",
+      "category": 3168,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH5_PEGASUS_BOOTS_2": {
+      "id": 30921,
+      "name": "Silverhawk boots",
+      "category": 3168,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH5_PEGASUS_BOOTS_1": {
+      "id": 30920,
+      "name": "Silverhawk boots",
+      "category": 3168,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "BARBASSAULT_PENANCE_GLOVES_WORN": {
+      "id": 10554,
+      "name": "Penance gloves",
+      "category": 0,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "BARBASSAULT_PENANCE_GLOVES": {
+      "id": 10553,
+      "name": "Penance gloves",
+      "category": 0,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "HUNTING_LIGHTER_CAPE_WORN": {
+      "id": 10074,
+      "name": "Spottier cape",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "HUNTING_LIGHTER_CAPE": {
+      "id": 10071,
+      "name": "Spottier cape",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "HUNTING_LIGHT_CAPE_WORN": {
+      "id": 10073,
+      "name": "Spotted cape",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "HUNTING_LIGHT_CAPE": {
+      "id": 10069,
+      "name": "Spotted cape",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "IKOV_BOOTSOFLIGHTNESSWORN": {
+      "id": 89,
+      "name": "Boots of lightness",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "IKOV_BOOTSOFLIGHTNESS": {
+      "id": 88,
+      "name": "Boots of lightness",
+      "category": -1,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "AGILE_AGILITY_LEGS_WORN": {
+      "id": 14939,
+      "name": "Agile legs",
+      "category": 8,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "AGILE_AGILITY_LEGS": {
+      "id": 14938,
+      "name": "Agile legs",
+      "category": 8,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "AGILE_AGILITY_TOP_WORN": {
+      "id": 14937,
+      "name": "Agile top",
+      "category": 7,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
+    },
+    "AGILE_AGILITY_TOP": {
+      "id": 14936,
+      "name": "Agile top",
+      "category": 7,
+      "source": "User-supplied Support probe output, 2026-10-24",
+      "verified_on": "2026-10-24",
+      "consumable": false
     }
   },
   "quests": {

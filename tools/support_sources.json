@@ -1,0 +1,2468 @@
+{
+  "version": 1,
+  "reviewed_on": "2026-10-24",
+  "scope": [
+    "AGILITY",
+    "THIEVING",
+    "PRAYER",
+    "SUMMONING"
+  ],
+  "native_probe": {
+    "reported_found": 184,
+    "initial_lookup": 182,
+    "extra_lookup_ids": [
+      32340,
+      31279
+    ],
+    "imported_non_audit_records": 133,
+    "source": "User-submitted Support probe and two-item variant output"
+  },
+  "guides": {
+    "agility": {
+      "title": "Agility training",
+      "url": "https://runescape.wiki/w/Agility_training",
+      "revision": 37211739,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792871653
+    },
+    "thieving": {
+      "title": "Thieving training",
+      "url": "https://runescape.wiki/w/Thieving_training",
+      "revision": 37211578,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792871654
+    },
+    "prayer": {
+      "title": "Pay-to-play Prayer training",
+      "url": "https://runescape.wiki/w/Pay-to-play_Prayer_training",
+      "revision": 37177532,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792871655
+    },
+    "summoning": {
+      "title": "Summoning training",
+      "url": "https://runescape.wiki/w/Summoning_training",
+      "revision": 37212679,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792871656
+    }
+  },
+  "pages": {
+    "Nimble outfit": {
+      "title": "Nimble outfit",
+      "revision": 37187839,
+      "url": "https://runescape.wiki/w/Nimble_outfit"
+    },
+    "Agile top": {
+      "title": "Agile top",
+      "revision": 37172680,
+      "url": "https://runescape.wiki/w/Agile_top"
+    },
+    "Agile legs": {
+      "title": "Agile legs",
+      "revision": 37172679,
+      "url": "https://runescape.wiki/w/Agile_legs"
+    },
+    "Boots of lightness": {
+      "title": "Boots of lightness",
+      "revision": 37211091,
+      "url": "https://runescape.wiki/w/Boots_of_lightness"
+    },
+    "Spotted cape": {
+      "title": "Spotted cape",
+      "revision": 37170749,
+      "url": "https://runescape.wiki/w/Spotted_cape"
+    },
+    "Spottier cape": {
+      "title": "Spottier cape",
+      "revision": 37171314,
+      "url": "https://runescape.wiki/w/Spottier_cape"
+    },
+    "Penance gloves": {
+      "title": "Penance gloves",
+      "revision": 37072647,
+      "url": "https://runescape.wiki/w/Penance_gloves"
+    },
+    "Silverhawk boots": {
+      "title": "Silverhawk boots",
+      "revision": 37186701,
+      "url": "https://runescape.wiki/w/Silverhawk_boots"
+    },
+    "Agility cape": {
+      "title": "Agility cape",
+      "revision": 37168211,
+      "url": "https://runescape.wiki/w/Agility_cape"
+    },
+    "Totem of Crystal": {
+      "title": "Totem of Crystal",
+      "revision": 37008511,
+      "url": "https://runescape.wiki/w/Totem_of_Crystal"
+    },
+    "Black ibis outfit": {
+      "title": "Black ibis outfit",
+      "revision": 37173173,
+      "url": "https://runescape.wiki/w/Black_ibis_outfit"
+    },
+    "Trahaearn exoskeleton set": {
+      "title": "Trahaearn exoskeleton set",
+      "revision": 36959473,
+      "url": "https://runescape.wiki/w/Trahaearn_exoskeleton_set"
+    },
+    "Camouflage outfits": {
+      "title": "Camouflage outfit",
+      "revision": 36884846,
+      "url": "https://runescape.wiki/w/Camouflage_outfit"
+    },
+    "Soul-in-a-box": {
+      "title": "Soul-in-a-box",
+      "revision": 36875709,
+      "url": "https://runescape.wiki/w/Soul-in-a-box"
+    },
+    "Ring of Vitur": {
+      "title": "Ring of Vitur",
+      "revision": 37067135,
+      "url": "https://runescape.wiki/w/Ring_of_Vitur"
+    },
+    "Sticky Fingers": {
+      "title": "Sticky Fingers",
+      "revision": 37200566,
+      "url": "https://runescape.wiki/w/Sticky_Fingers"
+    },
+    "Pickpocketing bag": {
+      "title": "Pickpocketing bag",
+      "revision": 37054512,
+      "url": "https://runescape.wiki/w/Pickpocketing_bag"
+    },
+    "Mushroomy pickpocketing bag": {
+      "title": "Mushroomy pickpocketing bag",
+      "revision": 37200564,
+      "url": "https://runescape.wiki/w/Mushroomy_pickpocketing_bag"
+    },
+    "Thieving cape": {
+      "title": "Thieving cape",
+      "revision": 37008283,
+      "url": "https://runescape.wiki/w/Thieving_cape"
+    },
+    "Master thief's lockpick": {
+      "title": "Master thief's lockpick",
+      "revision": 37197808,
+      "url": "https://runescape.wiki/w/Master_thief's_lockpick"
+    },
+    "Master thief's stethoscope": {
+      "title": "Master thief's stethoscope",
+      "revision": 37002026,
+      "url": "https://runescape.wiki/w/Master_thief's_stethoscope"
+    },
+    "Loot bag": {
+      "title": "Loot bag",
+      "revision": 37196412,
+      "url": "https://runescape.wiki/w/Loot_bag"
+    },
+    "First age outfit": {
+      "title": "First age outfit",
+      "revision": 36975404,
+      "url": "https://runescape.wiki/w/First_age_outfit"
+    },
+    "Modified first age tiara": {
+      "title": "Modified first age tiara",
+      "revision": 37127261,
+      "url": "https://runescape.wiki/w/Modified_first_age_tiara"
+    },
+    "Bonecrusher": {
+      "title": "Bonecrusher",
+      "revision": 37165447,
+      "url": "https://runescape.wiki/w/Bonecrusher"
+    },
+    "Ectoplasmator": {
+      "title": "Ectoplasmator",
+      "revision": 36908579,
+      "url": "https://runescape.wiki/w/Ectoplasmator"
+    },
+    "Attuned ectoplasmator": {
+      "title": "Attuned ectoplasmator",
+      "revision": 37177357,
+      "url": "https://runescape.wiki/w/Attuned_ectoplasmator"
+    },
+    "Dragon Rider amulet": {
+      "title": "Dragon Rider amulet",
+      "revision": 37157074,
+      "url": "https://runescape.wiki/w/Dragon_Rider_amulet"
+    },
+    "Prayer cape": {
+      "title": "Prayer cape",
+      "revision": 37168214,
+      "url": "https://runescape.wiki/w/Prayer_cape"
+    },
+    "Shaman's outfit": {
+      "title": "Shaman's outfit",
+      "revision": 37002669,
+      "url": "https://runescape.wiki/w/Shaman's_outfit"
+    },
+    "Charming imp": {
+      "title": "Charming imp",
+      "revision": 37194168,
+      "url": "https://runescape.wiki/w/Charming_imp"
+    },
+    "Spirit cape": {
+      "title": "Spirit cape",
+      "revision": 37198962,
+      "url": "https://runescape.wiki/w/Spirit_cape"
+    },
+    "Summoning cape": {
+      "title": "Summoning cape",
+      "revision": 37008289,
+      "url": "https://runescape.wiki/w/Summoning_cape"
+    },
+    "Totem of Summoning": {
+      "title": "Totem of Summoning",
+      "revision": 37181277,
+      "url": "https://runescape.wiki/w/Totem_of_Summoning"
+    },
+    "Gorajan trailblazer outfit": {
+      "title": "Gorajan trailblazer outfit",
+      "revision": 36740112,
+      "url": "https://runescape.wiki/w/Gorajan_trailblazer_outfit"
+    },
+    "Dungeoneering cape": {
+      "title": "Dungeoneering cape",
+      "revision": 37009105,
+      "url": "https://runescape.wiki/w/Dungeoneering_cape"
+    },
+    "Dungeoneering master cape": {
+      "title": "Dungeoneering master cape",
+      "revision": 37043328,
+      "url": "https://runescape.wiki/w/Dungeoneering_master_cape"
+    },
+    "Daemonheim aura": {
+      "title": "Daemonheim aura",
+      "revision": 37068328,
+      "url": "https://runescape.wiki/w/Daemonheim_aura"
+    },
+    "Herbicide": {
+      "title": "Herbicide",
+      "revision": 37112879,
+      "url": "https://runescape.wiki/w/Herbicide"
+    },
+    "Seedicide": {
+      "title": "Seedicide",
+      "revision": 37211097,
+      "url": "https://runescape.wiki/w/Seedicide"
+    },
+    "Herb bag": {
+      "title": "Herb bag",
+      "revision": 37044167,
+      "url": "https://runescape.wiki/w/Herb_bag"
+    },
+    "Upgraded herb bag": {
+      "title": "Herb bag",
+      "revision": 37044167,
+      "url": "https://runescape.wiki/w/Herb_bag"
+    },
+    "Gem bag": {
+      "title": "Gem bag",
+      "revision": 37134044,
+      "url": "https://runescape.wiki/w/Gem_bag"
+    },
+    "Gem bag (upgraded)": {
+      "title": "Gem bag (upgraded)",
+      "revision": 37161576,
+      "url": "https://runescape.wiki/w/Gem_bag_(upgraded)"
+    },
+    "Seed bag": {
+      "title": "Seed bag",
+      "revision": 37048576,
+      "url": "https://runescape.wiki/w/Seed_bag"
+    },
+    "Advanced gold accumulator": {
+      "title": "Advanced gold accumulator",
+      "revision": 37082712,
+      "url": "https://runescape.wiki/w/Advanced_gold_accumulator"
+    },
+    "Spring cleaner": {
+      "title": "Spring cleaner",
+      "revision": 37124979,
+      "url": "https://runescape.wiki/w/Spring_cleaner"
+    },
+    "Slayer cape": {
+      "title": "Slayer cape",
+      "revision": 37008284,
+      "url": "https://runescape.wiki/w/Slayer_cape"
+    },
+    "Slayer master cape": {
+      "title": "Slayer master cape",
+      "revision": 37003095,
+      "url": "https://runescape.wiki/w/Slayer_master_cape"
+    },
+    "Nimble boots": {
+      "title": "Nimble boots",
+      "revision": 37018324,
+      "url": "https://runescape.wiki/w/Nimble_boots"
+    },
+    "Nimble chestpiece": {
+      "title": "Nimble chestpiece",
+      "revision": 37018325,
+      "url": "https://runescape.wiki/w/Nimble_chestpiece"
+    },
+    "Nimble gloves": {
+      "title": "Nimble gloves",
+      "revision": 37018326,
+      "url": "https://runescape.wiki/w/Nimble_gloves"
+    },
+    "Nimble headwear": {
+      "title": "Nimble headwear",
+      "revision": 37018327,
+      "url": "https://runescape.wiki/w/Nimble_headwear"
+    },
+    "Nimble legwear": {
+      "title": "Nimble legwear",
+      "revision": 37018328,
+      "url": "https://runescape.wiki/w/Nimble_legwear"
+    },
+    "Hooded agility cape": {
+      "title": "Hooded agility cape",
+      "revision": 37015483,
+      "url": "https://runescape.wiki/w/Hooded_agility_cape"
+    },
+    "Inverted Agility master cape": {
+      "title": "Inverted Agility master cape",
+      "revision": 36962321,
+      "url": "https://runescape.wiki/w/Inverted_Agility_master_cape"
+    },
+    "Inverted hooded Agility cape": {
+      "title": "Inverted hooded Agility cape",
+      "revision": 36962350,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Agility_cape"
+    },
+    "Black ibis body": {
+      "title": "Black ibis body",
+      "revision": 36946186,
+      "url": "https://runescape.wiki/w/Black_ibis_body"
+    },
+    "Black ibis boots": {
+      "title": "Black ibis boots",
+      "revision": 36946190,
+      "url": "https://runescape.wiki/w/Black_ibis_boots"
+    },
+    "Black ibis legs": {
+      "title": "Black ibis legs",
+      "revision": 36946191,
+      "url": "https://runescape.wiki/w/Black_ibis_legs"
+    },
+    "Black ibis mask": {
+      "title": "Black ibis mask",
+      "revision": 36946184,
+      "url": "https://runescape.wiki/w/Black_ibis_mask"
+    },
+    "Desert camouflage outfit": {
+      "title": "Desert camouflage outfit",
+      "revision": 37060659,
+      "url": "https://runescape.wiki/w/Desert_camouflage_outfit"
+    },
+    "Keldagrim camouflage outfit": {
+      "title": "Keldagrim camouflage outfit",
+      "revision": 37076823,
+      "url": "https://runescape.wiki/w/Keldagrim_camouflage_outfit"
+    },
+    "Master camouflage outfit": {
+      "title": "Master camouflage outfit",
+      "revision": 37195287,
+      "url": "https://runescape.wiki/w/Master_camouflage_outfit"
+    },
+    "Prifddinas camouflage outfit": {
+      "title": "Prifddinas camouflage outfit",
+      "revision": 37060660,
+      "url": "https://runescape.wiki/w/Prifddinas_camouflage_outfit"
+    },
+    "Hooded thieving cape": {
+      "title": "Hooded thieving cape",
+      "revision": 37015489,
+      "url": "https://runescape.wiki/w/Hooded_thieving_cape"
+    },
+    "Inverted Thieving master cape": {
+      "title": "Inverted Thieving master cape",
+      "revision": 36962323,
+      "url": "https://runescape.wiki/w/Inverted_Thieving_master_cape"
+    },
+    "Inverted hooded Thieving cape": {
+      "title": "Inverted hooded Thieving cape",
+      "revision": 36962352,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Thieving_cape"
+    },
+    "First age bracelet": {
+      "title": "First age bracelet",
+      "revision": 37014134,
+      "url": "https://runescape.wiki/w/First_age_bracelet"
+    },
+    "First age cape": {
+      "title": "First age cape",
+      "revision": 37070211,
+      "url": "https://runescape.wiki/w/First_age_cape"
+    },
+    "First age tiara": {
+      "title": "First age tiara",
+      "revision": 37014137,
+      "url": "https://runescape.wiki/w/First_age_tiara"
+    },
+    "First age tiara add-on": {
+      "title": "First age tiara add-on",
+      "revision": 36975402,
+      "url": "https://runescape.wiki/w/First_age_tiara_add-on"
+    },
+    "Hooded prayer cape": {
+      "title": "Hooded prayer cape",
+      "revision": 36962992,
+      "url": "https://runescape.wiki/w/Hooded_prayer_cape"
+    },
+    "Inverted Prayer master cape": {
+      "title": "Inverted Prayer master cape",
+      "revision": 36962316,
+      "url": "https://runescape.wiki/w/Inverted_Prayer_master_cape"
+    },
+    "Inverted hooded Prayer cape": {
+      "title": "Inverted hooded Prayer cape",
+      "revision": 36962345,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Prayer_cape"
+    },
+    "Shaman's headdress": {
+      "title": "Shaman's headdress",
+      "revision": 37056665,
+      "url": "https://runescape.wiki/w/Shaman's_headdress"
+    },
+    "Shaman's headdress add-on": {
+      "title": "Shaman's headdress add-on",
+      "revision": 37056670,
+      "url": "https://runescape.wiki/w/Shaman's_headdress_add-on"
+    },
+    "Shaman's moccasins": {
+      "title": "Shaman's moccasins",
+      "revision": 37056668,
+      "url": "https://runescape.wiki/w/Shaman's_moccasins"
+    },
+    "Shaman's poncho": {
+      "title": "Shaman's poncho",
+      "revision": 37056666,
+      "url": "https://runescape.wiki/w/Shaman's_poncho"
+    },
+    "Hooded summoning cape": {
+      "title": "Hooded summoning cape",
+      "revision": 37015488,
+      "url": "https://runescape.wiki/w/Hooded_summoning_cape"
+    },
+    "Inverted Summoning master cape": {
+      "title": "Inverted Summoning master cape",
+      "revision": 36962337,
+      "url": "https://runescape.wiki/w/Inverted_Summoning_master_cape"
+    },
+    "Inverted hooded Summoning cape": {
+      "title": "Inverted hooded Summoning cape",
+      "revision": 36962367,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Summoning_cape"
+    },
+    "Abandoned gorajan trailblazer outfit": {
+      "title": "Abandoned gorajan trailblazer outfit",
+      "revision": 37140951,
+      "url": "https://runescape.wiki/w/Abandoned_gorajan_trailblazer_outfit"
+    },
+    "Frozen gorajan trailblazer outfit": {
+      "title": "Frozen gorajan trailblazer outfit",
+      "revision": 37142622,
+      "url": "https://runescape.wiki/w/Frozen_gorajan_trailblazer_outfit"
+    },
+    "Furnished gorajan trailblazer outfit": {
+      "title": "Furnished gorajan trailblazer outfit",
+      "revision": 37142612,
+      "url": "https://runescape.wiki/w/Furnished_gorajan_trailblazer_outfit"
+    },
+    "Occult gorajan trailblazer outfit": {
+      "title": "Occult gorajan trailblazer outfit",
+      "revision": 37042004,
+      "url": "https://runescape.wiki/w/Occult_gorajan_trailblazer_outfit"
+    },
+    "Warped gorajan trailblazer outfit": {
+      "title": "Warped gorajan trailblazer outfit",
+      "revision": 37140823,
+      "url": "https://runescape.wiki/w/Warped_gorajan_trailblazer_outfit"
+    },
+    "Hooded dungeoneering cape": {
+      "title": "Hooded dungeoneering cape",
+      "revision": 37009280,
+      "url": "https://runescape.wiki/w/Hooded_dungeoneering_cape"
+    },
+    "Inverted Dungeoneering master cape": {
+      "title": "Inverted Dungeoneering master cape",
+      "revision": 37043331,
+      "url": "https://runescape.wiki/w/Inverted_Dungeoneering_master_cape"
+    },
+    "Inverted hooded Dungeoneering cape": {
+      "title": "Inverted hooded Dungeoneering cape",
+      "revision": 36962366,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Dungeoneering_cape"
+    },
+    "Daemonheim aura 1": {
+      "title": "Daemonheim aura 1",
+      "revision": 37016683,
+      "url": "https://runescape.wiki/w/Daemonheim_aura_1"
+    },
+    "Daemonheim aura 2": {
+      "title": "Daemonheim aura 2",
+      "revision": 37054374,
+      "url": "https://runescape.wiki/w/Daemonheim_aura_2"
+    },
+    "Daemonheim aura 3": {
+      "title": "Daemonheim aura 3",
+      "revision": 37016686,
+      "url": "https://runescape.wiki/w/Daemonheim_aura_3"
+    },
+    "Daemonheim aura 4": {
+      "title": "Daemonheim aura 4",
+      "revision": 37013002,
+      "url": "https://runescape.wiki/w/Daemonheim_aura_4"
+    },
+    "Spring cleaner 2000": {
+      "title": "Spring cleaner 2000",
+      "revision": 37010568,
+      "url": "https://runescape.wiki/w/Spring_cleaner_2000"
+    },
+    "Spring cleaner 3000": {
+      "title": "Spring cleaner 3000",
+      "revision": 37113880,
+      "url": "https://runescape.wiki/w/Spring_cleaner_3000"
+    },
+    "Spring cleaner 5000": {
+      "title": "Spring cleaner 5000",
+      "revision": 37010566,
+      "url": "https://runescape.wiki/w/Spring_cleaner_5000"
+    },
+    "Spring cleaner 9000": {
+      "title": "Spring cleaner 9000",
+      "revision": 37010565,
+      "url": "https://runescape.wiki/w/Spring_cleaner_9000"
+    },
+    "Hooded slayer cape": {
+      "title": "Hooded slayer cape",
+      "revision": 36963005,
+      "url": "https://runescape.wiki/w/Hooded_slayer_cape"
+    },
+    "Inverted Slayer master cape": {
+      "title": "Inverted Slayer master cape",
+      "revision": 36962326,
+      "url": "https://runescape.wiki/w/Inverted_Slayer_master_cape"
+    },
+    "Inverted hooded Slayer cape": {
+      "title": "Inverted hooded Slayer cape",
+      "revision": 36962355,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Slayer_cape"
+    },
+    "Desert camouflage body": {
+      "title": "Desert camouflage body",
+      "revision": 36944299,
+      "url": "https://runescape.wiki/w/Desert_camouflage_body"
+    },
+    "Desert camouflage feet": {
+      "title": "Desert camouflage feet",
+      "revision": 36944302,
+      "url": "https://runescape.wiki/w/Desert_camouflage_feet"
+    },
+    "Desert camouflage hands": {
+      "title": "Desert camouflage hands",
+      "revision": 36944301,
+      "url": "https://runescape.wiki/w/Desert_camouflage_hands"
+    },
+    "Desert camouflage head": {
+      "title": "Desert camouflage head",
+      "revision": 37009541,
+      "url": "https://runescape.wiki/w/Desert_camouflage_head"
+    },
+    "Desert camouflage legs": {
+      "title": "Desert camouflage legs",
+      "revision": 36944300,
+      "url": "https://runescape.wiki/w/Desert_camouflage_legs"
+    },
+    "Keldagrim camouflage body": {
+      "title": "Keldagrim camouflage body",
+      "revision": 36944287,
+      "url": "https://runescape.wiki/w/Keldagrim_camouflage_body"
+    },
+    "Keldagrim camouflage feet": {
+      "title": "Keldagrim camouflage feet",
+      "revision": 36944290,
+      "url": "https://runescape.wiki/w/Keldagrim_camouflage_feet"
+    },
+    "Keldagrim camouflage hands": {
+      "title": "Keldagrim camouflage hands",
+      "revision": 36944289,
+      "url": "https://runescape.wiki/w/Keldagrim_camouflage_hands"
+    },
+    "Keldagrim camouflage head": {
+      "title": "Keldagrim camouflage head",
+      "revision": 37009539,
+      "url": "https://runescape.wiki/w/Keldagrim_camouflage_head"
+    },
+    "Keldagrim camouflage legs": {
+      "title": "Keldagrim camouflage legs",
+      "revision": 36944288,
+      "url": "https://runescape.wiki/w/Keldagrim_camouflage_legs"
+    },
+    "Master camouflage body": {
+      "title": "Master camouflage body",
+      "revision": 37024106,
+      "url": "https://runescape.wiki/w/Master_camouflage_body"
+    },
+    "Master camouflage feet": {
+      "title": "Master camouflage feet",
+      "revision": 37024109,
+      "url": "https://runescape.wiki/w/Master_camouflage_feet"
+    },
+    "Master camouflage hands": {
+      "title": "Master camouflage hands",
+      "revision": 37024108,
+      "url": "https://runescape.wiki/w/Master_camouflage_hands"
+    },
+    "Master camouflage head": {
+      "title": "Master camouflage head",
+      "revision": 37024105,
+      "url": "https://runescape.wiki/w/Master_camouflage_head"
+    },
+    "Master camouflage legs": {
+      "title": "Master camouflage legs",
+      "revision": 37024107,
+      "url": "https://runescape.wiki/w/Master_camouflage_legs"
+    },
+    "Prifddinas camouflage body": {
+      "title": "Prifddinas camouflage body",
+      "revision": 36944293,
+      "url": "https://runescape.wiki/w/Prifddinas_camouflage_body"
+    },
+    "Prifddinas camouflage feet": {
+      "title": "Prifddinas camouflage feet",
+      "revision": 36944296,
+      "url": "https://runescape.wiki/w/Prifddinas_camouflage_feet"
+    },
+    "Prifddinas camouflage hands": {
+      "title": "Prifddinas camouflage hands",
+      "revision": 36944295,
+      "url": "https://runescape.wiki/w/Prifddinas_camouflage_hands"
+    },
+    "Prifddinas camouflage head": {
+      "title": "Prifddinas camouflage head",
+      "revision": 37009540,
+      "url": "https://runescape.wiki/w/Prifddinas_camouflage_head"
+    },
+    "Prifddinas camouflage legs": {
+      "title": "Prifddinas camouflage legs",
+      "revision": 36944294,
+      "url": "https://runescape.wiki/w/Prifddinas_camouflage_legs"
+    },
+    "Modified shaman's headdress": {
+      "title": "Modified shaman's headdress",
+      "revision": 37126110,
+      "url": "https://runescape.wiki/w/Modified_shaman's_headdress"
+    },
+    "Abandoned gorajan trailblazer body": {
+      "title": "Abandoned gorajan trailblazer body",
+      "revision": 37140944,
+      "url": "https://runescape.wiki/w/Abandoned_gorajan_trailblazer_body"
+    },
+    "Abandoned gorajan trailblazer feet": {
+      "title": "Abandoned gorajan trailblazer feet",
+      "revision": 37140947,
+      "url": "https://runescape.wiki/w/Abandoned_gorajan_trailblazer_feet"
+    },
+    "Abandoned gorajan trailblazer hands": {
+      "title": "Abandoned gorajan trailblazer hands",
+      "revision": 37140948,
+      "url": "https://runescape.wiki/w/Abandoned_gorajan_trailblazer_hands"
+    },
+    "Abandoned gorajan trailblazer head": {
+      "title": "Abandoned gorajan trailblazer head",
+      "revision": 37140949,
+      "url": "https://runescape.wiki/w/Abandoned_gorajan_trailblazer_head"
+    },
+    "Abandoned gorajan trailblazer legs": {
+      "title": "Abandoned gorajan trailblazer legs",
+      "revision": 37140950,
+      "url": "https://runescape.wiki/w/Abandoned_gorajan_trailblazer_legs"
+    },
+    "Frozen gorajan trailblazer body": {
+      "title": "Frozen gorajan trailblazer body",
+      "revision": 37142603,
+      "url": "https://runescape.wiki/w/Frozen_gorajan_trailblazer_body"
+    },
+    "Frozen gorajan trailblazer feet": {
+      "title": "Frozen gorajan trailblazer feet",
+      "revision": 37142604,
+      "url": "https://runescape.wiki/w/Frozen_gorajan_trailblazer_feet"
+    },
+    "Frozen gorajan trailblazer hands": {
+      "title": "Frozen gorajan trailblazer hands",
+      "revision": 37142606,
+      "url": "https://runescape.wiki/w/Frozen_gorajan_trailblazer_hands"
+    },
+    "Frozen gorajan trailblazer head": {
+      "title": "Frozen gorajan trailblazer head",
+      "revision": 37142608,
+      "url": "https://runescape.wiki/w/Frozen_gorajan_trailblazer_head"
+    },
+    "Frozen gorajan trailblazer legs": {
+      "title": "Frozen gorajan trailblazer legs",
+      "revision": 37142623,
+      "url": "https://runescape.wiki/w/Frozen_gorajan_trailblazer_legs"
+    },
+    "Furnished gorajan trailblazer body": {
+      "title": "Furnished gorajan trailblazer body",
+      "revision": 37142620,
+      "url": "https://runescape.wiki/w/Furnished_gorajan_trailblazer_body"
+    },
+    "Furnished gorajan trailblazer feet": {
+      "title": "Furnished gorajan trailblazer feet",
+      "revision": 37142617,
+      "url": "https://runescape.wiki/w/Furnished_gorajan_trailblazer_feet"
+    },
+    "Furnished gorajan trailblazer hands": {
+      "title": "Furnished gorajan trailblazer hands",
+      "revision": 37142616,
+      "url": "https://runescape.wiki/w/Furnished_gorajan_trailblazer_hands"
+    },
+    "Furnished gorajan trailblazer head": {
+      "title": "Furnished gorajan trailblazer head",
+      "revision": 37142615,
+      "url": "https://runescape.wiki/w/Furnished_gorajan_trailblazer_head"
+    },
+    "Furnished gorajan trailblazer legs": {
+      "title": "Furnished gorajan trailblazer legs",
+      "revision": 37142613,
+      "url": "https://runescape.wiki/w/Furnished_gorajan_trailblazer_legs"
+    },
+    "Occult gorajan trailblazer body": {
+      "title": "Occult gorajan trailblazer body",
+      "revision": 37042006,
+      "url": "https://runescape.wiki/w/Occult_gorajan_trailblazer_body"
+    },
+    "Occult gorajan trailblazer feet": {
+      "title": "Occult gorajan trailblazer feet",
+      "revision": 37042011,
+      "url": "https://runescape.wiki/w/Occult_gorajan_trailblazer_feet"
+    },
+    "Occult gorajan trailblazer hands": {
+      "title": "Occult gorajan trailblazer hands",
+      "revision": 37042009,
+      "url": "https://runescape.wiki/w/Occult_gorajan_trailblazer_hands"
+    },
+    "Occult gorajan trailblazer head": {
+      "title": "Occult gorajan trailblazer head",
+      "revision": 37042007,
+      "url": "https://runescape.wiki/w/Occult_gorajan_trailblazer_head"
+    },
+    "Occult gorajan trailblazer legs": {
+      "title": "Occult gorajan trailblazer legs",
+      "revision": 37042008,
+      "url": "https://runescape.wiki/w/Occult_gorajan_trailblazer_legs"
+    },
+    "Warped gorajan trailblazer body": {
+      "title": "Warped gorajan trailblazer body",
+      "revision": 37042032,
+      "url": "https://runescape.wiki/w/Warped_gorajan_trailblazer_body"
+    },
+    "Warped gorajan trailblazer feet": {
+      "title": "Warped gorajan trailblazer feet",
+      "revision": 37042037,
+      "url": "https://runescape.wiki/w/Warped_gorajan_trailblazer_feet"
+    },
+    "Warped gorajan trailblazer hands": {
+      "title": "Warped gorajan trailblazer hands",
+      "revision": 37042036,
+      "url": "https://runescape.wiki/w/Warped_gorajan_trailblazer_hands"
+    },
+    "Warped gorajan trailblazer head": {
+      "title": "Warped gorajan trailblazer head",
+      "revision": 37042033,
+      "url": "https://runescape.wiki/w/Warped_gorajan_trailblazer_head"
+    },
+    "Warped gorajan trailblazer legs": {
+      "title": "Warped gorajan trailblazer legs",
+      "revision": 37042034,
+      "url": "https://runescape.wiki/w/Warped_gorajan_trailblazer_legs"
+    },
+    "Spirit Weaver": {
+      "title": "Spirit Weaver",
+      "revision": 37134409,
+      "url": "https://runescape.wiki/w/Spirit_Weaver"
+    },
+    "Huge loot bag": {
+      "title": "Huge loot bag",
+      "revision": 36843230,
+      "url": "https://runescape.wiki/w/Huge_loot_bag"
+    },
+    "Large loot bag": {
+      "title": "Large loot bag",
+      "revision": 37061853,
+      "url": "https://runescape.wiki/w/Large_loot_bag"
+    },
+    "Medium loot bag": {
+      "title": "Medium loot bag",
+      "revision": 37061862,
+      "url": "https://runescape.wiki/w/Medium_loot_bag"
+    },
+    "Small loot bag": {
+      "title": "Small loot bag",
+      "revision": 36852939,
+      "url": "https://runescape.wiki/w/Small_loot_bag"
+    },
+    "First age amulet": {
+      "title": "First age amulet",
+      "revision": 37014133,
+      "url": "https://runescape.wiki/w/First_age_amulet"
+    },
+    "First age ring": {
+      "title": "First age ring",
+      "revision": 37014136,
+      "url": "https://runescape.wiki/w/First_age_ring"
+    },
+    "Shaman's hand wraps": {
+      "title": "Shaman's hand wraps",
+      "revision": 37056669,
+      "url": "https://runescape.wiki/w/Shaman's_hand_wraps"
+    },
+    "Shaman's leggings": {
+      "title": "Shaman's leggings",
+      "revision": 37056667,
+      "url": "https://runescape.wiki/w/Shaman's_leggings"
+    },
+    "Ardougne cloak": {
+      "title": "Ardougne cloak",
+      "revision": 36048770,
+      "url": "https://runescape.wiki/w/Ardougne_cloak"
+    },
+    "Medium Ardougne achievements": {
+      "title": "Medium Ardougne achievements",
+      "revision": 37158296,
+      "url": "https://runescape.wiki/w/Medium_Ardougne_achievements"
+    },
+    "Ardougne cloak 1": {
+      "title": "Ardougne cloak 1",
+      "revision": 37006919,
+      "url": "https://runescape.wiki/w/Ardougne_cloak_1"
+    },
+    "Ardougne cloak 1 (override)": {
+      "title": "Ardougne cloak 1 (override)",
+      "revision": 36517977,
+      "url": "https://runescape.wiki/w/Ardougne_cloak_1_(override)"
+    },
+    "Ardougne cloak 2": {
+      "title": "Ardougne cloak 2",
+      "revision": 37006920,
+      "url": "https://runescape.wiki/w/Ardougne_cloak_2"
+    },
+    "Ardougne cloak 2 (override)": {
+      "title": "Ardougne cloak 2 (override)",
+      "revision": 36517978,
+      "url": "https://runescape.wiki/w/Ardougne_cloak_2_(override)"
+    },
+    "Ardougne cloak 3": {
+      "title": "Ardougne cloak 3",
+      "revision": 36961587,
+      "url": "https://runescape.wiki/w/Ardougne_cloak_3"
+    },
+    "Ardougne cloak 3 (override)": {
+      "title": "Ardougne cloak 3 (override)",
+      "revision": 36517980,
+      "url": "https://runescape.wiki/w/Ardougne_cloak_3_(override)"
+    },
+    "Ardougne cloak 4": {
+      "title": "Ardougne cloak 4",
+      "revision": 37006921,
+      "url": "https://runescape.wiki/w/Ardougne_cloak_4"
+    },
+    "Ardougne cloak 4 (override)": {
+      "title": "Ardougne cloak 4 (override)",
+      "revision": 36517981,
+      "url": "https://runescape.wiki/w/Ardougne_cloak_4_(override)"
+    },
+    "Attuned ectoplasmator (degraded)": {
+      "title": "Attuned ectoplasmator (degraded)",
+      "revision": 37007157,
+      "url": "https://runescape.wiki/w/Attuned_ectoplasmator_(degraded)"
+    },
+    "Thieving master cape": {
+      "title": "Thieving master cape",
+      "revision": 36961774,
+      "url": "https://runescape.wiki/w/Thieving_master_cape"
+    },
+    "Shrine of Inanna": {
+      "title": "Shrine of Inanna",
+      "revision": 37211082,
+      "url": "https://runescape.wiki/w/Shrine_of_Inanna"
+    },
+    "Easy Ardougne achievements": {
+      "title": "Easy Ardougne achievements",
+      "revision": 37162286,
+      "url": "https://runescape.wiki/w/Easy_Ardougne_achievements"
+    },
+    "Barbarian Outpost Agility Course": {
+      "title": "Barbarian Outpost Agility Course",
+      "revision": 37187695,
+      "url": "https://runescape.wiki/w/Barbarian_Outpost_Agility_Course"
+    },
+    "Penguin Agility Course": {
+      "title": "Penguin Agility Course",
+      "revision": 37187688,
+      "url": "https://runescape.wiki/w/Penguin_Agility_Course"
+    },
+    "Ape Atoll Agility Course": {
+      "title": "Ape Atoll Agility Course",
+      "revision": 37187699,
+      "url": "https://runescape.wiki/w/Ape_Atoll_Agility_Course"
+    },
+    "Wilderness Agility Course": {
+      "title": "Wilderness Agility Course",
+      "revision": 37187703,
+      "url": "https://runescape.wiki/w/Wilderness_Agility_Course"
+    },
+    "Het's Oasis Agility Course": {
+      "title": "Het's Oasis Agility Course",
+      "revision": 37187704,
+      "url": "https://runescape.wiki/w/Het's_Oasis_Agility_Course"
+    },
+    "Anachronia Agility Course": {
+      "title": "Anachronia Agility Course",
+      "revision": 37138654,
+      "url": "https://runescape.wiki/w/Anachronia_Agility_Course"
+    },
+    "Serenity posts": {
+      "title": "Serenity posts",
+      "revision": 37210988,
+      "url": "https://runescape.wiki/w/Serenity_posts"
+    },
+    "Empty Throne Room": {
+      "title": "The Empty Throne Room",
+      "revision": 37109914,
+      "url": "https://runescape.wiki/w/The_Empty_Throne_Room"
+    },
+    "Spirit moth": {
+      "title": "Spirit moths",
+      "revision": 37170278,
+      "url": "https://runescape.wiki/w/Spirit_moths"
+    },
+    "Hefin Agility Course": {
+      "title": "Hefin Agility Course",
+      "revision": 37210980,
+      "url": "https://runescape.wiki/w/Hefin_Agility_Course"
+    },
+    "Werewolf Agility Course": {
+      "title": "Werewolf Agility Course",
+      "revision": 37120394,
+      "url": "https://runescape.wiki/w/Werewolf_Agility_Course"
+    },
+    "Safecracking": {
+      "title": "Safecracking",
+      "revision": 37168582,
+      "url": "https://runescape.wiki/w/Safecracking"
+    },
+    "A Guild of Our Own": {
+      "title": "A Guild of Our Own (miniquest)",
+      "revision": 37153127,
+      "url": "https://runescape.wiki/w/A_Guild_of_Our_Own_(miniquest)"
+    },
+    "Vault of Hereditas": {
+      "title": "Vault of Hereditas",
+      "revision": 37207268,
+      "url": "https://runescape.wiki/w/Vault_of_Hereditas"
+    },
+    "Asuran Arsenal": {
+      "title": "Asuran Arsenal",
+      "revision": 37207267,
+      "url": "https://runescape.wiki/w/Asuran_Arsenal"
+    },
+    "Breaking the Seal": {
+      "title": "Breaking the Seal",
+      "revision": 37152695,
+      "url": "https://runescape.wiki/w/Breaking_the_Seal"
+    },
+    "Menaphite marketeer": {
+      "title": "Menaphite marketeer",
+      "revision": 37166120,
+      "url": "https://runescape.wiki/w/Menaphite_marketeer"
+    },
+    "Crux Eqal knight": {
+      "title": "Crux Eqal Knight",
+      "revision": 37156915,
+      "url": "https://runescape.wiki/w/Crux_Eqal_Knight"
+    },
+    "Cleansing crystal": {
+      "title": "Cleansing crystal",
+      "revision": 37168149,
+      "url": "https://runescape.wiki/w/Cleansing_crystal"
+    },
+    "Ectofuntus": {
+      "title": "Ectofuntus",
+      "revision": 37120495,
+      "url": "https://runescape.wiki/w/Ectofuntus"
+    },
+    "Nemi Forest": {
+      "title": "Nemi Forest",
+      "revision": 37133020,
+      "url": "https://runescape.wiki/w/Nemi_Forest"
+    },
+    "God Statues": {
+      "title": "God Statues",
+      "revision": 37193709,
+      "url": "https://runescape.wiki/w/God_Statues"
+    },
+    "Extra fine sand": {
+      "title": "Extra fine sand",
+      "revision": 37168894,
+      "url": "https://runescape.wiki/w/Extra_fine_sand"
+    },
+    "Gold charm": {
+      "title": "Gold charm",
+      "revision": 37167015,
+      "url": "https://runescape.wiki/w/Gold_charm"
+    },
+    "Green charm": {
+      "title": "Green charm",
+      "revision": 37106742,
+      "url": "https://runescape.wiki/w/Green_charm"
+    },
+    "Crimson charm": {
+      "title": "Crimson charm",
+      "revision": 37180310,
+      "url": "https://runescape.wiki/w/Crimson_charm"
+    },
+    "Blue charm": {
+      "title": "Blue charm",
+      "revision": 37124682,
+      "url": "https://runescape.wiki/w/Blue_charm"
+    },
+    "Banana": {
+      "title": "Banana",
+      "revision": 37131003,
+      "url": "https://runescape.wiki/w/Banana"
+    },
+    "Lockpick": {
+      "title": "Lockpick",
+      "revision": 37132500,
+      "url": "https://runescape.wiki/w/Lockpick"
+    },
+    "Dragon bones": {
+      "title": "Dragon bones",
+      "revision": 37134781,
+      "url": "https://runescape.wiki/w/Dragon_bones"
+    },
+    "Bones": {
+      "title": "Bones",
+      "revision": 37177466,
+      "url": "https://runescape.wiki/w/Bones"
+    },
+    "Big bones": {
+      "title": "Big bones",
+      "revision": 37130991,
+      "url": "https://runescape.wiki/w/Big_bones"
+    },
+    "Infernal ashes": {
+      "title": "Infernal ashes",
+      "revision": 37015737,
+      "url": "https://runescape.wiki/w/Infernal_ashes"
+    },
+    "Spirit shards": {
+      "title": "Spirit shards",
+      "revision": 37178486,
+      "url": "https://runescape.wiki/w/Spirit_shards"
+    },
+    "Tellervo's lantern": {
+      "title": "Tellervo's lantern",
+      "revision": 37201450,
+      "url": "https://runescape.wiki/w/Tellervo's_lantern"
+    },
+    "Andvaranaut": {
+      "title": "Andvaranaut",
+      "revision": 37043790,
+      "url": "https://runescape.wiki/w/Andvaranaut"
+    },
+    "Chapel (Fort Forinthry)": {
+      "title": "Chapel",
+      "revision": 37177904,
+      "url": "https://runescape.wiki/w/Chapel"
+    },
+    "Gilded altar": {
+      "title": "Gilded altar",
+      "revision": 37187818,
+      "url": "https://runescape.wiki/w/Gilded_altar"
+    },
+    "Chaos altar (Wilderness)": {
+      "title": "Chaos altar (Wilderness)",
+      "revision": 37144065,
+      "url": "https://runescape.wiki/w/Chaos_altar_(Wilderness)"
+    },
+    "Carved rod of pure essence": {
+      "title": "Carved rod of pure essence",
+      "revision": 36958908,
+      "url": "https://runescape.wiki/w/Carved_rod_of_pure_essence"
+    },
+    "Mushy mush": {
+      "title": "Mushy mush",
+      "revision": 37208108,
+      "url": "https://runescape.wiki/w/Mushy_mush"
+    },
+    "Totem of Crystal top": {
+      "title": "Totem of Crystal top",
+      "revision": 37044782,
+      "url": "https://runescape.wiki/w/Totem_of_Crystal_top"
+    },
+    "Totem of Summoning top": {
+      "title": "Totem of Summoning top",
+      "revision": 37044755,
+      "url": "https://runescape.wiki/w/Totem_of_Summoning_top"
+    },
+    "Scripture of Elidinis": {
+      "title": "Scripture of Elidinis",
+      "revision": 37214137,
+      "url": "https://runescape.wiki/w/Scripture_of_Elidinis"
+    },
+    "Brooch of the Gods": {
+      "title": "Brooch of the Gods",
+      "revision": 37128451,
+      "url": "https://runescape.wiki/w/Brooch_of_the_Gods"
+    },
+    "Urn enhancer": {
+      "title": "Urn enhancer",
+      "revision": 37154182,
+      "url": "https://runescape.wiki/w/Urn_enhancer"
+    },
+    "Dreadfowl pouch": {
+      "title": "Dreadfowl pouch",
+      "revision": 37013521,
+      "url": "https://runescape.wiki/w/Dreadfowl_pouch"
+    },
+    "Granite crab pouch": {
+      "title": "Granite crab pouch",
+      "revision": 37015005,
+      "url": "https://runescape.wiki/w/Granite_crab_pouch"
+    },
+    "Vampyre bat pouch": {
+      "title": "Vampyre bat pouch",
+      "revision": 37022360,
+      "url": "https://runescape.wiki/w/Vampyre_bat_pouch"
+    },
+    "Pyrelord pouch": {
+      "title": "Pyrelord pouch",
+      "revision": 37019451,
+      "url": "https://runescape.wiki/w/Pyrelord_pouch"
+    },
+    "Bloated leech pouch": {
+      "title": "Bloated leech pouch",
+      "revision": 37011489,
+      "url": "https://runescape.wiki/w/Bloated_leech_pouch"
+    },
+    "Smoke devil pouch": {
+      "title": "Smoke devil pouch",
+      "revision": 37020945,
+      "url": "https://runescape.wiki/w/Smoke_devil_pouch"
+    },
+    "Granite lobster pouch": {
+      "title": "Granite lobster pouch",
+      "revision": 37015011,
+      "url": "https://runescape.wiki/w/Granite_lobster_pouch"
+    },
+    "Spirit dagannoth pouch": {
+      "title": "Spirit dagannoth pouch",
+      "revision": 37021162,
+      "url": "https://runescape.wiki/w/Spirit_dagannoth_pouch"
+    },
+    "Pack yak pouch": {
+      "title": "Pack yak pouch",
+      "revision": 37124350,
+      "url": "https://runescape.wiki/w/Pack_yak_pouch"
+    },
+    "Steel titan pouch": {
+      "title": "Steel titan pouch",
+      "revision": 37021417,
+      "url": "https://runescape.wiki/w/Steel_titan_pouch"
+    },
+    "Spirit terrorbird pouch": {
+      "title": "Spirit terrorbird pouch",
+      "revision": 37021196,
+      "url": "https://runescape.wiki/w/Spirit_terrorbird_pouch"
+    },
+    "Barker toad pouch": {
+      "title": "Barker toad pouch",
+      "revision": 37007769,
+      "url": "https://runescape.wiki/w/Barker_toad_pouch"
+    },
+    "Spirit jelly pouch": {
+      "title": "Spirit jelly pouch",
+      "revision": 37021171,
+      "url": "https://runescape.wiki/w/Spirit_jelly_pouch"
+    },
+    "Obsidian golem pouch": {
+      "title": "Obsidian golem pouch",
+      "revision": 37018445,
+      "url": "https://runescape.wiki/w/Obsidian_golem_pouch"
+    },
+    "Geyser titan pouch": {
+      "title": "Geyser titan pouch",
+      "revision": 37014473,
+      "url": "https://runescape.wiki/w/Geyser_titan_pouch"
+    },
+    "Lost City": {
+      "title": "Lost City",
+      "revision": 37178262,
+      "url": "https://runescape.wiki/w/Lost_City"
+    },
+    "Nature Spirit": {
+      "title": "Nature Spirit",
+      "revision": 37188687,
+      "url": "https://runescape.wiki/w/Nature_Spirit"
+    },
+    "Codex page": {
+      "title": "Codex page",
+      "revision": 37165354,
+      "url": "https://runescape.wiki/w/Codex_page"
+    }
+  },
+  "tips": {
+    "agility.nimble_outfit": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.lightness": {
+      "notes": "No Hunter gate: this card is for freely accessible boots; capes are optional alternatives. No Silverhawk alias.",
+      "window": null,
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.agile_clothing": {
+      "notes": "85 Agility is unboosted access for earning legs, not a wear requirement; top course starts at 90.",
+      "window": null,
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.cape": {
+      "notes": "Timed sliding-block/sawblade damage exceptions remain; no claim of absolute damage immunity.",
+      "window": null,
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "thieving.black_ibis": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.camouflage": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.ardougne_cloak": {
+      "notes": "Combined easy/medium skill minimums; source quests/partial Fairy Tale II remain achievement goals, not a claim that the diary is already complete. Bought grapple avoids optional Fletching/Smithing gates. Cloak 1 lacks this benefit and does not suppress it.",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.loot_bag": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.master_lockpick": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.master_stethoscope": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.pickpocketing_bag": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.mushroomy_bag": {
+      "notes": "80 Crafting is on the creation operation itself, unlike the buyable carved input for the base tool.",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.soul_box": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.sticky_fingers": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.crystal_totem": {
+      "notes": "85 Agility is recommended by the source, not required. Totems no longer require weekly recharging.",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.ring_vitur": {
+      "notes": "117 is a source-progression gate for the magic stall, not a fabricated equip requirement.",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.cape": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.master_cape": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "prayer.first_age": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Pay-to-play Prayer training",
+        "url": "https://runescape.wiki/w/Pay-to-play_Prayer_training",
+        "revision": 37177532,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871655
+      }
+    },
+    "prayer.bonecrusher": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Pay-to-play Prayer training",
+        "url": "https://runescape.wiki/w/Pay-to-play_Prayer_training",
+        "revision": 37177532,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871655
+      }
+    },
+    "prayer.ectoplasmator": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Pay-to-play Prayer training",
+        "url": "https://runescape.wiki/w/Pay-to-play_Prayer_training",
+        "revision": 37177532,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871655
+      }
+    },
+    "prayer.cape": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Pay-to-play Prayer training",
+        "url": "https://runescape.wiki/w/Pay-to-play_Prayer_training",
+        "revision": 37177532,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871655
+      }
+    },
+    "summoning.shaman_outfit": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.charming_imp": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.spirit_cape": {
+      "notes": "50 Defence is a real purchase requirement. No combat target or ability use recommendation.",
+      "window": null,
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.spirit_weaver": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.totem": {
+      "notes": "Slayer is a source requirement, not a Slayer tip. No target/tactic advice. 85 Agility is recommended only, not required.",
+      "window": null,
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.cape": {
+      "notes": "",
+      "window": null,
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "agility.method.penguin": {
+      "notes": "Actual access is partial Cold War; completion conservatively covers the suit stage without guessing a quest var.",
+      "window": [
+        30,
+        34
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.method.barbarian": {
+      "notes": "Barcrawl is a mandatory entry goal. No quest config was present in the native quest dump, so no config or completion read is invented.",
+      "window": [
+        35,
+        47
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.method.ape_atoll": {
+      "notes": "",
+      "window": [
+        48,
+        51
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.method.wilderness": {
+      "notes": "",
+      "window": [
+        52,
+        59
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.method.bandos": {
+      "notes": "",
+      "window": [
+        60,
+        64
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.method.oasis": {
+      "notes": "",
+      "window": [
+        65,
+        69
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.method.anachronia_sections": {
+      "notes": "",
+      "window": [
+        70,
+        76
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.method.hefin": {
+      "notes": "",
+      "window": [
+        77,
+        79
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.method.spirit_moths": {
+      "notes": "85 Hunter is mandatory; full Heralds completion conservatively covers Havenhythe access.",
+      "window": [
+        80,
+        84
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.method.anachronia_laps": {
+      "notes": "Top course with continuing codex-page and lap-reward niche; not a low-tier method retained merely because it remains possible.",
+      "window": [
+        85,
+        120
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.alt.early_anachronia": {
+      "notes": "",
+      "window": [
+        30,
+        64
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.alt.werewolf": {
+      "notes": "",
+      "window": [
+        60,
+        84
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.alt.throne_room": {
+      "notes": "One-time capped XP pool; no claim of endless XP. Stop before Hefin becomes available.",
+      "window": [
+        65,
+        76
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "agility.alt.serenity": {
+      "notes": "",
+      "window": [
+        75,
+        94
+      ],
+      "guide": {
+        "title": "Agility training",
+        "url": "https://runescape.wiki/w/Agility_training",
+        "revision": 37211739,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871653
+      }
+    },
+    "thieving.method.misthalin": {
+      "notes": "Safes themselves do not require the Guild quests; the bag and stethoscope do. No false blanket quest gate.",
+      "window": [
+        62,
+        75
+      ],
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.asgarnia": {
+      "notes": "Safes themselves do not require the Guild quests; the bag and stethoscope do. No false blanket quest gate.",
+      "window": [
+        76,
+        82
+      ],
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.kandarin": {
+      "notes": "Safes themselves do not require the Guild quests; the bag and stethoscope do. No false blanket quest gate.",
+      "window": [
+        83,
+        89
+      ],
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.rogues_castle": {
+      "notes": "",
+      "window": [
+        90,
+        94
+      ],
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.hereditas": {
+      "notes": "Breaking the Seal is a mandatory entry mystery named as an unlock goal; no unverified mystery-completion state is fabricated. Extra Agility shortcuts and higher-level safes are optional. Native heist completion is not separately detected.",
+      "window": [
+        95,
+        107
+      ],
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.asuran": {
+      "notes": "Core Thieving heist, not the old multiplayer Heist minigame. Optional 75/85/97 Agility routes are not imposed as universal entry requirements.",
+      "window": [
+        108,
+        120
+      ],
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.alt.marketeers": {
+      "notes": "Actual city access is partial Jack of Spades; completion conservatively covers it. Reclassified as a main bracket; original saved ID retained.",
+      "window": [
+        46,
+        49
+      ],
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.alt.ardougne_knights": {
+      "notes": " Reclassified as a main bracket; original saved ID retained.",
+      "window": [
+        55,
+        61
+      ],
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.alt.crux_eqal": {
+      "notes": "",
+      "window": [
+        83,
+        107
+      ],
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.alt.prifddinas": {
+      "notes": "Scaling clan family; not a claim that every clan is available at 91.",
+      "window": [
+        91,
+        119
+      ],
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "prayer.method.altars": {
+      "notes": "30 is recommendation timing, not a game Prayer requirement. Host Construction levels are not imposed on visitors.",
+      "window": [
+        30,
+        74
+      ],
+      "guide": {
+        "title": "Pay-to-play Prayer training",
+        "url": "https://runescape.wiki/w/Pay-to-play_Prayer_training",
+        "revision": 37177532,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871655
+      }
+    },
+    "prayer.method.cleansing": {
+      "notes": "Capped at 99; crystals are core training materials, not a temporary bonus applied to a different training method.",
+      "window": [
+        75,
+        99
+      ],
+      "guide": {
+        "title": "Pay-to-play Prayer training",
+        "url": "https://runescape.wiki/w/Pay-to-play_Prayer_training",
+        "revision": 37177532,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871655
+      }
+    },
+    "prayer.alt.sand": {
+      "notes": "",
+      "window": [
+        20,
+        49
+      ],
+      "guide": {
+        "title": "Pay-to-play Prayer training",
+        "url": "https://runescape.wiki/w/Pay-to-play_Prayer_training",
+        "revision": 37177532,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871655
+      }
+    },
+    "prayer.alt.ectofuntus": {
+      "notes": "The Restless Ghost only needs partial progress for the amulet; Ghosts Ahoy and Agility shortcuts are not universal requirements.",
+      "window": [
+        20,
+        74
+      ],
+      "guide": {
+        "title": "Pay-to-play Prayer training",
+        "url": "https://runescape.wiki/w/Pay-to-play_Prayer_training",
+        "revision": 37177532,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871655
+      }
+    },
+    "prayer.alt.fort_chapel": {
+      "notes": "",
+      "window": [
+        30,
+        99
+      ],
+      "guide": {
+        "title": "Pay-to-play Prayer training",
+        "url": "https://runescape.wiki/w/Pay-to-play_Prayer_training",
+        "revision": 37177532,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871655
+      }
+    },
+    "prayer.alt.statues": {
+      "notes": "",
+      "window": [
+        30,
+        99
+      ],
+      "guide": {
+        "title": "Pay-to-play Prayer training",
+        "url": "https://runescape.wiki/w/Pay-to-play_Prayer_training",
+        "revision": 37177532,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871655
+      }
+    },
+    "prayer.alt.nemi": {
+      "notes": "Capped daily exploration niche, not an unlimited repeatable method or combat recommendation.",
+      "window": [
+        30,
+        79
+      ],
+      "guide": {
+        "title": "Pay-to-play Prayer training",
+        "url": "https://runescape.wiki/w/Pay-to-play_Prayer_training",
+        "revision": 37177532,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871655
+      }
+    },
+    "summoning.method.dreadfowl": {
+      "notes": "Recipe progression, not combat familiar/tactic advice. Top steel-titan window supports continued charm conversion beyond 99.",
+      "window": [
+        4,
+        15
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.method.granite_crab": {
+      "notes": "Recipe progression, not combat familiar/tactic advice. Top steel-titan window supports continued charm conversion beyond 99.",
+      "window": [
+        16,
+        30
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.method.vampyre_bat": {
+      "notes": "Recipe progression, not combat familiar/tactic advice. Top steel-titan window supports continued charm conversion beyond 99.",
+      "window": [
+        31,
+        45
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.method.pyrelord": {
+      "notes": "Recipe progression, not combat familiar/tactic advice. Top steel-titan window supports continued charm conversion beyond 99.",
+      "window": [
+        46,
+        48
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.method.bloated_leech": {
+      "notes": "Recipe progression, not combat familiar/tactic advice. Top steel-titan window supports continued charm conversion beyond 99.",
+      "window": [
+        49,
+        60
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.method.smoke_devil": {
+      "notes": "Recipe progression, not combat familiar/tactic advice. Top steel-titan window supports continued charm conversion beyond 99.",
+      "window": [
+        61,
+        73
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.method.granite_lobster": {
+      "notes": "Recipe progression, not combat familiar/tactic advice. Top steel-titan window supports continued charm conversion beyond 99.",
+      "window": [
+        74,
+        82
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.method.spirit_dagannoth": {
+      "notes": "Recipe progression, not combat familiar/tactic advice. Top steel-titan window supports continued charm conversion beyond 99.",
+      "window": [
+        83,
+        95
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.method.pack_yak": {
+      "notes": "Recipe progression, not combat familiar/tactic advice. Top steel-titan window supports continued charm conversion beyond 99.",
+      "window": [
+        96,
+        98
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.method.steel_titan": {
+      "notes": "Recipe progression, not combat familiar/tactic advice. Top steel-titan window supports continued charm conversion beyond 99.",
+      "window": [
+        99,
+        120
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.alt.shrine": {
+      "notes": "Scaling recipe family and distinct charm-efficiency/outfit-currency niche. Spirit Weaver does not apply here; nearby bank unlock is optional.",
+      "window": [
+        20,
+        120
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.alt.terrorbird": {
+      "notes": "",
+      "window": [
+        52,
+        65
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.alt.barker_toad": {
+      "notes": "",
+      "window": [
+        66,
+        98
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.alt.spirit_jelly": {
+      "notes": "",
+      "window": [
+        55,
+        72
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.alt.obsidian_golem": {
+      "notes": "",
+      "window": [
+        73,
+        88
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.alt.geyser_titan": {
+      "notes": "Separate blue-charm endgame niche; not an obsolete low-tier method extended to 120.",
+      "window": [
+        89,
+        120
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.alt.amlodd": {
+      "notes": "Location/QoL alternative scales with all later recipes; no optional teleport crafting levels are imposed.",
+      "window": [
+        75,
+        120
+      ],
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "summoning.shard_exchange": {
+      "notes": "Not every pouch is exchangeable at its infusion level; the tip points to the shop rather than claiming universal access.",
+      "window": null,
+      "guide": {
+        "title": "Summoning training",
+        "url": "https://runescape.wiki/w/Summoning_training",
+        "revision": 37212679,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871656
+      }
+    },
+    "thieving.method.farmers": {
+      "window": [
+        10,
+        14
+      ],
+      "notes": "Early pickpocketing table progression. See early_thieving_correction for source and access evidence.",
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.ham_members": {
+      "window": [
+        15,
+        24
+      ],
+      "notes": "Early pickpocketing table progression. See early_thieving_correction for source and access evidence.",
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.warrior_women": {
+      "window": [
+        25,
+        35
+      ],
+      "notes": "Early pickpocketing table progression. See early_thieving_correction for source and access evidence.",
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.cave_goblins": {
+      "window": [
+        36,
+        37
+      ],
+      "notes": "Early pickpocketing table progression. See early_thieving_correction for source and access evidence.",
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.master_farmers": {
+      "window": [
+        38,
+        39
+      ],
+      "notes": "Early pickpocketing table progression. See early_thieving_correction for source and access evidence.",
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.guards": {
+      "window": [
+        40,
+        41
+      ],
+      "notes": "Early pickpocketing table progression. See early_thieving_correction for source and access evidence.",
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.druids": {
+      "window": [
+        42,
+        44
+      ],
+      "notes": "Early pickpocketing table progression. See early_thieving_correction for source and access evidence.",
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.brigands": {
+      "window": [
+        45,
+        45
+      ],
+      "notes": "Early pickpocketing table progression. See early_thieving_correction for source and access evidence.",
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.trainee_archaeologists": {
+      "window": [
+        50,
+        52
+      ],
+      "notes": "Early pickpocketing table progression. See early_thieving_correction for source and access evidence.",
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    },
+    "thieving.method.desert_bandits": {
+      "window": [
+        53,
+        54
+      ],
+      "notes": "Early pickpocketing table progression. See early_thieving_correction for source and access evidence.",
+      "guide": {
+        "title": "Thieving training",
+        "url": "https://runescape.wiki/w/Thieving_training",
+        "revision": 37211578,
+        "license": "CC BY-NC-SA 3.0",
+        "fetched_at": 1792871654
+      }
+    }
+  },
+  "excluded_or_deferred": {
+    "Dungeoneering and Slayer": "User explicitly excluded their tip files. No gameplay probe, engine change or delayed Slayer queue is installed. Requirements in those skills remain where they are real item-source requirements.",
+    "Silverhawk boots": "Excluded at the user's request because they are being removed. Boot/feather discovery records are evidence only; neither becomes a tip or nimble-outfit alias.",
+    "Temporary boosts": "No spirit gems, Summoning foci, incense, burial powders or other repeated consumable boost recommendations. Bones, sand, cleansing crystals and pouch ingredients are core training materials, not boosts applied to another method.",
+    "Minigame training": "No Skullball, Brimhaven arena, Pyramid Plunder or other minigame training cards. A durable outfit can still name a reward source. Current high-level Thieving heists are distinct from the older multiplayer Heist minigame.",
+    "Guaranteed quest rewards": "Trahaearn exoskeleton and Dragon Rider amulet are candidates for the following useful quest-unlock pass. Avoid standalone post-quest item tips that are immediately suppressed by the guaranteed reward they require.",
+    "Combat advice": "No targets to fight, combat abilities, protection-prayer choices or Slayer logistics tips. Familiar/Prayer equipment descriptions do not recommend combat tactics.",
+    "Unknown account state": "Do not invent reads for tool belt, house/Diango storage, active relics/totems or partial quest/mystery stages. Known ownership persists once observed. Unobserved pre-install storage and learned unlocks remain limitations."
+  },
+  "early_thieving_correction": {
+    "reviewed_on": "2026-10-24",
+    "guide": "https://runescape.wiki/w/Thieving_training",
+    "guide_revision": 37211578,
+    "new_tips": 10,
+    "notes": "Main pickpocketing brackets begin at 10. Existing marketeer/knight IDs retained as main brackets 46-49 and 55-61. Only men/women at level 1 omitted. Cave goblins require Death to the Dorgeshuun; choose accessible Campus trainee and quest-free brigands. H.A.M. men and women both currently require 15. Level 53 bandits are the desert camp variant, not Pollnivneach (55).",
+    "pages": {
+      "Farmer": {
+        "title": "Farmer",
+        "revision": 37169627,
+        "url": "https://runescape.wiki/w/Farmer"
+      },
+      "H.A.M. member": {
+        "title": "H.A.M. Member",
+        "revision": 36768475,
+        "url": "https://runescape.wiki/w/H.A.M._Member"
+      },
+      "Warrior woman": {
+        "title": "Warrior woman",
+        "revision": 37156859,
+        "url": "https://runescape.wiki/w/Warrior_woman"
+      },
+      "Cave goblin": {
+        "title": "Cave goblin",
+        "revision": 36769710,
+        "url": "https://runescape.wiki/w/Cave_goblin"
+      },
+      "Master Farmer": {
+        "title": "Master Farmer",
+        "revision": 37169574,
+        "url": "https://runescape.wiki/w/Master_Farmer"
+      },
+      "Guard": {
+        "title": "Guard",
+        "revision": 37197696,
+        "url": "https://runescape.wiki/w/Guard"
+      },
+      "Druid": {
+        "title": "Druid",
+        "revision": 37148032,
+        "url": "https://runescape.wiki/w/Druid"
+      },
+      "Brigand": {
+        "title": "Brigand",
+        "revision": 37156887,
+        "url": "https://runescape.wiki/w/Brigand"
+      },
+      "Fremennik citizen": {
+        "title": "Fremennik citizen",
+        "revision": 36277023,
+        "url": "https://runescape.wiki/w/Fremennik_citizen"
+      },
+      "Trainee archaeologist": {
+        "title": "Trainee archaeologist",
+        "revision": 37157446,
+        "url": "https://runescape.wiki/w/Trainee_archaeologist"
+      },
+      "Bandit (Pollnivneach)": {
+        "title": "Bandit (Pollnivneach)",
+        "revision": 37156903,
+        "url": "https://runescape.wiki/w/Bandit_(Pollnivneach)"
+      },
+      "Knight of Ardougne": {
+        "title": "Knight of Ardougne",
+        "revision": 37156902,
+        "url": "https://runescape.wiki/w/Knight_of_Ardougne"
+      },
+      "H.A.M. Member (female)": {
+        "title": "H.A.M. Member (female)",
+        "revision": 37156868,
+        "url": "https://runescape.wiki/w/H.A.M._Member_(female)"
+      },
+      "H.A.M. Member (male)": {
+        "title": "H.A.M. Member (male)",
+        "revision": 37156867,
+        "url": "https://runescape.wiki/w/H.A.M._Member_(male)"
+      },
+      "Cave goblin (Dorgesh-Kaan)": {
+        "title": "Cave goblin (Dorgesh-Kaan)",
+        "revision": 37156866,
+        "url": "https://runescape.wiki/w/Cave_goblin_(Dorgesh-Kaan)"
+      },
+      "Guard (Varrock)": {
+        "title": "Guard (Varrock)",
+        "revision": 37156879,
+        "url": "https://runescape.wiki/w/Guard_(Varrock)"
+      },
+      "Druid (Garden of Kharid)": {
+        "title": "Druid (Garden of Kharid)",
+        "revision": 37156884,
+        "url": "https://runescape.wiki/w/Druid_(Garden_of_Kharid)"
+      },
+      "Bandit (Kharidian Desert Bandit Camp)": {
+        "title": "Bandit (Kharidian Desert Bandit Camp)",
+        "revision": 37156901,
+        "url": "https://runescape.wiki/w/Bandit_(Kharidian_Desert_Bandit_Camp)"
+      },
+      "Dorgesh-Kaan": {
+        "title": "Dorgesh-Kaan",
+        "revision": 37156701,
+        "url": "https://runescape.wiki/w/Dorgesh-Kaan"
+      }
+    }
+  }
+}
