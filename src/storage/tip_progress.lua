@@ -1,10 +1,12 @@
--- per character memory of what happened to each tip: dismissed for good, or pinned for later.
+-- per character memory of what happened to each tip: temporarily dismissed, or pinned for later.
 --
 -- "already shown this session" is kept in memory only, so a tip the player clicked Later on
 -- can come back another day
 
 local skills = require("src/data/skills")
 local saved_table = require("src/storage/saved_table")
+local settings = require("src/storage/settings")
+local event_owner = require("src/game/event_owner")
 
 local tip_progress = {}
 
@@ -14,6 +16,8 @@ local VERSION = 1
 local current_character
 local progress
 local shown_this_session = {}
+local timer_owner, last_tick
+local checkpoint = 0
 -- things that want to know when pins or dismissals change (the ribbon window's pinned list)
 local listeners = {}
 
@@ -110,19 +114,46 @@ local function clean_history(saved)
     return unique
 end
 
+-- old boolean dismissals have no age, so start their new timer once on migration.
+local function clean_dismissals(saved, elapsed)
+    local result, migrated = {}, false
+    for tip_id, value in pairs(type(saved) == "table" and saved or {}) do
+        if type(tip_id) == "string" then
+            if value == true then
+                result[tip_id], migrated = elapsed, true
+            elseif type(value) == "number" and value >= 0 and value <= elapsed then
+                result[tip_id] = value
+            end
+        end
+    end
+    return result, migrated
+end
+
+local function elapsed_value(value)
+    return type(value) == "number" and value >= 0 and value < math.huge and value or 0
+end
+
 local function load_character(character)
     local saved = character and saved_table.load(KEY_PREFIX .. character, VERSION) or {}
 
+    local elapsed = elapsed_value(saved.dismiss_elapsed)
+    local dismissed, migrated = clean_dismissals(saved.dismissed, elapsed)
     current_character = character
     shown_this_session = {}
+    last_tick, checkpoint = nil, elapsed
     progress = {
         version = VERSION,
-        dismissed = clean_set(saved.dismissed),
+        dismissed = dismissed,
+        dismiss_elapsed = elapsed,
+        known = clean_set(saved.known),
         pinned = clean_set(saved.pinned),
         pending_level_ups = clean_pending(saved.pending_level_ups),
         recent_tips = clean_history(saved.recent_tips),
         queued_quests = clean_set(saved.queued_quests),
     }
+    if migrated and character then
+        saved_table.save(KEY_PREFIX .. character, progress)
+    end
 end
 
 -- switches to a character's saved progress. call again whenever the logged in character changes
@@ -131,6 +162,9 @@ function tip_progress.use_character(character)
         return
     end
 
+    if current_character and progress and progress.dismiss_elapsed ~= checkpoint then
+        saved_table.save(KEY_PREFIX .. current_character, progress)
+    end
     load_character(character)
     notify()
 end
@@ -145,8 +179,34 @@ local function ensure_loaded()
     return progress
 end
 
+-- additive version-1 field; older saves simply have no learned tips yet.
+function tip_progress.is_known(tip_id)
+    return ensure_loaded().known[tip_id] == true
+end
+
+function tip_progress.mark_known(tip_ids)
+    if not current_character then
+        return
+    end
+
+    local loaded, changed = ensure_loaded(), false
+    for _, tip_id in ipairs(tip_ids) do
+        if not loaded.known[tip_id] then
+            loaded.known[tip_id] = true
+            changed = true
+        end
+    end
+
+    if changed then
+        save()
+    end
+end
+
 function tip_progress.is_dismissed(tip_id)
-    return ensure_loaded().dismissed[tip_id] == true
+    local loaded = ensure_loaded()
+    local dismissed_at = loaded.dismissed[tip_id]
+    return dismissed_at ~= nil
+        and loaded.dismiss_elapsed - dismissed_at < settings.get("dismiss_hours") * 3600
 end
 
 function tip_progress.is_pinned(tip_id)
@@ -154,7 +214,10 @@ function tip_progress.is_pinned(tip_id)
 end
 
 function tip_progress.dismiss(tip_id)
-    ensure_loaded().dismissed[tip_id] = true
+    local loaded = ensure_loaded()
+    loaded.dismissed[tip_id] = loaded.dismiss_elapsed
+    -- the dismissal timer replaces the session-only block for this specific tip.
+    shown_this_session[tip_id] = nil
     progress.pinned[tip_id] = nil
     save()
 end
@@ -261,6 +324,49 @@ function tip_progress.reset_dismissed()
     ensure_loaded().dismissed = {}
     shown_this_session = {}
     save()
+end
+
+-- count only time for the current character while the plugin is running. checkpoint
+-- once a minute, and flush on character switch/stop; never write on every logic tick.
+function tip_progress.start()
+    if timer_owner then
+        return
+    end
+    timer_owner = event_owner.new("skilling_coach_dismiss_timer")
+    last_tick = nil
+    timer_owner.subscribe(Event.Logic, function(event)
+        local tick = event.logicTick
+        if type(tick) ~= "number" then
+            return
+        end
+        if last_tick and current_character then
+            local loaded = ensure_loaded()
+            loaded.dismiss_elapsed = loaded.dismiss_elapsed + math.max(0, tick - last_tick) / 50
+            if loaded.dismiss_elapsed - checkpoint >= 60 then
+                checkpoint = loaded.dismiss_elapsed
+                if next(loaded.dismissed) then
+                    for tip_id in pairs(loaded.dismissed) do
+                        if not tip_progress.is_dismissed(tip_id) then
+                            loaded.dismissed[tip_id] = nil
+                        end
+                    end
+                    saved_table.save(KEY_PREFIX .. current_character, loaded)
+                end
+            end
+        end
+        last_tick = tick
+    end)
+end
+
+function tip_progress.stop()
+    if timer_owner then
+        timer_owner.destroy()
+        timer_owner = nil
+    end
+    if current_character and progress then
+        saved_table.save(KEY_PREFIX .. current_character, progress)
+    end
+    last_tick = nil
 end
 
 return tip_progress

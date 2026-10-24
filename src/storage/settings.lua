@@ -64,6 +64,7 @@ end
 
 local DEFINITIONS = {
     tips_enabled = { default = true, valid = is_boolean },
+    dismiss_hours = { default = 3, valid = whole_number_between(0, 8) },
     cooldown_minutes = { default = 10, valid = whole_number_between(2, 60) },
     -- 0 means no limit
     session_cap = { default = 6, valid = whole_number_between(0, 50) },

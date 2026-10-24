@@ -190,7 +190,7 @@ return function(root)
         lu.assertEquals(#view.buttons, 2)
         lu.assertEquals(view.buttons[1].text, "Pinned tips")
         lu.assertEquals(view.buttons[2].text, "Recent tips")
-        lu.assertEquals(view.texts[1].text, "Skilling Coach")
+        lu.assertEquals(view.texts[1].text, "Skill Tips")
         lu.assertTrue(view.buttons[1].options.width > 0)
         lu.assertEquals(view.buttons[1].options.width, view.buttons[2].options.width)
         progress.mark_shown("mining.ore_box")
@@ -527,6 +527,60 @@ return function(root)
         fake.fire("Logic", {})
         lu.assertEquals(calls, 2)
         keybind.stop()
+    end
+
+    function suite:test_recent_tips_starts_top_left_and_remembers_moved_position()
+        local fake, app, _, coach = world(root)
+        coach.open_history()
+        local window = fake.windows[#fake.windows]
+        lu.assertEquals(window.root.x, 0)
+        lu.assertEquals(window.root.y, 0)
+        window.root:SetPos(40, 70)
+        window:Close()
+        coach.open_history()
+        local reopened = fake.windows[#fake.windows]
+        lu.assertAlmostEquals(reopened.root.x, 40, 1)
+        lu.assertAlmostEquals(reopened.root.y, 70, 1)
+        app.stop()
+    end
+
+    function suite:test_resource_icons_are_kept_in_pins_and_history()
+        local fake, app, progress, coach = world(root)
+        progress.mark_shown("mining.method.iron")
+        progress.pin("mining.method.iron")
+        local rows = fake.load("src/ui/recent_history").rows()
+        lu.assertEquals(rows[1].icon_item_id, 440)
+        coach.open()
+        local found = false
+        for _, sprite in ipairs(fake.sprites or {}) do
+            if sprite.object_id == 440 then
+                found = true
+            end
+        end
+        lu.assertTrue(found)
+        app.stop()
+    end
+
+    function suite:test_history_wraps_inside_the_native_scrollbar_viewport_after_resize()
+        local fake, app, progress, coach = world(root)
+        fake.window_content_inset = 44
+        progress.mark_shown("mining.ore_box")
+        coach.open_history()
+        local window = fake.windows[#fake.windows]
+        local body = fake.labels[#fake.labels]
+        lu.assertEquals(body.options.width, window.content.width - 26)
+        lu.assertTrue(body.x + body.width <= window.content.width - 22)
+        local narrow_height = body.height
+
+        window.root:SetSize(500, 400)
+        fake.fire("Logic", { logicTick = 25 })
+        fake.fire("Logic", { logicTick = 50 })
+        window = fake.windows[#fake.windows]
+        body = fake.labels[#fake.labels]
+        lu.assertEquals(body.options.width, window.content.width - 26)
+        lu.assertTrue(body.x + body.width <= window.content.width - 22)
+        lu.assertTrue(body.height <= narrow_height)
+        app.stop()
     end
 
     return suite

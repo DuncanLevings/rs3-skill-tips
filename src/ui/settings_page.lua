@@ -46,7 +46,7 @@ local function populate(component, options)
         return { text = text, value = key, selected = settings.get(key) }
     end
 
-    current:AddText("Skilling Coach")
+    current:AddText("Skill Tips")
     checks({ choice("tips_enabled", "Show tips"), choice("animate_card", "Animate popup") })
     current:AddText("Tip categories")
     checks({
@@ -88,6 +88,7 @@ local function populate(component, options)
     slider("cooldown_minutes", "Time between tips", 2, 60, " min")
     slider("session_cap", "Tips per session (0 = unlimited)", 0, 50)
     slider("combat_quiet_seconds", "Quiet time after combat", 0, 600, " sec")
+    slider("dismiss_hours", "Hide dismissed tips for", 0, 8, " hr of game time")
     current:AddText("Muted skills")
     local choices = {}
     local muted = settings.get("muted_skills")
@@ -133,9 +134,12 @@ local function populate(component, options)
             coach_window.open_history()
         end
     end)
-    current:AddText("Dismissed tips stay hidden permanently.")
+    current:AddText(
+        "Dismissal timers pause while the plugin is stopped. 0 adds no dismissal delay."
+    )
     if options.reset_tips then
         current:AddText("Development testing")
+        current:AddText("Time between tips: 0 min (development override).")
         current:AddSimpleButton("Reset dismissals (development)", function()
             if alive() then
                 options.reset_tips()

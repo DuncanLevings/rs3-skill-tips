@@ -57,7 +57,11 @@ return function(root)
     function suite:test_training_alone_does_not_show_the_ore_box_tip()
         local world = setup(root)
         world.engine.on_training("MINING")
-        lu.assertEquals(#world.shown, 0)
+
+        -- a mining method tip may show, the ore box waits for a full backpack
+        for _, card in ipairs(world.shown) do
+            lu.assertNotEquals(card.tip.id, "mining.ore_box")
+        end
     end
 
     function suite:test_mining_without_an_ore_box_shows_the_ore_box_tip()
@@ -175,6 +179,25 @@ return function(root)
         lu.assertEquals(engine.stage({ level_range = { 70, 80 } }), "late")
         lu.assertEquals(engine.stage({ requirements = { skills = { SMITHING = 40 } } }), "mid")
         lu.assertEquals(engine.stage({}), "early")
+    end
+
+    function suite:test_dismissed_tip_reappears_only_after_its_timer()
+        local world = setup(root)
+        world.tip_progress.start()
+        world.fake.fire("Logic", { logicTick = 1 })
+        world.engine.on_backpack_full("MINING")
+        lu.assertEquals(#world.shown, 1)
+        world.close_card("on_dismiss")
+        world.advance(2 * 3600)
+        world.fake.fire("Logic", { logicTick = 1 + 2 * 3600 * 50 })
+        world.engine.on_backpack_full("MINING")
+        lu.assertEquals(#world.shown, 1)
+        world.advance(3600)
+        world.fake.fire("Logic", { logicTick = 1 + 3 * 3600 * 50 })
+        world.engine.on_backpack_full("MINING")
+        lu.assertEquals(#world.shown, 2)
+        lu.assertEquals(world.shown[2].tip.id, "mining.ore_box")
+        world.tip_progress.stop()
     end
 
     return suite

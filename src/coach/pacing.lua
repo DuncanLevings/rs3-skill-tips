@@ -1,5 +1,6 @@
 -- pacing is session state, reset when the app changes character or restarts.
 local settings = require("src/storage/settings")
+local development = require("src/development")
 local pacing = {}
 
 function pacing.new()
@@ -15,7 +16,12 @@ function pacing.new()
             return false
         end
 
-        if last_shown and now - last_shown < settings.get("cooldown_minutes") * 60 then
+        -- bypass only the between-tip delay; keep combat, session and eligibility guards.
+        if
+            not development.ENABLED
+            and last_shown
+            and now - last_shown < settings.get("cooldown_minutes") * 60
+        then
             return false
         end
 

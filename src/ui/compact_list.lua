@@ -5,6 +5,7 @@ local layout = require("src/ui/list_layout")
 local event_owner = require("src/game/event_owner")
 local action_icon = require("src/ui/action_icon")
 local internals = require("src/ui/prettyui_internals")
+local item_icon = require("src/ui/item_icon")
 local compact_list = {}
 
 function compact_list.new(options)
@@ -12,6 +13,7 @@ function compact_list.new(options)
     local place = {
         key = options.key,
         default_x = options.default_x,
+        default_y = options.default_y,
         remember_size = options.resizable,
         height = options.default_height,
     }
@@ -85,12 +87,7 @@ function compact_list.new(options)
 
         local rows, signature = rows_and_signature()
         for _, row in ipairs(rows) do
-            local available, item = pcall(function()
-                return row.icon_item and config.Obj[row.icon_item]
-            end)
-            if available and item then
-                row.icon_id = item.id
-            end
+            row.icon_id = item_icon.id(row)
         end
 
         local measured = layout.measure(rows, area, options)
@@ -146,10 +143,21 @@ function compact_list.new(options)
         -- without the content layer (prettyui changed) theres nowhere to put rows, so dont
         -- leave an empty window behind
         if not content then
-            log("Skilling Coach: couldn't open " .. options.title .. ", window layout changed")
+            log("Skill Tips: couldn't open " .. options.title .. ", window layout changed")
             controller.close(true)
             return false
         end
+
+        -- raw text is measured before overflow can narrow the native content layer.
+        -- history reserves the scrollbar width up front so later clipping cannot cut words.
+        measured = layout.measure(rows, area, {
+            min_width = rect.width,
+            max_width = rect.width,
+            content_width = math.max(
+                1,
+                content.width - layout.INSET * 2 - (options.text_right_padding or 0)
+            ),
+        })
 
         local y = layout.INSET
         for index, row in ipairs(rows) do

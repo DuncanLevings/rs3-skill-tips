@@ -26,6 +26,7 @@ local pinned = compact_list.new({
                     id = tip.id,
                     title = tip.title,
                     icon_item = tip.icon_item,
+                    icon_item_id = tip.icon_item_id,
                     icon = "unpin",
                     subtle = true,
                     tooltip = "Unpin " .. tip.title,
@@ -46,9 +47,11 @@ local recent = compact_list.new({
     min_width = 240,
     max_width = 360,
     default_x = 0,
+    default_y = 0,
     resizable = true,
     default_width = 360,
     default_height = 400,
+    text_right_padding = 18,
     dividers = true,
     empty = "No tips shown yet.",
     rows = history.rows,
@@ -80,7 +83,7 @@ function coach_window.start()
             heightAnchor = 1,
         })
         local current = ribbon
-        ribbon:AddTitle({ text = "Skilling Coach", height = 24, marginTop = 0, marginBottom = 8 })
+        ribbon:AddTitle({ text = "Skill Tips", height = 24, marginTop = 0, marginBottom = 8 })
         local button_width = math.max(1, math.min(240, (event.component.width or 288) - 48))
         ribbon:AddText({
             text = "Your tips and recent discoveries.",

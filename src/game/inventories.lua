@@ -57,6 +57,18 @@ function inventories.is_backpack(proxy)
     return ok and matches == true
 end
 
+-- only these inventories can teach item ownership; ignore unrelated transient containers.
+function inventories.is_ownership_inventory(proxy)
+    local ok, matches = pcall(function()
+        local number = proxy.id
+        return number == config.Inv.INV.id
+            or number == config.Inv.WORN.id
+            or number == config.Inv.BANK.id
+    end)
+
+    return ok and matches == true
+end
+
 function inventories.bank_is_open()
     return find("BANK") ~= nil
 end

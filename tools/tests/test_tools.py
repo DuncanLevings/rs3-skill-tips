@@ -52,6 +52,13 @@ class ContentTests(unittest.TestCase):
         path.write_text(text, encoding="utf-8")
         return path
 
+    def test_resource_icons_need_id_evidence(self):
+        self.write("src/tips/skills/mining.lua", "return {" + TIP.replace('icon_item = "BOX"', 'icon_item_id = 440') + "}")
+        report = check(self.root, self.configs)
+        self.assertTrue(any("resource icon evidence" in error for error in report["errors"]))
+        self.write("tools/resource_icons.json", json.dumps({"version": 1, "items": {"440": {"name": "Iron ore"}}}))
+        self.assertFalse(check(self.root, self.configs)["errors"])
+
     def test_real_lua_schema_checks_complete_tip(self):
         report = check(self.root, self.configs)
         self.assertEqual(report["errors"], [])
@@ -96,6 +103,22 @@ class ContentTests(unittest.TestCase):
         self.write("src/tips/skills/mining.lua", "return {" + tip + "}")
         self.configs["quests"] = {"REAL_QUEST": {"name": "A Quest"}, "OLD_QUEST": {"name": "A Quest", "deprecated": True}}
         self.assertTrue(any("duplicate configs" in problem for problem in check(self.root, self.configs)["warnings"]))
+
+    def test_duplicate_quest_names_are_settled_by_the_deprecated_flag(self):
+        tip = TIP.replace('known_when = { { type = "owns_any", items = { "BOX" } } }',
+                          'known_when = { { type = "quest_done", quest = "REAL_QUEST" } }')
+        self.write("src/tips/skills/mining.lua", "return {" + tip + "}")
+        path = self.write("probe.txt", """[sc-probe] quest 6 | OLD_QUEST | A Quest | false | false | true
+[sc-probe] quest 257 | REAL_QUEST | A Quest | true | true | false
+""")
+        imported = import_probe(path)
+        self.assertEqual(imported["quests"]["OLD_QUEST"]["deprecated"], True)
+        self.configs["quests"] = imported["quests"]
+        self.assertFalse(any("duplicate configs" in problem for problem in check(self.root, self.configs)["warnings"]))
+
+        # pointing the tip at the dead one is caught outright
+        self.write("src/tips/skills/mining.lua", "return {" + tip.replace("REAL_QUEST", "OLD_QUEST") + "}")
+        self.assertTrue(any("deprecated" in problem for problem in check(self.root, self.configs)["errors"]))
 
     def test_missing_varbit_is_checked(self):
         tip = TIP.replace('known_when = { { type = "owns_any", items = { "BOX" } } }',
@@ -244,7 +267,7 @@ class NetworkTests(unittest.TestCase):
             WikiClient(self.cache).request(action="bucket", query="test")
             WikiClient(self.cache, offline=True).request(action="bucket", query="test")
             self.assertEqual(request.call_count, 1)
-            self.assertIn("SkillingCoachOfflineTools", request.call_args.args[0].get_header("User-agent"))
+            self.assertIn("SkillTipsOfflineTools", request.call_args.args[0].get_header("User-agent"))
         with patch("skilling_tools.wiki.urlopen") as request:
             with self.assertRaises(ToolError):
                 WikiClient(self.cache, offline=True).request(action="bucket", query="missing")

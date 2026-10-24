@@ -1,0 +1,225 @@
+{
+  "version": 1,
+  "items": {
+    "566": {
+      "name": "Soul rune",
+      "source": "https://runescape.wiki/w/Soul_rune",
+      "verified_on": "2026-10-23"
+    },
+    "13435": {
+      "name": "Raw crayfish",
+      "source": "https://runescape.wiki/w/Raw_crayfish",
+      "verified_on": "2026-10-23"
+    },
+    "335": {
+      "name": "Raw trout",
+      "source": "https://runescape.wiki/w/Raw_trout",
+      "verified_on": "2026-10-23"
+    },
+    "11332": {
+      "name": "Leaping sturgeon",
+      "source": "https://runescape.wiki/w/Leaping_sturgeon",
+      "verified_on": "2026-10-23"
+    },
+    "40291": {
+      "name": "Raw beltfish",
+      "source": "https://runescape.wiki/w/Raw_beltfish",
+      "verified_on": "2026-10-23"
+    },
+    "52321": {
+      "name": "Fungal algae",
+      "source": "https://runescape.wiki/w/Fungal_algae",
+      "verified_on": "2026-10-23"
+    },
+    "35721": {
+      "name": "Small crystal urchin",
+      "source": "https://runescape.wiki/w/Small_crystal_urchin",
+      "verified_on": "2026-10-23"
+    },
+    "42249": {
+      "name": "Raw sailfish",
+      "source": "https://runescape.wiki/w/Raw_sailfish",
+      "verified_on": "2026-10-23"
+    },
+    "55302": {
+      "name": "Raw ghostly sole",
+      "source": "https://runescape.wiki/w/Raw_ghostly_sole",
+      "verified_on": "2026-10-23"
+    },
+    "42241": {
+      "name": "Magnetic minnow",
+      "source": "https://runescape.wiki/w/Magnetic_minnow",
+      "verified_on": "2026-10-23"
+    },
+    "37762": {
+      "name": "Raw tarpon",
+      "source": "https://runescape.wiki/w/Raw_tarpon",
+      "verified_on": "2026-10-23"
+    },
+    "37768": {
+      "name": "Raw wobbegong",
+      "source": "https://runescape.wiki/w/Raw_wobbegong",
+      "verified_on": "2026-10-23"
+    },
+    "436": {
+      "name": "Copper ore",
+      "source": "https://runescape.wiki/w/Copper_ore",
+      "verified_on": "2026-10-23"
+    },
+    "440": {
+      "name": "Iron ore",
+      "source": "https://runescape.wiki/w/Iron_ore",
+      "verified_on": "2026-10-23"
+    },
+    "453": {
+      "name": "Coal",
+      "source": "https://runescape.wiki/w/Coal",
+      "verified_on": "2026-10-23"
+    },
+    "447": {
+      "name": "Mithril ore",
+      "source": "https://runescape.wiki/w/Mithril_ore",
+      "verified_on": "2026-10-23"
+    },
+    "449": {
+      "name": "Adamantite ore",
+      "source": "https://runescape.wiki/w/Adamantite_ore",
+      "verified_on": "2026-10-23"
+    },
+    "451": {
+      "name": "Runite ore",
+      "source": "https://runescape.wiki/w/Runite_ore",
+      "verified_on": "2026-10-23"
+    },
+    "44822": {
+      "name": "Orichalcite ore",
+      "source": "https://runescape.wiki/w/Orichalcite_ore",
+      "verified_on": "2026-10-23"
+    },
+    "44826": {
+      "name": "Necrite ore",
+      "source": "https://runescape.wiki/w/Necrite_ore",
+      "verified_on": "2026-10-23"
+    },
+    "21778": {
+      "name": "Banite ore",
+      "source": "https://runescape.wiki/w/Banite_ore",
+      "verified_on": "2026-10-23"
+    },
+    "32262": {
+      "name": "Corrupted ore",
+      "source": "https://runescape.wiki/w/Corrupted_ore",
+      "verified_on": "2026-10-23"
+    },
+    "44830": {
+      "name": "Light animica",
+      "source": "https://runescape.wiki/w/Light_animica",
+      "verified_on": "2026-10-23"
+    },
+    "37773": {
+      "name": "Alaea sea salt",
+      "source": "https://runescape.wiki/w/Alaea_sea_salt",
+      "verified_on": "2026-10-23"
+    },
+    "57193": {
+      "name": "Promethium ore",
+      "source": "https://runescape.wiki/w/Promethium_ore",
+      "verified_on": "2026-10-23"
+    },
+    "13727": {
+      "name": "Stardust",
+      "source": "https://runescape.wiki/w/Stardust",
+      "verified_on": "2026-10-23"
+    },
+    "9632": {
+      "name": "Daeyalt ore",
+      "source": "https://runescape.wiki/w/Daeyalt_ore",
+      "verified_on": "2026-10-23"
+    },
+    "6975": {
+      "name": "Sandstone (5kg)",
+      "source": "https://runescape.wiki/w/Sandstone_%285kg%29",
+      "verified_on": "2026-10-23"
+    },
+    "35442": {
+      "name": "Crystal fragment",
+      "source": "https://runescape.wiki/w/Crystal_fragment",
+      "verified_on": "2026-10-23"
+    },
+    "1511": {
+      "name": "Logs",
+      "source": "https://runescape.wiki/w/Logs",
+      "verified_on": "2026-10-23"
+    },
+    "1521": {
+      "name": "Oak logs",
+      "source": "https://runescape.wiki/w/Oak_logs",
+      "verified_on": "2026-10-23"
+    },
+    "1519": {
+      "name": "Willow logs",
+      "source": "https://runescape.wiki/w/Willow_logs",
+      "verified_on": "2026-10-23"
+    },
+    "6333": {
+      "name": "Teak logs",
+      "source": "https://runescape.wiki/w/Teak_logs",
+      "verified_on": "2026-10-23"
+    },
+    "1517": {
+      "name": "Maple logs",
+      "source": "https://runescape.wiki/w/Maple_logs",
+      "verified_on": "2026-10-23"
+    },
+    "10810": {
+      "name": "Arctic pine logs",
+      "source": "https://runescape.wiki/w/Arctic_pine_logs",
+      "verified_on": "2026-10-23"
+    },
+    "12581": {
+      "name": "Eucalyptus logs",
+      "source": "https://runescape.wiki/w/Eucalyptus_logs",
+      "verified_on": "2026-10-23"
+    },
+    "6332": {
+      "name": "Mahogany logs",
+      "source": "https://runescape.wiki/w/Mahogany_logs",
+      "verified_on": "2026-10-23"
+    },
+    "32270": {
+      "name": "Crystal tree blossom",
+      "source": "https://runescape.wiki/w/Crystal_tree_blossom",
+      "verified_on": "2026-10-23"
+    },
+    "58250": {
+      "name": "Eternal magic logs",
+      "source": "https://runescape.wiki/w/Eternal_magic_logs",
+      "verified_on": "2026-10-23"
+    },
+    "40285": {
+      "name": "Acadia logs",
+      "source": "https://runescape.wiki/w/Acadia_logs",
+      "verified_on": "2026-10-23"
+    },
+    "29556": {
+      "name": "Elder logs",
+      "source": "https://runescape.wiki/w/Elder_logs",
+      "verified_on": "2026-10-23"
+    },
+    "37771": {
+      "name": "Golden bamboo",
+      "source": "https://runescape.wiki/w/Golden_bamboo",
+      "verified_on": "2026-10-23"
+    },
+    "775": {
+      "name": "Cooking gauntlets",
+      "source": "https://runescape.wiki/w/Cooking_gauntlets",
+      "verified_on": "2026-10-23"
+    },
+    "7944": {
+      "name": "Raw monkfish",
+      "source": "https://runescape.wiki/w/Raw_monkfish",
+      "verified_on": "2026-10-23"
+    }
+  }
+}

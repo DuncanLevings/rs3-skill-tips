@@ -15,6 +15,7 @@ local tip_progress = require("src/storage/tip_progress")
 local owned_items = require("src/storage/owned_items")
 local catalogue = require("src/tips/catalogue")
 local engine = require("src/coach/engine")
+local item_knowledge = require("src/coach/item_knowledge")
 local tip_card = require("src/ui/tip_card")
 local coach_window = require("src/ui/coach_window")
 local keybind = require("src/ui/keybind")
@@ -53,7 +54,8 @@ local function report_ore_box(context)
         return
     end
 
-    log("Skilling Coach [ore-box " .. context .. "]: " .. table.concat({
+    log("Skill Tips [ore-box " .. context .. "]: " .. table.concat({
+        "known=" .. tostring(tip_progress.is_known(tip.id)),
         "dismissed=" .. tostring(tip_progress.is_dismissed(tip.id)),
         "pinned=" .. tostring(tip_progress.is_pinned(tip.id)),
         "seen=" .. tostring(tip_progress.was_shown(tip.id)),
@@ -76,7 +78,10 @@ local function update_character()
     tip_progress.use_character(character)
     owned_items.use_character(character)
     start_engine()
+    -- carry forward evidence from the previous bank snapshot before replacing it.
+    item_knowledge.observe(player_state)
     inventories.refresh_bank()
+    item_knowledge.observe(player_state)
 end
 
 local function reset_tips()
@@ -92,12 +97,12 @@ function app.start()
 
     assert(
         prettyui and prettyui.SimpleView,
-        "Skilling Coach needs PrettyUI, get it from the Plugin Hub"
+        "Skill Tips needs PrettyUI, get it from the Plugin Hub"
     )
 
     catalogue.load()
     clock.start()
-    inventories.start()
+    tip_progress.start()
 
     start_engine()
 
@@ -132,6 +137,8 @@ function app.start()
     })
 
     update_character()
+    inventories.start()
+    item_knowledge.start({ before_observe = update_character, state = player_state })
     report_ore_box("startup")
     character_events = event_owner.new(CHARACTER_SUBSCRIPTION)
     character_events.subscribe(Event.ServerLogic, update_character)
@@ -143,7 +150,7 @@ function app.start()
 
     started = true
 
-    log("Skilling Coach started.")
+    log("Skill Tips started.")
 end
 
 function app.stop()
@@ -159,15 +166,17 @@ function app.stop()
     character_events.destroy()
     character_events = nil
     activity_watch.stop()
+    item_knowledge.stop()
     engine.stop()
     tip_card.destroy()
     inventories.stop()
+    tip_progress.stop()
     clock.stop()
     current_character = nil
     tip_progress.use_character(nil)
     owned_items.use_character(nil)
 
-    log("Skilling Coach stopped.")
+    log("Skill Tips stopped.")
 end
 
 return app

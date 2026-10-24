@@ -5,6 +5,7 @@ local theme = require("src/ui/theme")
 local card_drag = require("src/ui/card_drag")
 local internals = require("src/ui/prettyui_internals")
 
+local item_icon = require("src/ui/item_icon")
 local card_header = {}
 
 local PADDING = 12
@@ -38,18 +39,15 @@ end
 
 -- returns where the title text starts, after the icon if there is one
 local function draw_icon(window, tip)
-    local ok, item = pcall(function()
-        return tip.icon_item and config.Obj[tip.icon_item]
-    end)
-
-    if not ok or not item then
+    local item_id = item_icon.id(tip)
+    if not item_id then
         return PADDING
     end
 
     local icon = ui.Sprite.new(window.root)
     icon:SetPos(PADDING, PADDING)
     icon:SetSize(ICON_SIZE, ICON_SIZE)
-    icon:SetAssociatedObject(item.id)
+    icon:SetAssociatedObject(item_id)
     icon.clickthrough = true
 
     return PADDING + ICON_SIZE + GAP

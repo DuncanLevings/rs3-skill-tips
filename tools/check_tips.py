@@ -40,6 +40,8 @@ def coverage(entries, maximum):
 def check(root, configs, schema_only=False, maximum=120):
     entries, errors = TipReader(root).read()
     warnings, seen = [], set()
+    icon_path = Path(root) / "tools/resource_icons.json"
+    icon_items = json.loads(icon_path.read_text(encoding="utf-8")).get("items", {}) if icon_path.exists() else {}
     quest_names = defaultdict(list)
     for name, record in configs.get("quests", {}).items():
         if record.get("name"):
@@ -49,6 +51,9 @@ def check(root, configs, schema_only=False, maximum=120):
     for entry in entries:
         tip = entry["tip"]
         label = f"{entry['file']}:{tip['id']}"
+        if tip.get("icon_item_id") and not schema_only:
+            if str(tip["icon_item_id"]) not in icon_items:
+                errors.append(f"{label}: icon_item_id has no resource icon evidence")
         if tip["id"] in seen:
             errors.append(f"{label}: duplicate tip id")
         seen.add(tip["id"])
@@ -88,8 +93,14 @@ def check(root, configs, schema_only=False, maximum=120):
                 if record.get("deprecated"):
                     errors.append(f"{label}: {group} config {name} is marked deprecated")
                 if group == "quests" and len(quest_names.get(record.get("name"), [])) > 1:
-                    choices = ", ".join(sorted(quest_names[record["name"]]))
-                    warnings.append(f"{label}: quest display name {record['name']!r} has duplicate configs ({choices}); verify the live config")
+                    # settled when this one is confirmed live and every other same-name config is
+                    # confirmed deprecated (the probe's quest dump records that)
+                    others = [other for other in quest_names[record["name"]] if other != name]
+                    settled = record.get("deprecated") is False and all(
+                        configs["quests"][other].get("deprecated") is True for other in others)
+                    if not settled:
+                        choices = ", ".join(sorted(quest_names[record["name"]]))
+                        warnings.append(f"{label}: quest display name {record['name']!r} has duplicate configs ({choices}); run the probe's quest dump to see which is deprecated")
     if schema_only:
         warnings.append("Schema-only run: client config names/categories were not verified")
     return {"version": 1, "checked_tips": len(entries), "errors": errors,

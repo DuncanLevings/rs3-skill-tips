@@ -9,24 +9,35 @@ local client = {}
 -- Event.<Name>.Subscribe/Unsubscribe that remember the handlers per event
 local function create_events()
     local handlers = {}
+    local order = {}
     local events = {}
 
     setmetatable(events, {
         __index = function(_, event_name)
             handlers[event_name] = handlers[event_name] or {}
+            order[event_name] = order[event_name] or {}
 
             return {
                 Subscribe = function(reference, handler)
+                    if not handlers[event_name][reference] then
+                        order[event_name][#order[event_name] + 1] = reference
+                    end
                     handlers[event_name][reference] = handler
                 end,
                 Unsubscribe = function(reference)
                     handlers[event_name][reference] = nil
+                    for index, name in ipairs(order[event_name]) do
+                        if name == reference then
+                            table.remove(order[event_name], index)
+                            break
+                        end
+                    end
                 end,
             }
         end,
     })
 
-    return events, handlers
+    return events, handlers, order
 end
 
 local function create_persistent_db(context)
@@ -201,7 +212,8 @@ local function create_prettyui(context)
             self.root:SetSize(width, height)
         end
 
-        window.content = create_component(options.width, options.height)
+        window.content =
+            create_component(options.width - (context.window_content_inset or 0), options.height)
         function window:SetContentHeight(height)
             self.contentHeight = height
         end
@@ -369,7 +381,7 @@ local function create_config(context)
 end
 
 function client.new(root)
-    local events, handlers = create_events()
+    local events, handlers, event_order = create_events()
     local context = {
         keys = {},
         checkboxes = {},
@@ -532,7 +544,12 @@ function client.new(root)
 
     -- calls every handler subscribed to an event, like the client would
     function context.fire(event_name, payload)
-        for _, handler in pairs(handlers[event_name] or {}) do
+        -- native events run in subscription order; snapshot callbacks before dispatch.
+        local callbacks = {}
+        for _, name in ipairs(event_order[event_name] or {}) do
+            callbacks[#callbacks + 1] = handlers[event_name][name]
+        end
+        for _, handler in ipairs(callbacks) do
             handler(payload)
         end
     end

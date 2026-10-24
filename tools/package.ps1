@@ -29,7 +29,7 @@ $files += Get-ChildItem -Recurse -File (Join-Path $root "src")
 
 $dist = Join-Path $root "dist"
 New-Item -ItemType Directory -Force $dist | Out-Null
-$zip = Join-Path $dist ("skilling-coach-" + $version + ".zip")
+$zip = Join-Path $dist ("skill-tips-" + $version + ".zip")
 
 if (Test-Path $zip) {
     Remove-Item -Force $zip

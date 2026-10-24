@@ -9,6 +9,10 @@ local catalogue = {}
 
 local TIP_FILES = {
     "src/tips/skills/mining",
+    "src/tips/skills/woodcutting",
+    "src/tips/skills/fishing",
+    "src/tips/shared",
+    "src/tips/quests",
 }
 
 local loaded = false
@@ -30,7 +34,7 @@ local function add_tip(tip, file)
 
     if #problems > 0 then
         local label = type(tip) == "table" and tostring(tip.id) or "?"
-        log("Skilling Coach: skipped tip " .. label .. " in " .. file .. ": " .. problems[1])
+        log("Skill Tips: skipped tip " .. label .. " in " .. file .. ": " .. problems[1])
         return
     end
 

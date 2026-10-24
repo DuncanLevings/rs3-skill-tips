@@ -118,9 +118,23 @@ return function(root)
     function suite:test_quest_index_is_deduplicated_across_required_and_explicit_skills()
         local w = world(root)
         local catalogue = w.fake.load("src/tips/catalogue")
-        lu.assertEquals(#catalogue.for_skill("MINING"), 1)
-        lu.assertEquals(#catalogue.for_skill("SMITHING"), 1)
-        lu.assertEquals(#catalogue.quest_tips(), 1)
+        -- the real mining tips are in the catalogue too, so count only the quest tip
+        local function quest_entries(skill)
+            local count = 0
+            for _, tip in ipairs(catalogue.for_skill(skill)) do
+                if tip.id == "test.quest" then
+                    count = count + 1
+                end
+            end
+            return count
+        end
+
+        lu.assertEquals(quest_entries("MINING"), 1)
+        lu.assertEquals(quest_entries("SMITHING"), 1)
+        lu.assertEquals(
+            #catalogue.quest_tips(),
+            #client.new(root).load("src/tips/catalogue").quest_tips() + 1
+        )
         w.engine.on_quiet()
         w.shown[1].handlers.on_closed()
         w.advance(600)
@@ -154,6 +168,7 @@ return function(root)
         w.engine.stop()
         local app = w.fake.load("src/app")
         app.start()
+        w.fake.fire("Logic", { logicTick = 0 })
         w.fake.fire(
             "MiniMenuEntrySelected",
             { entry = { verbText = "Rub", componentData = { objConfig = {} } } }
@@ -178,6 +193,9 @@ return function(root)
         w.engine.stop()
         local app = w.fake.load("src/app")
         app.start()
+        w.fake.fire("Logic", { logicTick = 0 })
+        -- the real woodcutting tips would take the card slot, this is only about the quest queue
+        w.fake.load("src/storage/settings").set("muted_skills", { WOODCUTTING = true })
         w.fake.fire(
             "SkillTransmit",
             { skill = 14, oldXP = 100, newXP = 200, oldGameplayLevel = 49, newGameplayLevel = 50 }
@@ -226,6 +244,7 @@ return function(root)
         w.engine.stop()
         local app = w.fake.load("src/app")
         app.start()
+        w.fake.fire("Logic", { logicTick = 0 })
         w.fake.fire(
             "SkillTransmit",
             { skill = 0, oldXP = 100, newXP = 200, oldGameplayLevel = 39, newGameplayLevel = 40 }
@@ -271,6 +290,7 @@ return function(root)
         reload.quests.TEST_QUEST = { hasFinishedQuest = true }
         local app = reload.load("src/app")
         app.start()
+        reload.fire("Logic", { logicTick = 0 })
         lu.assertTrue(reload.load("src/storage/tip_progress").queued_quests()["test.quest"])
         reload.load("src/coach/engine").on_quiet()
         lu.assertEquals(#reload.windows, 0)

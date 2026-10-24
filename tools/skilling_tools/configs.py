@@ -27,10 +27,14 @@ def import_probe(path):
     data = {"version": 1, "source": Path(path).name, **{key: {} for key in GROUPS}}
     text = Path(path).read_text(encoding="utf-8-sig", errors="replace")
     for line in text.splitlines():
-        match = re.search(r"\[sc-probe\]\s+quest\s+(\d+)\s*\|\s*([A-Z][A-Z0-9_]*)\s*\|\s*(.*?)\s*\|\s*(?:true|false)\s*\|", line)
+        # newer probes add a deprecated column, which settles quests that share a name
+        match = re.search(r"\[sc-probe\]\s+quest\s+(\d+)\s*\|\s*([A-Z][A-Z0-9_]*)\s*\|\s*(.*?)\s*\|"
+                          r"\s*(?:true|false)\s*\|\s*(?:true|false)(?:\s*\|\s*(true|false))?", line)
         if match:
-            number, name, display = match.groups()
+            number, name, display, deprecated = match.groups()
             data["quests"][name] = {"id": int(number), "name": display}
+            if deprecated is not None:
+                data["quests"][name]["deprecated"] = deprecated == "true"
         match = re.search(r"\[sc-probe\]\s+item\s+(.+?)\s*\|\s*(\d+)\s*\|\s*([A-Z][A-Z0-9_]*)\s*\|\s*(-?\d+)", line)
         if match:
             display, number, name, category = match.groups()

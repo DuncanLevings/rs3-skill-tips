@@ -89,6 +89,7 @@ return function(root)
     end
 
     function suite:test_catalogue_skips_bad_and_duplicate_tips()
+        local baseline = #client.new(root).load("src/tips/catalogue").all()
         local fake = client.new(root)
         local bad = valid_tip()
         bad.id = "mining.ore_box"
@@ -99,7 +100,8 @@ return function(root)
         local catalogue = fake.load("src/tips/catalogue")
         catalogue.load()
 
-        lu.assertEquals(#catalogue.all(), #real - 1)
+        -- the duplicate is skipped, everything else still loads
+        lu.assertEquals(#catalogue.all(), baseline)
         lu.assertStrContains(fake.logs[1], "already used")
     end
 
@@ -110,6 +112,50 @@ return function(root)
 
         lu.assertTrue(items.MINING_OREBOX_BRONZE)
         lu.assertTrue(categories[4448])
+    end
+
+    function suite:test_progression_gate_fields_are_validated()
+        local tip = valid_tip()
+        tip.min_training_level = 80
+        tip.require_all_levels = true
+        lu.assertEquals(schema.problems(tip), {})
+        for _, value in ipairs({ 0, 121, 1.5, "80" }) do
+            tip.min_training_level = value
+            lu.assertStrContains(table.concat(schema.problems(tip)), "min_training_level")
+        end
+        tip.min_training_level = 80
+        tip.require_all_levels = "yes"
+        lu.assertStrContains(table.concat(schema.problems(tip)), "require_all_levels")
+    end
+
+    function suite:test_source_quest_gate_is_validated()
+        local tip = valid_tip()
+        tip.require_quests_complete = true
+        lu.assertEquals(schema.problems(tip), {})
+        tip.require_quests_complete = "yes"
+        lu.assertStrContains(table.concat(schema.problems(tip)), "require_quests_complete")
+        tip.require_quests_complete = true
+        tip.requirements.quests = {}
+        lu.assertStrContains(table.concat(schema.problems(tip)), "needs quest requirements")
+    end
+
+    function suite:test_resource_icon_ids_are_positive_and_unambiguous()
+        local tip = valid_tip()
+        tip.icon_item_id = 440
+        lu.assertEquals(schema.problems(tip), {})
+        for _, value in ipairs({ 0, -1, 1.5, "440" }) do
+            tip.icon_item_id = value
+            lu.assertStrContains(table.concat(schema.problems(tip)), "icon_item_id")
+        end
+        tip.icon_item_id = 440
+        tip.icon_item = "MINING_OREBOX_BRONZE"
+        lu.assertStrContains(table.concat(schema.problems(tip)), "not both")
+    end
+
+    function suite:test_every_shipped_tip_has_an_icon()
+        for _, tip in ipairs(client.new(root).load("src/tips/catalogue").all()) do
+            lu.assertTrue(tip.icon_item ~= nil or tip.icon_item_id ~= nil, tip.id)
+        end
     end
 
     return suite

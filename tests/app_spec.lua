@@ -13,7 +13,7 @@ return function(root)
         lu.assertEquals(fake.subscription_count("ContentLayerReady"), 1)
         lu.assertEquals(fake.subscription_count("SettingsLayerReady"), 1)
         lu.assertEquals(fake.subscription_count("SkillTransmit"), 1)
-        lu.assertEquals(fake.logs[#fake.logs], "Skilling Coach started.")
+        lu.assertEquals(fake.logs[#fake.logs], "Skill Tips started.")
 
         app.stop()
     end
@@ -45,7 +45,7 @@ return function(root)
         lu.assertEquals(#fake.views, 2)
         lu.assertTrue(fake.views[1].destroyed)
         lu.assertTrue(fake.views[2].destroyed)
-        lu.assertEquals(fake.logs[#fake.logs], "Skilling Coach stopped.")
+        lu.assertEquals(fake.logs[#fake.logs], "Skill Tips stopped.")
     end
 
     function suite:test_reopening_the_ribbon_replaces_the_old_view()
@@ -184,7 +184,7 @@ return function(root)
         end
         lu.assertEquals(#fake.windows, 1)
         lu.assertNil(progress.pending_level_up("MINING"))
-        lu.assertEquals(fake.logs[#fake.logs], "Skilling Coach started.")
+        lu.assertEquals(fake.logs[#fake.logs], "Skill Tips started.")
         app.stop()
     end
 

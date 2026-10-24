@@ -8,6 +8,7 @@ local SUBSCRIPTION = "skilling_coach_clock"
 local TICKS_PER_SECOND = 50
 
 local current_tick = 0
+local previous_client_tick
 local owner
 
 function clock.start()
@@ -17,8 +18,18 @@ function clock.start()
 
     owner = event_owner.new(SUBSCRIPTION)
     current_tick = 0
+    previous_client_tick = nil
     owner.subscribe(Event.Logic, function(event)
-        current_tick = event.logicTick or (current_tick + 1)
+        local tick = event.logicTick
+        if type(tick) == "number" then
+            -- client ticks include all time before plugin load; only count subsequent deltas.
+            if previous_client_tick then
+                current_tick = current_tick + math.max(0, tick - previous_client_tick)
+            end
+            previous_client_tick = tick
+        else
+            current_tick = current_tick + 1
+        end
     end)
 end
 

@@ -45,6 +45,15 @@ local function check_text_fields(tip, problems)
         problems[#problems + 1] = "icon_item must be an item config name"
     end
 
+    if tip.icon_item_id ~= nil then
+        if math.type(tip.icon_item_id) ~= "integer" or tip.icon_item_id <= 0 then
+            problems[#problems + 1] = "icon_item_id must be a positive item id"
+        end
+        if tip.icon_item ~= nil then
+            problems[#problems + 1] = "choose icon_item or icon_item_id, not both"
+        end
+    end
+
     for _, field in ipairs({ "id", "title", "hook", "why" }) do
         if not is_text(tip[field]) then
             problems[#problems + 1] = field .. " must be some text"
@@ -208,6 +217,23 @@ function schema.problems(tip)
 
         if not readiness then
             problems[#problems + 1] = "quest tips need a requirements_met trigger"
+        end
+    end
+
+    if tip.min_training_level ~= nil and not is_level(tip.min_training_level) then
+        problems[#problems + 1] = "min_training_level must be a level from 1 to 120"
+    end
+
+    if tip.require_all_levels ~= nil and type(tip.require_all_levels) ~= "boolean" then
+        problems[#problems + 1] = "require_all_levels must be true or false"
+    end
+
+    if tip.require_quests_complete ~= nil and type(tip.require_quests_complete) ~= "boolean" then
+        problems[#problems + 1] = "require_quests_complete must be true or false"
+    elseif tip.require_quests_complete then
+        local quests = type(tip.requirements) == "table" and tip.requirements.quests
+        if type(quests) ~= "table" or #quests == 0 then
+            problems[#problems + 1] = "require_quests_complete needs quest requirements"
         end
     end
 

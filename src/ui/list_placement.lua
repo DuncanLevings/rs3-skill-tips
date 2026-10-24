@@ -35,7 +35,10 @@ function placement.rect(area, content_height, options)
         x = math.floor(
             math.max(0, area.width - width) * ratio(saved.x_ratio, options.default_x or 1) + 0.5
         ),
-        y = math.floor(math.max(0, area.height - height) * ratio(saved.y_ratio, 0.35) + 0.5),
+        y = math.floor(
+            math.max(0, area.height - height) * ratio(saved.y_ratio, options.default_y or 0.35)
+                + 0.5
+        ),
     }
 end
 

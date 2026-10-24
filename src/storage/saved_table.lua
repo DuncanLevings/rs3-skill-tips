@@ -23,7 +23,7 @@ function saved_table.save(key, data)
     end)
 
     if not ok or not saved then
-        log("Skilling Coach: couldn't save " .. key .. " for next session")
+        log("Skill Tips: couldn't save " .. key .. " for next session")
         return false
     end
 

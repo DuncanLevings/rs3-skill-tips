@@ -282,5 +282,22 @@ return function(root)
         tip_card.destroy()
     end
 
+    function suite:test_method_resource_icon_draws_on_the_card()
+        local fake = client.new(root)
+        local tip = fake.load("src/tips/catalogue").get("mining.method.iron")
+        local handlers = recording_handlers()
+        local card = fake.load("src/ui/tip_card")
+        lu.assertTrue(
+            card.show(
+                tip,
+                handlers,
+                { state = fake.load("src/game/player_state"), animate = false }
+            )
+        )
+        lu.assertEquals(fake.sprites[4].object_id, 440)
+        lu.assertEquals(fake.labels[1].x - (fake.sprites[4].x + fake.sprites[4].width), 8)
+        card.destroy()
+    end
+
     return suite
 end

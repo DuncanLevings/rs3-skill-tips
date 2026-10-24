@@ -18,6 +18,7 @@ return function(root)
             end,
         }
         clock.start()
+        fake.fire("Logic", { logicTick = 0 })
         watch.start(handlers)
         return {
             fake = fake,

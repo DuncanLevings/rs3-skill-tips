@@ -1,4 +1,4 @@
-Skilling Coach offline tools
+Skill Tips offline tools
 ============================
 
 Developer tools for writing and checking tips. None of this ships to players:

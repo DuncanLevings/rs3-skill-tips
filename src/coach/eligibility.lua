@@ -21,6 +21,8 @@ function eligibility.stage(tip)
         end
     end
 
+    level = math.max(level, tip.min_training_level or 1)
+
     return level < 30 and "early" or (level < 70 and "mid" or "late")
 end
 
@@ -51,7 +53,8 @@ function eligibility.allows(tip, skill, state)
     end
 
     if
-        progress.is_dismissed(tip.id)
+        progress.is_known(tip.id)
+        or progress.is_dismissed(tip.id)
         or progress.is_pinned(tip.id)
         or progress.was_shown(tip.id)
     then
@@ -74,6 +77,45 @@ function eligibility.allows(tip, skill, state)
     if tip.kind == "method" and tip.level_range then
         local level = state.level(skill)
         if not level or level < tip.level_range[1] or level > tip.level_range[2] then
+            return false
+        end
+    end
+
+    -- source access is opt-in: methods can still point toward an unfinished quest.
+    if tip.require_quests_complete then
+        for _, quest in ipairs((tip.requirements or {}).quests or {}) do
+            if state.quest_done(quest) ~= true then
+                return false
+            end
+        end
+    end
+
+    -- relevance thresholds are separate from actual unlock requirements.
+    if tip.min_training_level then
+        local level = skill and state.level(skill)
+        if not level or level < tip.min_training_level then
+            return false
+        end
+    end
+
+    -- diary rewards need the whole skill set, not just the skill being trained.
+    if tip.require_all_levels then
+        for required_skill, needed in pairs((tip.requirements or {}).skills or {}) do
+            local level = state.level(required_skill)
+            if not level or level < needed then
+                return false
+            end
+        end
+    end
+
+    -- item and qol tips wait until the player has the level they need in the skill theyre
+    -- training ("99 Mining! the mining cape" at level 15 would be silly). needs in other skills
+    -- still show on the card as next steps, eg the golem outfit's Invention 20
+    if skill and (tip.kind == "convenience" or tip.kind == "general") then
+        local needed = ((tip.requirements or {}).skills or {})[skill]
+        local level = needed and state.level(skill)
+
+        if needed and (not level or level < needed) then
             return false
         end
     end

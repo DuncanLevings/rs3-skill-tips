@@ -78,7 +78,7 @@ local function show(tip, skill)
         end,
     })
     if not shown_ok then
-        log("Skilling Coach: couldn't show tip " .. tip.id .. ": " .. tostring(displayed))
+        log("Skill Tips: couldn't show tip " .. tip.id .. ": " .. tostring(displayed))
         displayed = false
     end
 

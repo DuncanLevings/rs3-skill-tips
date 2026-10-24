@@ -10,7 +10,7 @@ from urllib.request import Request, urlopen
 
 API = "https://runescape.wiki/api.php"
 USER_AGENT = (
-    "SkillingCoachOfflineTools/0.1 "
+    "SkillTipsOfflineTools/0.1 "
     "(https://github.com/DuncanLevings/rs3-skilling-coach; offline content preparation)"
 )
 

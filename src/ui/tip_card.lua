@@ -14,6 +14,7 @@
 -- a standalone Panel was tried first but it cant be dragged, and it snapped back to the spot
 -- it was created at after sliding
 
+local settings = require("src/storage/settings")
 local card_motion = require("src/ui/card_motion")
 local card_placement = require("src/ui/card_placement")
 local theme = require("src/ui/theme")
@@ -211,7 +212,9 @@ local function fill(window, blocks, text_width)
         columnGap = ICON_GAP,
         height = 28,
         colour = theme.TEXT,
-        tooltip = "Don't show this tip again",
+        tooltip = "Hide this tip for "
+            .. tostring(settings.get("dismiss_hours"))
+            .. " hours of game time",
     })
     window:AddSimpleButton("Later", function()
         close(card.handlers.on_later)
@@ -275,11 +278,17 @@ local function build(tip, handlers, options, area)
 
     local this_card = card
 
-    card.pin = card_header.attach(card.window, tip, function()
-        close(this_card.handlers.on_pin)
-    end, area, function()
-        return card == this_card and not this_card.closing
-    end)
+    card.pin = card_header.attach(
+        card.window,
+        tip,
+        function()
+            close(this_card.handlers.on_pin)
+        end,
+        area,
+        function()
+            return card == this_card and not this_card.closing
+        end
+    )
 
     card_motion.slide_in(card.window.root, rect, area, card.animate)
     card_placement.watch(card.window.root, rect, area, card_motion.is_sliding)
@@ -300,7 +309,7 @@ function tip_card.show(tip, handlers, options)
 
     if not ok then
         -- whatever got half built goes away, a broken card must not hang around on screen
-        log("Skilling Coach: couldn't show a tip card: " .. tostring(problem))
+        log("Skill Tips: couldn't show a tip card: " .. tostring(problem))
         tip_card.destroy()
         return false
     end

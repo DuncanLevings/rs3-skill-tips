@@ -13,6 +13,7 @@ function recent_history.rows()
                 id = tip.id,
                 title = tip.title,
                 icon_item = tip.icon_item,
+                icon_item_id = tip.icon_item_id,
                 body = tip.hook,
                 order = entry.order,
                 icon = "pin",

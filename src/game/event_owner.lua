@@ -15,7 +15,7 @@ function event_owner.new(name)
                 handler(payload)
             end)
             if not ok then
-                log("Skilling Coach: " .. name .. ": " .. tostring(problem))
+                log("Skill Tips: " .. name .. ": " .. tostring(problem))
             end
         end)
     end

@@ -1,11 +1,12 @@
 -- mining tips. convenience items first, then training methods in level order.
--- only the ore box so far, the rest of mining comes with the pilot content
+--
+-- method tips follow the brackets in the wiki's pay-to-play mining training guide, written in
+-- our own words. members comes from each ore's wiki item page (runite and below are f2p)
 
 return {
     -- convenience items
 
     {
-        -- ore box: holds ore outside the backpack, so each trip to the bank lasts longer
         id = "mining.ore_box",
         kind = "convenience",
         skills = { "MINING" },
@@ -21,7 +22,6 @@ return {
         requirements = { skills = { SMITHING = 1 } },
         triggers = { { type = "backpack_full", skill = "MINING" } },
         known_when = {
-            -- owning any tier means they know about ore boxes. all 11 tiers checked in game
             {
                 type = "owns_any",
                 items = {
@@ -38,9 +38,478 @@ return {
                     "MINING_OREBOX_PRIMAL",
                 },
             },
-            -- every tier shares this category too, so a future tier is still caught
             { type = "owns_category", category = 4448 },
         },
         priority = 1,
+    },
+
+    {
+        id = "mining.golden_mining_suit",
+        require_quests_complete = true,
+        kind = "convenience",
+        skills = { "MINING" },
+        members = true,
+        title = "Golden mining suit",
+        icon_item = "LFM_GOLD_HELMET",
+        hook = "Want more experience from every ore? The golden mining suit adds a bonus for each "
+            .. "piece you wear.",
+        why = "Each piece gives a little extra Mining experience, with a bonus for the full set. "
+            .. "The golem outfits keep this bonus later on.",
+        how = { "Get it from the Lava Flow Mine in Keldagrim, open after King of the Dwarves." },
+        requirements = { skills = { MINING = 68 }, quests = { "KING_OF_THE_DWARVES" } },
+        triggers = { { type = "training", skill = "MINING" } },
+        known_when = {
+            { type = "owns_category", category = 4155 },
+            {
+                type = "owns_any",
+                items = {
+                    "LFM_GOLD_HELMET",
+                    "LFM_GOLD_TOP",
+                    "LFM_GOLD_GLOVES",
+                    "LFM_GOLD_LEGS",
+                    "LFM_GOLD_BOOTS",
+                },
+            },
+        },
+        priority = 2,
+    },
+
+    {
+        id = "mining.golem_outfit",
+        require_all_levels = true,
+        kind = "convenience",
+        skills = { "MINING" },
+        members = true,
+        title = "Golem outfits",
+        icon_item = "TRH19_BLUE_HEAD",
+        hook = "80 Mining: a golem outfit makes critical swings more likely.",
+        why = "A full sapphire, emerald or ruby golem outfit raises your critical swing chance and "
+            .. "keeps the golden mining suit's experience bonus. All three combine into the magic "
+            .. "golem outfit for extra perks.",
+        how = {
+            "Make the pieces from gemstone golem fragments at an Inventor's workbench, once "
+                .. "you've discovered the golem outfit blueprint.",
+        },
+        requirements = { skills = { MINING = 80, INVENTION = 20 } },
+        triggers = { { type = "training", skill = "MINING" } },
+        known_when = {
+            { type = "owns_category", category = 3226 },
+            { type = "owns_category", category = 3227 },
+            { type = "owns_category", category = 3228 },
+            { type = "owns_category", category = 3229 },
+            {
+                type = "owns_any",
+                items = {
+                    "TRH19_BLUE_HEAD",
+                    "TRH19_GREEN_HEAD",
+                    "TRH19_RED_HEAD",
+                    "TRH19_MAGIC_HEAD",
+                },
+            },
+        },
+        priority = 2,
+    },
+
+    {
+        id = "mining.taggas_corehammer",
+        kind = "convenience",
+        skills = { "MINING" },
+        members = true,
+        title = "Tagga's corehammer",
+        icon_item = "EGWD_BIK_SKILLING_OFFHAND_MINING",
+        hook = "80 Mining: Tagga's corehammer powers up your critical swings.",
+        why = "Worn in your off-hand, it adds critical swing chance and damage while you mine.",
+        how = { "Smith it at level 80 Smithing." },
+        requirements = { skills = { MINING = 80, SMITHING = 80 } },
+        triggers = { { type = "training", skill = "MINING" } },
+        known_when = { { type = "owns_any", items = { "EGWD_BIK_SKILLING_OFFHAND_MINING" } } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.varrock_armour",
+        -- easy Varrock diary skill minimums; this does not imply diary completion.
+        requirements = { skills = { AGILITY = 13, CRAFTING = 8, FISHING = 20, MINING = 10 } },
+        require_all_levels = true,
+        kind = "convenience",
+        skills = { "MINING" },
+        members = true,
+        title = "Varrock armour",
+        icon_item = "ATVAR_BODY_EASY",
+        hook = "Varrock armour gives you a chance to mine two ores at once.",
+        why = "It's a free bonus whenever you mine, and finishing more of the Varrock achievements "
+            .. "makes it better.",
+        how = { "Claim it after completing the easy Varrock achievements." },
+        triggers = { { type = "training", skill = "MINING" } },
+        known_when = {
+            {
+                type = "owns_any",
+                items = {
+                    "ATVAR_BODY_EASY",
+                    "ATVAR_BODY_MED",
+                    "ATVAR_BODY_HARD",
+                    "ATVAR_BODY_ELITE",
+                },
+            },
+        },
+        priority = 2,
+    },
+
+    {
+        id = "mining.pontifex_ring",
+        require_all_levels = true,
+        require_quests_complete = true,
+        kind = "convenience",
+        skills = { "MINING" },
+        members = true,
+        title = "Pontifex observation ring",
+        icon_item = "QUEST_AZZANADRA_RING",
+        hook = "More rockertunities means more experience, and this ring makes them turn up more "
+            .. "often.",
+        why = "The pontifex observation ring increases how often rockertunities appear. It also "
+            .. "counts as a luck item and can be upgraded later.",
+        how = {
+            "Restore it at an archaeologist's workbench with level 58 Archaeology, after "
+                .. "Azzanadra's Quest.",
+        },
+        requirements = { skills = { ARCHAEOLOGY = 58 }, quests = { "AZZANADRA" } },
+        triggers = { { type = "training", skill = "MINING" } },
+        known_when = {
+            {
+                type = "owns_any",
+                items = {
+                    "QUEST_AZZANADRA_RING",
+                    "QUEST_SENNTISTEN_RING",
+                    "QUEST_EGW_FINALE_RING",
+                },
+            },
+        },
+        priority = 2,
+    },
+
+    {
+        id = "mining.brooch_of_the_gods",
+        -- late-game relevance, not an equip or crafting requirement.
+        min_training_level = 80,
+        kind = "convenience",
+        skills = { "MINING" },
+        members = true,
+        title = "Brooch of the Gods",
+        icon_item = "ENCHANTED_ALCHEMICAL_HYDRIX_BROOCH",
+        hook = "The Brooch of the Gods makes every rockertunity count for more.",
+        why = "Worn in your pocket slot, it boosts rockertunities while you mine and can hold "
+            .. "decorated mining urns and effigies for you.",
+        how = {
+            "Enchant an alchemical hydrix brooch with Lvl-6 Enchant, or a Lvl-6 enchant tablet.",
+        },
+        triggers = { { type = "training", skill = "MINING" } },
+        known_when = {
+            {
+                type = "owns_any",
+                items = {
+                    "ENCHANTED_ALCHEMICAL_HYDRIX_BROOCH",
+                    "ENCHANTED_ALCHEMICAL_HYDRIX_BROOCH_USED",
+                },
+            },
+        },
+        priority = 2,
+    },
+
+    {
+        id = "mining.cape",
+        kind = "convenience",
+        skills = { "MINING" },
+        members = true,
+        title = "Mining cape",
+        icon_item = "SKILLCAPE_MINING",
+        hook = "99 Mining! The Mining cape gives you a chance of double ore from core rocks.",
+        why = "Wearing it means some ores come in pairs, on top of everything else you use.",
+        how = { "Buy it from Gadrin at the entrance to the Mining Guild." },
+        requirements = { skills = { MINING = 99 } },
+        triggers = { { type = "training", skill = "MINING" } },
+        known_when = {
+            {
+                type = "owns_any",
+                items = {
+                    "SKILLCAPE_MINING",
+                    "SKILLCAPE_MINING_TRIMMED",
+                    "SKILLCAPE_MINING_RETRO",
+                    "SKILLCAPE_MINING_TRIMMED_RETRO",
+                },
+            },
+        },
+        priority = 2,
+    },
+
+    -- training methods
+
+    {
+        id = "mining.method.copper_tin",
+        icon_item_id = 436,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 1, 9 },
+        members = false,
+        title = "Copper and tin",
+        hook = "New to Mining? Copper and tin rocks are the place to start.",
+        why = "They're the first rocks you can mine, and you need one of each for a bronze bar.",
+        how = {
+            "Try the mine south-east of Lumbridge or the Burthorpe mine. When a rockertunity "
+                .. "appears on a nearby rock, switch to it for bonus experience.",
+        },
+        requirements = { skills = { MINING = 1 } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 1 } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.method.iron",
+        icon_item_id = 440,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 10, 19 },
+        members = false,
+        title = "Iron",
+        hook = "10 Mining: iron rocks are now your best option.",
+        why = "Iron is quicker experience than copper and tin. From level 15, mining slows down "
+            .. "if you leave it completely idle, so click the rock now and then.",
+        how = { "Look for iron in the mines south-west of Lumbridge and south-west of Varrock." },
+        requirements = { skills = { MINING = 10 } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 10 } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.method.coal",
+        icon_item_id = 453,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 20, 29 },
+        members = false,
+        title = "Coal",
+        hook = "20 Mining: time to move on to coal.",
+        why = "Coal is a step up in experience, and you'll need it to make steel bars.",
+        how = { "There's coal in the mine south-west of Lumbridge and the Falador west mine." },
+        requirements = { skills = { MINING = 20 } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 20 } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.method.mithril",
+        icon_item_id = 447,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 30, 39 },
+        members = false,
+        title = "Mithril",
+        hook = "30 Mining: mithril rocks are your next step up.",
+        why = "Mithril gives better experience than coal for the next ten levels.",
+        how = { "Mine it at the Varrock south-east or south-west mines." },
+        requirements = { skills = { MINING = 30 } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 30 } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.method.adamantite_luminite",
+        icon_item_id = 449,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 40, 49 },
+        members = false,
+        title = "Adamantite and luminite",
+        hook = "40 Mining: adamantite and luminite are open to you.",
+        why = "Both give similar experience, so pick whichever is closer. Luminite is also "
+            .. "needed alongside runite to make rune bars later.",
+        how = {
+            "Rimmington mine has adamantite. For luminite, try the Dwarven luminite mine.",
+        },
+        requirements = { skills = { MINING = 40 } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 40 } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.method.runite",
+        icon_item_id = 451,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 50, 59 },
+        members = false,
+        title = "Runite",
+        hook = "50 Mining: you can mine runite now.",
+        why = "Runite is a solid jump in experience from adamantite and luminite.",
+        how = {
+            "The mine south-east of the Fight Arena is the best spot. The Mining Guild has "
+                .. "runite too once you reach level 60.",
+        },
+        requirements = { skills = { MINING = 50 } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 50 } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.method.orichalcite_drakolith",
+        icon_item_id = 44822,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 60, 69 },
+        members = true,
+        title = "Orichalcite and drakolith",
+        hook = "60 Mining: orichalcite and drakolith are your next ores.",
+        why = "Either one is a clear step up in experience from runite.",
+        how = {
+            "Orichalcite is in the Mining Guild. Drakolith is at the Tai Bwo Wannai and "
+                .. "Heroes' Guild mines.",
+        },
+        requirements = { skills = { MINING = 60 } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 60 } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.method.necrite_phasmatite",
+        icon_item_id = 44826,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 70, 79 },
+        members = true,
+        title = "Necrite and phasmatite",
+        hook = "70 Mining: try necrite and phasmatite.",
+        why = "They're your next experience upgrade. Necrite is easy to reach even with few "
+            .. "quests done.",
+        how = {
+            "The hobgoblin mine near the Wilderness lodestone has necrite and a bank nearby. "
+                .. "It's in the Wilderness, so only bring what you're happy to lose.",
+        },
+        requirements = { skills = { MINING = 70 } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 70 } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.method.banite",
+        icon_item_id = 21778,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 80, 88 },
+        members = true,
+        title = "Banite",
+        hook = "80 Mining: banite rocks are open to you.",
+        why = "Banite is your next experience upgrade until corrupted ore and animica at 89 "
+            .. "and 90.",
+        how = {
+            "The Pirates' Hideout mine in the deep Wilderness has no requirements and a forge "
+                .. "beside it for depositing ore. Only bring what you're happy to lose.",
+        },
+        requirements = { skills = { MINING = 80 } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 80 } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.method.corrupted_ore",
+        icon_item_id = 32262,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 89, 99 },
+        members = true,
+        title = "Corrupted ore",
+        hook = "89 Mining: corrupted ore in Prifddinas is worth a look.",
+        why = "It gives more experience than banite or animica, stacks in your backpack and "
+            .. "doesn't use stamina, which makes it great for relaxed mining.",
+        how = {
+            "Mine the Seren stones in the Trahaearn district of Prifddinas. You'll need "
+                .. "Plague's End done to get into the city.",
+        },
+        requirements = { skills = { MINING = 89 }, quests = { "PLAGUES_END" } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 89 } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.method.animica",
+        icon_item_id = 44830,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 90, 96 },
+        members = true,
+        title = "Light and dark animica",
+        hook = "90 Mining: light and dark animica are open to you.",
+        why = "Animica's experience gets noticeably better as your level climbs towards 99.",
+        how = {
+            "Light animica is at the Lletya mine and Anachronia's south-west mine. Dark "
+                .. "animica is in the Anachronia swamp mine.",
+        },
+        requirements = { skills = { MINING = 90 } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 90 } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.method.alaea_crablets",
+        icon_item_id = 37773,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 97, 99 },
+        members = true,
+        title = "Alaea crablets",
+        hook = "97 Mining: keep an eye out for alaea crablets on the Uncharted Isles.",
+        why = "They're a rare daily resource with excellent experience while they last.",
+        how = {
+            "Uncharted Isles are reached from the Arc, which needs the Impressing the Locals "
+                .. "quest.",
+        },
+        requirements = { skills = { MINING = 97 }, quests = { "ELR0" } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 97 } },
+        priority = 2,
+    },
+
+    {
+        id = "mining.method.primal",
+        icon_item_id = 57193,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 100, 120 },
+        members = true,
+        title = "Primal rocks",
+        hook = "100 Mining: primal rocks are waiting in Daemonheim.",
+        why = "They're the top tier of ore, and the experience keeps improving as you level "
+            .. "past 100.",
+        how = {
+            "The promethium rocks on the Daemonheim Peninsula island have a deposit box "
+                .. "nearby once you've done the medium Daemonheim achievements.",
+        },
+        requirements = { skills = { MINING = 100 } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 100 } },
+        priority = 2,
+    },
+
+    -- alternative methods
+    --
+    -- other ways to train that stay useful across many levels, from the guide's "alternative
+    -- methods" section. priority 3 so the level's main method shows first, these come up on a
+    -- later session.
+
+    {
+        id = "mining.alt.shooting_stars",
+        icon_item_id = 13727,
+        kind = "method",
+        skills = { "MINING" },
+        level_range = { 10, 120 },
+        members = false,
+        title = "Shooting stars",
+        hook = "Fancy a more relaxed way to train? Shooting stars are a great semi-AFK option.",
+        why = "Lots of players can mine a crashed star together. You collect stardust as you "
+            .. "go, and the star sprite left at the end gives a reward and a temporary chance "
+            .. "of double ore.",
+        how = {
+            "Each star size needs 10 more Mining, so a size 8 star needs level 80. Smaller "
+                .. "stars are always fine to mine.",
+        },
+        requirements = { skills = { MINING = 10 } },
+        triggers = { { type = "level_reached", skill = "MINING", level = 10 } },
+        priority = 3,
     },
 }

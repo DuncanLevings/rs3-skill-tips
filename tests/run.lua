@@ -5,9 +5,11 @@ local lu = require("luaunit")
 local runner = lu.LuaUnit.new()
 
 runner:runSuiteByInstances({
+    { "TestItemKnowledge", require("tests/item_knowledge_spec")(root) },
     { "TestGameAdapters", require("tests/game_adapters_spec")(root) },
     { "TestActivityWatch", require("tests/activity_watch_spec")(root) },
     { "TestPhase5UI", require("tests/phase5_ui_spec")(root) },
+    { "TestQuestPilot", require("tests/quest_pilot_spec")(root) },
     { "TestQuestTips", require("tests/quest_tips_spec")(root) },
     { "TestApp", require("tests/app_spec")(root) },
     { "TestSchema", require("tests/schema_spec")(root) },
@@ -19,5 +21,7 @@ runner:runSuiteByInstances({
     { "TestEngine", require("tests/engine_spec")(root) },
     { "TestCard", require("tests/card_spec")(root) },
     { "TestReviewFixes", require("tests/review_fixes_spec")(root) },
+    { "TestMiningTips", require("tests/mining_tips_spec")(root) },
+    { "TestPilotTips", require("tests/pilot_tips_spec")(root) },
 })
 os.exit(runner.result.notSuccessCount)

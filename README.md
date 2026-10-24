@@ -1,26 +1,26 @@
-# Skilling Coach
+# Skill Tips
 
-Skilling Coach shows a short, useful tip at the moment you can use it. For example, when mining fills your backpack and you don't own an ore box yet, it tells you what an ore box is and where to get one.
+Skill Tips shows a short, useful tip at the moment you can use it. For example, when mining fills your backpack and you don't own an ore box yet, it tells you what an ore box is and where to get one.
 
-Tips cover useful items, quality-of-life features and worthwhile quests. They only appear while you're actually playing a skill, so XP from lamps, books or quest rewards doesn't set them off. The coach stays quiet for a while after combat.
+Tips cover useful items, quality-of-life features and worthwhile quests. Item and method tips appear while you train. Quest tips wait until you have their skill levels, then appear during a five-second quiet pause. Lamps or quest rewards can qualify you for a quest tip, but don't trigger training-method tips on their own. The plugin stays quiet for a while after combat.
 
-> **Early version:** only the ore box tip is included so far. More tips for every non-combat skill are on the way.
+> **Early version:** tips cover Mining, Woodcutting and Fishing so far: useful items, the best training method for your level, and alternative ways to train. The quest pilot covers Fishing Contest and Family Crest. More non-combat skills are on the way.
 
 ## What a tip looks like
 
 A small card slides in from the edge of the screen:
 
 - **Pin** (top right) keeps the tip in your **Pinned tips** list for later.
-- **Dismiss** hides that tip for good.
+- **Dismiss** hides that tip for 3 hours of plugin running time by default (configurable from 0 to 8 hours).
 - **Later** closes it for now. It can come back another day.
 
-Drag the card anywhere you like; the next one appears in the same place. Tips you already seem to know about are skipped. For item tips, that means owning the item: in your backpack, worn, or in your bank the last time you opened it.
+Drag the card anywhere you like; the next one appears in the same place. Tips you already seem to know about are skipped. For item tips, that means the plugin has seen you own the item: in your backpack, worn, or in your bank. Once seen, the tip stays known even if you later store the item in your house or destroy it for reclaim. Any single outfit piece counts.
 
-**Open your bank once after installing,** so the coach can see what you already own.
+**Open your bank once after installing,** so the plugin can see what you already own.
 
 ## Pinned tips and Recent tips
 
-Click the Skilling Coach icon on the ribbon to open:
+Click the Skill Tips icon on the ribbon to open:
 
 - **Pinned tips:** the tips you've pinned. Use the red cross to unpin one.
 - **Recent tips:** your last 10 tips, so you can pin one you closed by mistake.
@@ -35,7 +35,7 @@ Open the settings from the Plugin Hub. You can:
 - choose which kinds of tips you want: items, training methods, quality of life, quests
 - choose early, mid or late game tips, and whether to include members tips
 - set the time between tips and the number of tips per session
-- set how long the coach stays quiet after combat
+- set how long the plugin stays quiet after combat
 - mute skills you don't want tips for
 - turn the card animation off
 - reset the card's position
@@ -44,10 +44,10 @@ Open the settings from the Plugin Hub. You can:
 
 On your computer only, per character:
 
-- which tips you pinned, dismissed or saw recently
+- which tips you pinned, dismissed, saw recently or already know from owning the item
 - whether you own the specific items tips mention, never the rest of your bank
 
-Your settings and card position are saved too. Skilling Coach needs no permissions: it doesn't use the internet or read your chat.
+Your settings and card position are saved too. Skill Tips needs no permissions: it doesn't use the internet or read your chat.
 
 ## Requirements
 
@@ -56,3 +56,16 @@ Your settings and card position are saved too. Skilling Coach needs no permissio
 ## Credits
 
 Tip information is based on the [RuneScape Wiki](https://runescape.wiki), rewritten in our own words. See THIRD_PARTY_NOTICES.txt.
+
+
+Dismissal timing update (user, 2026-10-23): Dismiss now pauses only that tip for 3 hours
+of plugin running time by default; settings range 0–8 hours. No network or wall-clock
+dependency. Count per-character running time, persist checkpoint once a minute and
+flush on stop/character switch. Offline/plugin-stopped time does not count. A crash
+can lose at most the last checkpoint minute. Migrate old boolean dismissals once to
+a fresh timed dismissal; never restart them on each reload. 0 adds no dismissal delay,
+but normal global pacing still applies. Dismiss replaces that tip's session-only block
+so it can become eligible after expiry even in the same session; Later keeps the
+session-only behavior. Ownership and pins still suppress. Duration changes apply to
+active timers; expired records are cleaned up on checkpoints. Recent tips starts at
+the top left on first use; saved positions and sizes always take precedence.

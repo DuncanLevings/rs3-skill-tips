@@ -61,7 +61,7 @@ function layout.measure(rows, area, options)
         width = math.min(cap, math.max(width, options.empty_width or width))
     end
 
-    local content_width = math.max(1, width - chrome)
+    local content_width = math.max(1, options.content_width or (width - chrome))
     local longest_title = 0
     for _, row in ipairs(rows) do
         longest_title = math.max(longest_title, text_width(row.title, cap))

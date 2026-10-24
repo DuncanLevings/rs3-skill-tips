@@ -245,5 +245,35 @@ return function(root)
         lu.assertEquals(#w.shown, 1)
     end
 
+    function suite:test_development_bypasses_cooldown_without_changing_saved_setting()
+        local w = world(root, { tip("a", 70, 79), tip("b", 70, 79) })
+        w.fake.load("src/development").ENABLED = true
+        w.settings.set("cooldown_minutes", 30)
+        w.engine.on_training("MINING")
+        w.close()
+        w.engine.on_training("MINING")
+        lu.assertEquals(#w.shown, 2)
+        lu.assertEquals(w.settings.get("cooldown_minutes"), 30)
+    end
+
+    function suite:test_development_keeps_cap_combat_and_release_cooldown()
+        local fake = client.new(root)
+        local settings = fake.load("src/storage/settings")
+        local development = fake.load("src/development")
+        local gate = fake.load("src/coach/pacing").new()
+        development.ENABLED = true
+        gate.shown(100)
+        lu.assertTrue(gate.allows(100))
+        development.ENABLED = false
+        lu.assertFalse(gate.allows(100))
+        development.ENABLED = true
+        settings.set("session_cap", 1)
+        lu.assertFalse(gate.allows(100))
+        settings.set("session_cap", 0)
+        gate.combat(100)
+        lu.assertFalse(gate.allows(100))
+        lu.assertTrue(gate.allows(160))
+    end
+
     return suite
 end
