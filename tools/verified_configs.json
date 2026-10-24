@@ -918,6 +918,1298 @@
       "category": 4100,
       "consumable": false,
       "source": "All-piece in-game outfit probe, 2026-10-23; configName/category confirmed by user"
+    },
+    "HERO_MATTOCK": {
+      "id": 49584,
+      "name": "Guildmaster Tony's mattock",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "GIANT_MOTH_LANTERN": {
+      "id": 60699,
+      "name": "Tellervo's lantern",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output"
+    },
+    "GIANT_MOTH_BUTTERFLY_NET": {
+      "id": 60698,
+      "name": "Tellervo's net",
+      "category": 2750,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output"
+    },
+    "VITUR_RING": {
+      "id": 59954,
+      "name": "Ring of Vitur",
+      "category": 656,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output"
+    },
+    "PLATINUM_SUNBURST_BRACELET": {
+      "id": 59226,
+      "name": "Sunburst bracelet (new)",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output"
+    },
+    "PLATINUM_SUNBURST_BRACELET_USED": {
+      "id": 59228,
+      "name": "Sunburst bracelet",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output"
+    },
+    "ELIDINIS_BOSS_SKILLING_OFFHAND_DIVINATION": {
+      "id": 57521,
+      "name": "Memory dowser",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLING_OFFHAND_HUNTER": {
+      "id": 57033,
+      "name": "Skeka's hypnowand",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ARCH_ELITE_SKILLING_GLOVES": {
+      "id": 49944,
+      "name": "Master archaeologist's gloves",
+      "category": 4611,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ARCH_ELITE_SKILLING_LEGS": {
+      "id": 49943,
+      "name": "Master archaeologist's trousers",
+      "category": 4611,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ARCH_ELITE_SKILLING_BODY": {
+      "id": 49942,
+      "name": "Master archaeologist's jacket",
+      "category": 4611,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ARCH_ELITE_SKILLING_HAT": {
+      "id": 49941,
+      "name": "Master archaeologist's hat",
+      "category": 4611,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TIME_SPACE_MATTOCK": {
+      "id": 49581,
+      "name": "Mattock of Time and Space",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_MASTER_FEET": {
+      "id": 44021,
+      "name": "Master farmer boots",
+      "category": 4364,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_MASTER_HANDS": {
+      "id": 44020,
+      "name": "Master farmer gloves",
+      "category": 4364,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_MASTER_LEGS": {
+      "id": 44019,
+      "name": "Master farmer legwear",
+      "category": 4364,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_MASTER_BODY": {
+      "id": 44018,
+      "name": "Master farmer jacket",
+      "category": 4364,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_MASTER_HEAD": {
+      "id": 44017,
+      "name": "Master farmer hat",
+      "category": 4364,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_VOLCANIC_BODY": {
+      "id": 41024,
+      "name": "Volcanic trapper chest",
+      "category": 4177,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_VOLCANIC_FEET": {
+      "id": 41027,
+      "name": "Volcanic trapper boots",
+      "category": 4177,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_VOLCANIC_HANDS": {
+      "id": 41026,
+      "name": "Volcanic trapper arms",
+      "category": 4177,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_VOLCANIC_LEGS": {
+      "id": 41025,
+      "name": "Volcanic trapper legguards",
+      "category": 4177,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_VOLCANIC_HEAD": {
+      "id": 41023,
+      "name": "Volcanic trapper head",
+      "category": 4177,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ENCHANTED_OPAL_RING_NEW": {
+      "id": 39352,
+      "name": "Ring of metamorphosis (new)",
+      "category": 4058,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output"
+    },
+    "ENCHANTED_OPAL_RING_USED": {
+      "id": 39354,
+      "name": "Ring of metamorphosis",
+      "category": 4058,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output"
+    },
+    "ARCH_ELITE_SKILLING_BOOTS": {
+      "id": 49945,
+      "name": "Master archaeologist's boots",
+      "category": 4611,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "IMCANDO_MATTOCK": {
+      "id": 49574,
+      "name": "Imcando mattock",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_JUNGLE_FEET": {
+      "id": 41017,
+      "name": "Jungle trapper boots",
+      "category": 4175,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_JUNGLE_HANDS": {
+      "id": 41016,
+      "name": "Jungle trapper arms",
+      "category": 4175,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_JUNGLE_LEGS": {
+      "id": 41015,
+      "name": "Jungle trapper legguards",
+      "category": 4175,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_JUNGLE_BODY": {
+      "id": 41014,
+      "name": "Jungle trapper chest",
+      "category": 4175,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_JUNGLE_HEAD": {
+      "id": 41013,
+      "name": "Jungle trapper head",
+      "category": 4175,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "QUEST_ENDGAME_SHARD_HUNTER": {
+      "id": 39434,
+      "name": "Hunter's Catalyst fragment",
+      "category": 4069,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ELR2_HUNTER_HEAD": {
+      "id": 38821,
+      "name": "Hunter's headwear",
+      "category": 4475,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ELR2_HUNTER_FEET": {
+      "id": 38817,
+      "name": "Hunter's boots",
+      "category": 4475,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ELR2_HUNTER_HANDS": {
+      "id": 38818,
+      "name": "Hunter's gloves",
+      "category": 4475,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ELR2_HUNTER_LEGS": {
+      "id": 38819,
+      "name": "Hunter's legwear",
+      "category": 4475,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ELR2_HUNTER_BODY": {
+      "id": 38820,
+      "name": "Hunter's chestpiece",
+      "category": 4475,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_ELDER_LEGS": {
+      "id": 35980,
+      "name": "Elder divination legs",
+      "category": 3701,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH58_FARMING_HEAD_ADDON": {
+      "id": 34922,
+      "name": "Farmer's hat add-on",
+      "category": 3282,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output"
+    },
+    "TRH13_FARMER_LEGS": {
+      "id": 31345,
+      "name": "Farmer's legwear",
+      "category": 2739,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH13_FARMER_TORSO": {
+      "id": 31346,
+      "name": "Farmer's jacket",
+      "category": 2739,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH13_FARMER_HAT": {
+      "id": 31347,
+      "name": "Farmer's hat",
+      "category": 2739,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH13_FARMER_BOOTS": {
+      "id": 31343,
+      "name": "Farmer's boots",
+      "category": 2739,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_120_FARMING": {
+      "id": 31291,
+      "name": "Farming master cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "HUNTCHARM_STAVE_ENHANCED": {
+      "id": 28084,
+      "name": "Enhanced yaktwee stick",
+      "category": 2757,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "FT3_WATERING_CAN": {
+      "id": 18682,
+      "name": "Magic watering can",
+      "category": 147,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_HUNTING_RETRO": {
+      "id": 34575,
+      "name": "Retro hunter cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_HUNTING_TRIMMED": {
+      "id": 9949,
+      "name": "Hunter cape (t)",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_HUNTING_TRIMMED_RETRO": {
+      "id": 34577,
+      "name": "Retro hunter cape (t)",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_HUNTING": {
+      "id": 9948,
+      "name": "Hunter cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_FARMING_RETRO": {
+      "id": 34650,
+      "name": "Retro farming cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_FARMING_TRIMMED": {
+      "id": 9811,
+      "name": "Farming cape (t)",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_FARMING_TRIMMED_RETRO": {
+      "id": 34652,
+      "name": "Retro farming cape (t)",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_FARMING": {
+      "id": 9810,
+      "name": "Farming cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "FAIRY_ENCHANTED_SECATEURS": {
+      "id": 7409,
+      "name": "Magic secateurs",
+      "category": 2755,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "DRAGON_MATTOCK": {
+      "id": 49566,
+      "name": "Dragon mattock",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_ELDER_FEET": {
+      "id": 35982,
+      "name": "Elder divination feet",
+      "category": 3701,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_ELDER_HANDS": {
+      "id": 35981,
+      "name": "Elder divination hands",
+      "category": 3701,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_ELDER_BODY": {
+      "id": 35979,
+      "name": "Elder divination body",
+      "category": 3701,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_ELDER_HEAD": {
+      "id": 35978,
+      "name": "Elder divination head",
+      "category": 3701,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_CHRONICLE_FEET": {
+      "id": 35972,
+      "name": "Divination chronicle feet",
+      "category": 3699,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_CHRONICLE_HANDS": {
+      "id": 35971,
+      "name": "Divination chronicle hands",
+      "category": 3699,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_CHRONICLE_HEAD": {
+      "id": 35968,
+      "name": "Divination chronicle head",
+      "category": 3699,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_CHRONICLE_LEGS": {
+      "id": 35970,
+      "name": "Divination chronicle legs",
+      "category": 3699,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_ENERGY_FEET": {
+      "id": 35967,
+      "name": "Divination energy feet",
+      "category": 3698,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_ENERGY_HANDS": {
+      "id": 35966,
+      "name": "Divination energy hands",
+      "category": 3698,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_ENERGY_LEGS": {
+      "id": 35965,
+      "name": "Divination energy legs",
+      "category": 3698,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_ENERGY_BODY": {
+      "id": 35964,
+      "name": "Divination energy body",
+      "category": 3698,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_ENERGY_HEAD": {
+      "id": 35963,
+      "name": "Divination energy head",
+      "category": 3698,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_MEMORY_FEET": {
+      "id": 35977,
+      "name": "Divination memory feet",
+      "category": 3700,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_MEMORY_HANDS": {
+      "id": 35976,
+      "name": "Divination memory hands",
+      "category": 3700,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_MEMORY_LEGS": {
+      "id": 35975,
+      "name": "Divination memory legs",
+      "category": 3700,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_MEMORY_BODY": {
+      "id": 35974,
+      "name": "Divination memory body",
+      "category": 3700,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_MEMORY_HEAD": {
+      "id": 35973,
+      "name": "Divination memory head",
+      "category": 3700,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH28_DIVINATION_HEAD_ADDON": {
+      "id": 32275,
+      "name": "Diviner's headwear add-on",
+      "category": 3282,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output"
+    },
+    "WOF55_SKILL_DIVINATION_FEET": {
+      "id": 29868,
+      "name": "Diviner's footwear",
+      "category": 2739,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "WOF55_SKILL_DIVINATION_HANDS": {
+      "id": 29869,
+      "name": "Diviner's handwear",
+      "category": 2739,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "WOF55_SKILL_DIVINATION_LEGS": {
+      "id": 29867,
+      "name": "Diviner's legwear",
+      "category": 2739,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "WOF55_SKILL_DIVINATION_TORSO": {
+      "id": 29866,
+      "name": "Diviner's robe",
+      "category": 2739,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "WOF55_SKILL_DIVINATION_HEAD": {
+      "id": 29865,
+      "name": "Diviner's headwear",
+      "category": 2739,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLING_OFFHAND_ARCHAEOLOGY": {
+      "id": 57022,
+      "name": "Balarak's sash brush",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "QUEST_DM_ARCH_REWARD_ENHANCED": {
+      "id": 50431,
+      "name": "Cosmic accumulator",
+      "category": 4678,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "INVENT_AUTO_SCREENER": {
+      "id": 50161,
+      "name": "Auto-screener v1.080",
+      "category": 4669,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "INVENT_AUTO_SCREENER_INACTIVE": {
+      "id": 50245,
+      "name": "Auto-screener v1.080 (inactive)",
+      "category": 4669,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ARCH_SKILLING_BOOTS": {
+      "id": 49940,
+      "name": "Archaeologist's boots",
+      "category": 4610,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ARCH_SKILLING_GLOVES": {
+      "id": 49939,
+      "name": "Archaeologist's gloves",
+      "category": 4610,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ARCH_SKILLING_LEGS": {
+      "id": 49938,
+      "name": "Archaeologist's trousers",
+      "category": 4610,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ARCH_SKILLING_BODY": {
+      "id": 49937,
+      "name": "Archaeologist's jacket",
+      "category": 4610,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ARCH_SKILLING_HAT": {
+      "id": 49936,
+      "name": "Archaeologist's hat",
+      "category": 4610,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "ARCH_SOIL_BOX": {
+      "id": 49538,
+      "name": "Archaeological soil box",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_120_ARCHAEOLOGY": {
+      "id": 49401,
+      "name": "SKILLCAPE_120_ARCHAEOLOGY",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
+    },
+    "SKILLCAPE_ARCHAEOLOGY_RETRO": {
+      "id": 49391,
+      "name": "SKILLCAPE_ARCHAEOLOGY_RETRO",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
+    },
+    "SKILLCAPE_ARCHAEOLOGY_TRIMMED": {
+      "id": 49397,
+      "name": "SKILLCAPE_ARCHAEOLOGY_TRIMMED",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
+    },
+    "SKILLCAPE_ARCHAEOLOGY_TRIMMED_RETRO": {
+      "id": 49393,
+      "name": "SKILLCAPE_ARCHAEOLOGY_TRIMMED_RETRO",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
+    },
+    "SKILLCAPE_ARCHAEOLOGY": {
+      "id": 49396,
+      "name": "SKILLCAPE_ARCHAEOLOGY",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
+    },
+    "CRYSTAL_MATTOCK": {
+      "id": 49571,
+      "name": "Crystal mattock",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_ARCTIC_FEET": {
+      "id": 41022,
+      "name": "Arctic trapper boots",
+      "category": 4176,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_ARCTIC_HANDS": {
+      "id": 41021,
+      "name": "Arctic trapper arms",
+      "category": 4176,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_ARCTIC_LEGS": {
+      "id": 41020,
+      "name": "Arctic trapper legguards",
+      "category": 4176,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_ARCTIC_BODY": {
+      "id": 41019,
+      "name": "Arctic trapper chest",
+      "category": 4176,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_ARCTIC_HEAD": {
+      "id": 41018,
+      "name": "Arctic trapper head",
+      "category": 4176,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_DESERT_FEET": {
+      "id": 41012,
+      "name": "Desert trapper boots",
+      "category": 4174,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_DESERT_HANDS": {
+      "id": 41011,
+      "name": "Desert trapper arms",
+      "category": 4174,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_DESERT_LEGS": {
+      "id": 41010,
+      "name": "Desert trapper legguards",
+      "category": 4174,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_DESERT_BODY": {
+      "id": 41009,
+      "name": "Desert trapper chest",
+      "category": 4174,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH127_DESERT_HEAD": {
+      "id": 41008,
+      "name": "Desert trapper head",
+      "category": 4174,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH75_CHRONICLE_BODY": {
+      "id": 35969,
+      "name": "Divination chronicle body",
+      "category": 3699,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_DIVINATION_RETRO": {
+      "id": 34655,
+      "name": "Retro divination cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_DIVINATION_TRIMMED": {
+      "id": 29186,
+      "name": "Divination cape (t)",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_DIVINATION_TRIMMED_RETRO": {
+      "id": 34657,
+      "name": "Retro divination cape (t)",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_DIVINATION": {
+      "id": 29185,
+      "name": "Divination cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "NATURE_AMULET": {
+      "id": 6040,
+      "name": "Amulet of nature",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TIME_SPACE_MATTOCK_AUGMENTED_UNCHARGED": {
+      "id": 49583,
+      "name": "Augmented Mattock of Time and Space (uncharged)",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TIME_SPACE_MATTOCK_AUGMENTED": {
+      "id": 49582,
+      "name": "Augmented Mattock of Time and Space",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "IMCANDO_MATTOCK_AUGMENTED_UNCHARGED": {
+      "id": 49576,
+      "name": "Augmented Imcando mattock (uncharged)",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "IMCANDO_MATTOCK_AUGMENTED": {
+      "id": 49575,
+      "name": "Augmented Imcando mattock",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_FARMING_HOODED_RETRO": {
+      "id": 34651,
+      "name": "Retro hooded farming cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_FARMING_TRIMMED_HOODED": {
+      "id": 34291,
+      "name": "Hooded farming cape (t)",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_FARMING_TRIMMED_HOODED_RETRO": {
+      "id": 34653,
+      "name": "Retro hooded farming cape (t)",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_FARMING_HOODED": {
+      "id": 34290,
+      "name": "Hooded farming cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_ARCHAEOLOGY_HOODED": {
+      "id": 49398,
+      "name": "SKILLCAPE_ARCHAEOLOGY_HOODED",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
+    },
+    "SKILLCAPE_ARCHAEOLOGY_TRIMMED_HOODED_RETRO": {
+      "id": 49394,
+      "name": "SKILLCAPE_ARCHAEOLOGY_TRIMMED_HOODED_RETRO",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
+    },
+    "SKILLCAPE_ARCHAEOLOGY_TRIMMED_HOODED": {
+      "id": 49399,
+      "name": "SKILLCAPE_ARCHAEOLOGY_TRIMMED_HOODED",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
+    },
+    "HERO_MATTOCK_AUGMENTED": {
+      "id": 49586,
+      "name": "Augmented Guildmaster Tony's mattock",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "HERO_MATTOCK_AUGMENTED_UNCHARGED": {
+      "id": 49587,
+      "name": "Augmented Guildmaster Tony's mattock (uncharged)",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "CRYSTAL_MATTOCK_AUGMENTED": {
+      "id": 49572,
+      "name": "Augmented crystal mattock",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "CRYSTAL_MATTOCK_AUGMENTED_UNCHARGED": {
+      "id": 49573,
+      "name": "Augmented crystal mattock (uncharged)",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "DRAGON_MATTOCK_AUGMENTED": {
+      "id": 49569,
+      "name": "Augmented dragon mattock",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "DRAGON_MATTOCK_AUGMENTED_UNCHARGED": {
+      "id": 49570,
+      "name": "Augmented dragon mattock (uncharged)",
+      "category": 4604,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_TREES_FEET": {
+      "id": 44016,
+      "name": "Tree farmer boots",
+      "category": 4363,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_TREES_HANDS": {
+      "id": 44015,
+      "name": "Tree farmer gloves",
+      "category": 4363,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_TREES_LEGS": {
+      "id": 44014,
+      "name": "Tree farmer legwear",
+      "category": 4363,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_TREES_BODY": {
+      "id": 44013,
+      "name": "Tree farmer jacket",
+      "category": 4363,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_TREES_HEAD": {
+      "id": 44012,
+      "name": "Tree farmer hat",
+      "category": 4363,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_CROPS_FEET": {
+      "id": 44011,
+      "name": "Crop farmer boots",
+      "category": 4362,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_CROPS_HANDS": {
+      "id": 44010,
+      "name": "Crop farmer gloves",
+      "category": 4362,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_CROPS_LEGS": {
+      "id": 44009,
+      "name": "Crop farmer legwear",
+      "category": 4362,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_CROPS_BODY": {
+      "id": 44008,
+      "name": "Crop farmer jacket",
+      "category": 4362,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_CROPS_HEAD": {
+      "id": 44007,
+      "name": "Crop farmer hat",
+      "category": 4362,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_ANIMALS_FEET": {
+      "id": 44006,
+      "name": "Animal farmer boots",
+      "category": 4361,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_ANIMALS_HANDS": {
+      "id": 44005,
+      "name": "Animal farmer gloves",
+      "category": 4361,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_ANIMALS_LEGS": {
+      "id": 44004,
+      "name": "Animal farmer legwear",
+      "category": 4361,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_ANIMALS_BODY": {
+      "id": 44003,
+      "name": "Animal farmer jacket",
+      "category": 4361,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "POF_REWARDS_TRH_ANIMALS_HEAD": {
+      "id": 44002,
+      "name": "Animal farmer hat",
+      "category": 4361,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_DIVINATION_HOODED_RETRO": {
+      "id": 34656,
+      "name": "Retro hooded divination cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_DIVINATION_TRIMMED_HOODED": {
+      "id": 34293,
+      "name": "Hooded divination cape (t)",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_DIVINATION_TRIMMED_HOODED_RETRO": {
+      "id": 34658,
+      "name": "Retro hooded divination cape (t)",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_DIVINATION_HOODED": {
+      "id": 34292,
+      "name": "Hooded divination cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_HUNTING_HOODED_RETRO": {
+      "id": 34576,
+      "name": "Retro hooded hunter cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_HUNTING_TRIMMED_HOODED": {
+      "id": 34261,
+      "name": "Hooded hunter cape (t)",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_HUNTING_TRIMMED_HOODED_RETRO": {
+      "id": 34578,
+      "name": "Retro hooded hunter cape (t)",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_HUNTING_HOODED": {
+      "id": 34260,
+      "name": "Hooded hunter cape",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH58_FARMING_HEAD_UPGRADED": {
+      "id": 34926,
+      "name": "Modified farmer's hat",
+      "category": 2739,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "TRH28_DIVINATION_HEAD_UPGRADED": {
+      "id": 32279,
+      "name": "Modified diviner's headwear",
+      "category": 2739,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted gathering probe output",
+      "consumable": false
+    },
+    "SKILLCAPE_ARCHAEOLOGY_HOOD": {
+      "id": 49400,
+      "name": "SKILLCAPE_ARCHAEOLOGY_HOOD",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping"
+    },
+    "SKILLCAPE_ARCHAEOLOGY_HOOD_RETRO": {
+      "id": 49395,
+      "name": "SKILLCAPE_ARCHAEOLOGY_HOOD_RETRO",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping"
+    },
+    "SKILLCAPE_ARCHAEOLOGY_HOODED_RETRO": {
+      "id": 49392,
+      "name": "SKILLCAPE_ARCHAEOLOGY_HOODED_RETRO",
+      "category": 27,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
+    },
+    "NJCAPES_SHARD_ARCHAEOLOGY": {
+      "id": 49390,
+      "name": "NJCAPES_SHARD_ARCHAEOLOGY",
+      "category": 3277,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping"
+    },
+    "_6AWE3_SEEDICIDE": {
+      "id": 31188,
+      "name": "Seedicide",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
+    },
+    "NOMEL_SOUL_GENERATOR": {
+      "id": 36837,
+      "name": "Urn enhancer",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
+    },
+    "QUEST_ENDGAME_SHARD_FARMING": {
+      "id": 39435,
+      "name": "Farmer's Catalyst fragment",
+      "category": 4069,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
+    },
+    "QUEST_ENDGAME_SHARD_COMBINED": {
+      "id": 39437,
+      "name": "Combined Catalyst fragment",
+      "category": -1,
+      "verified_on": "2026-10-24",
+      "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
+      "consumable": false
     }
   },
   "quests": {

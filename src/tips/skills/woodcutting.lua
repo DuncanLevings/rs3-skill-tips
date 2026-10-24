@@ -178,30 +178,15 @@ return {
     -- training methods
 
     {
-        id = "woodcutting.method.regular_trees",
-        icon_item_id = 1511,
-        kind = "method",
-        skills = { "WOODCUTTING" },
-        level_range = { 1, 9 },
-        members = false,
-        title = "Regular trees",
-        hook = "New to Woodcutting? Regular trees are the place to start.",
-        why = "They grow almost everywhere, so you can start chopping straight away.",
-        how = { "Pick a spot with lots of trees together so you're not waiting for respawns." },
-        requirements = { skills = { WOODCUTTING = 1 } },
-        triggers = { { type = "level_reached", skill = "WOODCUTTING", level = 1 } },
-        priority = 2,
-    },
-
-    {
         id = "woodcutting.method.oak",
+        main_method = true,
         icon_item_id = 1521,
         kind = "method",
         skills = { "WOODCUTTING" },
         level_range = { 10, 19 },
         members = false,
         title = "Oak trees",
-        hook = "10 Woodcutting: oak trees are your next step up.",
+        hook = "Oak trees offer more experience per log than regular trees.",
         why = "Oaks give better experience than regular trees.",
         how = {
             "Try the oaks east of the Draynor Village bank or south-west of Varrock's west bank.",
@@ -213,13 +198,14 @@ return {
 
     {
         id = "woodcutting.method.willow",
+        main_method = true,
         icon_item_id = 1519,
         kind = "method",
         skills = { "WOODCUTTING" },
         level_range = { 20, 29 },
         members = false,
         title = "Willow trees",
-        hook = "20 Woodcutting: move on to willow trees.",
+        hook = "Willows offer steady Woodcutting experience close to a bank in Draynor Village.",
         why = "Willows are quicker experience than oaks for the next ten levels.",
         how = {
             "There's a big group of willows on the coast just south-west of the Draynor Village "
@@ -232,13 +218,14 @@ return {
 
     {
         id = "woodcutting.method.teak",
+        main_method = true,
         icon_item_id = 6333,
         kind = "method",
         skills = { "WOODCUTTING" },
         level_range = { 30, 39 },
         members = true,
         title = "Teak trees",
-        hook = "30 Woodcutting: teak trees are open to you.",
+        hook = "Teaks offer Woodcutting experience with occasional special logs for Construction.",
         why = "Teaks are a good jump in experience, and sometimes give special teak logs that are "
             .. "handy for Construction.",
         how = {
@@ -252,14 +239,15 @@ return {
 
     {
         id = "woodcutting.method.maple",
+        main_method = true,
         icon_item_id = 1517,
         kind = "method",
         skills = { "WOODCUTTING" },
         level_range = { 40, 55 },
         members = true,
         title = "Maple trees",
-        hook = "40 Woodcutting: maple trees are your next upgrade.",
-        why = "Maples carry you all the way to the mid 50s.",
+        hook = "Maples offer a Woodcutting option close to the bank in Seers' Village.",
+        why = "Their experience makes them an option through the mid 50s.",
         how = { "Seers' Village has several maples close to a bank." },
         requirements = { skills = { WOODCUTTING = 40 } },
         triggers = { { type = "level_reached", skill = "WOODCUTTING", level = 40 } },
@@ -270,17 +258,17 @@ return {
         -- the guide says starting the fremennik isles is enough, so its only mentioned in the
         -- text (a quest requirement here would mean finishing it)
         id = "woodcutting.method.arctic_pine",
+        main_method = true,
         icon_item_id = 10810,
         kind = "method",
         skills = { "WOODCUTTING" },
         level_range = { 56, 57 },
         members = true,
         title = "Arctic pines",
-        hook = "56 Woodcutting: arctic pines are worth a couple of levels.",
-        why = "They're a step up from maples until eucalyptus opens at 58.",
+        hook = "Arctic pines offer another Woodcutting option for visits to Neitiznot.",
+        why = "They give more experience than maples, with eucalyptus becoming another option at 58.",
         how = {
-            "They grow on Neitiznot. You need to have started The Fremennik Isles to get there; "
-                .. "if you haven't, stick with maples until 58.",
+            "They grow on Neitiznot, accessible after starting The Fremennik Isles. Maples are another option without island access.",
         },
         requirements = { skills = { WOODCUTTING = 56 } },
         triggers = { { type = "level_reached", skill = "WOODCUTTING", level = 56 } },
@@ -289,14 +277,15 @@ return {
 
     {
         id = "woodcutting.method.eucalyptus",
+        main_method = true,
         icon_item_id = 12581,
         kind = "method",
         skills = { "WOODCUTTING" },
         level_range = { 58, 59 },
         members = true,
         title = "Eucalyptus trees",
-        hook = "58 Woodcutting: try the eucalyptus trees around Oo'glog.",
-        why = "They're your best option for the two levels before mahogany.",
+        hook = "Eucalyptus trees offer a Woodcutting option around Oo'glog.",
+        why = "Their experience makes them an option before mahogany becomes available at 60.",
         how = { "Head to Oo'glog, where eucalyptus trees grow around the town." },
         requirements = { skills = { WOODCUTTING = 58 } },
         triggers = { { type = "level_reached", skill = "WOODCUTTING", level = 58 } },
@@ -305,13 +294,14 @@ return {
 
     {
         id = "woodcutting.method.mahogany",
+        main_method = true,
         icon_item_id = 6332,
         kind = "method",
         skills = { "WOODCUTTING" },
         level_range = { 60, 67 },
         members = true,
         title = "Mahogany",
-        hook = "60 Woodcutting: mahogany trees are open to you.",
+        hook = "Mahogany offers logs for Construction and can pair with Crystallise for training.",
         why = "Mahogany is a solid upgrade, and stays useful much later if you pair it with "
             .. "Crystallise.",
         how = { "Find mahogany in the tropical south of Karamja and on Ape Atoll." },
@@ -322,13 +312,14 @@ return {
 
     {
         id = "woodcutting.method.choking_ivy",
+        main_method = true,
         icon_item_id = 1511,
         kind = "method",
         skills = { "WOODCUTTING" },
         level_range = { 68, 93 },
         members = true,
         title = "Choking ivy",
-        hook = "68 Woodcutting: choking ivy is great, relaxed experience.",
+        hook = "Choking ivy offers relaxed Woodcutting without a backpack full of logs.",
         why = "Ivy needs less attention than most trees. You won't get logs from it, but you "
             .. "can still find bird's nests.",
         how = { "It grows on the walls of Varrock Palace, Falador and Yanille." },
@@ -339,13 +330,14 @@ return {
 
     {
         id = "woodcutting.method.crystal_trees",
+        main_method = true,
         icon_item_id = 32270,
         kind = "method",
         skills = { "WOODCUTTING" },
         level_range = { 94, 99 },
         members = true,
         title = "Crystal trees",
-        hook = "94 Woodcutting: crystal trees are your next big step.",
+        hook = "Crystal trees offer another option for higher-level Woodcutting.",
         why = "They're among the best experience there is before 100.",
         how = {
             "There are several crystal trees around the world, but only one is active at a "
@@ -358,13 +350,14 @@ return {
 
     {
         id = "woodcutting.method.eternal_magic",
+        main_method = true,
         icon_item_id = 58250,
         kind = "method",
         skills = { "WOODCUTTING" },
         level_range = { 100, 120 },
         members = true,
         title = "Eternal magic trees",
-        hook = "100 Woodcutting: eternal magic trees are the top tier.",
+        hook = "Eternal magic trees offer a high-level Woodcutting option to work towards.",
         why = "They're the highest level trees, and the experience keeps climbing past 100.",
         how = { "Find them in the Piscatoris Hunter area, north of Eagles' Peak." },
         requirements = { skills = { WOODCUTTING = 100 } },
@@ -405,7 +398,7 @@ return {
         level_range = { 50, 120 },
         members = true,
         title = "Acadia trees",
-        hook = "50 Woodcutting: acadia trees are a strong option that stays good for a long time.",
+        hook = "Acadia trees offer a Woodcutting option that stays useful across several levels.",
         why = "Acadia's experience keeps improving all the way to 99. Chopping in Menaphos also "
             .. "earns you Menaphos reputation.",
         how = {
@@ -425,7 +418,7 @@ return {
         level_range = { 81, 120 },
         members = true,
         title = "Overgrown idols",
-        hook = "81 Woodcutting: overgrown idols are a great AFK option.",
+        hook = "Overgrown idols offer Woodcutting training that needs little attention.",
         why = "Each vine keeps giving experience for several minutes, so you can relax while you "
             .. "train.",
         how = { "Find the idols on Karamja and Anachronia." },
@@ -442,7 +435,7 @@ return {
         level_range = { 90, 120 },
         members = true,
         title = "Elder trees",
-        hook = "90 Woodcutting: elder trees let you chop with very little attention.",
+        hook = "Elder trees offer a way to gather logs with very little attention.",
         why = "Each tree gives you five minutes of chopping on your own timer before it runs out.",
         how = {
             "When a tree runs dry, a superior locator can take you to another elder tree.",
@@ -460,7 +453,7 @@ return {
         level_range = { 96, 120 },
         members = true,
         title = "Golden bamboo",
-        hook = "96 Woodcutting: keep an eye out for golden bamboo on the Uncharted Isles.",
+        hook = "Golden bamboo offers another reason to explore the Uncharted Isles.",
         why = "It's a rare resource with excellent experience when you find it.",
         how = {
             "Uncharted Isles are reached from the Arc, which needs Impressing the Locals. The "

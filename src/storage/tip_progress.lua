@@ -133,6 +133,22 @@ local function elapsed_value(value)
     return type(value) == "number" and value >= 0 and value < math.huge and value or 0
 end
 
+-- additive field: keep valid baselines; saved zero is the explicit development preview sentinel.
+local function clean_starting_levels(saved)
+    local result = {}
+    for skill, level in pairs(type(saved) == "table" and saved or {}) do
+        if
+            skills.is_skill(skill)
+            and math.type(level) == "integer"
+            and level >= 0
+            and level <= 120
+        then
+            result[skill] = level
+        end
+    end
+    return result
+end
+
 local function load_character(character)
     local saved = character and saved_table.load(KEY_PREFIX .. character, VERSION) or {}
 
@@ -146,6 +162,7 @@ local function load_character(character)
         dismissed = dismissed,
         dismiss_elapsed = elapsed,
         known = clean_set(saved.known),
+        starting_levels = clean_starting_levels(saved.starting_levels),
         pinned = clean_set(saved.pinned),
         pending_level_ups = clean_pending(saved.pending_level_ups),
         recent_tips = clean_history(saved.recent_tips),
@@ -177,6 +194,47 @@ local function ensure_loaded()
     end
 
     return progress
+end
+
+function tip_progress.starting_level(skill)
+    return ensure_loaded().starting_levels[skill]
+end
+
+-- read only missing levels; invalid login values are retried at the next event.
+function tip_progress.capture_starting_levels(state)
+    if not current_character then
+        return
+    end
+
+    local levels, changed = ensure_loaded().starting_levels, false
+    for _, skill in pairs(skills.NAMES) do
+        if not skills.COMBAT[skill] and levels[skill] == nil then
+            local level = state.level(skill)
+            if math.type(level) == "integer" and level >= 1 and level <= 120 then
+                levels[skill], changed = level, true
+            end
+        end
+    end
+    if changed then
+        save()
+    end
+end
+
+-- development reset uses zero, so even starter brackets can be previewed after a reload.
+function tip_progress.allow_existing_methods()
+    if not current_character then
+        return
+    end
+
+    local levels, changed = ensure_loaded().starting_levels, false
+    for _, skill in pairs(skills.NAMES) do
+        if not skills.COMBAT[skill] and levels[skill] ~= 0 then
+            levels[skill], changed = 0, true
+        end
+    end
+    if changed then
+        save()
+    end
 end
 
 -- additive version-1 field; older saves simply have no learned tips yet.

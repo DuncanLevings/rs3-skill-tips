@@ -220,6 +220,311 @@
       "name": "Raw monkfish",
       "source": "https://runescape.wiki/w/Raw_monkfish",
       "verified_on": "2026-10-23"
+    },
+    "10088": {
+      "name": "Red feather",
+      "source": "https://runescape.wiki/w/Red_feather",
+      "verified_on": "2026-10-23"
+    },
+    "10089": {
+      "name": "Blue feather",
+      "source": "https://runescape.wiki/w/Blue_feather",
+      "verified_on": "2026-10-23"
+    },
+    "10087": {
+      "name": "Stripy feather",
+      "source": "https://runescape.wiki/w/Stripy_feather",
+      "verified_on": "2026-10-23"
+    },
+    "52796": {
+      "name": "Gliding whirligig shell",
+      "source": "https://runescape.wiki/w/Gliding_whirligig_shell",
+      "verified_on": "2026-10-23"
+    },
+    "52797": {
+      "name": "Swift whirligig shell",
+      "source": "https://runescape.wiki/w/Swift_whirligig_shell",
+      "verified_on": "2026-10-23"
+    },
+    "52798": {
+      "name": "Hasty whirligig shell",
+      "source": "https://runescape.wiki/w/Hasty_whirligig_shell",
+      "verified_on": "2026-10-23"
+    },
+    "52799": {
+      "name": "Speedy whirligig shell",
+      "source": "https://runescape.wiki/w/Speedy_whirligig_shell",
+      "verified_on": "2026-10-23"
+    },
+    "10147": {
+      "name": "Red salamander",
+      "source": "https://runescape.wiki/w/Red_salamander",
+      "verified_on": "2026-10-23"
+    },
+    "10034": {
+      "name": "Red chinchompa",
+      "source": "https://runescape.wiki/w/Red_chinchompa",
+      "verified_on": "2026-10-23"
+    },
+    "47948": {
+      "name": "Raw arcane apoterrasaur meat",
+      "source": "https://runescape.wiki/w/Raw_arcane_apoterrasaur_meat",
+      "verified_on": "2026-10-23"
+    },
+    "12160": {
+      "name": "Crimson charm",
+      "source": "https://runescape.wiki/w/Crimson_charm",
+      "verified_on": "2026-10-23"
+    },
+    "10008": {
+      "name": "Box trap",
+      "source": "https://runescape.wiki/w/Box_trap",
+      "verified_on": "2026-10-23"
+    },
+    "10006": {
+      "name": "Bird snare",
+      "source": "https://runescape.wiki/w/Bird_snare",
+      "verified_on": "2026-10-23"
+    },
+    "29313": {
+      "name": "Pale energy",
+      "source": "https://runescape.wiki/w/Pale_energy",
+      "verified_on": "2026-10-23"
+    },
+    "29314": {
+      "name": "Flickering energy",
+      "source": "https://runescape.wiki/w/Flickering_energy",
+      "verified_on": "2026-10-23"
+    },
+    "29315": {
+      "name": "Bright energy",
+      "source": "https://runescape.wiki/w/Bright_energy",
+      "verified_on": "2026-10-23"
+    },
+    "29316": {
+      "name": "Glowing energy",
+      "source": "https://runescape.wiki/w/Glowing_energy",
+      "verified_on": "2026-10-23"
+    },
+    "29317": {
+      "name": "Sparkling energy",
+      "source": "https://runescape.wiki/w/Sparkling_energy",
+      "verified_on": "2026-10-23"
+    },
+    "29318": {
+      "name": "Gleaming energy",
+      "source": "https://runescape.wiki/w/Gleaming_energy",
+      "verified_on": "2026-10-23"
+    },
+    "29319": {
+      "name": "Vibrant energy",
+      "source": "https://runescape.wiki/w/Vibrant_energy",
+      "verified_on": "2026-10-23"
+    },
+    "39017": {
+      "name": "Senntisten crystal",
+      "source": "https://runescape.wiki/w/Senntisten_crystal",
+      "verified_on": "2026-10-23"
+    },
+    "29320": {
+      "name": "Lustrous energy",
+      "source": "https://runescape.wiki/w/Lustrous_energy",
+      "verified_on": "2026-10-23"
+    },
+    "29321": {
+      "name": "Brilliant energy",
+      "source": "https://runescape.wiki/w/Brilliant_energy",
+      "verified_on": "2026-10-23"
+    },
+    "29322": {
+      "name": "Radiant energy",
+      "source": "https://runescape.wiki/w/Radiant_energy",
+      "verified_on": "2026-10-23"
+    },
+    "29323": {
+      "name": "Luminous energy",
+      "source": "https://runescape.wiki/w/Luminous_energy",
+      "verified_on": "2026-10-23"
+    },
+    "29324": {
+      "name": "Incandescent energy",
+      "source": "https://runescape.wiki/w/Incandescent_energy",
+      "verified_on": "2026-10-23"
+    },
+    "29293": {
+      "name": "Chronicle fragment",
+      "source": "https://runescape.wiki/w/Chronicle_fragment",
+      "verified_on": "2026-10-23"
+    },
+    "49460": {
+      "name": "Third Age iron",
+      "source": "https://runescape.wiki/w/Third_Age_iron",
+      "verified_on": "2026-10-23"
+    },
+    "49498": {
+      "name": "Chaotic brimstone",
+      "source": "https://runescape.wiki/w/Chaotic_brimstone",
+      "verified_on": "2026-10-23"
+    },
+    "49464": {
+      "name": "White oak",
+      "source": "https://runescape.wiki/w/White_oak",
+      "verified_on": "2026-10-23"
+    },
+    "49472": {
+      "name": "Stormguard steel",
+      "source": "https://runescape.wiki/w/Stormguard_steel",
+      "verified_on": "2026-10-23"
+    },
+    "49476": {
+      "name": "Malachite green",
+      "source": "https://runescape.wiki/w/Malachite_green",
+      "verified_on": "2026-10-23"
+    },
+    "50690": {
+      "name": "Dragon metal",
+      "source": "https://runescape.wiki/w/Dragon_metal",
+      "verified_on": "2026-10-23"
+    },
+    "49430": {
+      "name": "Chronotes",
+      "source": "https://runescape.wiki/w/Chronotes",
+      "verified_on": "2026-10-23"
+    },
+    "49429": {
+      "name": "Archaeology journal",
+      "source": "https://runescape.wiki/w/Archaeology_journal",
+      "verified_on": "2026-10-23"
+    },
+    "6032": {
+      "name": "Compost",
+      "source": "https://runescape.wiki/w/Compost",
+      "verified_on": "2026-10-23"
+    },
+    "5370": {
+      "name": "Oak sapling",
+      "source": "https://runescape.wiki/w/Oak_sapling",
+      "verified_on": "2026-10-23"
+    },
+    "5371": {
+      "name": "Willow sapling",
+      "source": "https://runescape.wiki/w/Willow_sapling",
+      "verified_on": "2026-10-23"
+    },
+    "5372": {
+      "name": "Maple sapling",
+      "source": "https://runescape.wiki/w/Maple_sapling",
+      "verified_on": "2026-10-23"
+    },
+    "5373": {
+      "name": "Yew sapling",
+      "source": "https://runescape.wiki/w/Yew_sapling",
+      "verified_on": "2026-10-23"
+    },
+    "5374": {
+      "name": "Magic sapling",
+      "source": "https://runescape.wiki/w/Magic_sapling",
+      "verified_on": "2026-10-23"
+    },
+    "32294": {
+      "name": "Elder sapling",
+      "source": "https://runescape.wiki/w/Elder_sapling",
+      "verified_on": "2026-10-23"
+    },
+    "199": {
+      "name": "Grimy guam",
+      "source": "https://runescape.wiki/w/Grimy_guam",
+      "verified_on": "2026-10-23"
+    },
+    "5283": {
+      "name": "Apple tree seed",
+      "source": "https://runescape.wiki/w/Apple_tree_seed",
+      "verified_on": "2026-10-23"
+    },
+    "43985": {
+      "name": "Rabbit teeth",
+      "source": "https://runescape.wiki/w/Rabbit_teeth",
+      "verified_on": "2026-10-23"
+    },
+    "48776": {
+      "name": "Common green frog (unchecked)",
+      "source": "https://runescape.wiki/w/Common_green_frog_%28unchecked%29",
+      "verified_on": "2026-10-23"
+    },
+    "52811": {
+      "name": "Golden roses",
+      "source": "https://runescape.wiki/w/Golden_roses",
+      "verified_on": "2026-10-23"
+    },
+    "1942": {
+      "name": "Raw potato",
+      "source": "https://runescape.wiki/w/Raw_potato",
+      "verified_on": "2026-10-23"
+    },
+    "1955": {
+      "name": "Cooking apple",
+      "source": "https://runescape.wiki/w/Cooking_apple",
+      "verified_on": "2026-10-23"
+    },
+    "10148": {
+      "name": "Black salamander",
+      "source": "https://runescape.wiki/w/Black_salamander",
+      "verified_on": "2026-10-24"
+    },
+    "7080": {
+      "name": "Sliced mushrooms",
+      "source": "https://runescape.wiki/w/Sliced_mushrooms",
+      "verified_on": "2026-10-24"
+    },
+    "18336": {
+      "name": "Scroll of life",
+      "source": "https://runescape.wiki/w/Scroll_of_life",
+      "verified_on": "2026-10-24"
+    },
+    "31595": {
+      "name": "Cobalt skillchompa",
+      "source": "https://runescape.wiki/w/Cobalt_skillchompa",
+      "verified_on": "2026-10-24"
+    },
+    "37776": {
+      "name": "Shell chippings",
+      "source": "https://runescape.wiki/w/Shell_chippings",
+      "verified_on": "2026-10-24"
+    },
+    "38627": {
+      "name": "Rumberry",
+      "source": "https://runescape.wiki/w/Rumberry",
+      "verified_on": "2026-10-24"
+    },
+    "43945": {
+      "name": "Delicious honeycomb",
+      "source": "https://runescape.wiki/w/Delicious_honeycomb",
+      "verified_on": "2026-10-24"
+    },
+    "49590": {
+      "name": "Cres Framework",
+      "source": "https://runescape.wiki/w/Cres_Framework",
+      "verified_on": "2026-10-24"
+    },
+    "49598": {
+      "name": "Queen Mab's Moonstone",
+      "source": "https://runescape.wiki/w/Queen_Mab%27s_Moonstone",
+      "verified_on": "2026-10-24"
+    },
+    "50701": {
+      "name": "Soma",
+      "source": "https://runescape.wiki/w/Soma",
+      "verified_on": "2026-10-24"
+    },
+    "63916": {
+      "name": "Memory stone",
+      "source": "https://runescape.wiki/w/Memory_stone",
+      "verified_on": "2026-10-24"
+    },
+    "63918": {
+      "name": "Remnant energy",
+      "source": "https://runescape.wiki/w/Remnant_energy",
+      "verified_on": "2026-10-24"
     }
   }
 }

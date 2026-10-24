@@ -140,6 +140,13 @@ local function populate(component, options)
     if options.reset_tips then
         current:AddText("Development testing")
         current:AddText("Time between tips: 0 min (development override).")
+        if options.allow_existing_methods then
+            current:AddSimpleButton("Allow existing method tips (development)", function()
+                if alive() then
+                    options.allow_existing_methods()
+                end
+            end)
+        end
         current:AddSimpleButton("Reset dismissals (development)", function()
             if alive() then
                 options.reset_tips()

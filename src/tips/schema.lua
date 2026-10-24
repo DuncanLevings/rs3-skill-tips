@@ -41,6 +41,10 @@ local function is_level(value)
 end
 
 local function check_text_fields(tip, problems)
+    if tip.main_method ~= nil and (type(tip.main_method) ~= "boolean" or tip.kind ~= "method") then
+        problems[#problems + 1] = "main_method must be a boolean on a method tip"
+    end
+
     if tip.icon_item ~= nil and not is_text(tip.icon_item) then
         problems[#problems + 1] = "icon_item must be an item config name"
     end

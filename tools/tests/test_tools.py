@@ -251,6 +251,15 @@ class ExtractionTests(unittest.TestCase):
 
 
 class NetworkTests(unittest.TestCase):
+    def test_rendered_pages_follow_training_guide_redirects(self):
+        page = {"title": "Hunter training", "revid": 123, "text": "<h2>Methods</h2>"}
+        client = WikiClient("unused", offline=True)
+        with patch.object(client, "request", return_value={"parse": page}) as request:
+            self.assertEqual(client.page("Pay-to-play Hunter training"), page)
+            request.assert_called_once_with(
+                action="parse", page="Pay-to-play Hunter training", prop="text|revid", redirects=1
+            )
+
     def setUp(self):
         self.temporary = tempfile.TemporaryDirectory()
         self.addCleanup(self.temporary.cleanup)

@@ -4,16 +4,15 @@
 return {
     {
         id = "shared.grace_of_the_elves",
-        -- gate on whichever gathering skill is active, not all three.
+        -- gate on whichever gathering skill is active, rather than every gathering skill.
         min_training_level = 80,
         kind = "convenience",
-        skills = { "MINING", "WOODCUTTING", "FISHING" },
+        skills = { "MINING", "WOODCUTTING", "FISHING", "ARCHAEOLOGY" },
         members = true,
         title = "Grace of the elves",
         icon_item = "ALCH_ONYX_SKILL_NECKLACE",
         hook = "Tired of banking? Grace of the elves sends what you gather straight to your bank.",
-        why = "It holds porter charges, so the ore, logs or fish you gather go to the bank on "
-            .. "their own. It can also summon Seren spirits while you skill.",
+        why = "It holds porter charges, so gathered resources can go straight to your bank. It can also summon Seren spirits while you skill.",
         how = {
             "Enchant an alchemical onyx necklace with Lvl-6 Enchant, then charge it with signs "
                 .. "of the porter.",
@@ -22,6 +21,7 @@ return {
             { type = "training", skill = "MINING" },
             { type = "training", skill = "WOODCUTTING" },
             { type = "training", skill = "FISHING" },
+            { type = "training", skill = "ARCHAEOLOGY" },
         },
         known_when = {
             {
@@ -36,19 +36,31 @@ return {
         id = "shared.ring_of_whispers",
         require_quests_complete = true,
         kind = "convenience",
-        skills = { "MINING", "WOODCUTTING", "FISHING" },
+        skills = {
+            "MINING",
+            "WOODCUTTING",
+            "FISHING",
+            "HUNTER",
+            "DIVINATION",
+            "ARCHAEOLOGY",
+            "FARMING",
+        },
         members = true,
         title = "Ring of Whispers",
         icon_item = "QUEST_ENDGAME_SHADOW_RING",
         hook = "The Ring of Whispers quietly boosts your gathering skills.",
-        why = "While you wear it, you get an invisible +3 to your Mining, Woodcutting and Fishing "
-            .. "levels.",
+        why = "Wear it for an invisible boost to Fishing, Hunter, Divination, Farming and Archaeology. "
+            .. "It also improves Mining damage and Woodcutting success.",
         how = { "It's a reward from Sliske's Endgame." },
         requirements = { quests = { "SLISKES_ENDGAME" } },
         triggers = {
             { type = "training", skill = "MINING" },
             { type = "training", skill = "WOODCUTTING" },
             { type = "training", skill = "FISHING" },
+            { type = "training", skill = "HUNTER" },
+            { type = "training", skill = "DIVINATION" },
+            { type = "training", skill = "ARCHAEOLOGY" },
+            { type = "training", skill = "FARMING" },
         },
         known_when = { { type = "owns_any", items = { "QUEST_ENDGAME_SHADOW_RING" } } },
         priority = 2,
@@ -74,7 +86,15 @@ return {
             quests = { "QUEST_AMASCUT" },
         },
         kind = "convenience",
-        skills = { "MINING", "WOODCUTTING", "FISHING" },
+        skills = {
+            "MINING",
+            "WOODCUTTING",
+            "FISHING",
+            "HUNTER",
+            "DIVINATION",
+            "ARCHAEOLOGY",
+            "FARMING",
+        },
         members = true,
         title = "Scripture of Elidinis",
         icon_item = "ELIDINIS_BOSS_ELIDINIS_BOOK",
@@ -89,6 +109,10 @@ return {
             { type = "training", skill = "MINING" },
             { type = "training", skill = "WOODCUTTING" },
             { type = "training", skill = "FISHING" },
+            { type = "training", skill = "HUNTER" },
+            { type = "training", skill = "DIVINATION" },
+            { type = "training", skill = "ARCHAEOLOGY" },
+            { type = "training", skill = "FARMING" },
         },
         known_when = {
             {
@@ -103,27 +127,98 @@ return {
     },
 
     {
-        id = "shared.crystallise",
+        kind = "general",
+        require_all_levels = true,
+        priority = 3,
+        members = true,
+        skills = { "MINING", "WOODCUTTING", "FISHING", "HUNTER" },
+        title = "Crystallise and Light Form",
+        triggers = {
+            {
+                type = "training",
+                skill = "MINING",
+            },
+            {
+                type = "training",
+                skill = "WOODCUTTING",
+            },
+            {
+                type = "training",
+                skill = "FISHING",
+            },
+            {
+                type = "training",
+                skill = "HUNTER",
+            },
+        },
         icon_item_id = 566,
+        id = "shared.crystallise",
+        how = {
+            "Crystallise needs 88 Magic, and Light Form needs 80 Prayer. Both come with The Light Within.",
+        },
+        require_quests_complete = true,
+        why = "For 30 seconds you gain extra experience from it, but no resources. The Light Form curse doubles that bonus.",
+        requirements = {
+            skills = {
+                PRAYER = 80,
+                MAGIC = 88,
+            },
+            quests = { "SEREN" },
+        },
+        hook = "Crystallise trades gathered resources for extra experience on supported spots and Hunter traps.",
+    },
+
+    {
+        id = "shared.urn_enhancer",
+        kind = "convenience",
+        skills = { "MINING", "WOODCUTTING", "FISHING", "HUNTER", "DIVINATION", "FARMING" },
+        members = true,
+        title = "Urn enhancer",
+        icon_item = "NOMEL_SOUL_GENERATOR",
+        hook = "An urn enhancer offers more experience from urns you already use.",
+        why = "Keep this reusable device in your backpack to improve urn rewards, using energy from your charge pack.",
+        how = { "After Nomad's Elegy, discover and build it through Invention." },
+        requirements = {
+            skills = {
+                INVENTION = 24,
+            },
+            quests = { "NOMADS_ELEGY" },
+        },
         require_all_levels = true,
         require_quests_complete = true,
-        kind = "general",
-        skills = { "MINING", "WOODCUTTING", "FISHING" },
-        members = true,
-        title = "Crystallise and Light Form",
-        hook = "Crystallise turns a rock, tree or fishing spot into a burst of bonus experience.",
-        why = "For 30 seconds you gain extra experience from it, but no resources. The Light "
-            .. "Form curse doubles that bonus.",
-        how = {
-            "Crystallise needs 88 Magic, and Light Form needs 80 Prayer. Both come with The "
-                .. "Light Within.",
-        },
-        requirements = { skills = { MAGIC = 88, PRAYER = 80 }, quests = { "SEREN" } },
+        min_training_level = 30,
         triggers = {
-            { type = "training", skill = "MINING" },
-            { type = "training", skill = "WOODCUTTING" },
-            { type = "training", skill = "FISHING" },
+            {
+                type = "training",
+                skill = "MINING",
+            },
+            {
+                type = "training",
+                skill = "WOODCUTTING",
+            },
+            {
+                type = "training",
+                skill = "FISHING",
+            },
+            {
+                type = "training",
+                skill = "HUNTER",
+            },
+            {
+                type = "training",
+                skill = "DIVINATION",
+            },
+            {
+                type = "training",
+                skill = "FARMING",
+            },
         },
-        priority = 3,
+        known_when = {
+            {
+                type = "owns_any",
+                items = { "NOMEL_SOUL_GENERATOR" },
+            },
+        },
+        priority = 2,
     },
 }

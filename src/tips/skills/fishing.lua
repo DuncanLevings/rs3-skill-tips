@@ -172,35 +172,17 @@ return {
     -- training methods
 
     {
-        id = "fishing.method.crayfish",
-        icon_item_id = 13435,
-        kind = "method",
-        skills = { "FISHING" },
-        level_range = { 1, 19 },
-        members = false,
-        title = "Crayfish",
-        hook = "New to Fishing? Start with crayfish.",
-        why = "They need no bait, so you can start straight away with just a crayfish cage.",
-        how = {
-            "Fish them east of Lumbridge church or on the north shore of the lake in Taverley.",
-        },
-        requirements = { skills = { FISHING = 1 } },
-        triggers = { { type = "level_reached", skill = "FISHING", level = 1 } },
-        priority = 2,
-    },
-
-    {
         id = "fishing.method.fly_fishing",
+        main_method = true,
         icon_item_id = 335,
         kind = "method",
         skills = { "FISHING" },
         level_range = { 20, 69 },
         members = false,
         title = "Fly fishing",
-        hook = "20 Fishing: fly fishing for trout, and later salmon, is your next step.",
-        why = "It carries you a long way. At 30 you start catching salmon too, which boosts your "
-            .. "experience.",
-        how = { "You'll need a fly fishing rod and feathers, which most fishing shops sell." },
+        hook = "Fly fishing offers steady experience with simple supplies.",
+        why = "Catch trout from 20 Fishing and salmon from 30 using the same setup.",
+        how = { "A fly fishing rod and feathers are available from most fishing shops." },
         requirements = { skills = { FISHING = 20 } },
         triggers = { { type = "level_reached", skill = "FISHING", level = 20 } },
         priority = 2,
@@ -208,13 +190,14 @@ return {
 
     {
         id = "fishing.method.barbarian_fishing",
+        main_method = true,
         icon_item_id = 11332,
         kind = "method",
         skills = { "FISHING" },
         level_range = { 70, 71 },
         members = true,
         title = "Barbarian fishing",
-        hook = "70 Fishing: try barbarian fishing for leaping fish.",
+        hook = "Barbarian fishing combines Fishing with a little Strength and Agility experience.",
         why = "You catch leaping trout, salmon and sturgeon, and earn some Strength and Agility "
             .. "experience on top.",
         how = { "Ask Otto Godblessed at his grotto west of Baxtorian Falls to teach you." },
@@ -227,13 +210,14 @@ return {
         -- the jack of spades only needs to be partly done for menaphos, so its named in the
         -- text rather than checked
         id = "fishing.method.menaphos_port",
+        main_method = true,
         icon_item_id = 40291,
         kind = "method",
         skills = { "FISHING" },
         level_range = { 72, 87 },
         members = true,
         title = "Menaphos port district",
-        hook = "72 Fishing: the fishing spots in Menaphos' port district are worth a look.",
+        hook = "Fishing in Menaphos offers a nearby bank and reputation alongside your catches.",
         why = "They're right by a bank, and fishing there earns Menaphos reputation too.",
         how = { "You need to have started The Jack of Spades to get into Menaphos." },
         requirements = { skills = { FISHING = 72 } },
@@ -243,13 +227,14 @@ return {
 
     {
         id = "fishing.method.croesus_front",
+        main_method = true,
         icon_item_id = 52321,
         kind = "method",
         skills = { "FISHING" },
         level_range = { 88, 92 },
         members = true,
         title = "Croesus Front",
-        hook = "88 Fishing: the Croesus Front in Senntisten is a relaxed, profitable spot.",
+        hook = "The Croesus Front offers a relaxed Fishing option with catches you can sell.",
         why = "Fishing the colonised guards here is calm, especially with a shark outfit to get "
             .. "rid of what you catch. All of its spots open at 92.",
         how = { "It's part of the Elder God Wars Dungeon, and has no entry requirements." },
@@ -260,13 +245,14 @@ return {
 
     {
         id = "fishing.method.prifddinas_waterfall",
+        main_method = true,
         icon_item_id = 35721,
         kind = "method",
         skills = { "FISHING" },
         level_range = { 93, 93 },
         members = true,
         title = "Prifddinas waterfall",
-        hook = "93 Fishing: the waterfall in Prifddinas opens up.",
+        hook = "The Prifddinas waterfall offers relaxed Fishing experience once you have access.",
         why = "It's a big step up in experience and stays a relaxed choice after 94 too.",
         how = {
             "It's between the Crwys and Meilyr districts. Plague's End gets you into the city, "
@@ -283,15 +269,15 @@ return {
 
     {
         id = "fishing.method.fishing_frenzy",
+        main_method = true,
         icon_item_id = 42249,
         kind = "method",
         skills = { "FISHING" },
         level_range = { 94, 120 },
         members = true,
         title = "Fishing Frenzy",
-        hook = "94 Fishing: Fishing Frenzy gives huge experience if you don't mind clicking.",
-        why = "It gives no fish and needs constant clicking to keep your streak going, but the "
-            .. "experience is huge.",
+        hook = "Fishing Frenzy trades a relaxed pace for more active training.",
+        why = "Keeping a streak takes frequent clicks. It rewards experience rather than fish to keep.",
         how = { "Talk to Goomah at the Fishing Guild to reach the Deep Sea Fishing hub." },
         requirements = { skills = { FISHING = 94 } },
         triggers = { { type = "level_reached", skill = "FISHING", level = 94 } },
@@ -311,7 +297,7 @@ return {
         level_range = { 66, 120 },
         members = true,
         title = "Ghostly sole",
-        hook = "66 Fishing: ghostly sole is about as AFK as Fishing gets.",
+        hook = "Ghostly sole offers a Fishing option that needs very little attention.",
         why = "The spot never moves or disappears, so with signs of the porter or a fury shark "
             .. "outfit you can leave it running for ages.",
         how = { "Fish it at the Reflection Pool in the south of the City of Um." },
@@ -328,7 +314,7 @@ return {
         level_range = { 68, 120 },
         members = true,
         title = "Minnow shoals",
-        hook = "68 Fishing: minnow shoals are a relaxed option with no quests needed.",
+        hook = "Minnow shoals offer relaxed Fishing without a quest requirement.",
         why = "Minnows stack in your backpack and the shoals don't move often, so you can fish "
             .. "without much attention.",
         how = {
@@ -347,7 +333,7 @@ return {
         level_range = { 90, 120 },
         members = true,
         title = "Fishing contracts",
-        hook = "90 Fishing: contracts in the Arc reward chimes as well as experience.",
+        hook = "Fishing contracts in the Arc reward chimes as well as experience.",
         why = "Each contract asks for a set amount of one fish and pays out chimes, the Arc's "
             .. "currency.",
         how = {
@@ -366,7 +352,7 @@ return {
         level_range = { 96, 120 },
         members = true,
         title = "Wobbegongs",
-        hook = "96 Fishing: look out for wobbegongs on the Uncharted Isles.",
+        hook = "Wobbegongs offer a Fishing option when exploring the Uncharted Isles.",
         why = "They're a rare catch with excellent experience while they last.",
         how = {
             "Uncharted Isles are reached from the Arc, which needs Impressing the Locals. The "

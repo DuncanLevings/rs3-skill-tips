@@ -46,14 +46,12 @@ return function(root)
     local suite = {}
 
     function suite:test_woodcutting_brackets()
-        lu.assertEquals(first_tip(root, "WOODCUTTING", 5), "woodcutting.method.regular_trees")
         lu.assertEquals(first_tip(root, "WOODCUTTING", 25), "woodcutting.method.willow")
         lu.assertEquals(first_tip(root, "WOODCUTTING", 70), "woodcutting.method.choking_ivy")
         lu.assertEquals(first_tip(root, "WOODCUTTING", 101), "woodcutting.method.eternal_magic")
     end
 
     function suite:test_fishing_brackets()
-        lu.assertEquals(first_tip(root, "FISHING", 10), "fishing.method.crayfish")
         lu.assertEquals(first_tip(root, "FISHING", 45), "fishing.method.fly_fishing")
         lu.assertEquals(first_tip(root, "FISHING", 90), "fishing.method.croesus_front")
         lu.assertEquals(first_tip(root, "FISHING", 95), "fishing.method.fishing_frenzy")
@@ -179,6 +177,9 @@ return function(root)
         local eligibility = fake.load("src/coach/eligibility")
         local tip = fake.load("src/tips/catalogue").get("shared.scripture_of_elidinis")
         local levels = { MINING = 80, FISHING = 80, WOODCUTTING = 80 }
+        for _, skill in ipairs(tip.skills) do
+            levels[skill] = 80
+        end
         for skill, needed in pairs(tip.requirements.skills) do
             levels[skill] = needed
         end
@@ -203,9 +204,10 @@ return function(root)
         end)
         for _, skill in ipairs(tip.skills) do
             lu.assertTrue(eligibility.allows(tip, skill, state))
+            local original = levels[skill]
             levels[skill] = 79
             lu.assertFalse(eligibility.allows(tip, skill, state))
-            levels[skill] = 80
+            levels[skill] = original
         end
         for skill, needed in pairs(tip.requirements.skills) do
             levels[skill] = needed - 1

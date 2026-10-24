@@ -37,7 +37,6 @@ return function(root)
 
     function suite:test_each_level_gets_its_own_bracket()
         local cases = {
-            { 1, "mining.method.copper_tin" },
             { 15, "mining.method.iron" },
             { 55, "mining.method.runite" },
             { 75, "mining.method.necrite_phasmatite" },

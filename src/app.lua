@@ -69,6 +69,7 @@ end
 local function update_character()
     local character = character_key.current()
     if character == current_character then
+        tip_progress.capture_starting_levels(player_state)
         return
     end
 
@@ -76,6 +77,7 @@ local function update_character()
     activity_watch.reset()
     current_character = character
     tip_progress.use_character(character)
+    tip_progress.capture_starting_levels(player_state)
     owned_items.use_character(character)
     start_engine()
     -- learn from the saved bank snapshot before an open bank replaces it, the refresh then
@@ -145,6 +147,11 @@ function app.start()
     coach_window.start()
     settings_page.start({
         reset_tips = development.ENABLED and reset_tips or nil,
+        allow_existing_methods = development.ENABLED and function()
+            tip_progress.allow_existing_methods()
+            tip_progress.reset_dismissed()
+            engine.reset_pacing()
+        end or nil,
     })
     keybind.start(coach_window.toggle)
 

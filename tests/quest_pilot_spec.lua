@@ -82,6 +82,7 @@ return function(root)
 
     function suite:test_real_quest_waits_behind_an_open_card()
         local fake, tip = world(root, "quest.fishing_contest")
+        fake.player.levels[10] = 20
         local engine = fake.load("src/coach/engine")
         local shown, now = {}, 1000
         engine.start({

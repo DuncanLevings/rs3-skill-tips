@@ -2,9 +2,9 @@
 
 Skill Tips shows a short, useful tip at the moment you can use it. For example, when mining fills your backpack and you don't own an ore box yet, it tells you what an ore box is and where to get one.
 
-Tips cover useful items, quality-of-life features and worthwhile quests. Item and method tips appear while you train. Quest tips wait until you have their skill levels, then appear during a five-second quiet pause. Lamps or quest rewards can qualify you for a quest tip, but don't trigger training-method tips on their own. The plugin stays quiet for a while after combat.
+Tips cover useful items, quality-of-life features and worthwhile quests. Item and method tips appear while you train. Quest tips wait until you have their skill levels, then appear during a five-second quiet pause. Lamps or quest rewards can qualify you for a quest tip, but don't trigger training-method tips on their own. The plugin stays quiet for a while after combat. When you first enable it for a character, it skips main training brackets you have already unlocked and introduces future ones as you progress. This includes starter brackets; useful discoveries and alternative methods can appear straight away.
 
-> **Early version:** tips cover Mining, Woodcutting and Fishing so far: useful items, the best training method for your level, and alternative ways to train. The quest pilot covers Fishing Contest and Family Crest. More non-combat skills are on the way.
+> **Early version:** tips cover Mining, Woodcutting, Fishing, Hunter, Divination, Archaeology and Farming: useful items, training methods and practical discoveries. The quest pilot covers Fishing Contest and Family Crest. More non-combat skills are on the way.
 
 ## What a tip looks like
 

@@ -11,6 +11,10 @@ local TIP_FILES = {
     "src/tips/skills/mining",
     "src/tips/skills/woodcutting",
     "src/tips/skills/fishing",
+    "src/tips/skills/hunter",
+    "src/tips/skills/divination",
+    "src/tips/skills/archaeology",
+    "src/tips/skills/farming",
     "src/tips/shared",
     "src/tips/quests",
 }

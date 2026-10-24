@@ -87,7 +87,7 @@ class WikiClient:
             raise ToolError(f"Wiki API error: {data['error']}")
 
     def page(self, title):
-        data = self.request(action="parse", page=title, prop="text|revid")
+        data = self.request(action="parse", page=title, prop="text|revid", redirects=1)
         page = data.get("parse", {})
         if not isinstance(page.get("text"), str):
             raise ToolError(f"No rendered HTML returned for {title}")

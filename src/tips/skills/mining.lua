@@ -188,21 +188,16 @@ return {
     },
 
     {
-        id = "mining.brooch_of_the_gods",
-        -- late-game relevance, not an equip or crafting requirement.
-        min_training_level = 80,
-        kind = "convenience",
-        skills = { "MINING" },
+        hook = "The Brooch of the Gods offers bonuses across several skilling activities.",
         members = true,
-        title = "Brooch of the Gods",
+        priority = 2,
         icon_item = "ENCHANTED_ALCHEMICAL_HYDRIX_BROOCH",
-        hook = "The Brooch of the Gods makes every rockertunity count for more.",
-        why = "Worn in your pocket slot, it boosts rockertunities while you mine and can hold "
-            .. "decorated mining urns and effigies for you.",
+        title = "Brooch of the Gods",
         how = {
             "Enchant an alchemical hydrix brooch with Lvl-6 Enchant, or a Lvl-6 enchant tablet.",
         },
-        triggers = { { type = "training", skill = "MINING" } },
+        why = "This pocket-slot item supports gathering. With Invention unlocked, it can also summon divine blessings containing materials.",
+        min_training_level = 80,
         known_when = {
             {
                 type = "owns_any",
@@ -212,7 +207,47 @@ return {
                 },
             },
         },
-        priority = 2,
+        id = "mining.brooch_of_the_gods",
+        kind = "convenience",
+        triggers = {
+            {
+                type = "training",
+                skill = "MINING",
+            },
+            {
+                type = "training",
+                skill = "WOODCUTTING",
+            },
+            {
+                type = "training",
+                skill = "FISHING",
+            },
+            {
+                type = "training",
+                skill = "HUNTER",
+            },
+            {
+                type = "training",
+                skill = "DIVINATION",
+            },
+            {
+                type = "training",
+                skill = "ARCHAEOLOGY",
+            },
+            {
+                type = "training",
+                skill = "FARMING",
+            },
+        },
+        skills = {
+            "MINING",
+            "WOODCUTTING",
+            "FISHING",
+            "HUNTER",
+            "DIVINATION",
+            "ARCHAEOLOGY",
+            "FARMING",
+        },
     },
 
     {
@@ -244,35 +279,16 @@ return {
     -- training methods
 
     {
-        id = "mining.method.copper_tin",
-        icon_item_id = 436,
-        kind = "method",
-        skills = { "MINING" },
-        level_range = { 1, 9 },
-        members = false,
-        title = "Copper and tin",
-        hook = "New to Mining? Copper and tin rocks are the place to start.",
-        why = "They're the first rocks you can mine, and you need one of each for a bronze bar.",
-        how = {
-            "Try the mine south-east of Lumbridge or the Burthorpe mine. When a rockertunity "
-                .. "appears on a nearby rock, switch to it for bonus experience.",
-        },
-        requirements = { skills = { MINING = 1 } },
-        triggers = { { type = "level_reached", skill = "MINING", level = 1 } },
-        priority = 2,
-    },
-
-    {
         id = "mining.method.iron",
+        main_method = true,
         icon_item_id = 440,
         kind = "method",
         skills = { "MINING" },
         level_range = { 10, 19 },
         members = false,
         title = "Iron",
-        hook = "10 Mining: iron rocks are now your best option.",
-        why = "Iron is quicker experience than copper and tin. From level 15, mining slows down "
-            .. "if you leave it completely idle, so click the rock now and then.",
+        hook = "Iron offers quicker experience than copper and tin.",
+        why = "From level 15, mining slows down if you leave it completely idle. Clicking the rock now and then keeps it moving.",
         how = { "Look for iron in the mines south-west of Lumbridge and south-west of Varrock." },
         requirements = { skills = { MINING = 10 } },
         triggers = { { type = "level_reached", skill = "MINING", level = 10 } },
@@ -281,14 +297,15 @@ return {
 
     {
         id = "mining.method.coal",
+        main_method = true,
         icon_item_id = 453,
         kind = "method",
         skills = { "MINING" },
         level_range = { 20, 29 },
         members = false,
         title = "Coal",
-        hook = "20 Mining: time to move on to coal.",
-        why = "Coal is a step up in experience, and you'll need it to make steel bars.",
+        hook = "Coal combines Mining experience with a supply for making steel bars.",
+        why = "It gives more experience than copper and tin, with a useful Smithing resource to keep or sell.",
         how = { "There's coal in the mine south-west of Lumbridge and the Falador west mine." },
         requirements = { skills = { MINING = 20 } },
         triggers = { { type = "level_reached", skill = "MINING", level = 20 } },
@@ -297,13 +314,14 @@ return {
 
     {
         id = "mining.method.mithril",
+        main_method = true,
         icon_item_id = 447,
         kind = "method",
         skills = { "MINING" },
         level_range = { 30, 39 },
         members = false,
         title = "Mithril",
-        hook = "30 Mining: mithril rocks are your next step up.",
+        hook = "Mithril offers another way to train while gathering ore for Smithing.",
         why = "Mithril gives better experience than coal for the next ten levels.",
         how = { "Mine it at the Varrock south-east or south-west mines." },
         requirements = { skills = { MINING = 30 } },
@@ -313,13 +331,14 @@ return {
 
     {
         id = "mining.method.adamantite_luminite",
+        main_method = true,
         icon_item_id = 449,
         kind = "method",
         skills = { "MINING" },
         level_range = { 40, 49 },
         members = false,
         title = "Adamantite and luminite",
-        hook = "40 Mining: adamantite and luminite are open to you.",
+        hook = "Adamantite and luminite offer similar experience, with different uses for your ore.",
         why = "Both give similar experience, so pick whichever is closer. Luminite is also "
             .. "needed alongside runite to make rune bars later.",
         how = {
@@ -332,13 +351,14 @@ return {
 
     {
         id = "mining.method.runite",
+        main_method = true,
         icon_item_id = 451,
         kind = "method",
         skills = { "MINING" },
         level_range = { 50, 59 },
         members = false,
         title = "Runite",
-        hook = "50 Mining: you can mine runite now.",
+        hook = "Runite offers an experience boost over adamantite and luminite.",
         why = "Runite is a solid jump in experience from adamantite and luminite.",
         how = {
             "The mine south-east of the Fight Arena is the best spot. The Mining Guild has "
@@ -351,13 +371,14 @@ return {
 
     {
         id = "mining.method.orichalcite_drakolith",
+        main_method = true,
         icon_item_id = 44822,
         kind = "method",
         skills = { "MINING" },
         level_range = { 60, 69 },
         members = true,
         title = "Orichalcite and drakolith",
-        hook = "60 Mining: orichalcite and drakolith are your next ores.",
+        hook = "Orichalcite and drakolith offer two options for gathering higher-tier ore.",
         why = "Either one is a clear step up in experience from runite.",
         how = {
             "Orichalcite is in the Mining Guild. Drakolith is at the Tai Bwo Wannai and "
@@ -370,15 +391,15 @@ return {
 
     {
         id = "mining.method.necrite_phasmatite",
+        main_method = true,
         icon_item_id = 44826,
         kind = "method",
         skills = { "MINING" },
         level_range = { 70, 79 },
         members = true,
         title = "Necrite and phasmatite",
-        hook = "70 Mining: try necrite and phasmatite.",
-        why = "They're your next experience upgrade. Necrite is easy to reach even with few "
-            .. "quests done.",
+        hook = "Necrite and phasmatite offer higher-tier ore for training and Smithing.",
+        why = "Both give more experience than orichalcite and drakolith. Necrite is reachable with few quests completed.",
         how = {
             "The hobgoblin mine near the Wilderness lodestone has necrite and a bank nearby. "
                 .. "It's in the Wilderness, so only bring what you're happy to lose.",
@@ -390,15 +411,15 @@ return {
 
     {
         id = "mining.method.banite",
+        main_method = true,
         icon_item_id = 21778,
         kind = "method",
         skills = { "MINING" },
         level_range = { 80, 88 },
         members = true,
         title = "Banite",
-        hook = "80 Mining: banite rocks are open to you.",
-        why = "Banite is your next experience upgrade until corrupted ore and animica at 89 "
-            .. "and 90.",
+        hook = "Banite is another option for training while gathering higher-tier ore.",
+        why = "It can bridge the levels before corrupted ore and animica become available at 89 and 90.",
         how = {
             "The Pirates' Hideout mine in the deep Wilderness has no requirements and a forge "
                 .. "beside it for depositing ore. Only bring what you're happy to lose.",
@@ -410,13 +431,14 @@ return {
 
     {
         id = "mining.method.corrupted_ore",
+        main_method = true,
         icon_item_id = 32262,
         kind = "method",
         skills = { "MINING" },
         level_range = { 89, 99 },
         members = true,
         title = "Corrupted ore",
-        hook = "89 Mining: corrupted ore in Prifddinas is worth a look.",
+        hook = "Corrupted ore offers relaxed Mining without filling your backpack with separate ores.",
         why = "It gives more experience than banite or animica, stacks in your backpack and "
             .. "doesn't use stamina, which makes it great for relaxed mining.",
         how = {
@@ -430,13 +452,14 @@ return {
 
     {
         id = "mining.method.animica",
+        main_method = true,
         icon_item_id = 44830,
         kind = "method",
         skills = { "MINING" },
         level_range = { 90, 96 },
         members = true,
         title = "Light and dark animica",
-        hook = "90 Mining: light and dark animica are open to you.",
+        hook = "Light and dark animica offer training that improves as your Mining level rises.",
         why = "Animica's experience gets noticeably better as your level climbs towards 99.",
         how = {
             "Light animica is at the Lletya mine and Anachronia's south-west mine. Dark "
@@ -449,13 +472,14 @@ return {
 
     {
         id = "mining.method.alaea_crablets",
+        main_method = true,
         icon_item_id = 37773,
         kind = "method",
         skills = { "MINING" },
         level_range = { 97, 99 },
         members = true,
         title = "Alaea crablets",
-        hook = "97 Mining: keep an eye out for alaea crablets on the Uncharted Isles.",
+        hook = "Alaea crablets offer a rare source of Mining experience on the Uncharted Isles.",
         why = "They're a rare daily resource with excellent experience while they last.",
         how = {
             "Uncharted Isles are reached from the Arc, which needs the Impressing the Locals "
@@ -468,13 +492,14 @@ return {
 
     {
         id = "mining.method.primal",
+        main_method = true,
         icon_item_id = 57193,
         kind = "method",
         skills = { "MINING" },
         level_range = { 100, 120 },
         members = true,
         title = "Primal rocks",
-        hook = "100 Mining: primal rocks are waiting in Daemonheim.",
+        hook = "Primal rocks offer a higher-level Mining option in Daemonheim.",
         why = "They're the top tier of ore, and the experience keeps improving as you level "
             .. "past 100.",
         how = {

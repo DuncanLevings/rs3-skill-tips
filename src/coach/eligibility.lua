@@ -75,6 +75,13 @@ function eligibility.allows(tip, skill, state)
     end
 
     if tip.kind == "method" and tip.level_range then
+        -- join at the player's current progress, not with advice for a bracket already unlocked.
+        -- starter brackets count too; alternatives are never filtered here.
+        local starting = progress.starting_level(skill)
+        if tip.main_method and starting and tip.level_range[1] <= starting then
+            return false
+        end
+
         local level = state.level(skill)
         if not level or level < tip.level_range[1] or level > tip.level_range[2] then
             return false
