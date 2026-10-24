@@ -71,7 +71,8 @@ return function(root)
         engine.on_training("MINING")
         lu.assertEquals(shown[1].tip.id, "mining.method.necrite_phasmatite")
 
-        -- Later on the main method, cooldown over, still mining: now the remaining curated alternative
+        -- Later on the main method, cooldown over, still mining: now the remaining curated
+        -- alternative
         shown[1].handlers.on_later()
         shown[1].handlers.on_closed()
         engine.reset_pacing()

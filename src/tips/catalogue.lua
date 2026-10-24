@@ -137,4 +137,37 @@ function catalogue.relevant_items()
     return items, categories
 end
 
+local ownership_index
+
+-- item name -> ids of tips that owning it explains, same for categories. built once so an
+-- inventory update only costs a table lookup per item instead of checking every tip
+function catalogue.ownership_index()
+    catalogue.load()
+
+    if ownership_index then
+        return ownership_index
+    end
+
+    ownership_index = { items = {}, categories = {} }
+
+    local function add(map, key, tip_id)
+        map[key] = map[key] or {}
+        table.insert(map[key], tip_id)
+    end
+
+    for _, tip in ipairs(ordered) do
+        for _, condition in ipairs(tip.known_when or {}) do
+            if condition.type == "owns_any" then
+                for _, item in ipairs(condition.items) do
+                    add(ownership_index.items, item, tip.id)
+                end
+            elseif condition.type == "owns_category" then
+                add(ownership_index.categories, condition.category, tip.id)
+            end
+        end
+    end
+
+    return ownership_index
+end
+
 return catalogue

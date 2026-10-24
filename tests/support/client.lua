@@ -327,10 +327,27 @@ local function create_prettyui(context)
 end
 
 -- inventory with a list of { item = config name, category = number, count = number }
-local function create_inventory(entries, valid)
-    local inv = { isValid = valid ~= false, freeSlotCount = math.max(0, 28 - #entries) }
+-- on_read (optional) is called for every item read so specs can count them
+local function create_inventory(entries, valid, on_read)
+    local inv = {
+        isValid = valid ~= false,
+        freeSlotCount = math.max(0, 28 - #entries),
+        slotCount = 28,
+    }
+    on_read = on_read or function() end
+
+    -- entries are slots 1, 2, 3... anything else is empty
+    function inv:GetSlot(slot_number)
+        on_read()
+        local entry = entries[slot_number]
+        return {
+            obj = entry and { configName = entry.item, category = entry.category },
+            count = entry and (entry.count or 1) or 0,
+        }
+    end
 
     function inv:GetTotal(obj)
+        on_read()
         local total = 0
 
         for _, entry in ipairs(entries) do
@@ -343,6 +360,7 @@ local function create_inventory(entries, valid)
     end
 
     function inv:GetCategoryTotal(category)
+        on_read()
         local total = 0
 
         for _, entry in ipairs(entries) do
@@ -400,6 +418,8 @@ function client.new(root)
         player = { name = "Test Player", levels = {} },
         -- inventory id -> list of items, BANK only while "open"
         inventories = { [93] = {}, [94] = {} },
+        -- GetSlot/GetTotal/GetCategoryTotal calls so far
+        item_reads = 0,
         quests = {},
         achievements = {},
         varbits = {},
@@ -506,7 +526,11 @@ function client.new(root)
     environment.Inventory = {
         Find = function(inv_type)
             local entries = inv_type and context.inventories[inv_type.id]
-            return entries and create_inventory(entries) or nil
+            return entries
+                    and create_inventory(entries, true, function()
+                        context.item_reads = context.item_reads + 1
+                    end)
+                or nil
         end,
     }
     environment.Player = {

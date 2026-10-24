@@ -82,7 +82,8 @@ return {
         why = "Worn in your pocket slot, it now and then spawns a soul that gives experience when "
             .. "you catch it, on top of your other boosts.",
         how = {
-            "Earn it from the Gate of Elidinis after Ode of the Devourer, or buy one on the Grand Exchange.",
+            "Earn it from the Gate of Elidinis after Ode of the Devourer, or buy one on the "
+                .. "Grand Exchange.",
         },
         triggers = {
             { type = "training", skill = "MINING" },

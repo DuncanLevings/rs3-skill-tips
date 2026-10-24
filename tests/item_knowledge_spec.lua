@@ -40,11 +40,9 @@ return function(root)
         lu.assertTrue(loaded.is_known("mining.golem_outfit"))
         local state = reload.load("src/game/player_state")
         lu.assertFalse(state.owns_category(3226))
-        lu.assertFalse(
-            reload
-                .load("src/coach/eligibility")
-                .allows(reload.load("src/tips/catalogue").get("mining.golem_outfit"), "MINING", state)
-        )
+        local eligibility = reload.load("src/coach/eligibility")
+        local golem_outfit = reload.load("src/tips/catalogue").get("mining.golem_outfit")
+        lu.assertFalse(eligibility.allows(golem_outfit, "MINING", state))
         next_app.stop()
     end
 
@@ -74,11 +72,49 @@ return function(root)
         end
     end
 
-    function suite:test_bank_update_is_observed_before_other_inventory_subscribers()
+    function suite:test_bank_snapshot_teaches_whatever_order_subscribers_run_in()
         local fake, app, progress = world(root)
         fake.inventories[95] = { { item = "TRH48_SHARK_BODY_FURY", category = 3500 } }
-        fake.handlers.InventoryUpdated.skilling_coach_item_knowledge({ inv = { id = 95 } })
+        fake.handlers.InventoryUpdated.skilling_coach_inventories({ inv = { id = 95 } })
         lu.assertTrue(progress.is_known("fishing.shark_outfit"))
+        app.stop()
+    end
+
+    function suite:test_mining_an_ore_only_reads_the_changed_slot()
+        local fake, app = world(root)
+        fake.inventories[93] = { { item = "COPPER_ORE", category = 1 } }
+        fake.item_reads = 0
+        fake.fire("InventoryUpdated", { inv = { id = 93 }, slotsUpdated = { 1 } })
+        lu.assertEquals(fake.item_reads, 1)
+        app.stop()
+    end
+
+    function suite:test_changed_slot_teaches_its_tip()
+        local fake, app, progress = world(root)
+        fake.inventories[93] = {
+            { item = "COPPER_ORE", category = 1 },
+            { item = "MINING_OREBOX_IRON", category = 4448 },
+        }
+        fake.fire("InventoryUpdated", { inv = { id = 93 }, slotsUpdated = { 2 } })
+        lu.assertTrue(progress.is_known("mining.ore_box"))
+        app.stop()
+    end
+
+    function suite:test_bank_update_reads_the_bank_once()
+        local fake, app = world(root)
+        local items, categories = fake.load("src/tips/catalogue").relevant_items()
+        local one_snapshot = 0
+        for _ in pairs(items) do
+            one_snapshot = one_snapshot + 1
+        end
+        for _ in pairs(categories) do
+            one_snapshot = one_snapshot + 1
+        end
+
+        fake.inventories[95] = {}
+        fake.item_reads = 0
+        fake.fire("InventoryUpdated", { inv = { id = 95 }, slotsUpdated = { 1 } })
+        lu.assertEquals(fake.item_reads, one_snapshot)
         app.stop()
     end
 

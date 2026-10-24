@@ -16,6 +16,8 @@ local SUBSCRIPTION = "skilling_coach_inventories"
 -- inventories that are always around, read live when a tip asks
 local LIVE_INVENTORIES = { "INV", "WORN" }
 local owner
+-- told after every bank snapshot, item_knowledge uses it to learn from the bank
+local bank_snapshot_listener
 
 local function find(inv_type_name)
     local ok, inv = pcall(function()
@@ -73,6 +75,81 @@ function inventories.bank_is_open()
     return find("BANK") ~= nil
 end
 
+-- the config name and category of whatever sits in one slot, nil for an empty slot
+local function read_slot(inv, slot_number)
+    local ok, item, category = pcall(function()
+        local slot = inv:GetSlot(slot_number)
+        local obj = slot and slot.obj
+        return obj and obj.configName, obj and obj.category
+    end)
+
+    if ok and type(item) == "string" and item ~= "" then
+        return { item = item, category = category }
+    end
+end
+
+-- "INV" or "WORN" for an event proxy, nil for anything else
+local function live_inventory_name(proxy)
+    for _, name in ipairs(LIVE_INVENTORIES) do
+        local ok, matches = pcall(function()
+            return proxy.id == config.Inv[name].id
+        end)
+
+        if ok and matches then
+            return name
+        end
+    end
+end
+
+-- whats in the backpack or worn slots an event says changed, as { item, category } pairs.
+-- with no slot list it reads the whole thing, thats only on login and when the inventory
+-- first shows up. empty slots, and anything that isnt the backpack or worn, give nothing
+function inventories.items_in(proxy, slot_numbers)
+    local name = live_inventory_name(proxy)
+    local inv = name and find(name)
+    local items = {}
+
+    if not inv then
+        return items
+    end
+
+    if type(slot_numbers) ~= "table" then
+        local ok, slot_count = pcall(function()
+            return inv.slotCount
+        end)
+        slot_count = ok and math.type(slot_count) == "integer" and slot_count or 0
+        slot_numbers = {}
+
+        -- not sure if slots start at 0 or 1, reading one extra covers both
+        for slot_number = 0, slot_count do
+            slot_numbers[#slot_numbers + 1] = slot_number
+        end
+    end
+
+    for _, slot_number in ipairs(slot_numbers) do
+        items[#items + 1] = read_slot(inv, slot_number)
+    end
+
+    return items
+end
+
+-- every item in the backpack and worn slots right now
+function inventories.carried_items()
+    local items = {}
+
+    for _, name in ipairs(LIVE_INVENTORIES) do
+        local ok, proxy = pcall(function()
+            return { id = config.Inv[name].id }
+        end)
+
+        for _, entry in ipairs(ok and inventories.items_in(proxy) or {}) do
+            items[#items + 1] = entry
+        end
+    end
+
+    return items
+end
+
 local function count_category(inv, category)
     local ok, total = pcall(function()
         return inv:GetCategoryTotal(category)
@@ -127,6 +204,10 @@ local function snapshot_bank()
     end, function(category)
         return count_category(bank, category)
     end)
+
+    if bank_snapshot_listener then
+        bank_snapshot_listener()
+    end
 end
 
 local function bank_id()
@@ -160,6 +241,11 @@ end
 
 function inventories.refresh_bank()
     snapshot_bank()
+end
+
+-- theres only one listener (item_knowledge), nil clears it
+function inventories.on_bank_snapshot(listener)
+    bank_snapshot_listener = listener
 end
 
 function inventories.stop()

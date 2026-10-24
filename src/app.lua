@@ -78,10 +78,10 @@ local function update_character()
     tip_progress.use_character(character)
     owned_items.use_character(character)
     start_engine()
-    -- carry forward evidence from the previous bank snapshot before replacing it.
-    item_knowledge.observe(player_state)
+    -- learn from the saved bank snapshot before an open bank replaces it, the refresh then
+    -- tells item_knowledge about the new one
+    item_knowledge.observe()
     inventories.refresh_bank()
-    item_knowledge.observe(player_state)
 end
 
 local function reset_tips()

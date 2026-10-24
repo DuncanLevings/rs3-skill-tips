@@ -36,6 +36,7 @@ Open the settings from the Plugin Hub. You can:
 - choose early, mid or late game tips, and whether to include members tips
 - set the time between tips and the number of tips per session
 - set how long the plugin stays quiet after combat
+- set how long a dismissed tip stays hidden, up to 8 hours of play (time with the plugin running)
 - mute skills you don't want tips for
 - turn the card animation off
 - reset the card's position
@@ -56,16 +57,3 @@ Your settings and card position are saved too. Skill Tips needs no permissions: 
 ## Credits
 
 Tip information is based on the [RuneScape Wiki](https://runescape.wiki), rewritten in our own words. See THIRD_PARTY_NOTICES.txt.
-
-
-Dismissal timing update (user, 2026-10-23): Dismiss now pauses only that tip for 3 hours
-of plugin running time by default; settings range 0–8 hours. No network or wall-clock
-dependency. Count per-character running time, persist checkpoint once a minute and
-flush on stop/character switch. Offline/plugin-stopped time does not count. A crash
-can lose at most the last checkpoint minute. Migrate old boolean dismissals once to
-a fresh timed dismissal; never restart them on each reload. 0 adds no dismissal delay,
-but normal global pacing still applies. Dismiss replaces that tip's session-only block
-so it can become eligible after expiry even in the same session; Later keeps the
-session-only behavior. Ownership and pins still suppress. Duration changes apply to
-active timers; expired records are cleaned up on checkpoints. Recent tips starts at
-the top left on first use; saved positions and sizes always take precedence.

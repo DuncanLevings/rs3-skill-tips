@@ -69,6 +69,19 @@ function owned_items.category_in_bank(category)
     return ensure_loaded().categories[tostring(category)] == true
 end
 
+-- calls visit_item(name) and visit_category(number) for everything the snapshot has
+function owned_items.each_in_bank(visit_item, visit_category)
+    local loaded = ensure_loaded()
+
+    for item in pairs(loaded.items) do
+        visit_item(item)
+    end
+
+    for category in pairs(loaded.categories) do
+        visit_category(tonumber(category))
+    end
+end
+
 local function same_set(left, right)
     for key in pairs(left) do
         if not right[key] then
