@@ -3,6 +3,109 @@
 
 return {
     {
+        why = "This pocket-slot item stores supported urns and improves some skilling rewards. With Invention unlocked, it can also summon divine blessings containing materials.",
+        kind = "convenience",
+        id = "mining.brooch_of_the_gods",
+        hook = "The Brooch of the Gods offers bonuses across several skilling activities.",
+        how = {
+            "Enchant an alchemical hydrix brooch with Lvl-6 Enchant, or a Lvl-6 enchant tablet.",
+        },
+        icon_item = "ENCHANTED_ALCHEMICAL_HYDRIX_BROOCH",
+        known_when = {
+            {
+                items = {
+                    "ENCHANTED_ALCHEMICAL_HYDRIX_BROOCH",
+                    "ENCHANTED_ALCHEMICAL_HYDRIX_BROOCH_USED",
+                },
+                type = "owns_any",
+            },
+        },
+        skills = {
+            "MINING",
+            "WOODCUTTING",
+            "FISHING",
+            "HUNTER",
+            "DIVINATION",
+            "ARCHAEOLOGY",
+            "FARMING",
+            "SMITHING",
+            "CRAFTING",
+            "FLETCHING",
+            "COOKING",
+            "HERBLORE",
+            "FIREMAKING",
+            "RUNECRAFTING",
+            "CONSTRUCTION",
+        },
+        title = "Brooch of the Gods",
+        triggers = {
+            {
+                type = "training",
+                skill = "MINING",
+            },
+            {
+                type = "training",
+                skill = "WOODCUTTING",
+            },
+            {
+                type = "training",
+                skill = "FISHING",
+            },
+            {
+                type = "training",
+                skill = "HUNTER",
+            },
+            {
+                type = "training",
+                skill = "DIVINATION",
+            },
+            {
+                type = "training",
+                skill = "ARCHAEOLOGY",
+            },
+            {
+                type = "training",
+                skill = "FARMING",
+            },
+            {
+                type = "training",
+                skill = "SMITHING",
+            },
+            {
+                type = "training",
+                skill = "CRAFTING",
+            },
+            {
+                type = "training",
+                skill = "FLETCHING",
+            },
+            {
+                type = "training",
+                skill = "COOKING",
+            },
+            {
+                type = "training",
+                skill = "HERBLORE",
+            },
+            {
+                type = "training",
+                skill = "FIREMAKING",
+            },
+            {
+                type = "training",
+                skill = "RUNECRAFTING",
+            },
+            {
+                type = "training",
+                skill = "CONSTRUCTION",
+            },
+        },
+        members = true,
+        priority = 2,
+        min_training_level = 80,
+    },
+
+    {
         id = "shared.grace_of_the_elves",
         -- gate on whichever gathering skill is active, rather than every gathering skill.
         min_training_level = 80,
@@ -67,25 +170,38 @@ return {
     },
 
     {
-        id = "shared.scripture_of_elidinis",
-        -- source access matters even though the book can be bought.
-        min_training_level = 80,
         require_all_levels = true,
         require_quests_complete = true,
         requirements = {
             skills = {
-                AGILITY = 25,
+                MAGIC = 66,
                 ARCHAEOLOGY = 86,
                 COOKING = 20,
-                MAGIC = 66,
-                NECROMANCY = 75,
-                PRAYER = 40,
                 CONSTRUCTION = 54,
+                PRAYER = 40,
+                AGILITY = 25,
                 SLAYER = 10,
+                NECROMANCY = 75,
             },
             quests = { "QUEST_AMASCUT" },
         },
         kind = "convenience",
+        how = {
+            "Earn it from the Gate of Elidinis after Ode of the Devourer, or buy one on the Grand Exchange.",
+        },
+        id = "shared.scripture_of_elidinis",
+        hook = "The Scripture of Elidinis gives you extra experience while you skill.",
+        title = "Scripture of Elidinis",
+        members = true,
+        known_when = {
+            {
+                items = {
+                    "ELIDINIS_BOSS_ELIDINIS_BOOK",
+                    "ELIDINIS_BOSS_ELIDINIS_BOOK_UNLOCK_TOKEN",
+                },
+                type = "owns_any",
+            },
+        },
         skills = {
             "MINING",
             "WOODCUTTING",
@@ -94,36 +210,81 @@ return {
             "DIVINATION",
             "ARCHAEOLOGY",
             "FARMING",
-        },
-        members = true,
-        title = "Scripture of Elidinis",
-        icon_item = "ELIDINIS_BOSS_ELIDINIS_BOOK",
-        hook = "The Scripture of Elidinis gives you extra experience while you skill.",
-        why = "Worn in your pocket slot, it now and then spawns a soul that gives experience when "
-            .. "you catch it, on top of your other boosts.",
-        how = {
-            "Earn it from the Gate of Elidinis after Ode of the Devourer, or buy one on the "
-                .. "Grand Exchange.",
+            "SMITHING",
+            "CRAFTING",
+            "FLETCHING",
+            "COOKING",
+            "HERBLORE",
+            "FIREMAKING",
+            "RUNECRAFTING",
+            "CONSTRUCTION",
         },
         triggers = {
-            { type = "training", skill = "MINING" },
-            { type = "training", skill = "WOODCUTTING" },
-            { type = "training", skill = "FISHING" },
-            { type = "training", skill = "HUNTER" },
-            { type = "training", skill = "DIVINATION" },
-            { type = "training", skill = "ARCHAEOLOGY" },
-            { type = "training", skill = "FARMING" },
-        },
-        known_when = {
             {
-                type = "owns_any",
-                items = {
-                    "ELIDINIS_BOSS_ELIDINIS_BOOK",
-                    "ELIDINIS_BOSS_ELIDINIS_BOOK_UNLOCK_TOKEN",
-                },
+                type = "training",
+                skill = "MINING",
+            },
+            {
+                type = "training",
+                skill = "WOODCUTTING",
+            },
+            {
+                type = "training",
+                skill = "FISHING",
+            },
+            {
+                type = "training",
+                skill = "HUNTER",
+            },
+            {
+                type = "training",
+                skill = "DIVINATION",
+            },
+            {
+                type = "training",
+                skill = "ARCHAEOLOGY",
+            },
+            {
+                type = "training",
+                skill = "FARMING",
+            },
+            {
+                type = "training",
+                skill = "SMITHING",
+            },
+            {
+                type = "training",
+                skill = "CRAFTING",
+            },
+            {
+                type = "training",
+                skill = "FLETCHING",
+            },
+            {
+                type = "training",
+                skill = "COOKING",
+            },
+            {
+                type = "training",
+                skill = "HERBLORE",
+            },
+            {
+                type = "training",
+                skill = "FIREMAKING",
+            },
+            {
+                type = "training",
+                skill = "RUNECRAFTING",
+            },
+            {
+                type = "training",
+                skill = "CONSTRUCTION",
             },
         },
+        why = "Worn in your pocket slot, it now and then spawns a soul that gives experience when you catch it, on top of your other boosts.",
+        icon_item = "ELIDINIS_BOSS_ELIDINIS_BOOK",
         priority = 2,
+        min_training_level = 80,
     },
 
     {
@@ -169,24 +330,15 @@ return {
     },
 
     {
-        id = "shared.urn_enhancer",
-        kind = "convenience",
-        skills = { "MINING", "WOODCUTTING", "FISHING", "HUNTER", "DIVINATION", "FARMING" },
-        members = true,
-        title = "Urn enhancer",
-        icon_item = "NOMEL_SOUL_GENERATOR",
-        hook = "An urn enhancer offers more experience from urns you already use.",
-        why = "Keep this reusable device in your backpack to improve urn rewards, using energy from your charge pack.",
-        how = { "After Nomad's Elegy, discover and build it through Invention." },
+        require_all_levels = true,
+        require_quests_complete = true,
         requirements = {
             skills = {
                 INVENTION = 24,
             },
             quests = { "NOMADS_ELEGY" },
         },
-        require_all_levels = true,
-        require_quests_complete = true,
-        min_training_level = 30,
+        kind = "convenience",
         triggers = {
             {
                 type = "training",
@@ -212,13 +364,49 @@ return {
                 type = "training",
                 skill = "FARMING",
             },
-        },
-        known_when = {
             {
-                type = "owns_any",
-                items = { "NOMEL_SOUL_GENERATOR" },
+                type = "training",
+                skill = "SMITHING",
+            },
+            {
+                type = "training",
+                skill = "FIREMAKING",
+            },
+            {
+                type = "training",
+                skill = "COOKING",
+            },
+            {
+                type = "training",
+                skill = "RUNECRAFTING",
             },
         },
+        id = "shared.urn_enhancer",
+        hook = "An urn enhancer offers more experience from urns you already use.",
+        why = "Keep this reusable device in your backpack to improve urn rewards, using energy from your charge pack.",
+        members = true,
+        known_when = {
+            {
+                items = { "NOMEL_SOUL_GENERATOR" },
+                type = "owns_any",
+            },
+        },
+        skills = {
+            "MINING",
+            "WOODCUTTING",
+            "FISHING",
+            "HUNTER",
+            "DIVINATION",
+            "FARMING",
+            "SMITHING",
+            "FIREMAKING",
+            "COOKING",
+            "RUNECRAFTING",
+        },
+        title = "Urn enhancer",
+        icon_item = "NOMEL_SOUL_GENERATOR",
+        how = { "After Nomad's Elegy, discover and build it through Invention." },
         priority = 2,
+        min_training_level = 30,
     },
 }

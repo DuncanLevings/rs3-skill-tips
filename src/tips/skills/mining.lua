@@ -127,32 +127,46 @@ return {
     },
 
     {
-        id = "mining.varrock_armour",
-        -- easy Varrock diary skill minimums; this does not imply diary completion.
-        requirements = { skills = { AGILITY = 13, CRAFTING = 8, FISHING = 20, MINING = 10 } },
         require_all_levels = true,
-        kind = "convenience",
-        skills = { "MINING" },
-        members = true,
+        requirements = {
+            skills = {
+                CRAFTING = 8,
+                MINING = 10,
+                FISHING = 20,
+                AGILITY = 13,
+            },
+        },
         title = "Varrock armour",
-        icon_item = "ATVAR_BODY_EASY",
-        hook = "Varrock armour gives you a chance to mine two ores at once.",
-        why = "It's a free bonus whenever you mine, and finishing more of the Varrock achievements "
-            .. "makes it better.",
+        id = "mining.varrock_armour",
+        hook = "Varrock armour offers bonuses while mining, smelting and smithing.",
         how = { "Claim it after completing the easy Varrock achievements." },
-        triggers = { { type = "training", skill = "MINING" } },
+        members = true,
         known_when = {
             {
-                type = "owns_any",
                 items = {
                     "ATVAR_BODY_EASY",
                     "ATVAR_BODY_MED",
                     "ATVAR_BODY_HARD",
                     "ATVAR_BODY_ELITE",
                 },
+                type = "owns_any",
             },
         },
+        skills = { "MINING", "SMITHING" },
+        triggers = {
+            {
+                type = "training",
+                skill = "MINING",
+            },
+            {
+                type = "training",
+                skill = "SMITHING",
+            },
+        },
+        why = "It can provide extra ore, bars or smithing progress. Higher achievement tiers improve which metals benefit.",
+        icon_item = "ATVAR_BODY_EASY",
         priority = 2,
+        kind = "convenience",
     },
 
     {
@@ -185,69 +199,6 @@ return {
             },
         },
         priority = 2,
-    },
-
-    {
-        hook = "The Brooch of the Gods offers bonuses across several skilling activities.",
-        members = true,
-        priority = 2,
-        icon_item = "ENCHANTED_ALCHEMICAL_HYDRIX_BROOCH",
-        title = "Brooch of the Gods",
-        how = {
-            "Enchant an alchemical hydrix brooch with Lvl-6 Enchant, or a Lvl-6 enchant tablet.",
-        },
-        why = "This pocket-slot item supports gathering. With Invention unlocked, it can also summon divine blessings containing materials.",
-        min_training_level = 80,
-        known_when = {
-            {
-                type = "owns_any",
-                items = {
-                    "ENCHANTED_ALCHEMICAL_HYDRIX_BROOCH",
-                    "ENCHANTED_ALCHEMICAL_HYDRIX_BROOCH_USED",
-                },
-            },
-        },
-        id = "mining.brooch_of_the_gods",
-        kind = "convenience",
-        triggers = {
-            {
-                type = "training",
-                skill = "MINING",
-            },
-            {
-                type = "training",
-                skill = "WOODCUTTING",
-            },
-            {
-                type = "training",
-                skill = "FISHING",
-            },
-            {
-                type = "training",
-                skill = "HUNTER",
-            },
-            {
-                type = "training",
-                skill = "DIVINATION",
-            },
-            {
-                type = "training",
-                skill = "ARCHAEOLOGY",
-            },
-            {
-                type = "training",
-                skill = "FARMING",
-            },
-        },
-        skills = {
-            "MINING",
-            "WOODCUTTING",
-            "FISHING",
-            "HUNTER",
-            "DIVINATION",
-            "ARCHAEOLOGY",
-            "FARMING",
-        },
     },
 
     {

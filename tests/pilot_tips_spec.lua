@@ -181,7 +181,7 @@ return function(root)
             levels[skill] = 80
         end
         for skill, needed in pairs(tip.requirements.skills) do
-            levels[skill] = needed
+            levels[skill] = math.max(levels[skill] or 0, needed)
         end
         ---@type boolean?
         local finished = true

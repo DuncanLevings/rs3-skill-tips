@@ -1,0 +1,2790 @@
+{
+  "version": 1,
+  "reviewed_on": "2026-10-24",
+  "native_evidence": "335 successful user-supplied native item lookups; probe-confirmed log SHA256 1a02cc5dc4fe95ce80fe7f23596404a981ac4396d42707a9fe98062cbd512cbf",
+  "guides": {
+    "smithing": {
+      "title": "Pay-to-play Smithing training",
+      "url": "https://runescape.wiki/w/Pay-to-play_Smithing_training",
+      "revision": 37178800,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792858940
+    },
+    "crafting": {
+      "title": "Pay-to-play Crafting training",
+      "url": "https://runescape.wiki/w/Pay-to-play_Crafting_training",
+      "revision": 37211357,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792858941
+    },
+    "fletching": {
+      "title": "Pay-to-play Fletching training",
+      "url": "https://runescape.wiki/w/Pay-to-play_Fletching_training",
+      "revision": 37197214,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792858941
+    },
+    "cooking": {
+      "title": "Pay-to-play Cooking training",
+      "url": "https://runescape.wiki/w/Pay-to-play_Cooking_training",
+      "revision": 37215208,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792858942
+    },
+    "herblore": {
+      "title": "Herblore training",
+      "url": "https://runescape.wiki/w/Herblore_training",
+      "revision": 37203645,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792858944
+    },
+    "firemaking": {
+      "title": "Pay-to-play Firemaking training",
+      "url": "https://runescape.wiki/w/Pay-to-play_Firemaking_training",
+      "revision": 37179720,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792858945
+    },
+    "runecrafting": {
+      "title": "Pay-to-play Runecrafting training",
+      "url": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training",
+      "revision": 37195075,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792858946
+    },
+    "construction": {
+      "title": "Construction training",
+      "url": "https://runescape.wiki/w/Construction_training",
+      "revision": 37199404,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792858947
+    },
+    "invention": {
+      "title": "Invention training",
+      "url": "https://runescape.wiki/w/Invention_training",
+      "revision": 37195592,
+      "license": "CC BY-NC-SA 3.0",
+      "fetched_at": 1792858947
+    }
+  },
+  "pages": {
+    "Advanced smithing autoheater": {
+      "title": "Advanced smithing autoheater",
+      "revision": 36926317,
+      "url": "https://runescape.wiki/w/Advanced_smithing_autoheater"
+    },
+    "Always Adze": {
+      "title": "Always Adze",
+      "revision": 37193203,
+      "url": "https://runescape.wiki/w/Always_Adze"
+    },
+    "Amulet of Artisan's Offerings": {
+      "title": "Amulet of Artisan's Offerings",
+      "revision": 36892986,
+      "url": "https://runescape.wiki/w/Amulet_of_Artisan's_Offerings"
+    },
+    "Amulet of Fletcher's Offerings": {
+      "title": "Amulet of Fletcher's Offerings",
+      "revision": 37086470,
+      "url": "https://runescape.wiki/w/Amulet_of_Fletcher's_Offerings"
+    },
+    "Amulet of Offerings": {
+      "title": "Amulet of Offerings",
+      "revision": 36819266,
+      "url": "https://runescape.wiki/w/Amulet_of_Offerings"
+    },
+    "Amulet of the expert": {
+      "title": "Amulet of the expert",
+      "revision": 36808002,
+      "url": "https://runescape.wiki/w/Amulet_of_the_expert"
+    },
+    "Artificer's measure": {
+      "title": "Artificer's measure",
+      "revision": 37173267,
+      "url": "https://runescape.wiki/w/Artificer's_measure"
+    },
+    "Artisan's bandana": {
+      "title": "Artisan's bandana",
+      "revision": 37212568,
+      "url": "https://runescape.wiki/w/Artisan's_bandana"
+    },
+    "Artisan's boots": {
+      "title": "Artisan's boots",
+      "revision": 37007060,
+      "url": "https://runescape.wiki/w/Artisan's_boots"
+    },
+    "Artisan's gloves": {
+      "title": "Artisan's gloves",
+      "revision": 37007062,
+      "url": "https://runescape.wiki/w/Artisan's_gloves"
+    },
+    "Artisan's legs": {
+      "title": "Artisan's legs",
+      "revision": 37007064,
+      "url": "https://runescape.wiki/w/Artisan's_legs"
+    },
+    "Artisan's outfit": {
+      "title": "Artisan's outfit",
+      "revision": 37212565,
+      "url": "https://runescape.wiki/w/Artisan's_outfit"
+    },
+    "Artisan's top": {
+      "title": "Artisan's top",
+      "revision": 37007066,
+      "url": "https://runescape.wiki/w/Artisan's_top"
+    },
+    "Augmented crystal hammer": {
+      "title": "Augmented crystal hammer",
+      "revision": 37160781,
+      "url": "https://runescape.wiki/w/Augmented_crystal_hammer"
+    },
+    "Bait and Switch": {
+      "title": "Bait and Switch",
+      "revision": 37185578,
+      "url": "https://runescape.wiki/w/Bait_and_Switch"
+    },
+    "Blacksmith's apron": {
+      "title": "Blacksmith's apron",
+      "revision": 37001240,
+      "url": "https://runescape.wiki/w/Blacksmith's_apron"
+    },
+    "Blacksmith's boots": {
+      "title": "Blacksmith's boots",
+      "revision": 37001241,
+      "url": "https://runescape.wiki/w/Blacksmith's_boots"
+    },
+    "Blacksmith's gloves": {
+      "title": "Blacksmith's gloves",
+      "revision": 37164914,
+      "url": "https://runescape.wiki/w/Blacksmith's_gloves"
+    },
+    "Blacksmith's helmet": {
+      "title": "Blacksmith's helmet",
+      "revision": 37008148,
+      "url": "https://runescape.wiki/w/Blacksmith's_helmet"
+    },
+    "Blacksmith's outfit": {
+      "title": "Blacksmith's outfit",
+      "revision": 37203201,
+      "url": "https://runescape.wiki/w/Blacksmith's_outfit"
+    },
+    "Blacksmith's top": {
+      "title": "Blacksmith's top",
+      "revision": 37001245,
+      "url": "https://runescape.wiki/w/Blacksmith's_top"
+    },
+    "Blood ethereal head": {
+      "title": "Blood ethereal head",
+      "revision": 36991443,
+      "url": "https://runescape.wiki/w/Blood_ethereal_head"
+    },
+    "Blood ethereal outfit": {
+      "title": "Blood ethereal outfit",
+      "revision": 37060654,
+      "url": "https://runescape.wiki/w/Blood_ethereal_outfit"
+    },
+    "Botanist's boots": {
+      "title": "Botanist's boots",
+      "revision": 37011730,
+      "url": "https://runescape.wiki/w/Botanist's_boots"
+    },
+    "Botanist's gloves": {
+      "title": "Botanist's gloves",
+      "revision": 37011732,
+      "url": "https://runescape.wiki/w/Botanist's_gloves"
+    },
+    "Botanist's mask": {
+      "title": "Botanist's mask",
+      "revision": 37011733,
+      "url": "https://runescape.wiki/w/Botanist's_mask"
+    },
+    "Botanist's outfit": {
+      "title": "Botanist's outfit",
+      "revision": 37212572,
+      "url": "https://runescape.wiki/w/Botanist's_outfit"
+    },
+    "Botanist's top": {
+      "title": "Botanist's top",
+      "revision": 37011735,
+      "url": "https://runescape.wiki/w/Botanist's_top"
+    },
+    "Botanist's trousers": {
+      "title": "Botanist's trousers",
+      "revision": 37011736,
+      "url": "https://runescape.wiki/w/Botanist's_trousers"
+    },
+    "Construction cape": {
+      "title": "Construction cape",
+      "revision": 37196799,
+      "url": "https://runescape.wiki/w/Construction_cape"
+    },
+    "Construction cape (t)": {
+      "title": "Construction cape",
+      "revision": 37196799,
+      "url": "https://runescape.wiki/w/Construction_cape"
+    },
+    "Construction master cape": {
+      "title": "Construction master cape",
+      "revision": 37166066,
+      "url": "https://runescape.wiki/w/Construction_master_cape"
+    },
+    "Constructor's boots": {
+      "title": "Constructor's boots",
+      "revision": 37212694,
+      "url": "https://runescape.wiki/w/Constructor's_boots"
+    },
+    "Constructor's garb": {
+      "title": "Constructor's garb",
+      "revision": 37182615,
+      "url": "https://runescape.wiki/w/Constructor's_garb"
+    },
+    "Constructor's gloves": {
+      "title": "Constructor's gloves",
+      "revision": 37212695,
+      "url": "https://runescape.wiki/w/Constructor's_gloves"
+    },
+    "Constructor's hat": {
+      "title": "Constructor's hat",
+      "revision": 37212685,
+      "url": "https://runescape.wiki/w/Constructor's_hat"
+    },
+    "Constructor's outfit": {
+      "title": "Constructor's outfit",
+      "revision": 37212563,
+      "url": "https://runescape.wiki/w/Constructor's_outfit"
+    },
+    "Constructor's trousers": {
+      "title": "Constructor's trousers",
+      "revision": 37212687,
+      "url": "https://runescape.wiki/w/Constructor's_trousers"
+    },
+    "Cooking cape": {
+      "title": "Cooking cape",
+      "revision": 37168204,
+      "url": "https://runescape.wiki/w/Cooking_cape"
+    },
+    "Cooking gauntlets": {
+      "title": "Cooking gauntlets",
+      "revision": 37164925,
+      "url": "https://runescape.wiki/w/Cooking_gauntlets"
+    },
+    "Crafting cape": {
+      "title": "Crafting cape",
+      "revision": 37008259,
+      "url": "https://runescape.wiki/w/Crafting_cape"
+    },
+    "Crafting cape (t)": {
+      "title": "Crafting cape",
+      "revision": 37008259,
+      "url": "https://runescape.wiki/w/Crafting_cape"
+    },
+    "Crystal binding rod": {
+      "title": "Crystal binding rod",
+      "revision": 37194108,
+      "url": "https://runescape.wiki/w/Crystal_binding_rod"
+    },
+    "Crystal hammer": {
+      "title": "Crystal hammer",
+      "revision": 37012911,
+      "url": "https://runescape.wiki/w/Crystal_hammer"
+    },
+    "Crystal knife": {
+      "title": "Crystal knife",
+      "revision": 37200661,
+      "url": "https://runescape.wiki/w/Crystal_knife"
+    },
+    "Crystal saw": {
+      "title": "Crystal saw",
+      "revision": 37102222,
+      "url": "https://runescape.wiki/w/Crystal_saw"
+    },
+    "Crystal saw (Prifddinas)": {
+      "title": "Crystal saw (Prifddinas)",
+      "revision": 37102221,
+      "url": "https://runescape.wiki/w/Crystal_saw_(Prifddinas)"
+    },
+    "Death ethereal head": {
+      "title": "Death ethereal head",
+      "revision": 36992517,
+      "url": "https://runescape.wiki/w/Death_ethereal_head"
+    },
+    "Death ethereal outfit": {
+      "title": "Death ethereal outfit",
+      "revision": 37060653,
+      "url": "https://runescape.wiki/w/Death_ethereal_outfit"
+    },
+    "Desert amulet 4": {
+      "title": "Desert amulet 4",
+      "revision": 37146413,
+      "url": "https://runescape.wiki/w/Desert_amulet_4"
+    },
+    "Dwarven army axe": {
+      "title": "Dwarven army axe",
+      "revision": 37211005,
+      "url": "https://runescape.wiki/w/Dwarven_army_axe"
+    },
+    "Enhanced hammer-tron": {
+      "title": "Enhanced hammer-tron",
+      "revision": 37027154,
+      "url": "https://runescape.wiki/w/Enhanced_hammer-tron"
+    },
+    "Enhanced pyro-matic": {
+      "title": "Enhanced pyro-matic",
+      "revision": 36829932,
+      "url": "https://runescape.wiki/w/Enhanced_pyro-matic"
+    },
+    "Ethereal outfit": {
+      "title": "Ethereal outfit",
+      "revision": 36169593,
+      "url": "https://runescape.wiki/w/Ethereal_outfit"
+    },
+    "Explorer's ring 2": {
+      "title": "Explorer's ring 2",
+      "revision": 37013937,
+      "url": "https://runescape.wiki/w/Explorer's_ring_2"
+    },
+    "Explorer's ring 3": {
+      "title": "Explorer's ring 3",
+      "revision": 37213168,
+      "url": "https://runescape.wiki/w/Explorer's_ring_3"
+    },
+    "Explorer's ring 4": {
+      "title": "Explorer's ring 4",
+      "revision": 37084766,
+      "url": "https://runescape.wiki/w/Explorer's_ring_4"
+    },
+    "Factory boots": {
+      "title": "Factory boots",
+      "revision": 36311278,
+      "url": "https://runescape.wiki/w/Factory_boots"
+    },
+    "Factory gloves": {
+      "title": "Factory gloves",
+      "revision": 36311279,
+      "url": "https://runescape.wiki/w/Factory_gloves"
+    },
+    "Factory mask": {
+      "title": "Factory mask",
+      "revision": 36597441,
+      "url": "https://runescape.wiki/w/Factory_mask"
+    },
+    "Factory outfit": {
+      "title": "Factory outfit",
+      "revision": 36714168,
+      "url": "https://runescape.wiki/w/Factory_outfit"
+    },
+    "Factory top": {
+      "title": "Factory top",
+      "revision": 36311281,
+      "url": "https://runescape.wiki/w/Factory_top"
+    },
+    "Factory trousers": {
+      "title": "Factory trousers",
+      "revision": 36311282,
+      "url": "https://runescape.wiki/w/Factory_trousers"
+    },
+    "Fenshell knife": {
+      "title": "Fenshell knife",
+      "revision": 37214322,
+      "url": "https://runescape.wiki/w/Fenshell_knife"
+    },
+    "Fired up set": {
+      "title": "Fired up set",
+      "revision": 36662917,
+      "url": "https://runescape.wiki/w/Fired_up_set"
+    },
+    "Firemaking cape": {
+      "title": "Firemaking cape",
+      "revision": 37008263,
+      "url": "https://runescape.wiki/w/Firemaking_cape"
+    },
+    "Flame gloves": {
+      "title": "Flame gloves",
+      "revision": 37159080,
+      "url": "https://runescape.wiki/w/Flame_gloves"
+    },
+    "Fletcher's outfit": {
+      "title": "Fletcher's outfit",
+      "revision": 37212571,
+      "url": "https://runescape.wiki/w/Fletcher's_outfit"
+    },
+    "Fletching cape": {
+      "title": "Fletching cape",
+      "revision": 37124918,
+      "url": "https://runescape.wiki/w/Fletching_cape"
+    },
+    "Furniture depacker": {
+      "title": "Furniture depacker",
+      "revision": 37189107,
+      "url": "https://runescape.wiki/w/Furniture_depacker"
+    },
+    "Giant pouch": {
+      "title": "Giant pouch",
+      "revision": 37157766,
+      "url": "https://runescape.wiki/w/Giant_pouch"
+    },
+    "Hammer-tron": {
+      "title": "Hammer-tron",
+      "revision": 37171466,
+      "url": "https://runescape.wiki/w/Hammer-tron"
+    },
+    "Herblore cape": {
+      "title": "Herblore cape",
+      "revision": 37008282,
+      "url": "https://runescape.wiki/w/Herblore_cape"
+    },
+    "Herblore master cape": {
+      "title": "Herblore master cape",
+      "revision": 36961773,
+      "url": "https://runescape.wiki/w/Herblore_master_cape"
+    },
+    "Infinity ethereal outfit": {
+      "title": "Infinity ethereal outfit",
+      "revision": 37060656,
+      "url": "https://runescape.wiki/w/Infinity_ethereal_outfit"
+    },
+    "Invention cape": {
+      "title": "Invention cape",
+      "revision": 37008291,
+      "url": "https://runescape.wiki/w/Invention_cape"
+    },
+    "Large pouch": {
+      "title": "Large pouch",
+      "revision": 37157765,
+      "url": "https://runescape.wiki/w/Large_pouch"
+    },
+    "Law ethereal head": {
+      "title": "Law ethereal head",
+      "revision": 36991402,
+      "url": "https://runescape.wiki/w/Law_ethereal_head"
+    },
+    "Law ethereal outfit": {
+      "title": "Law ethereal outfit",
+      "revision": 37060655,
+      "url": "https://runescape.wiki/w/Law_ethereal_outfit"
+    },
+    "Massive pouch": {
+      "title": "Massive pouch",
+      "revision": 37181193,
+      "url": "https://runescape.wiki/w/Massive_pouch"
+    },
+    "Master constructor's boots": {
+      "title": "Master constructor's boots",
+      "revision": 36921298,
+      "url": "https://runescape.wiki/w/Master_constructor's_boots"
+    },
+    "Master constructor's gloves": {
+      "title": "Master constructor's gloves",
+      "revision": 36921299,
+      "url": "https://runescape.wiki/w/Master_constructor's_gloves"
+    },
+    "Master constructor's hat": {
+      "title": "Master constructor's hat",
+      "revision": 37161467,
+      "url": "https://runescape.wiki/w/Master_constructor's_hat"
+    },
+    "Master constructor's jacket": {
+      "title": "Master constructor's jacket",
+      "revision": 36921301,
+      "url": "https://runescape.wiki/w/Master_constructor's_jacket"
+    },
+    "Master constructor's outfit": {
+      "title": "Master constructor's outfit",
+      "revision": 37183026,
+      "url": "https://runescape.wiki/w/Master_constructor's_outfit"
+    },
+    "Master constructor's trousers": {
+      "title": "Master constructor's trousers",
+      "revision": 36921300,
+      "url": "https://runescape.wiki/w/Master_constructor's_trousers"
+    },
+    "Master runecrafter boots": {
+      "title": "Master runecrafter boots",
+      "revision": 37068566,
+      "url": "https://runescape.wiki/w/Master_runecrafter_boots"
+    },
+    "Master runecrafter hat": {
+      "title": "Master runecrafter hat",
+      "revision": 37068569,
+      "url": "https://runescape.wiki/w/Master_runecrafter_hat"
+    },
+    "Master runecrafter robe": {
+      "title": "Master runecrafter robe",
+      "revision": 37068568,
+      "url": "https://runescape.wiki/w/Master_runecrafter_robe"
+    },
+    "Master runecrafter robes": {
+      "title": "Master runecrafter robes",
+      "revision": 37212573,
+      "url": "https://runescape.wiki/w/Master_runecrafter_robes"
+    },
+    "Master runecrafter skirt": {
+      "title": "Master runecrafter skirt",
+      "revision": 37068567,
+      "url": "https://runescape.wiki/w/Master_runecrafter_skirt"
+    },
+    "Medium pouch": {
+      "title": "Medium pouch",
+      "revision": 37157762,
+      "url": "https://runescape.wiki/w/Medium_pouch"
+    },
+    "Modified artisan's bandana": {
+      "title": "Modified artisan's bandana",
+      "revision": 37126249,
+      "url": "https://runescape.wiki/w/Modified_artisan's_bandana"
+    },
+    "Modified blacksmith's helmet": {
+      "title": "Modified blacksmith's helmet",
+      "revision": 37126113,
+      "url": "https://runescape.wiki/w/Modified_blacksmith's_helmet"
+    },
+    "Modified botanist's mask": {
+      "title": "Modified botanist's mask",
+      "revision": 37126104,
+      "url": "https://runescape.wiki/w/Modified_botanist's_mask"
+    },
+    "Modified sous chef's toque": {
+      "title": "Modified sous chef's toque",
+      "revision": 37126236,
+      "url": "https://runescape.wiki/w/Modified_sous_chef's_toque"
+    },
+    "Morytania legs 4": {
+      "title": "Morytania legs 4",
+      "revision": 37018173,
+      "url": "https://runescape.wiki/w/Morytania_legs_4"
+    },
+    "Nexus Mod": {
+      "title": "Nexus Mod",
+      "revision": 37134404,
+      "url": "https://runescape.wiki/w/Nexus_Mod"
+    },
+    "Orthen furnace core": {
+      "title": "Orthen furnace core",
+      "revision": 37149212,
+      "url": "https://runescape.wiki/w/Orthen_furnace_core"
+    },
+    "Passing bracelet": {
+      "title": "Passing bracelet",
+      "revision": 36918127,
+      "url": "https://runescape.wiki/w/Passing_bracelet"
+    },
+    "Pitch can": {
+      "title": "Pitch can",
+      "revision": 36906132,
+      "url": "https://runescape.wiki/w/Pitch_can"
+    },
+    "Plank box": {
+      "title": "Plank box",
+      "revision": 37103774,
+      "url": "https://runescape.wiki/w/Plank_box"
+    },
+    "Pyro-matic": {
+      "title": "Pyro-matic",
+      "revision": 36875867,
+      "url": "https://runescape.wiki/w/Pyro-matic"
+    },
+    "Ranger's Workroom": {
+      "title": "Ranger's Workroom",
+      "revision": 37177912,
+      "url": "https://runescape.wiki/w/Ranger's_Workroom"
+    },
+    "Ring of fire": {
+      "title": "Ring of fire",
+      "revision": 37159243,
+      "url": "https://runescape.wiki/w/Ring_of_fire"
+    },
+    "Runecrafter's Catalyst fragment": {
+      "title": "Runecrafter's Catalyst fragment",
+      "revision": 37031364,
+      "url": "https://runescape.wiki/w/Runecrafter's_Catalyst_fragment"
+    },
+    "Runecrafting cape": {
+      "title": "Runecrafting cape",
+      "revision": 37168209,
+      "url": "https://runescape.wiki/w/Runecrafting_cape"
+    },
+    "Runecrafting pouches": {
+      "title": "Runecrafting pouches",
+      "revision": 37193050,
+      "url": "https://runescape.wiki/w/Runecrafting_pouches"
+    },
+    "Runic attuner": {
+      "title": "Runic attuner",
+      "revision": 37214138,
+      "url": "https://runescape.wiki/w/Runic_attuner"
+    },
+    "Sculpting chisel": {
+      "title": "Sculpting chisel",
+      "revision": 37161569,
+      "url": "https://runescape.wiki/w/Sculpting_chisel"
+    },
+    "Shadow's Grace": {
+      "title": "Shadow's Grace",
+      "revision": 37136013,
+      "url": "https://runescape.wiki/w/Shadow's_Grace"
+    },
+    "Small pouch": {
+      "title": "Small pouch",
+      "revision": 37020901,
+      "url": "https://runescape.wiki/w/Small_pouch"
+    },
+    "Smelting gauntlets": {
+      "title": "Smelting gauntlets",
+      "revision": 37020914,
+      "url": "https://runescape.wiki/w/Smelting_gauntlets"
+    },
+    "Smithing autoheater": {
+      "title": "Smithing autoheater",
+      "revision": 37002710,
+      "url": "https://runescape.wiki/w/Smithing_autoheater"
+    },
+    "Smithing cape": {
+      "title": "Smithing cape",
+      "revision": 37008243,
+      "url": "https://runescape.wiki/w/Smithing_cape"
+    },
+    "Sous chef's jacket": {
+      "title": "Sous chef's jacket",
+      "revision": 37021046,
+      "url": "https://runescape.wiki/w/Sous_chef's_jacket"
+    },
+    "Sous chef's mitts": {
+      "title": "Sous chef's mitts",
+      "revision": 37021047,
+      "url": "https://runescape.wiki/w/Sous_chef's_mitts"
+    },
+    "Sous chef's outfit": {
+      "title": "Sous chef's outfit",
+      "revision": 37002734,
+      "url": "https://runescape.wiki/w/Sous_chef's_outfit"
+    },
+    "Sous chef's shoes": {
+      "title": "Sous chef's shoes",
+      "revision": 37021048,
+      "url": "https://runescape.wiki/w/Sous_chef's_shoes"
+    },
+    "Sous chef's toque": {
+      "title": "Sous chef's toque",
+      "revision": 37212696,
+      "url": "https://runescape.wiki/w/Sous_chef's_toque"
+    },
+    "Sous chef's trousers": {
+      "title": "Sous chef's trousers",
+      "revision": 37021051,
+      "url": "https://runescape.wiki/w/Sous_chef's_trousers"
+    },
+    "Superheat Form": {
+      "title": "Superheat Form",
+      "revision": 37179718,
+      "url": "https://runescape.wiki/w/Superheat_Form"
+    },
+    "Underworld Grimoire": {
+      "title": "Underworld Grimoire",
+      "revision": 37203026,
+      "url": "https://runescape.wiki/w/Underworld_Grimoire"
+    },
+    "Underworld Grimoire 1": {
+      "title": "Underworld Grimoire 1",
+      "revision": 37081759,
+      "url": "https://runescape.wiki/w/Underworld_Grimoire_1"
+    },
+    "Underworld Grimoire 2": {
+      "title": "Underworld Grimoire 2",
+      "revision": 37081760,
+      "url": "https://runescape.wiki/w/Underworld_Grimoire_2"
+    },
+    "Underworld Grimoire 3": {
+      "title": "Underworld Grimoire 3",
+      "revision": 37081761,
+      "url": "https://runescape.wiki/w/Underworld_Grimoire_3"
+    },
+    "Underworld Grimoire 4": {
+      "title": "Underworld Grimoire 4",
+      "revision": 37081762,
+      "url": "https://runescape.wiki/w/Underworld_Grimoire_4"
+    },
+    "Varrock armour": {
+      "title": "Varrock armour",
+      "revision": 36607456,
+      "url": "https://runescape.wiki/w/Varrock_armour"
+    },
+    "Varrock armour 1": {
+      "title": "Varrock armour 1",
+      "revision": 37022373,
+      "url": "https://runescape.wiki/w/Varrock_armour_1"
+    },
+    "Varrock armour 2": {
+      "title": "Varrock armour 2",
+      "revision": 37082264,
+      "url": "https://runescape.wiki/w/Varrock_armour_2"
+    },
+    "Varrock armour 3": {
+      "title": "Varrock armour 3",
+      "revision": 37022375,
+      "url": "https://runescape.wiki/w/Varrock_armour_3"
+    },
+    "Varrock armour 4": {
+      "title": "Varrock armour 4",
+      "revision": 37000831,
+      "url": "https://runescape.wiki/w/Varrock_armour_4"
+    },
+    "Wicked cape": {
+      "title": "Wicked cape",
+      "revision": 37068570,
+      "url": "https://runescape.wiki/w/Wicked_cape"
+    },
+    "Wicked hood": {
+      "title": "Wicked hood",
+      "revision": 37124398,
+      "url": "https://runescape.wiki/w/Wicked_hood"
+    },
+    "Wicked legs": {
+      "title": "Wicked legs",
+      "revision": 37073727,
+      "url": "https://runescape.wiki/w/Wicked_legs"
+    },
+    "Wicked robe outfit": {
+      "title": "Wicked robe outfit",
+      "revision": 36969883,
+      "url": "https://runescape.wiki/w/Wicked_robe_outfit"
+    },
+    "Wicked robe top": {
+      "title": "Wicked robe top",
+      "revision": 37068564,
+      "url": "https://runescape.wiki/w/Wicked_robe_top"
+    },
+    "Wilderness sword": {
+      "title": "Wilderness sword",
+      "revision": 37060707,
+      "url": "https://runescape.wiki/w/Wilderness_sword"
+    },
+    "Wilderness sword 1": {
+      "title": "Wilderness sword 1",
+      "revision": 37022682,
+      "url": "https://runescape.wiki/w/Wilderness_sword_1"
+    },
+    "Wilderness sword 2": {
+      "title": "Wilderness sword 2",
+      "revision": 37022683,
+      "url": "https://runescape.wiki/w/Wilderness_sword_2"
+    },
+    "Wilderness sword 3": {
+      "title": "Wilderness sword 3",
+      "revision": 37022684,
+      "url": "https://runescape.wiki/w/Wilderness_sword_3"
+    },
+    "Wilderness sword 4": {
+      "title": "Wilderness sword 4",
+      "revision": 36975391,
+      "url": "https://runescape.wiki/w/Wilderness_sword_4"
+    },
+    "Artisan's bandana add-on": {
+      "title": "Artisan's bandana add-on",
+      "revision": 37007059,
+      "url": "https://runescape.wiki/w/Artisan's_bandana_add-on"
+    },
+    "Blacksmith's helmet add-on": {
+      "title": "Blacksmith's helmet add-on",
+      "revision": 36973549,
+      "url": "https://runescape.wiki/w/Blacksmith's_helmet_add-on"
+    },
+    "Blood ethereal body": {
+      "title": "Blood ethereal body",
+      "revision": 37011494,
+      "url": "https://runescape.wiki/w/Blood_ethereal_body"
+    },
+    "Blood ethereal feet": {
+      "title": "Blood ethereal feet",
+      "revision": 37011495,
+      "url": "https://runescape.wiki/w/Blood_ethereal_feet"
+    },
+    "Blood ethereal hands": {
+      "title": "Blood ethereal hands",
+      "revision": 37011496,
+      "url": "https://runescape.wiki/w/Blood_ethereal_hands"
+    },
+    "Blood ethereal legs": {
+      "title": "Blood ethereal legs",
+      "revision": 37011497,
+      "url": "https://runescape.wiki/w/Blood_ethereal_legs"
+    },
+    "Botanist's mask add-on": {
+      "title": "Botanist's mask add-on",
+      "revision": 37011734,
+      "url": "https://runescape.wiki/w/Botanist's_mask_add-on"
+    },
+    "Hooded construction cape": {
+      "title": "Hooded construction cape",
+      "revision": 36963007,
+      "url": "https://runescape.wiki/w/Hooded_construction_cape"
+    },
+    "Inverted hooded Construction cape": {
+      "title": "Inverted hooded Construction cape",
+      "revision": 36962356,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Construction_cape"
+    },
+    "Hooded cooking cape": {
+      "title": "Hooded cooking cape",
+      "revision": 36962997,
+      "url": "https://runescape.wiki/w/Hooded_cooking_cape"
+    },
+    "Inverted hooded Cooking cape": {
+      "title": "Inverted hooded Cooking cape",
+      "revision": 36962360,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Cooking_cape"
+    },
+    "Hooded crafting cape": {
+      "title": "Hooded crafting cape",
+      "revision": 36962993,
+      "url": "https://runescape.wiki/w/Hooded_crafting_cape"
+    },
+    "Hooded runecrafting cape": {
+      "title": "Hooded runecrafting cape",
+      "revision": 36962999,
+      "url": "https://runescape.wiki/w/Hooded_runecrafting_cape"
+    },
+    "Inverted hooded Crafting cape": {
+      "title": "Inverted hooded Crafting cape",
+      "revision": 36962353,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Crafting_cape"
+    },
+    "Inverted hooded Runecrafting cape": {
+      "title": "Inverted hooded Runecrafting cape",
+      "revision": 36962347,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Runecrafting_cape"
+    },
+    "Death ethereal body": {
+      "title": "Death ethereal body",
+      "revision": 37013086,
+      "url": "https://runescape.wiki/w/Death_ethereal_body"
+    },
+    "Death ethereal feet": {
+      "title": "Death ethereal feet",
+      "revision": 37013087,
+      "url": "https://runescape.wiki/w/Death_ethereal_feet"
+    },
+    "Death ethereal hands": {
+      "title": "Death ethereal hands",
+      "revision": 37013088,
+      "url": "https://runescape.wiki/w/Death_ethereal_hands"
+    },
+    "Death ethereal legs": {
+      "title": "Death ethereal legs",
+      "revision": 37013089,
+      "url": "https://runescape.wiki/w/Death_ethereal_legs"
+    },
+    "Hooded firemaking cape": {
+      "title": "Hooded firemaking cape",
+      "revision": 36962998,
+      "url": "https://runescape.wiki/w/Hooded_firemaking_cape"
+    },
+    "Inverted hooded Firemaking cape": {
+      "title": "Inverted hooded Firemaking cape",
+      "revision": 37049206,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Firemaking_cape"
+    },
+    "Fletcher's boots": {
+      "title": "Fletcher's boots",
+      "revision": 37014223,
+      "url": "https://runescape.wiki/w/Fletcher's_boots"
+    },
+    "Fletcher's chestpiece": {
+      "title": "Fletcher's chestpiece",
+      "revision": 37014224,
+      "url": "https://runescape.wiki/w/Fletcher's_chestpiece"
+    },
+    "Fletcher's gloves": {
+      "title": "Fletcher's gloves",
+      "revision": 37014225,
+      "url": "https://runescape.wiki/w/Fletcher's_gloves"
+    },
+    "Fletcher's headwear": {
+      "title": "Fletcher's headwear",
+      "revision": 37014226,
+      "url": "https://runescape.wiki/w/Fletcher's_headwear"
+    },
+    "Fletcher's legwear": {
+      "title": "Fletcher's legwear",
+      "revision": 37014228,
+      "url": "https://runescape.wiki/w/Fletcher's_legwear"
+    },
+    "Hooded fletching cape": {
+      "title": "Hooded fletching cape",
+      "revision": 37124925,
+      "url": "https://runescape.wiki/w/Hooded_fletching_cape"
+    },
+    "Inverted hooded Fletching cape": {
+      "title": "Inverted hooded Fletching cape",
+      "revision": 36962354,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Fletching_cape"
+    },
+    "Hooded herblore cape": {
+      "title": "Hooded herblore cape",
+      "revision": 36963002,
+      "url": "https://runescape.wiki/w/Hooded_herblore_cape"
+    },
+    "Inverted hooded Herblore cape": {
+      "title": "Inverted hooded Herblore cape",
+      "revision": 36962351,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Herblore_cape"
+    },
+    "Infinity ethereal body": {
+      "title": "Infinity ethereal body",
+      "revision": 37024070,
+      "url": "https://runescape.wiki/w/Infinity_ethereal_body"
+    },
+    "Infinity ethereal feet": {
+      "title": "Infinity ethereal feet",
+      "revision": 37024073,
+      "url": "https://runescape.wiki/w/Infinity_ethereal_feet"
+    },
+    "Infinity ethereal hands": {
+      "title": "Infinity ethereal hands",
+      "revision": 37024071,
+      "url": "https://runescape.wiki/w/Infinity_ethereal_hands"
+    },
+    "Infinity ethereal head": {
+      "title": "Infinity ethereal head",
+      "revision": 37024069,
+      "url": "https://runescape.wiki/w/Infinity_ethereal_head"
+    },
+    "Infinity ethereal legs": {
+      "title": "Infinity ethereal legs",
+      "revision": 37024072,
+      "url": "https://runescape.wiki/w/Infinity_ethereal_legs"
+    },
+    "Hooded Invention cape": {
+      "title": "Hooded Invention cape",
+      "revision": 37015486,
+      "url": "https://runescape.wiki/w/Hooded_Invention_cape"
+    },
+    "Inverted hooded Invention cape": {
+      "title": "Inverted hooded Invention cape",
+      "revision": 36962368,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Invention_cape"
+    },
+    "Law ethereal body": {
+      "title": "Law ethereal body",
+      "revision": 37016227,
+      "url": "https://runescape.wiki/w/Law_ethereal_body"
+    },
+    "Law ethereal feet": {
+      "title": "Law ethereal feet",
+      "revision": 37016228,
+      "url": "https://runescape.wiki/w/Law_ethereal_feet"
+    },
+    "Law ethereal hands": {
+      "title": "Law ethereal hands",
+      "revision": 37016229,
+      "url": "https://runescape.wiki/w/Law_ethereal_hands"
+    },
+    "Law ethereal legs": {
+      "title": "Law ethereal legs",
+      "revision": 37016230,
+      "url": "https://runescape.wiki/w/Law_ethereal_legs"
+    },
+    "Hooded smithing cape": {
+      "title": "Hooded smithing cape",
+      "revision": 36962995,
+      "url": "https://runescape.wiki/w/Hooded_smithing_cape"
+    },
+    "Inverted hooded Smithing cape": {
+      "title": "Inverted hooded Smithing cape",
+      "revision": 36962358,
+      "url": "https://runescape.wiki/w/Inverted_hooded_Smithing_cape"
+    },
+    "Sous chef's toque add-on": {
+      "title": "Sous chef's toque add-on",
+      "revision": 37021050,
+      "url": "https://runescape.wiki/w/Sous_chef's_toque_add-on"
+    },
+    "Augmented Wilderness sword 4": {
+      "title": "Augmented Wilderness sword 4",
+      "revision": 37160706,
+      "url": "https://runescape.wiki/w/Augmented_Wilderness_sword_4"
+    },
+    "Crystal tinderbox": {
+      "title": "Crystal tinderbox",
+      "revision": 37035431,
+      "url": "https://runescape.wiki/w/Crystal_tinderbox"
+    },
+    "Augmented crystal tinderbox": {
+      "title": "Augmented crystal tinderbox",
+      "revision": 37160790,
+      "url": "https://runescape.wiki/w/Augmented_crystal_tinderbox"
+    },
+    "Binding rod": {
+      "title": "Binding rod",
+      "revision": 37194109,
+      "url": "https://runescape.wiki/w/Binding_rod"
+    },
+    "Mechanised siphon": {
+      "title": "Mechanised siphon",
+      "revision": 37147615,
+      "url": "https://runescape.wiki/w/Mechanised_siphon"
+    },
+    "Invention master cape": {
+      "title": "Invention master cape",
+      "revision": 36961915,
+      "url": "https://runescape.wiki/w/Invention_master_cape"
+    },
+    "Ancient Invention": {
+      "title": "Ancient Invention",
+      "revision": 37202501,
+      "url": "https://runescape.wiki/w/Ancient_Invention"
+    },
+    "Machines": {
+      "title": "Machines",
+      "revision": 36997545,
+      "url": "https://runescape.wiki/w/Machines"
+    },
+    "Sculpting chisel (Bandos)": {
+      "title": "Sculpting chisel (Bandos)",
+      "revision": 37161571,
+      "url": "https://runescape.wiki/w/Sculpting_chisel_(Bandos)"
+    },
+    "Sculpting chisel (Guthix)": {
+      "title": "Sculpting chisel (Guthix)",
+      "revision": 37161572,
+      "url": "https://runescape.wiki/w/Sculpting_chisel_(Guthix)"
+    },
+    "Sculpting chisel (Saradomin)": {
+      "title": "Sculpting chisel (Saradomin)",
+      "revision": 37161573,
+      "url": "https://runescape.wiki/w/Sculpting_chisel_(Saradomin)"
+    },
+    "Sculpting chisel (Seren)": {
+      "title": "Sculpting chisel (Seren)",
+      "revision": 37161575,
+      "url": "https://runescape.wiki/w/Sculpting_chisel_(Seren)"
+    },
+    "Sculpting chisel (Zamorak)": {
+      "title": "Sculpting chisel (Zamorak)",
+      "revision": 37161574,
+      "url": "https://runescape.wiki/w/Sculpting_chisel_(Zamorak)"
+    },
+    "Scroll of efficiency": {
+      "title": "Scroll of efficiency",
+      "revision": 37194309,
+      "url": "https://runescape.wiki/w/Scroll_of_efficiency"
+    },
+    "Scroll of dexterity": {
+      "title": "Scroll of dexterity",
+      "revision": 37082708,
+      "url": "https://runescape.wiki/w/Scroll_of_dexterity"
+    },
+    "Scroll of cleansing": {
+      "title": "Scroll of cleansing",
+      "revision": 37082706,
+      "url": "https://runescape.wiki/w/Scroll_of_cleansing"
+    },
+    "Scroll of proficiency": {
+      "title": "Scroll of proficiency",
+      "revision": 37140941,
+      "url": "https://runescape.wiki/w/Scroll_of_proficiency"
+    },
+    "Easy Underworld achievements": {
+      "title": "Easy Underworld achievements",
+      "revision": 36747724,
+      "url": "https://runescape.wiki/w/Easy_Underworld_achievements"
+    },
+    "Elite Morytania achievements": {
+      "title": "Elite Morytania achievements",
+      "revision": 37158337,
+      "url": "https://runescape.wiki/w/Elite_Morytania_achievements"
+    },
+    "Elite Desert achievements": {
+      "title": "Elite Desert achievements",
+      "revision": 37182088,
+      "url": "https://runescape.wiki/w/Elite_Desert_achievements"
+    },
+    "Medium Lumbridge achievements": {
+      "title": "Medium Lumbridge achievements",
+      "revision": 36495283,
+      "url": "https://runescape.wiki/w/Medium_Lumbridge_achievements"
+    },
+    "Easy Wilderness achievements": {
+      "title": "Easy Wilderness achievements",
+      "revision": 37158476,
+      "url": "https://runescape.wiki/w/Easy_Wilderness_achievements"
+    },
+    "Fenmoor Totems": {
+      "title": "Fenmoor Totems",
+      "revision": 37213259,
+      "url": "https://runescape.wiki/w/Fenmoor_Totems"
+    },
+    "Ourania Runecrafting Altar": {
+      "title": "Ourania Runecrafting Altar",
+      "revision": 37207369,
+      "url": "https://runescape.wiki/w/Ourania_Runecrafting_Altar"
+    },
+    "Necromancy!": {
+      "title": "Necromancy!",
+      "revision": 37173763,
+      "url": "https://runescape.wiki/w/Necromancy!"
+    },
+    "Rune Mythos": {
+      "title": "Rune Mythos",
+      "revision": 37161989,
+      "url": "https://runescape.wiki/w/Rune_Mythos"
+    },
+    "Blood altar": {
+      "title": "Blood altar",
+      "revision": 37128563,
+      "url": "https://runescape.wiki/w/Blood_altar"
+    },
+    "Soul altar": {
+      "title": "Soul altar",
+      "revision": 37178037,
+      "url": "https://runescape.wiki/w/Soul_altar"
+    },
+    "Time altar": {
+      "title": "Time altar",
+      "revision": 37128548,
+      "url": "https://runescape.wiki/w/Time_altar"
+    },
+    "Ascended equipment": {
+      "title": "Ascended equipment",
+      "revision": 36687117,
+      "url": "https://runescape.wiki/w/Ascended_equipment"
+    },
+    "Starbloom equipment": {
+      "title": "Starbloom equipment",
+      "revision": 37148964,
+      "url": "https://runescape.wiki/w/Starbloom_equipment"
+    },
+    "Apex hide armour": {
+      "title": "Apex hide armour",
+      "revision": 37027034,
+      "url": "https://runescape.wiki/w/Apex_hide_armour"
+    },
+    "Burial equipment": {
+      "title": "Burial equipment",
+      "revision": 37175794,
+      "url": "https://runescape.wiki/w/Burial_equipment"
+    },
+    "Martial equipment": {
+      "title": "Martial equipment",
+      "revision": 37181213,
+      "url": "https://runescape.wiki/w/Martial_equipment"
+    },
+    "God Statues": {
+      "title": "God Statues",
+      "revision": 37193709,
+      "url": "https://runescape.wiki/w/God_Statues"
+    },
+    "Construction Contracts": {
+      "title": "Construction Contracts",
+      "revision": 37213046,
+      "url": "https://runescape.wiki/w/Construction_Contracts"
+    },
+    "Fort Forinthry": {
+      "title": "Fort Forinthry",
+      "revision": 37178736,
+      "url": "https://runescape.wiki/w/Fort_Forinthry"
+    },
+    "Pouch Protector": {
+      "title": "Pouch Protector",
+      "revision": 37134391,
+      "url": "https://runescape.wiki/w/Pouch_Protector"
+    },
+    "Trout": {
+      "title": "Trout",
+      "revision": 36953398,
+      "url": "https://runescape.wiki/w/Trout"
+    },
+    "Sweetcorn": {
+      "title": "Sweetcorn",
+      "revision": 37178903,
+      "url": "https://runescape.wiki/w/Sweetcorn"
+    },
+    "Desert sole": {
+      "title": "Desert sole",
+      "revision": 36953418,
+      "url": "https://runescape.wiki/w/Desert_sole"
+    },
+    "Beltfish": {
+      "title": "Beltfish",
+      "revision": 36953444,
+      "url": "https://runescape.wiki/w/Beltfish"
+    },
+    "Shark": {
+      "title": "Shark",
+      "revision": 37185866,
+      "url": "https://runescape.wiki/w/Shark"
+    },
+    "Rocktail": {
+      "title": "Rocktail",
+      "revision": 37017049,
+      "url": "https://runescape.wiki/w/Rocktail"
+    },
+    "Sailfish": {
+      "title": "Sailfish",
+      "revision": 36961007,
+      "url": "https://runescape.wiki/w/Sailfish"
+    },
+    "Iron bar": {
+      "title": "Iron bar",
+      "revision": 37017984,
+      "url": "https://runescape.wiki/w/Iron_bar"
+    },
+    "Steel bar": {
+      "title": "Steel bar",
+      "revision": 37134793,
+      "url": "https://runescape.wiki/w/Steel_bar"
+    },
+    "Mithril bar": {
+      "title": "Mithril bar",
+      "revision": 37018446,
+      "url": "https://runescape.wiki/w/Mithril_bar"
+    },
+    "Adamant bar": {
+      "title": "Adamant bar",
+      "revision": 37082395,
+      "url": "https://runescape.wiki/w/Adamant_bar"
+    },
+    "Rune bar": {
+      "title": "Rune bar",
+      "revision": 37178505,
+      "url": "https://runescape.wiki/w/Rune_bar"
+    },
+    "Orikalkum bar": {
+      "title": "Orikalkum bar",
+      "revision": 37168765,
+      "url": "https://runescape.wiki/w/Orikalkum_bar"
+    },
+    "Necronium bar": {
+      "title": "Necronium bar",
+      "revision": 37018439,
+      "url": "https://runescape.wiki/w/Necronium_bar"
+    },
+    "Bane bar": {
+      "title": "Bane bar",
+      "revision": 37173249,
+      "url": "https://runescape.wiki/w/Bane_bar"
+    },
+    "Elder rune bar": {
+      "title": "Elder rune bar",
+      "revision": 37155726,
+      "url": "https://runescape.wiki/w/Elder_rune_bar"
+    },
+    "Primal bar": {
+      "title": "Primal bar",
+      "revision": 37042969,
+      "url": "https://runescape.wiki/w/Primal_bar"
+    },
+    "Plank": {
+      "title": "Plank",
+      "revision": 37157503,
+      "url": "https://runescape.wiki/w/Plank"
+    },
+    "Oak plank": {
+      "title": "Oak plank",
+      "revision": 36996135,
+      "url": "https://runescape.wiki/w/Oak_plank"
+    },
+    "Teak plank": {
+      "title": "Teak plank",
+      "revision": 36996136,
+      "url": "https://runescape.wiki/w/Teak_plank"
+    },
+    "Mahogany plank": {
+      "title": "Mahogany plank",
+      "revision": 37131102,
+      "url": "https://runescape.wiki/w/Mahogany_plank"
+    },
+    "Eternal plank": {
+      "title": "Eternal plank",
+      "revision": 37195743,
+      "url": "https://runescape.wiki/w/Eternal_plank"
+    },
+    "Oak logs": {
+      "title": "Oak logs",
+      "revision": 37018407,
+      "url": "https://runescape.wiki/w/Oak_logs"
+    },
+    "Willow logs": {
+      "title": "Willow logs",
+      "revision": 37112010,
+      "url": "https://runescape.wiki/w/Willow_logs"
+    },
+    "Maple logs": {
+      "title": "Maple logs",
+      "revision": 37215434,
+      "url": "https://runescape.wiki/w/Maple_logs"
+    },
+    "Acadia logs": {
+      "title": "Acadia logs",
+      "revision": 37161702,
+      "url": "https://runescape.wiki/w/Acadia_logs"
+    },
+    "Yew logs": {
+      "title": "Yew logs",
+      "revision": 37168159,
+      "url": "https://runescape.wiki/w/Yew_logs"
+    },
+    "Magic logs": {
+      "title": "Magic logs",
+      "revision": 37153904,
+      "url": "https://runescape.wiki/w/Magic_logs"
+    },
+    "Elder logs": {
+      "title": "Elder logs",
+      "revision": 37166250,
+      "url": "https://runescape.wiki/w/Elder_logs"
+    },
+    "Eternal magic logs": {
+      "title": "Eternal magic logs",
+      "revision": 37165551,
+      "url": "https://runescape.wiki/w/Eternal_magic_logs"
+    },
+    "Sapphire": {
+      "title": "Sapphire",
+      "revision": 37136086,
+      "url": "https://runescape.wiki/w/Sapphire"
+    },
+    "Emerald": {
+      "title": "Emerald",
+      "revision": 37134894,
+      "url": "https://runescape.wiki/w/Emerald"
+    },
+    "Ruby": {
+      "title": "Ruby",
+      "revision": 37136039,
+      "url": "https://runescape.wiki/w/Ruby"
+    },
+    "Diamond": {
+      "title": "Diamond",
+      "revision": 37172142,
+      "url": "https://runescape.wiki/w/Diamond"
+    },
+    "Dragonstone": {
+      "title": "Dragonstone",
+      "revision": 37128508,
+      "url": "https://runescape.wiki/w/Dragonstone"
+    },
+    "Green dragon leather": {
+      "title": "Green dragon leather",
+      "revision": 37171842,
+      "url": "https://runescape.wiki/w/Green_dragon_leather"
+    },
+    "Black dragon leather": {
+      "title": "Black dragon leather",
+      "revision": 37045451,
+      "url": "https://runescape.wiki/w/Black_dragon_leather"
+    },
+    "Bow string": {
+      "title": "Bowstring",
+      "revision": 37198222,
+      "url": "https://runescape.wiki/w/Bowstring"
+    },
+    "Rune dart tip": {
+      "title": "Rune dart tip",
+      "revision": 37090126,
+      "url": "https://runescape.wiki/w/Rune_dart_tip"
+    },
+    "Pure essence": {
+      "title": "Pure essence",
+      "revision": 37192383,
+      "url": "https://runescape.wiki/w/Pure_essence"
+    },
+    "Impure essence": {
+      "title": "Impure essence",
+      "revision": 37161441,
+      "url": "https://runescape.wiki/w/Impure_essence"
+    },
+    "Fire rune": {
+      "title": "Fire rune",
+      "revision": 37194620,
+      "url": "https://runescape.wiki/w/Fire_rune"
+    },
+    "Cosmic rune": {
+      "title": "Cosmic rune",
+      "revision": 37194625,
+      "url": "https://runescape.wiki/w/Cosmic_rune"
+    },
+    "Nature rune": {
+      "title": "Nature rune",
+      "revision": 37194631,
+      "url": "https://runescape.wiki/w/Nature_rune"
+    },
+    "Law rune": {
+      "title": "Law rune",
+      "revision": 37194641,
+      "url": "https://runescape.wiki/w/Law_rune"
+    },
+    "Death rune": {
+      "title": "Death rune",
+      "revision": 37194642,
+      "url": "https://runescape.wiki/w/Death_rune"
+    },
+    "Blood rune": {
+      "title": "Blood rune",
+      "revision": 37194648,
+      "url": "https://runescape.wiki/w/Blood_rune"
+    },
+    "Soul rune": {
+      "title": "Soul rune",
+      "revision": 36969778,
+      "url": "https://runescape.wiki/w/Soul_rune"
+    },
+    "Time rune": {
+      "title": "Time rune",
+      "revision": 37194654,
+      "url": "https://runescape.wiki/w/Time_rune"
+    },
+    "Guam": {
+      "title": "Guam",
+      "revision": 36714607,
+      "url": "https://runescape.wiki/w/Guam"
+    },
+    "Harralander": {
+      "title": "Harralander",
+      "revision": 36883116,
+      "url": "https://runescape.wiki/w/Harralander"
+    },
+    "Ranarr": {
+      "title": "Ranarr",
+      "revision": 36714616,
+      "url": "https://runescape.wiki/w/Ranarr"
+    },
+    "Irit": {
+      "title": "Irit",
+      "revision": 36714619,
+      "url": "https://runescape.wiki/w/Irit"
+    },
+    "Avantoe": {
+      "title": "Avantoe",
+      "revision": 36714621,
+      "url": "https://runescape.wiki/w/Avantoe"
+    },
+    "Kwuarm": {
+      "title": "Kwuarm",
+      "revision": 36714624,
+      "url": "https://runescape.wiki/w/Kwuarm"
+    },
+    "Cadantine": {
+      "title": "Cadantine",
+      "revision": 36714627,
+      "url": "https://runescape.wiki/w/Cadantine"
+    },
+    "Lantadyme": {
+      "title": "Lantadyme",
+      "revision": 36714628,
+      "url": "https://runescape.wiki/w/Lantadyme"
+    },
+    "Dwarf weed": {
+      "title": "Dwarf weed",
+      "revision": 36714631,
+      "url": "https://runescape.wiki/w/Dwarf_weed"
+    },
+    "Torstol": {
+      "title": "Torstol",
+      "revision": 36902940,
+      "url": "https://runescape.wiki/w/Torstol"
+    },
+    "Fellstalk": {
+      "title": "Fellstalk",
+      "revision": 36714633,
+      "url": "https://runescape.wiki/w/Fellstalk"
+    },
+    "Primal fruit pulp": {
+      "title": "Primal fruit pulp",
+      "revision": 37211234,
+      "url": "https://runescape.wiki/w/Primal_fruit_pulp"
+    },
+    "Teak logs": {
+      "title": "Teak logs",
+      "revision": 37135395,
+      "url": "https://runescape.wiki/w/Teak_logs"
+    },
+    "Mahogany logs": {
+      "title": "Mahogany logs",
+      "revision": 37174561,
+      "url": "https://runescape.wiki/w/Mahogany_logs"
+    },
+    "Eucalyptus logs": {
+      "title": "Eucalyptus logs",
+      "revision": 37013900,
+      "url": "https://runescape.wiki/w/Eucalyptus_logs"
+    },
+    "Blue blubber jellyfish": {
+      "title": "Blue blubber jellyfish",
+      "revision": 37208434,
+      "url": "https://runescape.wiki/w/Blue_blubber_jellyfish"
+    },
+    "Grapes": {
+      "title": "Grapes",
+      "revision": 37132025,
+      "url": "https://runescape.wiki/w/Grapes"
+    },
+    "Tarromin": {
+      "title": "Tarromin",
+      "revision": 36714613,
+      "url": "https://runescape.wiki/w/Tarromin"
+    },
+    "Snapdragon": {
+      "title": "Snapdragon",
+      "revision": 36714626,
+      "url": "https://runescape.wiki/w/Snapdragon"
+    },
+    "Toadflax": {
+      "title": "Toadflax",
+      "revision": 36714618,
+      "url": "https://runescape.wiki/w/Toadflax"
+    },
+    "Law altar": {
+      "title": "Law altar",
+      "revision": 37128559,
+      "url": "https://runescape.wiki/w/Law_altar"
+    },
+    "Cosmic altar": {
+      "title": "Cosmic altar",
+      "revision": 37128556,
+      "url": "https://runescape.wiki/w/Cosmic_altar"
+    },
+    "Death altar": {
+      "title": "Death altar",
+      "revision": 37128564,
+      "url": "https://runescape.wiki/w/Death_altar"
+    },
+    "Expansive pouch": {
+      "title": "Expansive pouch",
+      "revision": 37197716,
+      "url": "https://runescape.wiki/w/Expansive_pouch"
+    },
+    "Threads of Fate": {
+      "title": "Threads of Fate",
+      "revision": 37168743,
+      "url": "https://runescape.wiki/w/Threads_of_Fate"
+    },
+    "Evil Bob's Catspaw": {
+      "title": "Evil Bob's Catspaw",
+      "revision": 37061301,
+      "url": "https://runescape.wiki/w/Evil_Bob's_Catspaw"
+    },
+    "Gem bag (upgraded)": {
+      "title": "Gem bag (upgraded)",
+      "revision": 37161576,
+      "url": "https://runescape.wiki/w/Gem_bag_(upgraded)"
+    },
+    "Seed bag": {
+      "title": "Seed bag",
+      "revision": 37048576,
+      "url": "https://runescape.wiki/w/Seed_bag"
+    },
+    "Medium Underworld achievements": {
+      "title": "Medium Underworld achievements",
+      "revision": 37161420,
+      "url": "https://runescape.wiki/w/Medium_Underworld_achievements"
+    },
+    "Hard Underworld achievements": {
+      "title": "Hard Underworld achievements",
+      "revision": 37153398,
+      "url": "https://runescape.wiki/w/Hard_Underworld_achievements"
+    },
+    "Morytania achievements": {
+      "title": "Morytania achievements",
+      "revision": 37049729,
+      "url": "https://runescape.wiki/w/Morytania_achievements"
+    },
+    "Desert achievements": {
+      "title": "Desert achievements",
+      "revision": 37049683,
+      "url": "https://runescape.wiki/w/Desert_achievements"
+    },
+    "Clean guam": {
+      "title": "Clean guam",
+      "revision": 37087336,
+      "url": "https://runescape.wiki/w/Clean_guam"
+    },
+    "Clean harralander": {
+      "title": "Clean harralander",
+      "revision": 37012500,
+      "url": "https://runescape.wiki/w/Clean_harralander"
+    },
+    "Clean ranarr": {
+      "title": "Clean ranarr",
+      "revision": 37087341,
+      "url": "https://runescape.wiki/w/Clean_ranarr"
+    },
+    "Clean irit": {
+      "title": "Clean irit",
+      "revision": 37153909,
+      "url": "https://runescape.wiki/w/Clean_irit"
+    },
+    "Clean avantoe": {
+      "title": "Clean avantoe",
+      "revision": 37130712,
+      "url": "https://runescape.wiki/w/Clean_avantoe"
+    },
+    "Clean kwuarm": {
+      "title": "Clean kwuarm",
+      "revision": 37157318,
+      "url": "https://runescape.wiki/w/Clean_kwuarm"
+    },
+    "Clean cadantine": {
+      "title": "Clean cadantine",
+      "revision": 37105727,
+      "url": "https://runescape.wiki/w/Clean_cadantine"
+    },
+    "Clean lantadyme": {
+      "title": "Clean lantadyme",
+      "revision": 36778066,
+      "url": "https://runescape.wiki/w/Clean_lantadyme"
+    },
+    "Clean dwarf weed": {
+      "title": "Clean dwarf weed",
+      "revision": 37200226,
+      "url": "https://runescape.wiki/w/Clean_dwarf_weed"
+    },
+    "Clean torstol": {
+      "title": "Clean torstol",
+      "revision": 36802079,
+      "url": "https://runescape.wiki/w/Clean_torstol"
+    },
+    "Clean fellstalk": {
+      "title": "Clean fellstalk",
+      "revision": 37012498,
+      "url": "https://runescape.wiki/w/Clean_fellstalk"
+    },
+    "Clean tarromin": {
+      "title": "Clean tarromin",
+      "revision": 37082075,
+      "url": "https://runescape.wiki/w/Clean_tarromin"
+    },
+    "Clean snapdragon": {
+      "title": "Clean snapdragon",
+      "revision": 36778072,
+      "url": "https://runescape.wiki/w/Clean_snapdragon"
+    },
+    "Clean toadflax": {
+      "title": "Clean toadflax",
+      "revision": 36778077,
+      "url": "https://runescape.wiki/w/Clean_toadflax"
+    }
+  },
+  "tips": {
+    "smithing.blacksmith_outfit": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training",
+      "item_source": "https://runescape.wiki/w/Blacksmith's_helmet"
+    },
+    "smithing.smelting_gauntlets": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training",
+      "item_source": "https://runescape.wiki/w/Smelting_gauntlets"
+    },
+    "smithing.autoheater": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training",
+      "item_source": "https://runescape.wiki/w/Smithing_autoheater"
+    },
+    "smithing.hammer_tron": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training",
+      "item_source": "https://runescape.wiki/w/Hammer-tron"
+    },
+    "smithing.crystal_hammer": {
+      "notes": "NPC singing route avoids requiring the optional 80 Smithing self-singing recipe or Prifddinas access.",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training",
+      "item_source": "https://runescape.wiki/w/Crystal_hammer"
+    },
+    "smithing.efficiency": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.superheat_form": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.furnace_core": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training",
+      "item_source": "https://runescape.wiki/w/Orthen_furnace_core"
+    },
+    "crafting.artisan_outfit": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training",
+      "item_source": "https://runescape.wiki/w/Artisan's_bandana"
+    },
+    "crafting.dexterity": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "fletching.fletcher_outfit": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training",
+      "item_source": "https://runescape.wiki/w/Fletcher's_headwear"
+    },
+    "fletching.crystal_knife": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training",
+      "item_source": "https://runescape.wiki/w/Crystal_knife"
+    },
+    "fletching.rangers_workroom": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.fenshell_knife": {
+      "notes": "Totems needs partial Heralds of Crimson; completion is a conservative gate until partial-stage reads are verified.",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training",
+      "item_source": "https://runescape.wiki/w/Fenshell_knife"
+    },
+    "cooking.sous_chef_outfit": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training",
+      "item_source": "https://runescape.wiki/w/Sous_chef's_toque"
+    },
+    "cooking.cooking_gauntlets": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training",
+      "item_source": "https://runescape.wiki/w/Cooking_gauntlets"
+    },
+    "herblore.botanist_outfit": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Herblore_training",
+      "item_source": "https://runescape.wiki/w/Botanist's_mask"
+    },
+    "herblore.factory_outfit": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Herblore_training",
+      "item_source": "https://runescape.wiki/w/Factory_mask"
+    },
+    "herblore.cleansing": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "firemaking.fired_up": {
+      "notes": "Ring first available at 62; gloves at 79. Gloves are an aspiration, not an assertion of current eligibility.",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training",
+      "item_source": "https://runescape.wiki/w/Ring_of_fire"
+    },
+    "firemaking.pyro_matic": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training",
+      "item_source": "https://runescape.wiki/w/Pyro-matic"
+    },
+    "firemaking.crystal_tinderbox": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training",
+      "item_source": "https://runescape.wiki/w/Crystal_tinderbox"
+    },
+    "firemaking.pitch_can": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training",
+      "item_source": "https://runescape.wiki/w/Pitch_can"
+    },
+    "runecrafting.master_robes": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training",
+      "item_source": "https://runescape.wiki/w/Master_runecrafter_hat"
+    },
+    "runecrafting.ethereal_outfits": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training",
+      "item_source": "https://runescape.wiki/w/Infinity_ethereal_head"
+    },
+    "runecrafting.pouches": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training",
+      "item_source": "https://runescape.wiki/w/Medium_pouch"
+    },
+    "runecrafting.expansive_pouch": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training",
+      "item_source": "https://runescape.wiki/w/Expansive_pouch"
+    },
+    "runecrafting.catalyst": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training",
+      "item_source": "https://runescape.wiki/w/Runecrafter's_Catalyst_fragment"
+    },
+    "runecrafting.binding_rod": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training",
+      "item_source": "https://runescape.wiki/w/Binding_rod"
+    },
+    "runecrafting.crystal_binding_rod": {
+      "notes": "82 Invention and 81 Runecrafting are actual creation/use thresholds. 80 Crafting makes a buyable input, so it is not imposed. Prifddinas gate uses the documented harmonic-dust source route.",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training",
+      "item_source": "https://runescape.wiki/w/Crystal_binding_rod"
+    },
+    "runecrafting.runic_attuner": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training",
+      "item_source": "https://runescape.wiki/w/Runic_attuner"
+    },
+    "runecrafting.pouch_protector": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "runecrafting.nexus_mod": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "construction.constructor_outfit": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Construction_training",
+      "item_source": "https://runescape.wiki/w/Constructor's_hat"
+    },
+    "construction.master_outfit": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Construction_training",
+      "item_source": "https://runescape.wiki/w/Master_constructor's_hat"
+    },
+    "construction.plank_box": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Construction_training",
+      "item_source": "https://runescape.wiki/w/Plank_box"
+    },
+    "construction.crystal_saw": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Construction_training",
+      "item_source": "https://runescape.wiki/w/Crystal_saw"
+    },
+    "construction.proficiency": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Construction_training"
+    },
+    "invention.mechanised_siphon": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Invention_training",
+      "item_source": "https://runescape.wiki/w/Mechanised_siphon"
+    },
+    "invention.ancient_invention": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Invention_training"
+    },
+    "invention.machines": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Invention_training"
+    },
+    "smithing.cape": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "crafting.cape": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "fletching.cape": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "cooking.cape": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training"
+    },
+    "herblore.cape": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "firemaking.cape": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "runecrafting.cape": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "construction.cape": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Construction_training"
+    },
+    "invention.cape": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Invention_training"
+    },
+    "herblore.master_cape": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Herblore_training",
+      "item_source": "https://runescape.wiki/w/Herblore_master_cape"
+    },
+    "construction.master_cape": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Construction_training",
+      "item_source": "https://runescape.wiki/w/Construction_master_cape"
+    },
+    "shared.amulet_of_offerings": {
+      "notes": "",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "shared.artificers_measure": {
+      "notes": "Untradeable off-hand: Crafting 99/Archaeology 102 and upgraded gem bag 35 Dungeoneering. Full Legacy completion conservatively covers partial mould access; Prifddinas gates recommended sandstone route. Glorious bar can be bought, so Smithing 99 is not universally imposed.",
+      "window": null,
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "smithing.method.iron": {
+      "notes": "",
+      "window": [
+        10,
+        19
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.method.steel": {
+      "notes": "",
+      "window": [
+        20,
+        29
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.method.mithril": {
+      "notes": "",
+      "window": [
+        30,
+        39
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.method.adamant": {
+      "notes": "",
+      "window": [
+        40,
+        49
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.method.rune": {
+      "notes": "",
+      "window": [
+        50,
+        59
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.method.orikalkum": {
+      "notes": "",
+      "window": [
+        60,
+        69
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.method.necronium": {
+      "notes": "",
+      "window": [
+        70,
+        79
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.method.bane": {
+      "notes": "",
+      "window": [
+        80,
+        89
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.method.elder_rune": {
+      "notes": "",
+      "window": [
+        90,
+        99
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.method.primal": {
+      "notes": "",
+      "window": [
+        100,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.alt.smelting": {
+      "notes": "Editorial 20–79 discovery window; lower profit-focused option, not claimed best XP or profitable at all prices.",
+      "window": [
+        20,
+        79
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.alt.burial": {
+      "notes": "Scaling family from adamant through primal, not adamant recommended to 120.",
+      "window": [
+        40,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "smithing.alt.corrupted": {
+      "notes": "Capped before primal burial; distinct use for banked untradeable ore.",
+      "window": [
+        89,
+        99
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Smithing_training"
+    },
+    "crafting.method.gems": {
+      "notes": "",
+      "window": [
+        20,
+        39
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "crafting.method.dragonhide": {
+      "notes": "Scaling green/blue/red/black/royal family; undead replaces at 75.",
+      "window": [
+        40,
+        74
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "crafting.method.undead_hide": {
+      "notes": "",
+      "window": [
+        75,
+        99
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "crafting.method.high_tier": {
+      "notes": "Top-tier upgrade families; higher upgrades unlock progressively. No claim every upgrade is available at 100.",
+      "window": [
+        100,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "crafting.alt.jewellery": {
+      "notes": "",
+      "window": [
+        20,
+        79
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "crafting.alt.battlestaves": {
+      "notes": "54 water, then earth/fire/air; stop before 80 to avoid a default unlock-to-120 alternative.",
+      "window": [
+        54,
+        79
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "crafting.alt.harps": {
+      "notes": "",
+      "window": [
+        75,
+        99
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "crafting.alt.flasks": {
+      "notes": "Ongoing resource-run niche; crystal variant intentionally not implied without Prifddinas access.",
+      "window": [
+        89,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "crafting.alt.exquisite_urns": {
+      "notes": "Crafting training output, not a consumable boost purchase recommendation; scaling exquisite family.",
+      "window": [
+        102,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "crafting.alt.platinum": {
+      "notes": "",
+      "window": [
+        104,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Crafting_training"
+    },
+    "fletching.method.oak": {
+      "notes": "",
+      "window": [
+        20,
+        34
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.method.willow": {
+      "notes": "",
+      "window": [
+        35,
+        49
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.method.maple": {
+      "notes": "",
+      "window": [
+        50,
+        64
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.method.yew": {
+      "notes": "",
+      "window": [
+        65,
+        79
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.method.magic": {
+      "notes": "",
+      "window": [
+        80,
+        89
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.method.elder": {
+      "notes": "",
+      "window": [
+        90,
+        99
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.method.eternal": {
+      "notes": "Top-tier upgraded family, not an assertion that all bow/crossbow variants unlock at 100.",
+      "window": [
+        100,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.alt.ammunition": {
+      "notes": "",
+      "window": [
+        52,
+        80
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.alt.fenmoor": {
+      "notes": "Partial Heralds access not verified in client; full completion conservatively gates. Cap 104 before final tier/repeated endgame loops.",
+      "window": [
+        65,
+        104
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.alt.iaia": {
+      "notes": "Recurring capped resource sink, useful beyond ordinary bow brackets.",
+      "window": [
+        75,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.alt.darts": {
+      "notes": "",
+      "window": [
+        81,
+        99
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.alt.carestyling": {
+      "notes": "",
+      "window": [
+        82,
+        109
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "fletching.alt.sagaies": {
+      "notes": "",
+      "window": [
+        83,
+        95
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Fletching_training"
+    },
+    "cooking.method.trout": {
+      "notes": "Guide recommendation bracket, not necessarily the first level this food can be cooked. Top jellyfish retained for endgame food-production niche.",
+      "window": [
+        15,
+        27
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training"
+    },
+    "cooking.method.sweetcorn": {
+      "notes": "Guide recommendation bracket, not necessarily the first level this food can be cooked. Top jellyfish retained for endgame food-production niche.",
+      "window": [
+        28,
+        51
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training"
+    },
+    "cooking.method.desert_sole": {
+      "notes": "Guide recommendation bracket, not necessarily the first level this food can be cooked. Top jellyfish retained for endgame food-production niche.",
+      "window": [
+        52,
+        79
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training"
+    },
+    "cooking.method.beltfish": {
+      "notes": "Guide recommendation bracket, not necessarily the first level this food can be cooked. Top jellyfish retained for endgame food-production niche.",
+      "window": [
+        80,
+        89
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training"
+    },
+    "cooking.method.sharks": {
+      "notes": "Guide recommendation bracket, not necessarily the first level this food can be cooked. Top jellyfish retained for endgame food-production niche.",
+      "window": [
+        90,
+        92
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training"
+    },
+    "cooking.method.rocktail": {
+      "notes": "Guide recommendation bracket, not necessarily the first level this food can be cooked. Top jellyfish retained for endgame food-production niche.",
+      "window": [
+        93,
+        94
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training"
+    },
+    "cooking.method.blue_blubber_jellyfish": {
+      "notes": "Guide recommendation bracket, not necessarily the first level this food can be cooked. Top jellyfish retained for endgame food-production niche.",
+      "window": [
+        95,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training"
+    },
+    "cooking.alt.wine": {
+      "notes": "",
+      "window": [
+        35,
+        79
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training"
+    },
+    "cooking.alt.curry": {
+      "notes": "",
+      "window": [
+        74,
+        89
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training"
+    },
+    "cooking.alt.bait_switch": {
+      "notes": "Cross-skill passive family; no normal Cooking requirement for the fish. Actual relic obtain prerequisites audited separately.",
+      "window": [
+        1,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Cooking_training"
+    },
+    "herblore.method.strength_potions": {
+      "notes": "Training output; not a recommendation to consume a potion as an XP boost.",
+      "window": [
+        12,
+        25
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.method.energy_potions": {
+      "notes": "Training output; not a recommendation to consume a potion as an XP boost.",
+      "window": [
+        26,
+        37
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.method.prayer_potions": {
+      "notes": "Training output; not a recommendation to consume a potion as an XP boost.",
+      "window": [
+        38,
+        54
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.method.super_strength_potions": {
+      "notes": "Training output; not a recommendation to consume a potion as an XP boost.",
+      "window": [
+        55,
+        62
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.method.super_restore_potions": {
+      "notes": "Training output; not a recommendation to consume a potion as an XP boost.",
+      "window": [
+        63,
+        71
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.method.super_ranging_potions": {
+      "notes": "Training output; not a recommendation to consume a potion as an XP boost.",
+      "window": [
+        72,
+        80
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.method.saradomin_brews": {
+      "notes": "Training output; not a recommendation to consume a potion as an XP boost.",
+      "window": [
+        81,
+        87
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.method.extremes": {
+      "notes": "",
+      "window": [
+        88,
+        95
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.method.overloads": {
+      "notes": "",
+      "window": [
+        96,
+        98
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.method.poison_bombs": {
+      "notes": "Guide recommendation window; training output, not consumable XP-boost advice.",
+      "window": [
+        99,
+        100
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.method.sticky_bombs": {
+      "notes": "Guide recommendation window; training output, not consumable XP-boost advice.",
+      "window": [
+        101,
+        106
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.method.vulnerability_bombs": {
+      "notes": "Guide recommendation window; training output, not consumable XP-boost advice.",
+      "window": [
+        107,
+        117
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.method.powerbursts_of_feats": {
+      "notes": "Guide recommendation window; training output, not consumable XP-boost advice.",
+      "window": [
+        118,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.alt.tar": {
+      "notes": "Ordinary mixing route, not the 85 Magic Telekinetic Grind variant; no Lunar gate invented.",
+      "window": [
+        44,
+        69
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.alt.combination": {
+      "notes": "Starts at purchasable/free-recipe grand potion tier; later recipe unlocks are not assumed.",
+      "window": [
+        91,
+        119
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.alt.iaia": {
+      "notes": "",
+      "window": [
+        75,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "herblore.alt.primal": {
+      "notes": "",
+      "window": [
+        90,
+        119
+      ],
+      "source": "https://runescape.wiki/w/Herblore_training"
+    },
+    "firemaking.method.oak": {
+      "notes": "",
+      "window": [
+        15,
+        29
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "firemaking.method.willow": {
+      "notes": "",
+      "window": [
+        30,
+        34
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "firemaking.method.teak": {
+      "notes": "",
+      "window": [
+        35,
+        44
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "firemaking.method.maple": {
+      "notes": "",
+      "window": [
+        45,
+        49
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "firemaking.method.mahogany": {
+      "notes": "",
+      "window": [
+        50,
+        57
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "firemaking.method.eucalyptus": {
+      "notes": "",
+      "window": [
+        58,
+        59
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "firemaking.method.yew": {
+      "notes": "",
+      "window": [
+        60,
+        74
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "firemaking.method.magic": {
+      "notes": "",
+      "window": [
+        75,
+        89
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "firemaking.method.elder": {
+      "notes": "",
+      "window": [
+        90,
+        99
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "firemaking.method.eternal_magic": {
+      "notes": "",
+      "window": [
+        100,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "firemaking.alt.accidental": {
+      "notes": "Starting egg-care task at 82 only; higher variants are aspirations, not assumed unlocked.",
+      "window": [
+        82,
+        109
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "firemaking.alt.curly_roots": {
+      "notes": "",
+      "window": [
+        83,
+        99
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "firemaking.alt.shells": {
+      "notes": "",
+      "window": [
+        87,
+        109
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Firemaking_training"
+    },
+    "runecrafting.method.fire_runes": {
+      "notes": "Altar access quest enforced; recommendation bracket ends at next major altar. No Abyss access silently assumed.",
+      "window": [
+        14,
+        26
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "runecrafting.method.cosmic_runes": {
+      "notes": "Lost City is a surface-route requirement, not imposed on the Abyss route.",
+      "window": [
+        27,
+        43
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "runecrafting.method.nature_runes": {
+      "notes": "Altar access quest enforced; recommendation bracket ends at next major altar. No Abyss access silently assumed.",
+      "window": [
+        44,
+        53
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "runecrafting.method.law_runes": {
+      "notes": "Troll Stronghold is not a current law-altar access requirement.",
+      "window": [
+        54,
+        64
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "runecrafting.method.death_runes": {
+      "notes": "Altar access quest enforced; recommendation bracket ends at next major altar. No Abyss access silently assumed.",
+      "window": [
+        65,
+        76
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "runecrafting.method.blood_runes": {
+      "notes": "Altar access quest enforced; recommendation bracket ends at next major altar. No Abyss access silently assumed.",
+      "window": [
+        77,
+        89
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "runecrafting.method.soul_runes": {
+      "notes": "Altar access quest enforced; recommendation bracket ends at next major altar. No Abyss access silently assumed.",
+      "window": [
+        90,
+        99
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "runecrafting.method.time_runes": {
+      "notes": "Altar access quest enforced; recommendation bracket ends at next major altar. No Abyss access silently assumed.",
+      "window": [
+        100,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "runecrafting.alt.ourania": {
+      "notes": "",
+      "window": [
+        40,
+        76
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "runecrafting.alt.necrotic": {
+      "notes": "Bone/flesh/miasma family; spirit-only level-1 starter omitted. Cap before top time-rune tier.",
+      "window": [
+        20,
+        99
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "runecrafting.alt.ascended": {
+      "notes": "Top-tier eternal equipment family; no consumable XP boost purchase tip.",
+      "window": [
+        100,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Pay-to-play_Runecrafting_training"
+    },
+    "construction.method.wooden_furniture": {
+      "notes": "Current post-July-2026 furniture-workbench route, not removed flatpack training; wooden family scales within 6–32.",
+      "window": [
+        6,
+        32
+      ],
+      "source": "https://runescape.wiki/w/Construction_training"
+    },
+    "construction.method.oak_larders": {
+      "notes": "Current post-July-2026 furniture-workbench route, not removed flatpack training; wooden family scales within 6–32.",
+      "window": [
+        33,
+        55
+      ],
+      "source": "https://runescape.wiki/w/Construction_training"
+    },
+    "construction.method.teak_tables": {
+      "notes": "Current post-July-2026 furniture-workbench route, not removed flatpack training; wooden family scales within 6–32.",
+      "window": [
+        56,
+        71
+      ],
+      "source": "https://runescape.wiki/w/Construction_training"
+    },
+    "construction.method.mahogany_tables": {
+      "notes": "Current post-July-2026 furniture-workbench route, not removed flatpack training; wooden family scales within 6–32.",
+      "window": [
+        72,
+        79
+      ],
+      "source": "https://runescape.wiki/w/Construction_training"
+    },
+    "construction.method.potion_cauldrons": {
+      "notes": "Current post-July-2026 furniture-workbench route, not removed flatpack training; wooden family scales within 6–32.",
+      "window": [
+        80,
+        105
+      ],
+      "source": "https://runescape.wiki/w/Construction_training"
+    },
+    "construction.method.eternal_furniture": {
+      "notes": "Current post-July-2026 furniture-workbench route, not removed flatpack training; wooden family scales within 6–32.",
+      "window": [
+        106,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Construction_training"
+    },
+    "construction.alt.contracts": {
+      "notes": "Scaling plank family including eternal contracts; full window justified by unique credit rewards and travel-based lower-intensity niche.",
+      "window": [
+        40,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Construction_training"
+    },
+    "construction.alt.fort": {
+      "notes": "Scaling building/upgrade family; individual higher tiers and their quests are not assumed unlocked.",
+      "window": [
+        40,
+        119
+      ],
+      "source": "https://runescape.wiki/w/Construction_training"
+    },
+    "construction.alt.statues": {
+      "notes": "Monthly D&D, not a minigame training loop. Level 20 is editorial discovery timing, reward scales.",
+      "window": [
+        20,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Construction_training"
+    },
+    "invention.method.equipment_levels": {
+      "notes": "Only equipment-level-5 blueprint available at 4; no claim skilling tools are unlocked before 22. No combat target advice.",
+      "window": [
+        4,
+        26
+      ],
+      "source": "https://runescape.wiki/w/Invention_training"
+    },
+    "invention.method.siphoning": {
+      "notes": "Siphons unlock at 27; item-level-12 route is not claimed until the 60 Invention equipment-level-15 blueprint.",
+      "window": [
+        27,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Invention_training"
+    },
+    "invention.alt.discovery": {
+      "notes": "One-time-per-blueprint progression, not an endlessly repeatable XP method; highest guide discovery at 118.",
+      "window": [
+        4,
+        118
+      ],
+      "source": "https://runescape.wiki/w/Invention_training"
+    },
+    "invention.alt.skilling_tools": {
+      "notes": "Scaling equipment family; siphoning is described as later at 22, unlocks at 27.",
+      "window": [
+        22,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Invention_training"
+    },
+    "invention.alt.gizmos": {
+      "notes": "Unboosted 103 timeworn-component unlock, not guide 86 plus an extreme-potion boost. Does not assume ancient blueprint is already read.",
+      "window": [
+        103,
+        120
+      ],
+      "source": "https://runescape.wiki/w/Invention_training"
+    }
+  },
+  "excluded_or_deferred": {
+    "Portable stations": "User explicitly excludes both purchasing and using public stations.",
+    "Repeat consumable boosts": "No XP potions, incense, brawlers, proteans, urn purchases, XP capacitors, finite expert amulets or furniture depackers. Herblore training outputs and making urns are not boost-purchase recommendations.",
+    "Minigame training": "No Runespan, Great Orb Project, Stealing Creation, Barbarian Assault, Flash Powder Factory, Herby Werby or Gnome Restaurant training loops. Some durable outfit tips name these as their reward source; that does not make them training-method tips.",
+    "Combat training": "No vyrelord or other combat-target recommendations. Invention explains gear experience without choosing combat targets.",
+    "Starter cards": "No level-1 main methods; first-use baselines still suppress already-unlocked main brackets.",
+    "Very low-value alternatives": "Chocolate-cake assembly, dairy churning and similar low-impact tangents are omitted to favour practical methods. There is no claim this is an exhaustive Wiki catalogue.",
+    "Higher diary rewards": "Morytania legs 4, Desert amulet 4, Explorer rings, Wilderness swords and Underworld Grimoires were surveyed but are withheld pending a complete prerequisite audit across task tiers and verified handling of alternative requirements. Do not ship a no-requirements diary item simply because native IDs are known. Existing easy Varrock armour gates are reused for Smithing.",
+    "Storage/unlock state": "No invented reads for tool belt, house/Diango, relic powers, permanent scroll effects, Fort buildings or blueprint unlock flags. Ownership learns observed item possession permanently. Unlock tips retain normal dismissal/pacing rather than pretending to know unobserved account state."
+  }
+}

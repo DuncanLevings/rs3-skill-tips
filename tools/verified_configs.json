@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "source": "In-game skilling-coach-probe, client 951-1, 2026-10-23: all 11 ore-box configs/category confirmed (docs/api-findings.md), plus the full quest dump and item/varbit lines imported from the probe log. Not a full client item dump: new items still need the probe. Item lookup run 2026-10-23 added 76 durable gathering items (consumable false). Quest dump with deprecated flags added 2026-10-23.",
+  "source": "In-game skilling-coach-probe, client 951-1, 2026-10-23: all 11 ore-box configs/category confirmed (docs/api-findings.md), plus the full quest dump and item/varbit lines imported from the probe log. Not a full client item dump: new items still need the probe. Item lookup run 2026-10-23 added 76 durable gathering items (consumable false). Quest dump with deprecated flags added 2026-10-23. Artisan probe on 2026-10-24 verified 335 item IDs including cape audit candidates and the expansive pouch; unused discovery candidates are not item recommendations.",
   "items": {
     "MINING_OREBOX_BRONZE": {
       "id": 44779,
@@ -499,25 +499,33 @@
       "id": 19757,
       "name": "Varrock armour 4",
       "category": 7,
-      "consumable": false
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
     },
     "ATVAR_BODY_HARD": {
       "id": 11758,
       "name": "Varrock armour 3",
       "category": 7,
-      "consumable": false
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
     },
     "ATVAR_BODY_MED": {
       "id": 11757,
       "name": "Varrock armour 2",
       "category": 7,
-      "consumable": false
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
     },
     "ATVAR_BODY_EASY": {
       "id": 11756,
       "name": "Varrock armour 1",
       "category": 7,
-      "consumable": false
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
     },
     "EGWD_BIK_SKILLING_OFFHAND_MINING": {
       "id": 52242,
@@ -2128,10 +2136,10 @@
     },
     "SKILLCAPE_HUNTING_HOODED": {
       "id": 34260,
-      "name": "Hooded hunter cape",
+      "name": "Cape ID audit 34260",
       "category": 27,
       "verified_on": "2026-10-24",
-      "source": "User-submitted gathering probe output",
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
       "consumable": false
     },
     "TRH58_FARMING_HEAD_UPGRADED": {
@@ -2210,6 +2218,2548 @@
       "verified_on": "2026-10-24",
       "source": "User-submitted correction probe; native ID overrides Wiki cape mapping",
       "consumable": false
+    },
+    "SKILLCAPE_FISHING_HOODED": {
+      "id": 34282,
+      "name": "Cape ID audit 34282",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SMITHING_HOOD_RETRO": {
+      "id": 34629,
+      "name": "Cape ID audit 34629",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_MINING_TRIMMED_HOODED": {
+      "id": 34279,
+      "name": "Cape ID audit 34279",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_ARCHAEOLOGY_TRIMMED_HOODED": {
+      "id": 53852,
+      "name": "Cape ID audit 53852",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_SUMMONING_TRIMMED_HOODED": {
+      "id": 53850,
+      "name": "Cape ID audit 53850",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_ARCHAEOLOGY_HOODED": {
+      "id": 53823,
+      "name": "Cape ID audit 53823",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_SUMMONING_HOODED": {
+      "id": 53821,
+      "name": "Cape ID audit 53821",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVENTION_HOOD": {
+      "id": 36355,
+      "name": "Cape ID audit 36355",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVENTION_HOOD_RETRO": {
+      "id": 36793,
+      "name": "Cape ID audit 36793",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_AGILITY_TRIMMED_HOODED": {
+      "id": 53834,
+      "name": "Cape ID audit 53834",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_AGILITY_HOODED": {
+      "id": 53805,
+      "name": "Cape ID audit 53805",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_THIEVING_HOODED": {
+      "id": 34268,
+      "name": "Cape ID audit 34268",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_HERBLORE_HOOD_RETRO": {
+      "id": 34594,
+      "name": "Cape ID audit 34594",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_AGILITY_TRIMMED_HOODED": {
+      "id": 34265,
+      "name": "Cape ID audit 34265",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SLAYER_HOODED": {
+      "id": 34274,
+      "name": "Cape ID audit 34274",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FLETCHING_HOOD_RETRO": {
+      "id": 34609,
+      "name": "Cape ID audit 34609",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_WOODCUTTING_TRIMMED_HOODED": {
+      "id": 53846,
+      "name": "Cape ID audit 53846",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_WOODCUTTING_HOODED": {
+      "id": 53817,
+      "name": "Cape ID audit 53817",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_WOODCUTTING_HOODED": {
+      "id": 34288,
+      "name": "Cape ID audit 34288",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FIREMAKING_HOOD_RETRO": {
+      "id": 34644,
+      "name": "Cape ID audit 34644",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_HUNTING_TRIMMED_HOODED": {
+      "id": 53832,
+      "name": "Cape ID audit 53832",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_MAGIC_TRIMMED_HOODED": {
+      "id": 53830,
+      "name": "Cape ID audit 53830",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_HUNTING_HOODED": {
+      "id": 53803,
+      "name": "Cape ID audit 53803",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_MAGIC_HOODED": {
+      "id": 53801,
+      "name": "Cape ID audit 53801",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_THIEVING_TRIMMED_HOODED": {
+      "id": 53836,
+      "name": "Cape ID audit 53836",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_THIEVING_HOODED": {
+      "id": 53807,
+      "name": "Cape ID audit 53807",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_RUNECRAFTING_HOOD_RETRO": {
+      "id": 34574,
+      "name": "Cape ID audit 34574",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_MAGIC_TRIMMED_HOODED": {
+      "id": 34257,
+      "name": "Cape ID audit 34257",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_THIEVING_TRIMMED_HOODED": {
+      "id": 34269,
+      "name": "Cape ID audit 34269",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_FISHING_TRIMMED_HOODED": {
+      "id": 53843,
+      "name": "Cape ID audit 53843",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_FISHING_HOODED": {
+      "id": 53814,
+      "name": "Cape ID audit 53814",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FISHING_TRIMMED_HOODED": {
+      "id": 34283,
+      "name": "Cape ID audit 34283",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_MINING_TRIMMED_HOODED": {
+      "id": 53841,
+      "name": "Cape ID audit 53841",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_SLAYER_TRIMMED_HOODED": {
+      "id": 53839,
+      "name": "Cape ID audit 53839",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_MINING_HOODED": {
+      "id": 53812,
+      "name": "Cape ID audit 53812",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_SLAYER_HOODED": {
+      "id": 53810,
+      "name": "Cape ID audit 53810",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_MINING_HOODED": {
+      "id": 34278,
+      "name": "Cape ID audit 34278",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CONSTRUCTION_HOOD_RETRO": {
+      "id": 34619,
+      "name": "Cape ID audit 34619",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SLAYER_TRIMMED_HOODED": {
+      "id": 34275,
+      "name": "Cape ID audit 34275",
+      "category": 27,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCSIPHONXP_SKILLGUIDE_ICON": {
+      "id": 24212,
+      "name": "Cape ID audit 24212",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SMITHING_HOOD": {
+      "id": 9797,
+      "name": "Cape ID audit 9797",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_MINING_HOOD_RETRO": {
+      "id": 34624,
+      "name": "Cape ID audit 34624",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_MINING_HOOD": {
+      "id": 9794,
+      "name": "Cape ID audit 9794",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_RUNECRAFTING_HOOD": {
+      "id": 9767,
+      "name": "Cape ID audit 9767",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_MAGIC_HOOD_RETRO": {
+      "id": 34569,
+      "name": "Cape ID audit 34569",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_MAGIC_HOOD": {
+      "id": 9764,
+      "name": "Cape ID audit 9764",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH82_LOVE_LETTER": {
+      "id": 36788,
+      "name": "Cape ID audit 36788",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "MTX_CLAN_CLOAK_OVERRIDE": {
+      "id": 36350,
+      "name": "Cape ID audit 36350",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_HERBLORE_HOOD": {
+      "id": 9776,
+      "name": "Cape ID audit 9776",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_AGILITY_HOOD_RETRO": {
+      "id": 34589,
+      "name": "Cape ID audit 34589",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_AGILITY_HOOD": {
+      "id": 9773,
+      "name": "Cape ID audit 9773",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FLETCHING_HOOD": {
+      "id": 9785,
+      "name": "Cape ID audit 9785",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CRAFTING_HOOD_RETRO": {
+      "id": 34604,
+      "name": "Cape ID audit 34604",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FIREMAKING_HOOD": {
+      "id": 9806,
+      "name": "Cape ID audit 9806",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_COOKING_HOOD_RETRO": {
+      "id": 34639,
+      "name": "Cape ID audit 34639",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CRAFTING_HOOD": {
+      "id": 9782,
+      "name": "Cape ID audit 9782",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_THIEVING_HOOD_RETRO": {
+      "id": 34599,
+      "name": "Cape ID audit 34599",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_THIEVING_HOOD": {
+      "id": 9779,
+      "name": "Cape ID audit 9779",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_COOKING_HOOD": {
+      "id": 9803,
+      "name": "Cape ID audit 9803",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FISHING_HOOD_RETRO": {
+      "id": 34634,
+      "name": "Cape ID audit 34634",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FISHING_HOOD": {
+      "id": 9800,
+      "name": "Cape ID audit 9800",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CONSTRUCTION_HOOD": {
+      "id": 9791,
+      "name": "Cape ID audit 9791",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SLAYER_HOOD_RETRO": {
+      "id": 34614,
+      "name": "Cape ID audit 34614",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SLAYER_HOOD": {
+      "id": 9788,
+      "name": "Cape ID audit 9788",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "GODSS_HAMMER_CHISEL_PLAYER_ZAMORAK": {
+      "id": 26573,
+      "name": "Sculpting chisel (Zamorak)",
+      "category": 2844,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "GODSS_HAMMER_CHISEL_PLAYER_SEREN": {
+      "id": 32271,
+      "name": "Sculpting chisel (Seren)",
+      "category": 2844,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "GODSS_HAMMER_CHISEL_PLAYER_SARADOMIN": {
+      "id": 26574,
+      "name": "Sculpting chisel (Saradomin)",
+      "category": 2844,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "GODSS_HAMMER_CHISEL_PLAYER_GUTHIX": {
+      "id": 26575,
+      "name": "Sculpting chisel (Guthix)",
+      "category": 2844,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "GODSS_HAMMER_CHISEL_PLAYER_BANDOS": {
+      "id": 26576,
+      "name": "Sculpting chisel (Bandos)",
+      "category": 2844,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_120_INVENTION": {
+      "id": 36356,
+      "name": "Invention master cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_AUTO_SIPHON": {
+      "id": 41092,
+      "name": "Mechanised siphon",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_RUNECRAFTING_ROD_UNCHARGED": {
+      "id": 58897,
+      "name": "Binding rod (uncharged)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_RUNECRAFTING_ROD_UNUSED": {
+      "id": 58895,
+      "name": "Binding rod (new)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_RUNECRAFTING_ROD": {
+      "id": 58896,
+      "name": "Binding rod",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELFCITY_CRYSTAL_TINDERBOX_AUGMENTED_UNCHARGED": {
+      "id": 39658,
+      "name": "Augmented crystal tinderbox (uncharged)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELFCITY_CRYSTAL_TINDERBOX_AUGMENTED": {
+      "id": 39657,
+      "name": "Augmented crystal tinderbox",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELFCITY_CRYSTAL_TINDERBOX_50": {
+      "id": 32638,
+      "name": "Crystal tinderbox",
+      "category": 3336,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELFCITY_CRYSTAL_TINDERBOX_100": {
+      "id": 32637,
+      "name": "Crystal tinderbox",
+      "category": 3336,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATWILD_REWARD_ELITE_AUGMENTED_UNCHARGED": {
+      "id": 41377,
+      "name": "Augmented Wilderness sword 4 (uncharged)",
+      "category": 2752,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATWILD_REWARD_ELITE_AUGMENTED": {
+      "id": 41376,
+      "name": "Augmented Wilderness sword 4",
+      "category": 2752,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH58_COOKING_HEAD_ADDON": {
+      "id": 34920,
+      "name": "Sous chef's toque add-on",
+      "category": 3282,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_SMITHING_TRIMMED_HOODED": {
+      "id": 53842,
+      "name": "Inverted hooded Smithing cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_SMITHING_HOODED": {
+      "id": 53813,
+      "name": "Inverted hooded Smithing cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SMITHING_TRIMMED_HOODED": {
+      "id": 34281,
+      "name": "Hooded smithing cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SMITHING_TRIMMED_HOODED_RETRO": {
+      "id": 34628,
+      "name": "Retro hooded smithing cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SMITHING_HOODED_RETRO": {
+      "id": 34626,
+      "name": "Retro hooded smithing cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SMITHING_HOODED": {
+      "id": 34280,
+      "name": "Hooded smithing cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_LEGS_LAW_WORN": {
+      "id": 32576,
+      "name": "Law ethereal legs",
+      "category": 3311,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_LEGS_LAW": {
+      "id": 32344,
+      "name": "Law ethereal legs",
+      "category": 3311,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_HANDS_LAW": {
+      "id": 32345,
+      "name": "Law ethereal hands",
+      "category": 3311,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_FEET_LAW": {
+      "id": 32346,
+      "name": "Law ethereal feet",
+      "category": 3311,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_BODY_LAW_WORN": {
+      "id": 32575,
+      "name": "Law ethereal body",
+      "category": 3311,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_BODY_LAW": {
+      "id": 32343,
+      "name": "Law ethereal body",
+      "category": 3311,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_INVENTION_TRIMMED_HOODED": {
+      "id": 53851,
+      "name": "Inverted hooded Invention cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_INVENTION_HOODED": {
+      "id": 53822,
+      "name": "Inverted hooded Invention cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVENTION_TRIMMED_HOODED": {
+      "id": 36354,
+      "name": "Hooded Invention cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVENTION_TRIMMED_HOODED_RETRO": {
+      "id": 36792,
+      "name": "Retro hooded invention cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVENTION_HOODED_RETRO": {
+      "id": 36790,
+      "name": "Retro hooded invention cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVENTION_HOODED": {
+      "id": 36353,
+      "name": "Hooded Invention cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_LEGS_INFINITY_WORN": {
+      "id": 32582,
+      "name": "Infinity ethereal legs",
+      "category": 3314,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_LEGS_INFINITY": {
+      "id": 32359,
+      "name": "Infinity ethereal legs",
+      "category": 3314,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_HEAD_INFINITY": {
+      "id": 32357,
+      "name": "Infinity ethereal head",
+      "category": 3314,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_HANDS_INFINITY": {
+      "id": 32360,
+      "name": "Infinity ethereal hands",
+      "category": 3314,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_FEET_INFINITY": {
+      "id": 32361,
+      "name": "Infinity ethereal feet",
+      "category": 3314,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_BODY_INFINITY_WORN": {
+      "id": 32581,
+      "name": "Infinity ethereal body",
+      "category": 3314,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_BODY_INFINITY": {
+      "id": 32358,
+      "name": "Infinity ethereal body",
+      "category": 3314,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_HERBLORE_TRIMMED_HOODED": {
+      "id": 53835,
+      "name": "Inverted hooded Herblore cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_HERBLORE_HOODED": {
+      "id": 53806,
+      "name": "Inverted hooded Herblore cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_HERBLORE_TRIMMED_HOODED": {
+      "id": 34267,
+      "name": "Hooded herblore cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_HERBLORE_TRIMMED_HOODED_RETRO": {
+      "id": 34593,
+      "name": "Retro hooded herblore cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_HERBLORE_HOODED_RETRO": {
+      "id": 34591,
+      "name": "Retro hooded herblore cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_HERBLORE_HOODED": {
+      "id": 34266,
+      "name": "Hooded herblore cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_FLETCHING_TRIMMED_HOODED": {
+      "id": 53838,
+      "name": "Inverted hooded Fletching cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_FLETCHING_HOODED": {
+      "id": 53809,
+      "name": "Inverted hooded Fletching cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FLETCHING_TRIMMED_HOODED": {
+      "id": 34273,
+      "name": "Hooded fletching cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FLETCHING_TRIMMED_HOODED_RETRO": {
+      "id": 34608,
+      "name": "Retro hooded fletching cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FLETCHING_HOODED_RETRO": {
+      "id": 34606,
+      "name": "Retro hooded fletching cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FLETCHING_HOODED": {
+      "id": 34272,
+      "name": "Hooded fletching cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH85_FLETCHING_LEGS": {
+      "id": 36897,
+      "name": "Fletcher's legwear",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH85_FLETCHING_HEAD": {
+      "id": 36899,
+      "name": "Fletcher's headwear",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH85_FLETCHING_HANDS": {
+      "id": 36896,
+      "name": "Fletcher's gloves",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH85_FLETCHING_TORSO": {
+      "id": 36898,
+      "name": "Fletcher's chestpiece",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH85_FLETCHING_BOOTS": {
+      "id": 36895,
+      "name": "Fletcher's boots",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_FIREMAKING_TRIMMED_HOODED": {
+      "id": 53845,
+      "name": "Inverted hooded Firemaking cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_FIREMAKING_HOODED": {
+      "id": 53816,
+      "name": "Inverted hooded Firemaking cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FIREMAKING_TRIMMED_HOODED": {
+      "id": 34287,
+      "name": "Hooded firemaking cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FIREMAKING_TRIMMED_HOODED_RETRO": {
+      "id": 34643,
+      "name": "Retro hooded firemaking cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FIREMAKING_HOODED_RETRO": {
+      "id": 34641,
+      "name": "Retro hooded firemaking cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FIREMAKING_HOODED": {
+      "id": 34286,
+      "name": "Hooded firemaking cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_LEGS_DEATH_WORN": {
+      "id": 32580,
+      "name": "Death ethereal legs",
+      "category": 3313,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_LEGS_DEATH": {
+      "id": 32354,
+      "name": "Death ethereal legs",
+      "category": 3313,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_HANDS_DEATH": {
+      "id": 32355,
+      "name": "Death ethereal hands",
+      "category": 3313,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_FEET_DEATH": {
+      "id": 32356,
+      "name": "Death ethereal feet",
+      "category": 3313,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_BODY_DEATH_WORN": {
+      "id": 32579,
+      "name": "Death ethereal body",
+      "category": 3313,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_BODY_DEATH": {
+      "id": 32353,
+      "name": "Death ethereal body",
+      "category": 3313,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_RUNECRAFTING_TRIMMED_HOODED": {
+      "id": 53831,
+      "name": "Inverted hooded Runecrafting cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_RUNECRAFTING_HOODED": {
+      "id": 53802,
+      "name": "Inverted hooded Runecrafting cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_CRAFTING_TRIMMED_HOODED": {
+      "id": 53837,
+      "name": "Inverted hooded Crafting cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_CRAFTING_HOODED": {
+      "id": 53808,
+      "name": "Inverted hooded Crafting cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_RUNECRAFTING_TRIMMED_HOODED": {
+      "id": 34259,
+      "name": "Hooded runecrafting cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_RUNECRAFTING_TRIMMED_HOODED_RETRO": {
+      "id": 34573,
+      "name": "Retro hooded runecrafting cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_RUNECRAFTING_HOODED_RETRO": {
+      "id": 34571,
+      "name": "Retro hooded runecrafting cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_RUNECRAFTING_HOODED": {
+      "id": 34258,
+      "name": "Hooded runecrafting cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CRAFTING_TRIMMED_HOODED": {
+      "id": 34271,
+      "name": "Hooded crafting cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CRAFTING_TRIMMED_HOODED_RETRO": {
+      "id": 34603,
+      "name": "Retro hooded crafting cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CRAFTING_HOODED_RETRO": {
+      "id": 34601,
+      "name": "Retro hooded crafting cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CRAFTING_HOODED": {
+      "id": 34270,
+      "name": "Hooded crafting cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_COOKING_TRIMMED_HOODED": {
+      "id": 53844,
+      "name": "Inverted hooded Cooking cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_COOKING_HOODED": {
+      "id": 53815,
+      "name": "Inverted hooded Cooking cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_COOKING_TRIMMED_HOODED": {
+      "id": 34285,
+      "name": "Hooded cooking cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_COOKING_TRIMMED_HOODED_RETRO": {
+      "id": 34638,
+      "name": "Retro hooded cooking cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_COOKING_HOODED_RETRO": {
+      "id": 34636,
+      "name": "Retro hooded cooking cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_COOKING_HOODED": {
+      "id": 34284,
+      "name": "Hooded cooking cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_CONSTRUCTION_TRIMMED_HOODED": {
+      "id": 53840,
+      "name": "Inverted hooded Construction cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVERTED_CONSTRUCTION_HOODED": {
+      "id": 53811,
+      "name": "Inverted hooded Construction cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CONSTRUCTION_TRIMMED_HOODED": {
+      "id": 34277,
+      "name": "Hooded construction cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CONSTRUCTION_TRIMMED_HOODED_RETRO": {
+      "id": 34618,
+      "name": "Retro hooded construction cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CONSTRUCTION_HOODED_RETRO": {
+      "id": 34616,
+      "name": "Retro hooded construction cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CONSTRUCTION_HOODED": {
+      "id": 34276,
+      "name": "Hooded construction cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH58_HERBLORE_HEAD_ADDON": {
+      "id": 34919,
+      "name": "Botanist's mask add-on",
+      "category": 3282,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_LEGS_BLOOD_WORN": {
+      "id": 32578,
+      "name": "Blood ethereal legs",
+      "category": 3312,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_LEGS_BLOOD": {
+      "id": 32349,
+      "name": "Blood ethereal legs",
+      "category": 3312,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_HANDS_BLOOD": {
+      "id": 32350,
+      "name": "Blood ethereal hands",
+      "category": 3312,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_FEET_BLOOD": {
+      "id": 32351,
+      "name": "Blood ethereal feet",
+      "category": 3312,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_BODY_BLOOD_WORN": {
+      "id": 32577,
+      "name": "Blood ethereal body",
+      "category": 3312,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_BODY_BLOOD": {
+      "id": 32348,
+      "name": "Blood ethereal body",
+      "category": 3312,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH28_SMITHING_HEAD_ADDON": {
+      "id": 32276,
+      "name": "Blacksmith's helmet add-on",
+      "category": 3282,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH28_CRAFTING_HEAD_ADDON": {
+      "id": 32277,
+      "name": "Artisan's bandana add-on",
+      "category": 3282,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATWILD_REWARD_ELITE": {
+      "id": 37907,
+      "name": "Wilderness sword 4",
+      "category": 2752,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATWILD_REWARD_HARD": {
+      "id": 37906,
+      "name": "Wilderness sword 3",
+      "category": 2752,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATWILD_REWARD_MED": {
+      "id": 37905,
+      "name": "Wilderness sword 2",
+      "category": 2752,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATWILD_REWARD_EASY": {
+      "id": 37904,
+      "name": "Wilderness sword 1",
+      "category": 2752,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCSIPHONXP_WICKED_TORSO_WORN": {
+      "id": 24207,
+      "name": "Wicked robe top",
+      "category": 2664,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCSIPHONXP_WICKED_TORSO": {
+      "id": 24206,
+      "name": "Wicked robe top",
+      "category": 2664,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCSIPHONXP_WICKED_LEGS_WORN": {
+      "id": 24209,
+      "name": "Wicked legs",
+      "category": 2664,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCSIPHONXP_WICKED_LEGS": {
+      "id": 24208,
+      "name": "Wicked legs",
+      "category": 2664,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "HOOKS3_HOOD": {
+      "id": 22332,
+      "name": "Wicked hood",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCSIPHONXP_WICKED_CAPE_WORN": {
+      "id": 24211,
+      "name": "Wicked cape",
+      "category": 2664,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCSIPHONXP_WICKED_CAPE": {
+      "id": 24210,
+      "name": "Wicked cape",
+      "category": 2664,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATUM_REWARD_ELITE": {
+      "id": 55678,
+      "name": "Underworld Grimoire 4",
+      "category": 5351,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATUM_REWARD_HARD": {
+      "id": 55677,
+      "name": "Underworld Grimoire 3",
+      "category": 5351,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATUM_REWARD_MED": {
+      "id": 55676,
+      "name": "Underworld Grimoire 2",
+      "category": 5351,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATUM_REWARD_EASY": {
+      "id": 55675,
+      "name": "Underworld Grimoire 1",
+      "category": 5351,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_COOKING_LEGS": {
+      "id": 25182,
+      "name": "Sous chef's trousers",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_COOKING_HEAD": {
+      "id": 25180,
+      "name": "Sous chef's toque",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_COOKING_FEET": {
+      "id": 25183,
+      "name": "Sous chef's shoes",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_COOKING_HANDS": {
+      "id": 25184,
+      "name": "Sous chef's mitts",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_COOKING_TORSO": {
+      "id": 25181,
+      "name": "Sous chef's jacket",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SMITHING_TRIMMED": {
+      "id": 9796,
+      "name": "Smithing cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SMITHING_TRIMMED_RETRO": {
+      "id": 34627,
+      "name": "Retro smithing cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SMITHING_RETRO": {
+      "id": 34625,
+      "name": "Retro smithing cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_SMITHING": {
+      "id": 9795,
+      "name": "Smithing cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SMITHING_COAL_HEAT_CONSUMER": {
+      "id": 47069,
+      "name": "Smithing autoheater",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "GAUNTLETS_OF_GOLDSMITHING": {
+      "id": 776,
+      "name": "Smelting gauntlets",
+      "category": 16,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCU_POUCH_SMALL": {
+      "id": 5509,
+      "name": "Small pouch",
+      "category": 4222,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELIDINIS_BOSS_SKILLING_OFFHAND_RUNECRAFTING": {
+      "id": 57519,
+      "name": "Runic attuner",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_RUNECRAFTING_TRIMMED": {
+      "id": 9766,
+      "name": "Runecrafting cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_RUNECRAFTING_TRIMMED_RETRO": {
+      "id": 34572,
+      "name": "Retro runecrafting cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_RUNECRAFTING_RETRO": {
+      "id": 34570,
+      "name": "Retro runecrafting cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_RUNECRAFTING": {
+      "id": 9765,
+      "name": "Runecrafting cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "QUEST_ENDGAME_SHARD_RUNECRAFTING": {
+      "id": 39436,
+      "name": "Runecrafter's Catalyst fragment",
+      "category": 4069,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "FIREDUP_RING": {
+      "id": 13659,
+      "name": "Ring of fire",
+      "category": 656,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_TINDERBOX_UNCHARGED": {
+      "id": 39650,
+      "name": "Pyro-matic (uncharged)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_TINDERBOX_UNUSED": {
+      "id": 39648,
+      "name": "Pyro-matic (new)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_TINDERBOX": {
+      "id": 39649,
+      "name": "Pyro-matic",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "CON_TOOLKIT": {
+      "id": 51022,
+      "name": "Plank box",
+      "category": 4918,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "FMC_PITCH_CAN_USED": {
+      "id": 42519,
+      "name": "Pitch can",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "FMC_PITCH_CAN_FULL": {
+      "id": 42517,
+      "name": "Pitch can (full)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "FMC_PITCH_CAN_EMPTY": {
+      "id": 42520,
+      "name": "Pitch can (empty)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "MOONSTONE_PASSING_BRACELET": {
+      "id": 56416,
+      "name": "Passing bracelet",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLING_OFFHAND_FURNACE": {
+      "id": 50806,
+      "name": "Orthen furnace core",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATMO_LEGS_ELITE": {
+      "id": 24137,
+      "name": "Morytania legs 4",
+      "category": 8,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH58_COOKING_HEAD_UPGRADED": {
+      "id": 34924,
+      "name": "Modified sous chef's toque",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH58_HERBLORE_HEAD_UPGRADED": {
+      "id": 34923,
+      "name": "Modified botanist's mask",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH28_SMITHING_HEAD_UPGRADED": {
+      "id": 32280,
+      "name": "Modified blacksmith's helmet",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH28_CRAFTING_HEAD_UPGRADED": {
+      "id": 32281,
+      "name": "Modified artisan's bandana",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCU_POUCH_MEDIUM": {
+      "id": 5510,
+      "name": "Medium pouch",
+      "category": 4222,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCU_POUCH_MEDIUM_DEGRADE": {
+      "id": 5511,
+      "name": "Medium pouch",
+      "category": 4222,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "HLR4M_RUNECRAFTER_LEGS": {
+      "id": 21518,
+      "name": "Master runecrafter skirt",
+      "category": 4157,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "HLR4M_RUNECRAFTER_ROBE": {
+      "id": 21516,
+      "name": "Master runecrafter robe",
+      "category": 4157,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "HLR4M_RUNECRAFTER_HAT": {
+      "id": 21517,
+      "name": "Master runecrafter hat",
+      "category": 4157,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "HLR4M_RUNECRAFTER_BOOTS": {
+      "id": 21519,
+      "name": "Master runecrafter boots",
+      "category": 4157,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "CON_ELITE_SKILLING_LEGS": {
+      "id": 51019,
+      "name": "Master constructor's trousers",
+      "category": 4917,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "CON_ELITE_SKILLING_BODY": {
+      "id": 51018,
+      "name": "Master constructor's jacket",
+      "category": 4917,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "CON_ELITE_SKILLING_HAT": {
+      "id": 51017,
+      "name": "Master constructor's hat",
+      "category": 4917,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "CON_ELITE_SKILLING_GLOVES": {
+      "id": 51020,
+      "name": "Master constructor's gloves",
+      "category": 4917,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "CON_ELITE_SKILLING_BOOTS": {
+      "id": 51021,
+      "name": "Master constructor's boots",
+      "category": 4917,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCSIPHONXP_MASSIVE_POUCH_INACTIVE": {
+      "id": 24204,
+      "name": "Massive pouch",
+      "category": 4222,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCSIPHONXP_MASSIVE_POUCH_ACTIVE": {
+      "id": 24205,
+      "name": "Massive pouch",
+      "category": 4222,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_HEAD_LAW": {
+      "id": 32342,
+      "name": "Law ethereal head",
+      "category": 3311,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCU_POUCH_LARGE": {
+      "id": 5512,
+      "name": "Large pouch",
+      "category": 4222,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCU_POUCH_LARGE_DEGRADE": {
+      "id": 5513,
+      "name": "Large pouch",
+      "category": 4222,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVENTION_TRIMMED": {
+      "id": 36352,
+      "name": "Invention cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVENTION_TRIMMED_RETRO": {
+      "id": 36791,
+      "name": "Retro invention cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVENTION_RETRO": {
+      "id": 36789,
+      "name": "Retro invention cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_INVENTION": {
+      "id": 36351,
+      "name": "Invention cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_120_HERBLORE": {
+      "id": 31278,
+      "name": "Herblore master cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_HERBLORE_TRIMMED": {
+      "id": 9775,
+      "name": "Herblore cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_HERBLORE_TRIMMED_RETRO": {
+      "id": 34592,
+      "name": "Retro herblore cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_HERBLORE_RETRO": {
+      "id": 34590,
+      "name": "Retro herblore cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_HERBLORE": {
+      "id": 9774,
+      "name": "Herblore cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_HAMMER_UNUSED": {
+      "id": 39652,
+      "name": "Hammer-tron (new)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_HAMMER_UNCHARGED": {
+      "id": 39654,
+      "name": "Hammer-tron (uncharged)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_HAMMER": {
+      "id": 39653,
+      "name": "Hammer-tron",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCU_POUCH_GIANT": {
+      "id": 5514,
+      "name": "Giant pouch",
+      "category": 4222,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCU_POUCH_GIANT_DEGRADE": {
+      "id": 5515,
+      "name": "Giant pouch",
+      "category": 4222,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_FLATPACK_DISSASEMBLER_INACTIVE": {
+      "id": 41084,
+      "name": "Furniture depacker (inactive)",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_FLATPACK_DISSASEMBLER": {
+      "id": 41085,
+      "name": "Furniture depacker",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FLETCHING_TRIMMED": {
+      "id": 9784,
+      "name": "Fletching cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FLETCHING_TRIMMED_RETRO": {
+      "id": 34607,
+      "name": "Retro fletching cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FLETCHING_RETRO": {
+      "id": 34605,
+      "name": "Retro fletching cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FLETCHING": {
+      "id": 9783,
+      "name": "Fletching cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "FIREDUP_GLOVES": {
+      "id": 13660,
+      "name": "Flame gloves",
+      "category": 0,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FIREMAKING_TRIMMED": {
+      "id": 9805,
+      "name": "Firemaking cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FIREMAKING_TRIMMED_RETRO": {
+      "id": 34642,
+      "name": "Retro firemaking cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FIREMAKING_RETRO": {
+      "id": 34640,
+      "name": "Retro firemaking cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_FIREMAKING": {
+      "id": 9804,
+      "name": "Firemaking cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "CERT_FENMOOR_WOODCUTTING_TORCH": {
+      "id": 63901,
+      "name": "Fenshell knife",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RDEN2_LEGS": {
+      "id": 22960,
+      "name": "Factory trousers",
+      "category": 8,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RDEN2_BODY": {
+      "id": 22958,
+      "name": "Factory top",
+      "category": 7,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RDEN2_HELM": {
+      "id": 22959,
+      "name": "Factory mask",
+      "category": 2,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RDEN2_GLOVES": {
+      "id": 22961,
+      "name": "Factory gloves",
+      "category": 16,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RDEN2_BOOTS": {
+      "id": 22962,
+      "name": "Factory boots",
+      "category": 17,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATLUM_RING_ELITE": {
+      "id": 19760,
+      "name": "Explorer's ring 4",
+      "category": 994,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATLUM_RING_HARD": {
+      "id": 13562,
+      "name": "Explorer's ring 3",
+      "category": 994,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATLUM_RING_MED": {
+      "id": 13561,
+      "name": "Explorer's ring 2",
+      "category": 994,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_ENHANCED_TINDERBOX": {
+      "id": 50156,
+      "name": "Enhanced pyro-matic",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_ENHANCED_TINDERBOX_UNCHARGED": {
+      "id": 50157,
+      "name": "Enhanced pyro-matic (uncharged)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_ENHANCED_TINDERBOX_UNUSED": {
+      "id": 50155,
+      "name": "Enhanced pyro-matic (new)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_ENHANCED_HAMMER": {
+      "id": 50159,
+      "name": "Enhanced hammer-tron",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_ENHANCED_HAMMER_UNCHARGED": {
+      "id": 50160,
+      "name": "Enhanced hammer-tron (uncharged)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_ENHANCED_HAMMER_UNUSED": {
+      "id": 50158,
+      "name": "Enhanced hammer-tron (new)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "HOOKS1_AXE": {
+      "id": 21340,
+      "name": "Dwarven army axe",
+      "category": 35,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ATDES_AMULET_ELITE": {
+      "id": 27096,
+      "name": "Desert amulet 4",
+      "category": 4715,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_HEAD_DEATH": {
+      "id": 32352,
+      "name": "Death ethereal head",
+      "category": 3313,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELFCITY_CRYSTAL_SAW_50": {
+      "id": 32634,
+      "name": "Crystal saw",
+      "category": 3336,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELFCITY_CRYSTAL_SAW_100": {
+      "id": 32633,
+      "name": "Crystal saw",
+      "category": 3336,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "EYEGLO_CRYSTAL_SAW": {
+      "id": 9625,
+      "name": "Crystal saw",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELFCITY_CRYSTAL_KNIFE_50": {
+      "id": 32636,
+      "name": "Crystal knife",
+      "category": 3336,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELFCITY_CRYSTAL_KNIFE_100": {
+      "id": 32635,
+      "name": "Crystal knife",
+      "category": 3336,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELFCITY_CRYSTAL_HAMMER_50": {
+      "id": 32641,
+      "name": "Crystal hammer",
+      "category": 3336,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELFCITY_CRYSTAL_HAMMER_100": {
+      "id": 32640,
+      "name": "Crystal hammer",
+      "category": 3336,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_RUNECRAFTING_ROD_CRYSTAL": {
+      "id": 58899,
+      "name": "Crystal binding rod",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_RUNECRAFTING_ROD_CRYSTAL_UNCHARGED": {
+      "id": 58900,
+      "name": "Crystal binding rod (uncharged)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "INVENT_RUNECRAFTING_ROD_CRYSTAL_UNUSED": {
+      "id": 58898,
+      "name": "Crystal binding rod (new)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CRAFTING_TRIMMED": {
+      "id": 9781,
+      "name": "Crafting cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CRAFTING_TRIMMED_RETRO": {
+      "id": 34602,
+      "name": "Retro crafting cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CRAFTING_RETRO": {
+      "id": 34600,
+      "name": "Retro crafting cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CRAFTING": {
+      "id": 9780,
+      "name": "Crafting cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "GAUNTLETS_OF_COOKING": {
+      "id": 775,
+      "name": "Cooking gauntlets",
+      "category": 16,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_COOKING_TRIMMED": {
+      "id": 9802,
+      "name": "Cooking cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_COOKING_TRIMMED_RETRO": {
+      "id": 34637,
+      "name": "Retro cooking cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_COOKING_RETRO": {
+      "id": 34635,
+      "name": "Retro cooking cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_COOKING": {
+      "id": 9801,
+      "name": "Cooking cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TT2_CONSTRUCTION_LEGS": {
+      "id": 21448,
+      "name": "Constructor's trousers",
+      "category": 4159,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TT2_CONSTRUCTION_HAT": {
+      "id": 21446,
+      "name": "Constructor's hat",
+      "category": 4159,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TT2_CONSTRUCTION_GLOVES": {
+      "id": 21449,
+      "name": "Constructor's gloves",
+      "category": 4159,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TT2_CONSTRUCTION_BODY": {
+      "id": 21447,
+      "name": "Constructor's garb",
+      "category": 4159,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TT2_CONSTRUCTION_BOOTS": {
+      "id": 21450,
+      "name": "Constructor's boots",
+      "category": 4159,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_120_CONSTRUCTION": {
+      "id": 31275,
+      "name": "Construction master cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CONSTRUCTION_TRIMMED": {
+      "id": 9790,
+      "name": "Construction cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CONSTRUCTION_TRIMMED_RETRO": {
+      "id": 34617,
+      "name": "Retro construction cape (t)",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CONSTRUCTION_RETRO": {
+      "id": 34615,
+      "name": "Retro construction cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLCAPE_CONSTRUCTION": {
+      "id": 9789,
+      "name": "Construction cape",
+      "category": 27,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_HERBLORE_LEGS": {
+      "id": 25192,
+      "name": "Botanist's trousers",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_HERBLORE_TORSO": {
+      "id": 25191,
+      "name": "Botanist's top",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_HERBLORE_HEAD": {
+      "id": 25190,
+      "name": "Botanist's mask",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_HERBLORE_HANDS": {
+      "id": 25194,
+      "name": "Botanist's gloves",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_HERBLORE_FEET": {
+      "id": 25193,
+      "name": "Botanist's boots",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "TRH33_ETHEREAL_HEAD_BLOOD": {
+      "id": 32347,
+      "name": "Blood ethereal head",
+      "category": 3312,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_SMITHING_TORSO": {
+      "id": 25196,
+      "name": "Blacksmith's top",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_SMITHING_HEAD": {
+      "id": 25195,
+      "name": "Blacksmith's helmet",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_SMITHING_HANDS": {
+      "id": 25199,
+      "name": "Blacksmith's gloves",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_SMITHING_FEET": {
+      "id": 25198,
+      "name": "Blacksmith's boots",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_SMITHING_LEGS": {
+      "id": 25197,
+      "name": "Blacksmith's apron",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELFCITY_CRYSTAL_HAMMER_AUGMENTED_UNCHARGED": {
+      "id": 39656,
+      "name": "Augmented crystal hammer (uncharged)",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELFCITY_CRYSTAL_HAMMER_AUGMENTED": {
+      "id": 39655,
+      "name": "Augmented crystal hammer",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_CRAFTING_TORSO": {
+      "id": 25186,
+      "name": "Artisan's top",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_CRAFTING_LEGS": {
+      "id": 25187,
+      "name": "Artisan's legs",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_CRAFTING_HANDS": {
+      "id": 25189,
+      "name": "Artisan's gloves",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_CRAFTING_FEET": {
+      "id": 25188,
+      "name": "Artisan's boots",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "WOF19_SKILL_CRAFTING_HEAD": {
+      "id": 25185,
+      "name": "Artisan's bandana",
+      "category": 2739,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SKILLING_OFFHAND_MEASURE": {
+      "id": 50805,
+      "name": "Artificer's measure",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "PLATINUM_AMULET_OF_THE_EXPERT_USED": {
+      "id": 59235,
+      "name": "Amulet of the expert",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "PLATINUM_AMULET_OF_THE_EXPERT": {
+      "id": 59233,
+      "name": "Amulet of the expert (new)",
+      "category": -1,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELIDINIS_BOSS_OFFERINGS_AMULET": {
+      "id": 57527,
+      "name": "Amulet of Offerings",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELIDINIS_BOSS_OFFERINGS_AMULET_UPGRADED_FLETCHING": {
+      "id": 57532,
+      "name": "Amulet of Fletcher's Offerings",
+      "category": 5445,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "ELIDINIS_BOSS_OFFERINGS_AMULET_UPGRADED_CRAFTING": {
+      "id": 57531,
+      "name": "Amulet of Artisan's Offerings",
+      "category": 5445,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "SMITHING_COAL_HEAT_CONSUMER_UPGRADED": {
+      "id": 47871,
+      "name": "Advanced smithing autoheater",
+      "category": -1,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
+    },
+    "RCU_POUCH_EXPANSIVE": {
+      "id": 58451,
+      "name": "Expansive pouch",
+      "category": 4222,
+      "consumable": false,
+      "source": "User-submitted Artisan native item lookup, 2026-10-24",
+      "verified_on": "2026-10-24"
     }
   },
   "quests": {
