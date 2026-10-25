@@ -1,5 +1,5 @@
 # builds the zip that gets uploaded to mod.io. only the files players need go in, docs,
-# tests, tools and AGENTS.md stay out. run from anywhere:
+# tests, tools, AGENTS.md and the local changelog stay out. run from anywhere:
 #   powershell -File tools/package.ps1
 #
 # entries are added one by one with / separators. Compress-Archive in windows powershell 5.1
@@ -19,7 +19,7 @@ if ($development -notmatch "ENABLED\s*=\s*false") {
     throw "src/development.lua has ENABLED switched on, set it to false before packaging"
 }
 
-$shipped = @("main.lua", "plugin.json", "README.md", "CHANGELOG.md", "THIRD_PARTY_NOTICES.txt")
+$shipped = @("main.lua", "plugin.json", "README.md", "THIRD_PARTY_NOTICES.txt")
 $files = @()
 
 foreach ($name in $shipped) {

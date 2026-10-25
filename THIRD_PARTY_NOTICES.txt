@@ -8,9 +8,9 @@ this plugin.
 
 RuneScape Wiki
 --------------
-Tip text will be written from information on the RuneScape Wiki (https://runescape.wiki),
-reworded rather than copied. Wiki content is licensed under CC BY-NC-SA 3.0
-(https://creativecommons.org/licenses/by-nc-sa/3.0/). Each tip names the wiki page it is based on.
+Tip text is written from information on the RuneScape Wiki (https://runescape.wiki), reworded
+rather than copied. Wiki content is licensed under CC BY-NC-SA 3.0
+(https://creativecommons.org/licenses/by-nc-sa/3.0/).
 
 LuaUnit (tests only)
 --------------------
