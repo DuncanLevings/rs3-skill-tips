@@ -64,7 +64,7 @@ end
 
 local DEFINITIONS = {
     tips_enabled = { default = true, valid = is_boolean },
-    dismiss_hours = { default = 3, valid = whole_number_between(0, 8) },
+    later_hours = { default = 3, valid = whole_number_between(0, 8) },
     cooldown_minutes = { default = 10, valid = whole_number_between(2, 60) },
     -- 0 means no limit
     session_cap = { default = 6, valid = whole_number_between(0, 50) },
@@ -106,6 +106,10 @@ local function load()
     end
 
     local saved = saved_table.load(STORAGE_KEY, VERSION) or {}
+    -- carry the player's existing duration over to Later, without changing other settings
+    if saved.later_hours == nil then
+        saved.later_hours = saved.dismiss_hours
+    end
     values = { version = VERSION }
 
     for key, definition in pairs(DEFINITIONS) do

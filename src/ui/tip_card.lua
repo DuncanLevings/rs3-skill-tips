@@ -191,15 +191,16 @@ local function on_window_closed()
     closed.handlers.on_closed()
 end
 
--- "Hide this tip for 3 hours of play", the hours come from the settings page
-local function dismiss_tooltip()
-    local hours = settings.get("dismiss_hours")
+-- "Remind me after 3 hours of play", the hours come from the settings page. Dismiss is
+-- always for good, so its tooltip never changes
+local function later_tooltip()
+    local hours = settings.get("later_hours")
 
     if hours == 0 then
-        return "Hide this tip"
+        return "Close for now"
     end
 
-    return "Hide this tip for " .. hours .. (hours == 1 and " hour" or " hours") .. " of play"
+    return "Remind me after " .. hours .. (hours == 1 and " hour" or " hours") .. " of play"
 end
 
 local function fill(window, blocks, text_width)
@@ -223,7 +224,7 @@ local function fill(window, blocks, text_width)
         columnGap = ICON_GAP,
         height = 28,
         colour = theme.TEXT,
-        tooltip = dismiss_tooltip(),
+        tooltip = "Never show this tip again",
     })
     window:AddSimpleButton("Later", function()
         close(card.handlers.on_later)
@@ -232,7 +233,7 @@ local function fill(window, blocks, text_width)
         width = action_width,
         height = 28,
         colour = theme.TEXT,
-        tooltip = "Close for now",
+        tooltip = later_tooltip(),
     })
 end
 

@@ -92,7 +92,7 @@ local function populate(component, options)
     slider("cooldown_minutes", "Time between tips", 2, 60, " min")
     slider("session_cap", "Tips per session (0 = unlimited)", 0, 50)
     slider("combat_quiet_seconds", "Quiet time after combat", 0, 600, " sec")
-    slider("dismiss_hours", "Hide dismissed tips for", 0, 8, " hr of play")
+    slider("later_hours", "Remind me after Later", 0, 8, " hr of play")
     current:AddText("Muted skills")
     local choices = {}
     local muted = settings.get("muted_skills")
@@ -139,7 +139,8 @@ local function populate(component, options)
         end
     end)
     current:AddText(
-        "Dismissal timers pause while the plugin is stopped. 0 adds no dismissal delay."
+        "Dismiss hides a tip for good. Later brings it back after the time above, counted"
+            .. " only while the plugin is running. 0 means no wait."
     )
     if options.reset_tips then
         current:AddText("Development testing")

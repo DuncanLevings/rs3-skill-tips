@@ -38,8 +38,8 @@ Skill Tips skips a tip when it can tell you already know it:
 A small card slides in from the edge of the screen:
 
 - **Pin** (top right) saves the tip to your **Pinned tips** list.
-- **Dismiss** hides that tip for a while: 3 hours of play by default, and you can choose anywhere from 0 to 8 hours. Time only counts while the plugin is running.
-- **Later** closes it for now. It can come back another day.
+- **Dismiss** hides that tip for good.
+- **Later** puts it aside for a while: 3 hours of play by default, and you can choose anywhere from 0 to 8 hours. Time only counts while the plugin is running. After that, the tip can come back the next time it fits what you're doing.
 
 Drag the card wherever you like and resize it. The next card appears in the same place.
 
@@ -61,7 +61,7 @@ Open the settings from the Plugin Hub. You can:
 - choose early, mid or late game tips, and whether to include members tips
 - set the time between tips and the number of tips per session
 - set how long the plugin stays quiet after combat
-- set how long a dismissed tip stays hidden
+- set how long Later pauses a tip
 - mute skills you don't want tips for
 - turn the card animation off
 - reset the card's position

@@ -1,8 +1,10 @@
 -- per character memory of what happened to each tip, saved in PersistentDB:
 --
---   dismissed          tip id -> dismiss_elapsed when it was dismissed. hidden until
---                      dismiss_hours of play have passed since
---   dismiss_elapsed    seconds of play counted while the plugin runs, the dismissal clock
+--   dismissed          tip ids the player dismissed, hidden for good
+--   snoozed            tip id -> dismiss_elapsed when Later was clicked. hidden until
+--                      later_hours of play have passed since
+--   dismiss_elapsed    seconds of play counted while the plugin runs, the clock Later uses
+--                      (the name is from when Dismiss was the timed one)
 --   known              tip ids the player already knows, from owning the item once
 --   starting_levels    skill -> level when the plugin first saw this character, main method
 --                      tips for brackets at or below it are skipped
@@ -11,9 +13,9 @@
 --   recent_tips        the last 10 tips shown, newest first
 --   queued_quests      quest tip ids waiting for a quiet pause
 --
--- "already shown this session" is kept in memory only, so a tip the player clicked Later on
--- can come back another day. fields added after the first release just start empty in older
--- saves, so the save version hasnt needed to change
+-- "already shown this session" is kept in memory only, Later swaps it for the saved timer.
+-- fields added after the first release just start empty in older saves, so the save version
+-- hasnt needed to change
 
 local skills = require("src/data/skills")
 local saved_table = require("src/storage/saved_table")
@@ -29,7 +31,7 @@ local current_character
 local progress
 local shown_this_session = {}
 
--- dismissal clock: the last logic tick seen, and dismiss_elapsed at the last save
+-- play clock: the last logic tick seen, and dismiss_elapsed at the last save
 local timer_owner, last_tick
 local checkpoint = 0
 
@@ -129,19 +131,34 @@ local function clean_history(saved)
     return unique
 end
 
--- older saves stored dismissals as true with no time, those start their timer now (once)
+-- old timed dismissals were still Dismiss clicks, so preserve their intent permanently
 local function clean_dismissals(saved, elapsed)
     local result, migrated = {}, false
     for tip_id, value in pairs(type(saved) == "table" and saved or {}) do
         if type(tip_id) == "string" then
             if value == true then
-                result[tip_id], migrated = elapsed, true
+                result[tip_id] = true
             elseif type(value) == "number" and value >= 0 and value <= elapsed then
-                result[tip_id] = value
+                result[tip_id], migrated = true, true
             end
         end
     end
     return result, migrated
+end
+
+local function clean_snoozed(saved, elapsed)
+    local result = {}
+    for tip_id, value in pairs(type(saved) == "table" and saved or {}) do
+        if
+            type(tip_id) == "string"
+            and type(value) == "number"
+            and value >= 0
+            and value <= elapsed
+        then
+            result[tip_id] = value
+        end
+    end
+    return result
 end
 
 local function elapsed_value(value)
@@ -176,6 +193,7 @@ local function load_character(character)
     progress = {
         version = VERSION,
         dismissed = dismissed,
+        snoozed = clean_snoozed(saved.snoozed, elapsed),
         dismiss_elapsed = elapsed,
         known = clean_set(saved.known),
         starting_levels = clean_starting_levels(saved.starting_levels),
@@ -278,10 +296,21 @@ function tip_progress.mark_known(tip_ids)
 end
 
 function tip_progress.is_dismissed(tip_id)
+    return ensure_loaded().dismissed[tip_id] == true
+end
+
+function tip_progress.is_snoozed(tip_id)
     local loaded = ensure_loaded()
-    local dismissed_at = loaded.dismissed[tip_id]
-    return dismissed_at ~= nil
-        and loaded.dismiss_elapsed - dismissed_at < settings.get("dismiss_hours") * 3600
+    local paused_at = loaded.snoozed[tip_id]
+    return paused_at ~= nil
+        and loaded.dismiss_elapsed - paused_at < settings.get("later_hours") * 3600
+end
+
+function tip_progress.snooze(tip_id)
+    local loaded = ensure_loaded()
+    loaded.snoozed[tip_id] = loaded.dismiss_elapsed
+    shown_this_session[tip_id] = nil
+    save()
 end
 
 function tip_progress.is_pinned(tip_id)
@@ -290,8 +319,8 @@ end
 
 function tip_progress.dismiss(tip_id)
     local loaded = ensure_loaded()
-    loaded.dismissed[tip_id] = loaded.dismiss_elapsed
-    -- the dismissal timer replaces the session-only block for this specific tip.
+    loaded.dismissed[tip_id] = true
+    loaded.snoozed[tip_id] = nil
     shown_this_session[tip_id] = nil
     loaded.pinned[tip_id] = nil
     save()
@@ -394,9 +423,11 @@ function tip_progress.clear_level_up(skill)
     end
 end
 
--- the settings page reset: brings back dismissed tips and anything shown this session
+-- development switch only: brings back dismissed and Later tips, and anything shown this
+-- session
 function tip_progress.reset_dismissed()
     ensure_loaded().dismissed = {}
+    ensure_loaded().snoozed = {}
     shown_this_session = {}
     save()
 end
@@ -432,10 +463,10 @@ function tip_progress.start()
             loaded.dismiss_elapsed = loaded.dismiss_elapsed + math.max(0, tick - last_tick) / 50
             if loaded.dismiss_elapsed - checkpoint >= 60 then
                 checkpoint = loaded.dismiss_elapsed
-                if next(loaded.dismissed) then
-                    for tip_id in pairs(loaded.dismissed) do
-                        if not tip_progress.is_dismissed(tip_id) then
-                            loaded.dismissed[tip_id] = nil
+                if next(loaded.snoozed) then
+                    for tip_id in pairs(loaded.snoozed) do
+                        if not tip_progress.is_snoozed(tip_id) then
+                            loaded.snoozed[tip_id] = nil
                         end
                     end
                     saved_table.save(KEY_PREFIX .. current_character, loaded)

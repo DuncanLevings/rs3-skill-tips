@@ -66,10 +66,12 @@ local function allowed_by_settings(tip, skill)
         and (not tip.members or settings.get("show_members"))
 end
 
--- known from owning the item, dismissed recently, pinned, or already shown this session
+-- known from owning the item, dismissed, paused with Later, pinned, or already shown this
+-- session
 local function already_handled(tip)
     return progress.is_known(tip.id)
         or progress.is_dismissed(tip.id)
+        or progress.is_snoozed(tip.id)
         or progress.is_pinned(tip.id)
         or progress.was_shown(tip.id)
 end

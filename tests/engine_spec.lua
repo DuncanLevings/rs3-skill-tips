@@ -115,6 +115,7 @@ return function(root)
         lu.assertEquals(#world.shown, 1)
 
         world.close_card("on_later")
+        lu.assertTrue(world.tip_progress.is_snoozed("mining.ore_box"))
         world.advance(3600)
         world.engine.on_backpack_full("MINING")
 
@@ -181,13 +182,13 @@ return function(root)
         lu.assertEquals(engine.stage({}), "early")
     end
 
-    function suite:test_dismissed_tip_reappears_only_after_its_timer()
+    function suite:test_later_tip_reappears_only_after_its_timer()
         local world = setup(root)
         world.tip_progress.start()
         world.fake.fire("Logic", { logicTick = 1 })
         world.engine.on_backpack_full("MINING")
         lu.assertEquals(#world.shown, 1)
-        world.close_card("on_dismiss")
+        world.close_card("on_later")
         world.advance(2 * 3600)
         world.fake.fire("Logic", { logicTick = 1 + 2 * 3600 * 50 })
         world.engine.on_backpack_full("MINING")

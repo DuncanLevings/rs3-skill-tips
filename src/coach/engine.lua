@@ -46,8 +46,7 @@ function engine.pick_tip(skill, trigger_type)
     local candidates = {}
     for _, tip in ipairs(catalogue.for_skill(skill)) do
         if
-            triggers.matches(tip, context)
-            and eligibility.allows(tip, skill, session.deps.state)
+            triggers.matches(tip, context) and eligibility.allows(tip, skill, session.deps.state)
         then
             candidates[#candidates + 1] = tip
         end
@@ -80,7 +79,11 @@ local function show(tip, skill)
                 progress.dismiss(tip.id)
             end
         end,
-        on_later = function() end,
+        on_later = function()
+            if active() then
+                progress.snooze(tip.id)
+            end
+        end,
         on_closed = function()
             if active() then
                 running.card = nil
@@ -144,6 +147,7 @@ local function queue_if_ready(tip)
     if
         eligibility.quest_ready(tip, session.deps.state)
         and not progress.is_dismissed(tip.id)
+        and not progress.is_snoozed(tip.id)
         and not progress.is_pinned(tip.id)
         and not progress.was_shown(tip.id)
     then
