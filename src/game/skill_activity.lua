@@ -1,7 +1,7 @@
 -- decides when the player is actually training a skill, as opposed to getting xp from a lamp,
 -- a book or a quest reward. tips only ever hear "training MINING", never raw xp.
 --
--- the rules come from watching clicks and xp in game (docs/api-findings.md, check 6):
+-- how reward xp and training xp look different:
 -- - lamps, books and quest hand ins all finish with a dialogue button (actionType 30) and the
 --   xp lands within a second of it
 -- - rubbing/reading an item starts that flow, so xp shortly after one of those is ignored too

@@ -1,7 +1,10 @@
--- hooks the client's xp and click events up to skill_activity and reports "training <skill>".
---
--- combat skills arent reported as training, they go to on_combat instead (the coach stays quiet
--- for a bit after combat xp)
+-- hooks the client's xp, click and backpack events up to skill_activity and turns them into
+-- the signals the coach listens for:
+--   on_training(skill)       real training, not reward xp
+--   on_level_up(skill, ...)  any level up, reward or not
+--   on_backpack_full(skill)  a mining or woodcutting backpack just filled up
+--   on_quiet()               the player has been idle for a few seconds
+--   on_combat()              combat xp, the coach stays quiet for a while after it
 
 local clock = require("src/game/clock")
 local skills = require("src/data/skills")
@@ -13,17 +16,31 @@ local activity_watch = {}
 
 local SUBSCRIPTION = "skilling_coach_activity"
 
+-- inventory and xp updates can arrive in either order within a server tick
+local FULL_MATCH_SECONDS = 1.2
+
+-- no xp or clicks for this long counts as a quiet pause
+local QUIET_SECONDS = 5
+
 local tracker
 local listeners
 local owner
+
+-- "MINING" or "WOODCUTTING" while the last click was mining a rock or chopping a tree
 local gathering_skill
-local previous_free_slots
-local full_at
-local last_activity_at
+
+-- true while the last click was on any object (a rock, tree, fishing spot...)
 local gathering_action
+
+-- backpack free slots at the last check, to spot the change to full
+local previous_free_slots
+
+-- when the backpack became full, and when the last gathering xp landed
+local full_at
 local gathering_xp_at
--- inventory and xp updates can arrive in either order within a server tick
-local FULL_MATCH_SECONDS = 1.2
+
+-- last click or xp drop, for spotting quiet pauses
+local last_activity_at
 
 function activity_watch.reset()
     tracker = skill_activity.new()
@@ -124,7 +141,7 @@ local function on_entry_selected(event)
     local click = {
         action_type = entry.actionType,
         verb = entry.verbText,
-        -- clicks on backpack items carry the item, checked in game
+        -- clicks on backpack items carry the item they were made on
         is_item = entry.componentData ~= nil and entry.componentData.objConfig ~= nil,
     }
 
@@ -151,8 +168,8 @@ local function on_skill_transmit(event)
         return
     end
 
-    -- same gameplay level fields the in game probe used
-    -- level ups get reported even when the reward guard says this xp wasnt training
+    -- level ups get reported even when the reward guard says this xp wasnt training, a lamp
+    -- level still unlocks the next method tip (it just waits for real training to show)
     if listeners.on_level_up then
         local old_level, new_level = event.oldGameplayLevel, event.newGameplayLevel
         if
@@ -179,8 +196,9 @@ local function on_skill_transmit(event)
     end
 end
 
--- a quiet pause is on the careful side: no xp or clicks for 5s and no gathering click still going
--- walking or any non location click ends the gathering, so a bank run can show queued tips
+-- a quiet pause is on the careful side: no xp or clicks for a few seconds and no gathering
+-- click still going. walking or any non object click ends the gathering, so a bank run can
+-- show queued tips. checked twice a second (every 25 logic ticks), not every tick
 local function check_quiet(event)
     if not listeners or not listeners.on_quiet or (event.logicTick or 0) % 25 ~= 0 then
         return
@@ -193,14 +211,15 @@ local function check_quiet(event)
     local now = clock.now()
     if
         not gathering_action
-        and now - last_activity_at >= 5
+        and now - last_activity_at >= QUIET_SECONDS
         and not tracker.reward_guard_active(now)
     then
         listeners.on_quiet()
     end
 end
 
--- handlers = { on_training = function(skill), on_combat = function() }
+-- handlers = { before_activity, on_training, on_level_up, on_backpack_full, on_quiet,
+-- on_combat }, before_activity runs before every event so the app can notice a new login
 function activity_watch.start(handlers)
     if owner then
         owner.destroy()

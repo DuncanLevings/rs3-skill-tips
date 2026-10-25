@@ -1,4 +1,5 @@
--- unboxed list actions: native pin artwork and a small red cross for Unpin.
+-- the small button at the end of a list row: the game's own pin icon (recent tips) or a
+-- red cross (unpin, in pinned tips). handles hover, tooltip placement and clicks
 
 local internals = require("src/ui/prettyui_internals")
 

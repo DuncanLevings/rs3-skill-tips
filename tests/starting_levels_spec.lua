@@ -200,7 +200,8 @@ return function(root)
                 return 99
             end,
         })
-        lu.assertIs(fake.saved.skilling_coach_progress_alice, original)
+        -- same table, not just equal contents: nothing was saved again
+        lu.assertTrue(rawequal(fake.saved.skilling_coach_progress_alice, original))
     end
 
     return suite

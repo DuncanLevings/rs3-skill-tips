@@ -4,8 +4,8 @@
 local theme = require("src/ui/theme")
 local card_drag = require("src/ui/card_drag")
 local internals = require("src/ui/prettyui_internals")
-
 local item_icon = require("src/ui/item_icon")
+
 local card_header = {}
 
 local PADDING = 12

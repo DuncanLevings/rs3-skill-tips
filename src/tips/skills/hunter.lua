@@ -1,35 +1,32 @@
--- useful items and unlocks first, then level-bracket methods and alternatives.
--- access and relevance evidence is recorded in docs/gathering-coverage.md.
+-- hunter tips: useful items and unlocks first, then one main training method per level
+-- bracket, then alternative methods. src/tips/schema.lua explains every field
 
 return {
     -- useful items and unlocks
-
     {
         id = "hunter.hunters_outfit",
-        icon_item = "ELR2_HUNTER_HEAD",
         kind = "convenience",
         skills = { "HUNTER" },
         members = true,
+        min_training_level = 30,
         title = "Hunter's outfit",
+        icon_item = "ELR2_HUNTER_HEAD",
         hook = "The Hunter's outfit adds experience to your catches.",
         why = "Each piece contributes, with an extra bonus for wearing the full set.",
         how = {
-            "The Waiko Reward Shop sells the pieces for chimes and taijitu after Impressing the Locals.",
+            "The Waiko Reward Shop sells the pieces for chimes and taijitu after Impressing the "
+                .. "Locals.",
         },
-        quest_how = { "Complete Impressing the Locals to start exploring the Arc." },
+        quest_how = {
+            "Complete Impressing the Locals to start exploring the Arc.",
+        },
         requirements = {
-            skills = {
-                HUNTER = 1,
-            },
+            skills = { HUNTER = 1 },
             quests = { "ELR0" },
         },
-        min_training_level = 30,
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "HUNTER",
-            },
+            { type = "training", skill = "HUNTER" },
         },
         known_when = {
             {
@@ -48,28 +45,24 @@ return {
 
     {
         id = "hunter.trapper_outfits",
-        icon_item = "TRH127_VOLCANIC_HEAD",
         kind = "convenience",
         skills = { "HUNTER" },
         members = true,
         title = "Trapper outfits",
+        icon_item = "TRH127_VOLCANIC_HEAD",
         hook = "Trapper outfits offer better catch chances and useful hunting teleports.",
-        why = "Matching sets provide benefits, and combining the desert, jungle and arctic sets makes the volcanic outfit.",
+        why = "Matching sets provide benefits, and combining the desert, jungle and arctic sets "
+            .. "makes the volcanic outfit.",
         how = {
-            "Buy the blueprint from the Hunter mark shop, then use trapper fragments at an Invention workbench.",
+            "Buy the blueprint from the Hunter mark shop, then use trapper fragments at an "
+                .. "Invention workbench.",
         },
         requirements = {
-            skills = {
-                HUNTER = 80,
-                INVENTION = 20,
-            },
+            skills = { HUNTER = 80, INVENTION = 20 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "HUNTER",
-            },
+            { type = "training", skill = "HUNTER" },
         },
         known_when = {
             {
@@ -103,205 +96,181 @@ return {
 
     {
         id = "hunter.catalyst_fragment",
-        icon_item = "QUEST_ENDGAME_SHARD_HUNTER",
         kind = "convenience",
         skills = { "HUNTER" },
         members = true,
+        min_training_level = 50,
         title = "Hunter's Catalyst fragment",
+        icon_item = "QUEST_ENDGAME_SHARD_HUNTER",
         hook = "The Hunter's Catalyst fragment can save time resetting traps.",
-        why = "Its effect resets supported traps when they fail to catch a creature, leaving less to set up again.",
-        how = { "It's a reward from Sliske's Endgame." },
-        quest_how = { "Look into Sliske's Endgame and its lasting skilling rewards." },
+        why = "Its effect resets supported traps when they fail to catch a creature, leaving less "
+            .. "to set up again.",
+        how = {
+            "It's a reward from Sliske's Endgame.",
+        },
+        quest_how = {
+            "Look into Sliske's Endgame and its lasting skilling rewards.",
+        },
         requirements = {
             skills = {
-                HUNTER = 65,
                 AGILITY = 80,
-                THIEVING = 66,
-                DIVINATION = 80,
-                MAGIC = 81,
-                SLAYER = 80,
-                SUMMONING = 75,
-                HERBLORE = 80,
+                ATTACK = 79,
                 CONSTRUCTION = 75,
+                COOKING = 35,
                 CRAFTING = 80,
+                DEFENCE = 72,
+                DIVINATION = 80,
                 DUNGEONEERING = 75,
+                FARMING = 25,
+                FIREMAKING = 71,
+                FISHING = 36,
+                FLETCHING = 70,
+                HERBLORE = 80,
+                HITPOINTS = 78,
+                HUNTER = 65,
+                MAGIC = 81,
                 MINING = 75,
                 PRAYER = 80,
                 RANGED = 75,
-                WOODCUTTING = 80,
-                COOKING = 35,
-                FLETCHING = 70,
-                FIREMAKING = 71,
                 RUNECRAFTING = 50,
+                SLAYER = 80,
                 SMITHING = 70,
                 STRENGTH = 79,
-                FARMING = 25,
-                DEFENCE = 72,
-                ATTACK = 79,
-                FISHING = 36,
-                HITPOINTS = 78,
+                SUMMONING = 75,
+                THIEVING = 66,
+                WOODCUTTING = 80,
             },
             quests = { "SLISKES_ENDGAME" },
         },
-        min_training_level = 50,
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "HUNTER",
-            },
+            { type = "training", skill = "HUNTER" },
         },
         known_when = {
             {
-                items = { "QUEST_ENDGAME_SHARD_HUNTER", "QUEST_ENDGAME_SHARD_COMBINED" },
                 type = "owns_any",
+                items = { "QUEST_ENDGAME_SHARD_HUNTER", "QUEST_ENDGAME_SHARD_COMBINED" },
             },
-            {
-                type = "quest_done",
-                quest = "SLISKES_ENDGAME",
-            },
+            { type = "quest_done", quest = "SLISKES_ENDGAME" },
         },
         priority = 2,
     },
 
     {
         id = "hunter.enhanced_yaktwee",
-        icon_item = "HUNTCHARM_STAVE_ENHANCED",
         kind = "convenience",
         skills = { "HUNTER" },
         members = true,
         title = "Enhanced yaktwee stick",
+        icon_item = "HUNTCHARM_STAVE_ENHANCED",
         hook = "The enhanced yaktwee stick adds an experience boost to many Hunter activities.",
         why = "It also helps reveal rarer charm sprites while you hunt them.",
         how = {
-            "Catch charm sprites with a yaktwee stick, then ask Yaktwee Swinmari Cianta about upgrading it.",
+            "Catch charm sprites with a yaktwee stick, then ask Yaktwee Swinmari Cianta about "
+                .. "upgrading it.",
         },
         requirements = {
-            skills = {
-                HUNTER = 72,
-            },
+            skills = { HUNTER = 72 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "HUNTER",
-            },
+            { type = "training", skill = "HUNTER" },
         },
         known_when = {
-            {
-                type = "owns_any",
-                items = { "HUNTCHARM_STAVE_ENHANCED" },
-            },
+            { type = "owns_any", items = { "HUNTCHARM_STAVE_ENHANCED" } },
         },
         priority = 2,
     },
 
     {
         id = "hunter.hypnowand",
-        icon_item = "SKILLING_OFFHAND_HUNTER",
         kind = "convenience",
         skills = { "HUNTER" },
         members = true,
+        min_training_level = 80,
         title = "Skeka's hypnowand",
+        icon_item = "SKILLING_OFFHAND_HUNTER",
         hook = "Skeka's hypnowand offers bonuses across several hunting styles.",
         why = "The off-hand helps with whirligigs, box traps and Big Game Hunter.",
         how = {
-            "Complete On the Threshold of the Mind research and read the aged journal in Daemonheim before hunting for its pieces, or buy the finished wand.",
+            "Complete On the Threshold of the Mind research and read the aged journal in "
+                .. "Daemonheim before hunting for its pieces, or buy the finished wand.",
         },
         requirements = {
-            skills = {
-                ARCHAEOLOGY = 103,
-                DUNGEONEERING = 95,
-                HUNTER = 80,
-            },
+            skills = { ARCHAEOLOGY = 103, DUNGEONEERING = 95, HUNTER = 80 },
         },
-        min_training_level = 80,
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "HUNTER",
-            },
+            { type = "training", skill = "HUNTER" },
         },
         known_when = {
-            {
-                type = "owns_any",
-                items = { "SKILLING_OFFHAND_HUNTER" },
-            },
+            { type = "owns_any", items = { "SKILLING_OFFHAND_HUNTER" } },
         },
         priority = 2,
     },
 
     {
         id = "hunter.trap_supplies",
-        icon_item_id = 10006,
         kind = "general",
         skills = { "HUNTER" },
         members = true,
         title = "Hunter supplies",
-        hook = "Different hunting methods use different traps; you do not need to find them as drops.",
-        why = "Hunter shops stock the basic equipment for birds, butterflies and box-trap creatures.",
-        how = { "Visit a Hunter shop before heading to a new hunting area." },
+        icon_item_id = 10006,
+        hook = "Different hunting methods use different traps; you do not need to find them as "
+            .. "drops.",
+        why = "Hunter shops stock the basic equipment for birds, butterflies and box-trap "
+            .. "creatures.",
+        how = {
+            "Visit a Hunter shop before heading to a new hunting area.",
+        },
         requirements = {
-            skills = {
-                HUNTER = 1,
-            },
+            skills = { HUNTER = 1 },
         },
         triggers = {
-            {
-                type = "training",
-                skill = "HUNTER",
-            },
+            { type = "training", skill = "HUNTER" },
         },
         priority = 3,
     },
 
     {
         id = "hunter.extra_traps",
-        icon_item_id = 10008,
         kind = "general",
         skills = { "HUNTER" },
         members = true,
         title = "More traps",
+        icon_item_id = 10008,
         hook = "As your Hunter level rises, you can keep more traps working at once.",
         why = "Using your available trap limit reduces time spent waiting for the next catch.",
-        how = { "Try adding another trap to your hunting spot when your level allows it." },
+        how = {
+            "Try adding another trap to your hunting spot when your level allows it.",
+        },
         requirements = {
-            skills = {
-                HUNTER = 20,
-            },
+            skills = { HUNTER = 20 },
         },
         triggers = {
-            {
-                type = "training",
-                skill = "HUNTER",
-            },
+            { type = "training", skill = "HUNTER" },
         },
         priority = 3,
     },
 
     {
         id = "hunter.cape",
-        icon_item = "SKILLCAPE_HUNTING",
         kind = "convenience",
         skills = { "HUNTER" },
         members = true,
         title = "Hunter cape",
+        icon_item = "SKILLCAPE_HUNTING",
         hook = "The Hunter cape can speed up placing and resetting traps.",
         why = "Its activated perk lets your next supported trap go down quickly.",
-        how = { "Buy it from the Hunting expert in the Feldip Hills and try its Activate option." },
+        how = {
+            "Buy it from the Hunting expert in the Feldip Hills and try its Activate option.",
+        },
         requirements = {
-            skills = {
-                HUNTER = 99,
-            },
+            skills = { HUNTER = 99 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "HUNTER",
-            },
+            { type = "training", skill = "HUNTER" },
         },
         known_when = {
             {
@@ -321,590 +290,503 @@ return {
         priority = 2,
     },
 
-    -- training methods
-
+    -- training methods, one main method per level bracket
     {
         id = "hunter.method.cerulean_twitches",
-        main_method = true,
-        icon_item_id = 10089,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 11, 18 },
         members = true,
+        level_range = { 11, 18 },
+        main_method = true,
         title = "Cerulean twitches",
+        icon_item_id = 10089,
         hook = "Cerulean twitches offer another bird-snaring option in the Rellekka Hunter area.",
         why = "These blue birds give more experience per catch than crimson swifts.",
         how = {
             "Look along the south-eastern shore of the Rellekka Hunter area with a bird snare.",
         },
         requirements = {
-            skills = {
-                HUNTER = 11,
-            },
+            skills = { HUNTER = 11 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 11,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 11 },
         },
         priority = 2,
     },
 
     {
         id = "hunter.method.tropical_wagtails",
-        main_method = true,
-        icon_item_id = 10087,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 19, 29 },
         members = true,
+        level_range = { 19, 29 },
+        main_method = true,
         title = "Tropical wagtails",
+        icon_item_id = 10087,
         hook = "Tropical wagtails offer clustered catches for keeping several bird snares busy.",
         why = "Their clustered spawns make it easier to keep your snares busy.",
-        how = { "Take bird snares to the area north of the Monastery of Ascension." },
+        how = {
+            "Take bird snares to the area north of the Monastery of Ascension.",
+        },
         requirements = {
-            skills = {
-                HUNTER = 19,
-            },
+            skills = { HUNTER = 19 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 19,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 19 },
         },
         priority = 2,
     },
 
     {
         id = "hunter.method.gliding_whirligigs",
-        main_method = true,
-        icon_item_id = 52796,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 30, 49 },
         members = true,
+        level_range = { 30, 49 },
+        main_method = true,
         title = "Gliding whirligigs",
+        icon_item_id = 52796,
         hook = "Gliding whirligigs offer Hunter training with your crocodile at Het's Oasis.",
-        why = "Your crocodile catches them for you, and Dundee offers upgrades as you build up catches.",
-        how = { "Head to Het's Oasis and fill a built flower basket with roses to attract them." },
+        why = "Your crocodile catches them for you, and Dundee offers upgrades as you build up "
+            .. "catches.",
+        how = {
+            "Head to Het's Oasis and fill a built flower basket with roses to attract them.",
+        },
         requirements = {
-            skills = {
-                HUNTER = 30,
-            },
+            skills = { HUNTER = 30 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 30,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 30 },
         },
         priority = 2,
     },
 
     {
         id = "hunter.method.swift_whirligigs",
-        main_method = true,
-        icon_item_id = 52797,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 50, 69 },
         members = true,
+        level_range = { 50, 69 },
+        main_method = true,
         title = "Swift whirligigs",
+        icon_item_id = 52797,
         hook = "Swift whirligigs offer Hunter training with your crocodile at Het's Oasis.",
-        why = "Your crocodile catches them for you, and Dundee offers upgrades as you build up catches.",
-        how = { "Head to Het's Oasis and fill a built flower basket with irises to attract them." },
+        why = "Your crocodile catches them for you, and Dundee offers upgrades as you build up "
+            .. "catches.",
+        how = {
+            "Head to Het's Oasis and fill a built flower basket with irises to attract them.",
+        },
         requirements = {
-            skills = {
-                HUNTER = 50,
-            },
+            skills = { HUNTER = 50 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 50,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 50 },
         },
         priority = 2,
     },
 
     {
         id = "hunter.method.hasty_whirligigs",
-        main_method = true,
-        icon_item_id = 52798,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 70, 89 },
         members = true,
+        level_range = { 70, 89 },
+        main_method = true,
         title = "Hasty whirligigs",
+        icon_item_id = 52798,
         hook = "Hasty whirligigs offer Hunter training with your crocodile at Het's Oasis.",
-        why = "Your crocodile catches them for you, and Dundee offers upgrades as you build up catches.",
+        why = "Your crocodile catches them for you, and Dundee offers upgrades as you build up "
+            .. "catches.",
         how = {
             "Head to Het's Oasis and fill a built flower basket with hydrangeas to attract them.",
         },
         requirements = {
-            skills = {
-                HUNTER = 70,
-            },
+            skills = { HUNTER = 70 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 70,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 70 },
         },
         priority = 2,
     },
 
     {
         id = "hunter.method.speedy_whirligigs",
-        main_method = true,
-        icon_item_id = 52799,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 90, 120 },
         members = true,
+        level_range = { 90, 120 },
+        main_method = true,
         title = "Speedy whirligigs",
+        icon_item_id = 52799,
         hook = "Speedy whirligigs offer Hunter training with your crocodile at Het's Oasis.",
-        why = "Your crocodile catches them for you, and Dundee offers upgrades as you build up catches.",
+        why = "Your crocodile catches them for you, and Dundee offers upgrades as you build up "
+            .. "catches.",
         how = {
             "Head to Het's Oasis and fill a built flower basket with hollyhocks to attract them.",
         },
         requirements = {
-            skills = {
-                HUNTER = 90,
-            },
+            skills = { HUNTER = 90 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 90,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 90 },
         },
         priority = 2,
     },
 
-    -- alternative methods
-
+    -- alternative methods, offered alongside the main method for a level
     {
         id = "hunter.alt.birdhouses",
-        icon_item_id = 10006,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 5, 120 },
         members = true,
+        level_range = { 5, 120 },
         title = "Birdhouse runs",
+        icon_item_id = 10006,
         hook = "Birdhouse runs offer a different rhythm from watching traps.",
-        why = "Visit the Havenhythe plots between other activities for catches and nests. Higher-tier birdhouses offer more experience as Hunter improves.",
+        why = "Visit the Havenhythe plots between other activities for catches and nests. "
+            .. "Higher-tier birdhouses offer more experience as Hunter improves.",
         how = {
-            "Buy suitable birdhouses and bring bait seeds to the Havenhythe plots, or craft your own with the appropriate Crafting and Fletching levels.",
+            "Buy suitable birdhouses and bring bait seeds to the Havenhythe plots, or craft your "
+                .. "own with the appropriate Crafting and Fletching levels.",
         },
         requirements = {
-            skills = {
-                HUNTER = 5,
-            },
+            skills = { HUNTER = 5 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 5,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 5 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.plain_whirligigs",
-        icon_item_id = 10088,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 16, 29 },
         members = true,
+        level_range = { 16, 29 },
         title = "Plain whirligigs",
+        icon_item_id = 10088,
         hook = "Plain whirligigs offer an early way to try hunting with a crocodile.",
-        why = "The crocodile handles the catches at Het's Oasis while you build up experience and catches for upgrades.",
+        why = "The crocodile handles the catches at Het's Oasis while you build up experience and "
+            .. "catches for upgrades.",
         how = {
-            "Speak to Dundee at Het's Oasis and use a built flower basket with the appropriate bait.",
+            "Speak to Dundee at Het's Oasis and use a built flower basket with the appropriate "
+                .. "bait.",
         },
         requirements = {
-            skills = {
-                HUNTER = 16,
-            },
+            skills = { HUNTER = 16 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 16,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 16 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.skillchompas",
-        icon_item_id = 31595,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 27, 120 },
         members = true,
+        level_range = { 27, 120 },
         title = "Hunting skillchompas",
+        icon_item_id = 31595,
         hook = "Skillchompas offer box-trap training with catches you can keep or sell.",
-        why = "Cobalt skillchompas are the first type; higher Hunter levels open further varieties.",
+        why = "Cobalt skillchompas are the first type; higher Hunter levels open further "
+            .. "varieties.",
         how = {
-            "Use box traps at a skillchompa colony that suits your Hunter level. Eagles' Peak unlocks box trapping.",
+            "Use box traps at a skillchompa colony that suits your Hunter level. Eagles' Peak "
+                .. "unlocks box trapping.",
         },
         quest_how = {
-            "Complete Eagles' Peak to unlock box trapping, then try a colony suited to your Hunter level.",
+            "Complete Eagles' Peak to unlock box trapping, then try a colony suited to your Hunter "
+                .. "level.",
         },
         requirements = {
-            skills = {
-                HUNTER = 27,
-            },
+            skills = { HUNTER = 27 },
             quests = { "EAGLES_PEAK" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 27,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 27 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.red_salamanders",
-        icon_item_id = 10147,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 59, 66 },
         members = true,
+        level_range = { 59, 66 },
         title = "Red salamanders",
+        icon_item_id = 10147,
         hook = "Prefer setting traps? Red salamanders are another way to train from 59 Hunter.",
         why = "Net traps offer a change from whirligigs and let you work several catches at once.",
         how = {
-            "Bring ropes and small fishing nets to the hunting area outside Ourania, north of Castle Wars.",
+            "Bring ropes and small fishing nets to the hunting area outside Ourania, north of "
+                .. "Castle Wars.",
         },
         requirements = {
-            skills = {
-                HUNTER = 59,
-            },
+            skills = { HUNTER = 59 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 59,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 59 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.red_chinchompas",
-        icon_item_id = 10034,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 63, 79 },
         members = true,
+        level_range = { 63, 79 },
         title = "Carnivorous chinchompas",
+        icon_item_id = 10034,
         hook = "Carnivorous chinchompas turn box-trap catches into a tradeable resource.",
         why = "They are an alternative when you want to gather something useful while training.",
         how = {
             "Complete Eagles' Peak to unlock box traps, then hunt them in the Feldip Hunter area.",
         },
         quest_how = {
-            "Complete Eagles' Peak to unlock box trapping, then try a colony suited to your Hunter level.",
+            "Complete Eagles' Peak to unlock box trapping, then try a colony suited to your Hunter "
+                .. "level.",
         },
         requirements = {
-            skills = {
-                HUNTER = 63,
-            },
+            skills = { HUNTER = 63 },
             quests = { "EAGLES_PEAK" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 63,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 63 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.black_salamanders",
-        icon_item_id = 10148,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 67, 79 },
         members = true,
+        level_range = { 67, 79 },
         title = "Black salamanders",
+        icon_item_id = 10148,
         hook = "Black salamanders offer another net-trapping option.",
-        why = "They give a change from box traps and whirligigs, but their hunting ground is in the Wilderness.",
+        why = "They give a change from box traps and whirligigs, but their hunting ground is in "
+            .. "the Wilderness.",
         how = {
-            "Bring ropes and small fishing nets to the area near the Chaos Temple. Check your Wilderness opt-in status before travelling.",
+            "Bring ropes and small fishing nets to the area near the Chaos Temple. Check your "
+                .. "Wilderness opt-in status before travelling.",
         },
         requirements = {
-            skills = {
-                HUNTER = 67,
-            },
+            skills = { HUNTER = 67 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 67,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 67 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.charm_sprites",
-        icon_item_id = 12160,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 72, 87 },
         members = true,
+        level_range = { 72, 87 },
         title = "Charm sprites",
+        icon_item_id = 12160,
         hook = "Charm sprites offer Hunter experience alongside Summoning charms.",
-        why = "Following their trails and catching the sprites makes this a more active hunting option.",
+        why = "Following their trails and catching the sprites makes this a more active hunting "
+            .. "option.",
         how = {
-            "Speak to Yaktwee Swinmari Cianta south-west of the Tree Gnome Stronghold for a yaktwee stick and sprite lure.",
+            "Speak to Yaktwee Swinmari Cianta south-west of the Tree Gnome Stronghold for a "
+                .. "yaktwee stick and sprite lure.",
         },
         requirements = {
-            skills = {
-                HUNTER = 72,
-            },
+            skills = { HUNTER = 72 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 72,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 72 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.big_game_hunter",
-        icon_item_id = 47948,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 75, 110 },
         members = true,
+        level_range = { 75, 110 },
         title = "Big Game Hunter",
+        icon_item_id = 47948,
         hook = "Big Game Hunter offers a more active hunt on Anachronia.",
-        why = "This active hunting method trades repeated trap clicks for tracking dinosaurs and preparing an ambush.",
+        why = "This active hunting method trades repeated trap clicks for tracking dinosaurs and "
+            .. "preparing an ambush.",
         how = {
             "Speak to the Hunter master on Anachronia to learn how to hunt the first dinosaurs.",
         },
         requirements = {
-            skills = {
-                HUNTER = 75,
-                SLAYER = 55,
-            },
+            skills = { HUNTER = 75, SLAYER = 55 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 75,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 75 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.grenwalls",
-        icon_item_id = 10008,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 77, 95 },
         members = true,
+        level_range = { 77, 95 },
         title = "Grenwalls",
+        icon_item_id = 10008,
         hook = "Grenwalls offer box-trap catches with useful spikes to keep or sell.",
-        why = "They are another option in Tirannwn. Later unlocks can remove the bait requirement or add Crystallise training.",
+        why = "They are another option in Tirannwn. Later unlocks can remove the bait requirement "
+            .. "or add Crystallise training.",
         how = {
-            "After Regicide, look for grenwalls in Isafdar and bring box traps with raw pawya meat as bait.",
+            "After Regicide, look for grenwalls in Isafdar and bring box traps with raw pawya meat "
+                .. "as bait.",
         },
-        quest_how = { "Work towards Regicide and Eagles' Peak, then try box trapping in Isafdar." },
+        quest_how = {
+            "Work towards Regicide and Eagles' Peak, then try box trapping in Isafdar.",
+        },
         requirements = {
-            skills = {
-                HUNTER = 77,
-                AGILITY = 56,
-                RANGED = 25,
-            },
+            skills = { AGILITY = 56, HUNTER = 77, RANGED = 25 },
             quests = { "REGICIDE", "EAGLES_PEAK" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 77,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 77 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.barehanded_butterflies",
-        icon_item_id = 10088,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 80, 99 },
         members = true,
+        level_range = { 80, 99 },
         title = "Barehanded butterflies",
-        hook = "Barehanded butterfly catching offers quieter Hunter training with some Agility experience.",
-        why = "Your character can keep following a butterfly after releasing it, so catches need less attention than most traps.",
+        icon_item_id = 10088,
+        hook = "Barehanded butterfly catching offers quieter Hunter training with some Agility "
+            .. "experience.",
+        why = "Your character can keep following a butterfly after releasing it, so catches need "
+            .. "less attention than most traps.",
         how = {
-            "Try ruby harvest butterflies in the Feldip Hunter area. Other butterflies need higher Hunter and Agility levels.",
+            "Try ruby harvest butterflies in the Feldip Hunter area. Other butterflies need higher "
+                .. "Hunter and Agility levels.",
         },
         requirements = {
-            skills = {
-                AGILITY = 75,
-                HUNTER = 80,
-            },
+            skills = { AGILITY = 75, HUNTER = 80 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 80,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 80 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.jadinkos",
-        icon_item_id = 10008,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 80, 110 },
         members = true,
+        level_range = { 80, 110 },
         title = "Anachronia jadinkos",
+        icon_item_id = 10008,
         hook = "Jadinkos offer plant-trap hunting on Anachronia.",
-        why = "Different jadinkos open up as Hunter improves, giving another route alongside whirligigs and box traps.",
+        why = "Different jadinkos open up as Hunter improves, giving another route alongside "
+            .. "whirligigs and box traps.",
         how = {
-            "Bring marasamaw plants to Anachronia's jadinko habitats and start with a type you have the level to catch.",
+            "Bring marasamaw plants to Anachronia's jadinko habitats and start with a type you "
+                .. "have the level to catch.",
         },
         requirements = {
-            skills = {
-                HUNTER = 80,
-            },
+            skills = { HUNTER = 80 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 80,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 80 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.charming_moths",
-        icon_item_id = 12160,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 88, 120 },
         members = true,
+        level_range = { 88, 120 },
         title = "Charming moths",
+        icon_item_id = 12160,
         hook = "Charming moths combine relaxed Hunter training with Summoning charms.",
         why = "Catch them barehanded for Hunter experience and Summoning charms.",
         how = {
-            "Find them on the Wilderness coast near Daemonheim. Check your Wilderness opt-in status before travelling.",
+            "Find them on the Wilderness coast near Daemonheim. Check your Wilderness opt-in "
+                .. "status before travelling.",
         },
         requirements = {
-            skills = {
-                AGILITY = 83,
-                HUNTER = 88,
-            },
+            skills = { AGILITY = 83, HUNTER = 88 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 88,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 88 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.croesus_front",
-        icon_item_id = 10088,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 88, 120 },
         members = true,
+        level_range = { 88, 120 },
         title = "Croesus Front spores",
+        icon_item_id = 10088,
         hook = "Gathering at the Croesus Front offers Hunter experience without setting traps.",
-        why = "Decaying guards provide fungal spores, with enriched nodes becoming available at 92 Hunter.",
+        why = "Decaying guards provide fungal spores, with enriched nodes becoming available at 92 "
+            .. "Hunter.",
         how = {
-            "Look for decaying guards outside the Croesus boss arena in Senntisten. The resource nodes do not require fighting the boss.",
+            "Look for decaying guards outside the Croesus boss arena in Senntisten. The resource "
+                .. "nodes do not require fighting the boss.",
         },
         requirements = {
-            skills = {
-                HUNTER = 88,
-            },
+            skills = { HUNTER = 88 },
         },
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 88,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 88 },
         },
         priority = 3,
     },
 
     {
         id = "hunter.alt.ornate_tortles",
-        icon_item_id = 37776,
         kind = "method",
         skills = { "HUNTER" },
-        level_range = { 96, 120 },
         members = true,
+        level_range = { 96, 120 },
         title = "Ornate tortles",
+        icon_item_id = 37776,
         hook = "Ornate tortles offer high-level hunting while exploring the Uncharted Isles.",
-        why = "Their shells can be processed into an Arc resource, with colonies available until their daily supply runs out.",
+        why = "Their shells can be processed into an Arc resource, with colonies available until "
+            .. "their daily supply runs out.",
         how = {
-            "After Impressing the Locals, take tortle traps on an Uncharted Isles voyage and look for a colony.",
+            "After Impressing the Locals, take tortle traps on an Uncharted Isles voyage and look "
+                .. "for a colony.",
         },
-        quest_how = { "Complete Impressing the Locals to start exploring the Arc." },
+        quest_how = {
+            "Complete Impressing the Locals to start exploring the Arc.",
+        },
         requirements = {
-            skills = {
-                HUNTER = 96,
-            },
+            skills = { HUNTER = 96 },
             quests = { "ELR0" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "HUNTER",
-                level = 96,
-            },
+            { type = "level_reached", skill = "HUNTER", level = 96 },
         },
         priority = 3,
     },

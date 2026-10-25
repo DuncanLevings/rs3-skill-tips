@@ -1,5 +1,5 @@
--- colours shared by the card and windows, picked to sit close to the game's own brown panels
--- (same values monster lookup uses)
+-- colours shared by the card and windows, picked to sit close to the game's own brown panels.
+-- 0xRRGGBBAA
 
 local theme = {
     TEXT = 0xE7D7B0FF,

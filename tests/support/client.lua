@@ -337,13 +337,26 @@ local function create_inventory(entries, valid, on_read)
     on_read = on_read or function() end
 
     -- entries are slots 1, 2, 3... anything else is empty
-    function inv:GetSlot(slot_number)
-        on_read()
+    local function slot(slot_number)
         local entry = entries[slot_number]
         return {
             obj = entry and { configName = entry.item, category = entry.category },
             count = entry and (entry.count or 1) or 0,
         }
+    end
+
+    function inv:GetSlot(slot_number)
+        on_read()
+        return slot(slot_number)
+    end
+
+    function inv:GetSlots()
+        on_read()
+        local slots = {}
+        for slot_number = 1, inv.slotCount do
+            slots[slot_number] = slot(slot_number)
+        end
+        return slots
     end
 
     function inv:GetTotal(obj)

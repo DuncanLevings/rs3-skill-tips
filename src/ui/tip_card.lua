@@ -3,7 +3,7 @@
 --   [item icon] title         [unboxed pin]
 --   hook
 --   why
---   discovery pointer
+--   how (or quest_how while a required quest isnt done)
 --   Needs: (only the ones not met yet)
 --   [Dismiss]               [Later]
 --
@@ -11,8 +11,8 @@
 -- that). its a prettyui Window so the player can drag and resize it, card_placement remembers
 -- where. it slides in from whichever screen edge its nearest (card_motion).
 --
--- a standalone Panel was tried first but it cant be dragged, and it snapped back to the spot
--- it was created at after sliding
+-- its a Window rather than a standalone Panel because a Panel cant be dragged, and snaps back
+-- to where it was created after sliding
 
 local settings = require("src/storage/settings")
 local card_motion = require("src/ui/card_motion")
@@ -191,6 +191,17 @@ local function on_window_closed()
     closed.handlers.on_closed()
 end
 
+-- "Hide this tip for 3 hours of play", the hours come from the settings page
+local function dismiss_tooltip()
+    local hours = settings.get("dismiss_hours")
+
+    if hours == 0 then
+        return "Hide this tip"
+    end
+
+    return "Hide this tip for " .. hours .. (hours == 1 and " hour" or " hours") .. " of play"
+end
+
 local function fill(window, blocks, text_width)
     for _, block in ipairs(blocks) do
         window:AddText({
@@ -212,9 +223,7 @@ local function fill(window, blocks, text_width)
         columnGap = ICON_GAP,
         height = 28,
         colour = theme.TEXT,
-        tooltip = "Hide this tip for "
-            .. tostring(settings.get("dismiss_hours"))
-            .. " hours of game time",
+        tooltip = dismiss_tooltip(),
     })
     window:AddSimpleButton("Later", function()
         close(card.handlers.on_later)

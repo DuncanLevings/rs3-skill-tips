@@ -4,6 +4,7 @@
 -- that means an inventory update only has to look at the slots that changed, and each item
 -- is one lookup in the catalogue's ownership index. levels and quest progress are live
 -- conditions, not evidence of owning something, so they never end up here
+
 local catalogue = require("src/tips/catalogue")
 local progress = require("src/storage/tip_progress")
 local owned_items = require("src/storage/owned_items")
@@ -11,6 +12,7 @@ local inventories = require("src/game/inventories")
 local event_owner = require("src/game/event_owner")
 
 local item_knowledge = {}
+
 local owner
 
 local function collect(learned, tip_ids)

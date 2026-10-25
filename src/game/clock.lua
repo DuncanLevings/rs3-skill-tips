@@ -1,8 +1,9 @@
 -- game time in seconds, counted from logic ticks (50 a second). good enough for "how long ago
 -- was that click" and doesnt depend on the os clock
 
-local clock = {}
 local event_owner = require("src/game/event_owner")
+
+local clock = {}
 
 local SUBSCRIPTION = "skilling_coach_clock"
 local TICKS_PER_SECOND = 50

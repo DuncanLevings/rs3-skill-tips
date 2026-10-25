@@ -85,8 +85,8 @@ conditions.TYPES = {
         end,
     },
 
-    -- quest config names, checked against the probe's quest dump. some quests have a dead
-    -- duplicate with the same name (COOK_QUEST vs COOKS_ASSISTANT), always use the live one
+    -- quest config names. some quests also have a dead duplicate config under a similar name
+    -- (COOK_QUEST vs COOKS_ASSISTANT), always use the live one
     quest_done = {
         validate = function(condition)
             return is_non_empty_string(condition.quest)

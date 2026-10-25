@@ -1,29 +1,28 @@
--- useful equipment and unlocks, then main methods and alternatives in level order.
--- access and recommendation-window evidence: docs/support-coverage.md.
+-- prayer tips: useful items and unlocks first, then one main training method per level
+-- bracket, then alternative methods. src/tips/schema.lua explains every field
 
 return {
+    -- useful items and unlocks
     {
         id = "prayer.first_age",
-        icon_item = "WOF36_SKILL_PRAYER_TIARA",
         kind = "convenience",
         skills = { "PRAYER" },
         members = true,
-        title = "First age outfit",
-        hook = "The First age outfit adds experience to many Prayer training methods.",
-        why = "Each piece contributes. It does not boost the Ectofuntus itself, urns or God Statue rewards; a modified tiara can also save offerings.",
-        how = { "Spend ecto-tokens with the shady ghost at the Ectofuntus." },
-        requirements = {
-            skills = {
-                PRAYER = 1,
-            },
-        },
         min_training_level = 30,
+        title = "First age outfit",
+        icon_item = "WOF36_SKILL_PRAYER_TIARA",
+        hook = "The First age outfit adds experience to many Prayer training methods.",
+        why = "Each piece contributes. It does not boost the Ectofuntus itself, urns or God Statue "
+            .. "rewards; a modified tiara can also save offerings.",
+        how = {
+            "Spend ecto-tokens with the shady ghost at the Ectofuntus.",
+        },
+        requirements = {
+            skills = { PRAYER = 1 },
+        },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "PRAYER",
-            },
+            { type = "training", skill = "PRAYER" },
         },
         known_when = {
             {
@@ -44,61 +43,52 @@ return {
 
     {
         id = "prayer.bonecrusher",
-        icon_item = "RAND_REWARD_BONECRUSHER",
         kind = "convenience",
         skills = { "PRAYER" },
         members = true,
-        title = "Bonecrusher",
-        hook = "A bonecrusher can turn ordinary bone drops into passive Prayer experience.",
-        why = "Carry it to bury supported bones automatically, choosing which bone types it should handle.",
-        how = { "Look in the Dungeoneering rewards shop." },
-        requirements = {
-            skills = {
-                PRAYER = 21,
-                DUNGEONEERING = 21,
-            },
-        },
         min_training_level = 40,
+        title = "Bonecrusher",
+        icon_item = "RAND_REWARD_BONECRUSHER",
+        hook = "A bonecrusher can turn ordinary bone drops into passive Prayer experience.",
+        why = "Carry it to bury supported bones automatically, choosing which bone types it should "
+            .. "handle.",
+        how = {
+            "Look in the Dungeoneering rewards shop.",
+        },
+        requirements = {
+            skills = { DUNGEONEERING = 21, PRAYER = 21 },
+        },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "PRAYER",
-            },
+            { type = "training", skill = "PRAYER" },
         },
         known_when = {
-            {
-                type = "owns_any",
-                items = { "RAND_REWARD_BONECRUSHER" },
-            },
+            { type = "owns_any", items = { "RAND_REWARD_BONECRUSHER" } },
         },
         priority = 2,
     },
 
     {
         id = "prayer.ectoplasmator",
-        icon_item = "HW2012_ECTOPLASMATOR",
         kind = "convenience",
         skills = { "PRAYER" },
         members = true,
+        min_training_level = 50,
         title = "Ectoplasmator",
+        icon_item = "HW2012_ECTOPLASMATOR",
         hook = "An ectoplasmator offers Prayer experience from encounters with ghosts.",
-        why = "The attuned upgrade can also scatter dropped ashes automatically, using ghostly essence for charges.",
+        why = "The attuned upgrade can also scatter dropped ashes automatically, using ghostly "
+            .. "essence for charges.",
         how = {
-            "Look for the device among ghost drops, then inspect the attuned upgrade when you want to develop it further.",
+            "Look for the device among ghost drops, then inspect the attuned upgrade when you want "
+                .. "to develop it further.",
         },
         requirements = {
-            skills = {
-                PRAYER = 1,
-            },
+            skills = { PRAYER = 1 },
         },
-        min_training_level = 50,
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "PRAYER",
-            },
+            { type = "training", skill = "PRAYER" },
         },
         known_when = {
             {
@@ -115,25 +105,23 @@ return {
 
     {
         id = "prayer.cape",
-        icon_item = "SKILLCAPE_PRAYER",
         kind = "convenience",
         skills = { "PRAYER" },
         members = true,
         title = "Prayer cape",
+        icon_item = "SKILLCAPE_PRAYER",
         hook = "The Prayer cape simplifies training at player-owned house altars.",
-        why = "It supplies the effect of two lit incense burners there, without needing to light them yourself.",
-        how = { "Buy it from Brother Jered at the Edgeville Monastery." },
+        why = "It supplies the effect of two lit incense burners there, without needing to light "
+            .. "them yourself.",
+        how = {
+            "Buy it from Brother Jered at the Edgeville Monastery.",
+        },
         requirements = {
-            skills = {
-                PRAYER = 99,
-            },
+            skills = { PRAYER = 99 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "PRAYER",
-            },
+            { type = "training", skill = "PRAYER" },
         },
         known_when = {
             {
@@ -155,175 +143,164 @@ return {
         priority = 2,
     },
 
+    -- training methods, one main method per level bracket
     {
         id = "prayer.method.altars",
-        main_method = true,
-        icon_item_id = 536,
         kind = "method",
         skills = { "PRAYER" },
-        level_range = { 30, 74 },
         members = true,
+        level_range = { 30, 74 },
+        main_method = true,
         title = "Offering bones at altars",
+        icon_item_id = 536,
         hook = "A suitable altar can give more experience from the same bones.",
-        why = "Using a gilded altar in another player's house avoids needing to build one yourself.",
-        how = { "Look for a hosted gilded altar with lit burners and try a small batch of bones." },
+        why = "Using a gilded altar in another player's house avoids needing to build one "
+            .. "yourself.",
+        how = {
+            "Look for a hosted gilded altar with lit burners and try a small batch of bones.",
+        },
         requirements = {
-            skills = {
-                PRAYER = 1,
-            },
+            skills = { PRAYER = 1 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "PRAYER",
-                level = 30,
-            },
+            { type = "level_reached", skill = "PRAYER", level = 30 },
         },
         priority = 2,
     },
 
     {
         id = "prayer.method.cleansing",
-        main_method = true,
-        icon_item_id = 32615,
         kind = "method",
         skills = { "PRAYER" },
-        level_range = { 75, 99 },
         members = true,
+        level_range = { 75, 99 },
+        main_method = true,
         title = "Cleansing crystals",
+        icon_item_id = 32615,
         hook = "Cleansing crystals offer Prayer training with little banking.",
-        why = "The ritual takes longer than an active bone-offering route, but lets you train in place with a more relaxed rhythm.",
-        how = { "Speak to a Hefin monk inside the Prifddinas cathedral." },
+        why = "The ritual takes longer than an active bone-offering route, but lets you train in "
+            .. "place with a more relaxed rhythm.",
+        how = {
+            "Speak to a Hefin monk inside the Prifddinas cathedral.",
+        },
         quest_how = {
             "Work towards Plague's End to open up Prifddinas and its training facilities.",
         },
         requirements = {
             skills = {
-                PRAYER = 75,
                 AGILITY = 75,
                 CONSTRUCTION = 75,
+                COOKING = 30,
                 CRAFTING = 75,
                 DUNGEONEERING = 75,
+                FLETCHING = 70,
                 HERBLORE = 75,
                 MINING = 75,
+                PRAYER = 75,
                 RANGED = 75,
                 SUMMONING = 75,
-                WOODCUTTING = 75,
-                COOKING = 30,
-                FLETCHING = 70,
                 THIEVING = 50,
+                WOODCUTTING = 75,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "PRAYER",
-                level = 75,
-            },
+            { type = "level_reached", skill = "PRAYER", level = 75 },
         },
         priority = 2,
     },
 
+    -- alternative methods, offered alongside the main method for a level
     {
         id = "prayer.alt.sand",
-        icon_item_id = 48674,
         kind = "method",
         skills = { "PRAYER" },
-        level_range = { 20, 49 },
         members = true,
+        level_range = { 20, 49 },
         title = "Blessing sand",
+        icon_item_id = 48674,
         hook = "Blessing sand offers low-intensity Prayer training without using bones.",
-        why = "The materials stack, so little banking is needed. Experience is much slower than bone-offering methods.",
-        how = { "Try blessing extra fine sand at a Saradominist altar, such as Lumbridge church." },
+        why = "The materials stack, so little banking is needed. Experience is much slower than "
+            .. "bone-offering methods.",
+        how = {
+            "Try blessing extra fine sand at a Saradominist altar, such as Lumbridge church.",
+        },
         requirements = {
-            skills = {
-                PRAYER = 20,
-            },
+            skills = { PRAYER = 20 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "PRAYER",
-            },
+            { type = "training", skill = "PRAYER" },
         },
         priority = 3,
     },
 
     {
         id = "prayer.alt.ectofuntus",
-        icon_item_id = 526,
         kind = "method",
         skills = { "PRAYER" },
-        level_range = { 20, 40 },
         members = true,
+        level_range = { 20, 40 },
         title = "Ectofuntus",
+        icon_item_id = 526,
         hook = "The Ectofuntus trades more preparation for extra experience from your offerings.",
         why = "Worship also earns ecto-tokens, which can go towards the First age outfit.",
         how = {
-            "Look into slime and bonemeal at the Ectofuntus north of Port Phasmatys. A ghostspeak amulet helps with its ghosts.",
+            "Look into slime and bonemeal at the Ectofuntus north of Port Phasmatys. A ghostspeak "
+                .. "amulet helps with its ghosts.",
         },
         requirements = {
-            skills = {
-                PRAYER = 1,
-            },
+            skills = { PRAYER = 1 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "PRAYER",
-            },
+            { type = "training", skill = "PRAYER" },
         },
         priority = 3,
     },
 
     {
         id = "prayer.alt.fort_chapel",
-        icon_item_id = 536,
         kind = "method",
         skills = { "PRAYER" },
-        level_range = { 30, 99 },
         members = true,
+        level_range = { 30, 99 },
         title = "Fort Forinthry chapel",
+        icon_item_id = 536,
         hook = "The Fort chapel offers an altar with a bank nearby.",
-        why = "Offering bones or ashes there gives extra experience, and upgrading the chapel improves its benefits.",
+        why = "Offering bones or ashes there gives extra experience, and upgrading the chapel "
+            .. "improves its benefits.",
         how = {
             "After New Foundations, inspect the chapel and its building plans at Fort Forinthry.",
         },
         quest_how = {
-            "Start building Fort Forinthry through New Foundations, then explore its building plans.",
+            "Start building Fort Forinthry through New Foundations, then explore its building "
+                .. "plans.",
         },
         requirements = {
-            skills = {
-                CONSTRUCTION = 15,
-                PRAYER = 1,
-            },
+            skills = { CONSTRUCTION = 15, PRAYER = 1 },
             quests = { "QUEST_FORT_INTRO" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "PRAYER",
-            },
+            { type = "training", skill = "PRAYER" },
         },
         priority = 3,
     },
 
     {
         id = "prayer.alt.statues",
-        icon_item_id = 526,
         kind = "method",
         skills = { "PRAYER" },
-        level_range = { 30, 99 },
         members = true,
+        level_range = { 30, 99 },
         title = "God Statues",
+        icon_item_id = 526,
         hook = "God Statues offer a monthly Prayer side activity.",
-        why = "Building a statue favoured by the local people can provide a Prayer reward alongside Construction experience.",
+        why = "Building a statue favoured by the local people can provide a Prayer reward "
+            .. "alongside Construction experience.",
         how = {
             "After Let Them Eat Pie, speak to Copernicus Glyph near the Taverley Summoning shop.",
         },
@@ -331,43 +308,36 @@ return {
             "Complete Let Them Eat Pie, then ask Copernicus Glyph near Taverley about God Statues.",
         },
         requirements = {
-            skills = {
-                PRAYER = 1,
-            },
+            skills = { PRAYER = 1 },
             quests = { "LET_THEM_EAT_PIE" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "PRAYER",
-            },
+            { type = "training", skill = "PRAYER" },
         },
         priority = 3,
     },
 
     {
         id = "prayer.alt.nemi",
-        icon_item_id = 526,
         kind = "method",
         skills = { "PRAYER" },
-        level_range = { 30, 79 },
         members = true,
+        level_range = { 30, 79 },
         title = "Nemi Forest",
+        icon_item_id = 526,
         hook = "Nemi Forest offers a free daily side trip for Prayer experience.",
-        why = "Its gathering nodes give several kinds of experience, including Prayer. The forest changes, so finding the nodes is part of the activity.",
-        how = { "Look for the forest entrances near the Mazcab guides." },
+        why = "Its gathering nodes give several kinds of experience, including Prayer. The forest "
+            .. "changes, so finding the nodes is part of the activity.",
+        how = {
+            "Look for the forest entrances near the Mazcab guides.",
+        },
         requirements = {
-            skills = {
-                PRAYER = 1,
-            },
+            skills = { PRAYER = 1 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "PRAYER",
-            },
+            { type = "training", skill = "PRAYER" },
         },
         priority = 3,
     },

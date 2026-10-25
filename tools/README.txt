@@ -102,6 +102,21 @@ and checks:
   --report FILE         write the results as JSON
 
 
+format_tips.py
+
+    python tools/format_tips.py
+    python tools/format_tips.py --check
+
+Rewrites the tip files so every tip lists its fields in the same order (the
+order documented at the top of src/tips/schema.lua), with the same layout and
+wrapping inside 100 columns. Skill files also get the same three section
+markers: useful items, training methods, alternative methods. Comments are
+kept. Run it after adding or editing tips; --check only lists files that
+would change and exits 1 if any would.
+
+No dependencies beyond the standard library.
+
+
 Config evidence
 ---------------
 

@@ -1,13 +1,17 @@
--- compact native list geometry shared by tips and history, measured before making a window.
+-- works out the size of a list window and every row in it before the window is made, by
+-- measuring the text with the game's font. compact_list then just places things
+
 local layout = {}
-layout.ICON_SIZE = 28
-layout.ICON_GAP = 8
-layout.ACTION_WIDTH = 24
-layout.GAP = 20
-layout.INSET = 4
-layout.GUTTER = 18
-layout.BOTTOM_PADDING = 12
-layout.WINDOW_CHROME = 48
+
+-- all in pixels
+layout.ICON_SIZE = 28 -- item icon at the start of a row
+layout.ICON_GAP = 8 -- between the icon and the title
+layout.ACTION_WIDTH = 24 -- the pin / unpin button at the end of a row
+layout.GAP = 20 -- between the title and the action button
+layout.INSET = 4 -- padding inside the content area
+layout.GUTTER = 18 -- kept free on the right for the scrollbar
+layout.BOTTOM_PADDING = 12 -- below the last row
+layout.WINDOW_CHROME = 48 -- window frame and title bar around the content
 
 local function line_count(text, width)
     local ok, lines = pcall(function()

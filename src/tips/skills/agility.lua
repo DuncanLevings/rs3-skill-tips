@@ -1,31 +1,28 @@
--- useful equipment and unlocks, then main methods and alternatives in level order.
--- access and recommendation-window evidence: docs/support-coverage.md.
+-- agility tips: useful items and unlocks first, then one main training method per level
+-- bracket, then alternative methods. src/tips/schema.lua explains every field
 
 return {
+    -- useful items and unlocks
     {
         id = "agility.nimble_outfit",
-        icon_item = "TRH85_AGILITY_HEAD",
         kind = "convenience",
         skills = { "AGILITY" },
         members = true,
+        min_training_level = 20,
         title = "Nimble outfit",
+        icon_item = "TRH85_AGILITY_HEAD",
         hook = "The nimble outfit adds experience to your Agility training.",
         why = "Each piece contributes, with a further bonus for wearing the full set.",
         how = {
-            "Watch for invitations to The Pit while training on supported courses; completing an activity can award a piece.",
+            "Watch for invitations to The Pit while training on supported courses; completing an "
+                .. "activity can award a piece.",
         },
         requirements = {
-            skills = {
-                AGILITY = 1,
-            },
+            skills = { AGILITY = 1 },
         },
-        min_training_level = 20,
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "AGILITY",
-            },
+            { type = "training", skill = "AGILITY" },
         },
         known_when = {
             {
@@ -44,26 +41,24 @@ return {
 
     {
         id = "agility.lightness",
-        icon_item = "IKOV_BOOTSOFLIGHTNESS",
         kind = "convenience",
         skills = { "AGILITY" },
         members = true,
-        title = "Boots of lightness",
-        hook = "Boots of lightness help keep your load down while travelling.",
-        why = "Less weight can make your run energy last longer. Weight-reducing capes offer another way to lighten a heavier outfit.",
-        how = { "Look into the boots beneath the Temple of Ikov." },
-        requirements = {
-            skills = {
-                AGILITY = 1,
-            },
-        },
         min_training_level = 20,
+        title = "Boots of lightness",
+        icon_item = "IKOV_BOOTSOFLIGHTNESS",
+        hook = "Boots of lightness help keep your load down while travelling.",
+        why = "Less weight can make your run energy last longer. Weight-reducing capes offer "
+            .. "another way to lighten a heavier outfit.",
+        how = {
+            "Look into the boots beneath the Temple of Ikov.",
+        },
+        requirements = {
+            skills = { AGILITY = 1 },
+        },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "AGILITY",
-            },
+            { type = "training", skill = "AGILITY" },
         },
         known_when = {
             {
@@ -83,26 +78,24 @@ return {
 
     {
         id = "agility.agile_clothing",
-        icon_item = "AGILE_AGILITY_LEGS",
         kind = "convenience",
         skills = { "AGILITY" },
         members = true,
-        title = "Agile clothing",
-        hook = "Agile clothing offers weight-saving rewards to work towards.",
-        why = "Flawless laps on the advanced Gnome course earn the legs; the advanced Barbarian course offers a top at a later level.",
-        how = { "Ask the trainers about rewards when you try the advanced courses." },
-        requirements = {
-            skills = {
-                AGILITY = 1,
-            },
-        },
         min_training_level = 85,
+        title = "Agile clothing",
+        icon_item = "AGILE_AGILITY_LEGS",
+        hook = "Agile clothing offers weight-saving rewards to work towards.",
+        why = "Flawless laps on the advanced Gnome course earn the legs; the advanced Barbarian "
+            .. "course offers a top at a later level.",
+        how = {
+            "Ask the trainers about rewards when you try the advanced courses.",
+        },
+        requirements = {
+            skills = { AGILITY = 1 },
+        },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "AGILITY",
-            },
+            { type = "training", skill = "AGILITY" },
         },
         known_when = {
             {
@@ -120,25 +113,23 @@ return {
 
     {
         id = "agility.cape",
-        icon_item = "SKILLCAPE_AGILITY",
         kind = "convenience",
         skills = { "AGILITY" },
         members = true,
         title = "Agility cape",
+        icon_item = "SKILLCAPE_AGILITY",
         hook = "The Agility cape takes most obstacle failures out of your journeys.",
-        why = "Its perk prevents failures on nearly all Agility obstacles, making course running and shortcuts more reliable.",
-        how = { "Buy it from Cap'n Izzy No-Beard at the Brimhaven Agility Arena entrance." },
+        why = "Its perk prevents failures on nearly all Agility obstacles, making course running "
+            .. "and shortcuts more reliable.",
+        how = {
+            "Buy it from Cap'n Izzy No-Beard at the Brimhaven Agility Arena entrance.",
+        },
         requirements = {
-            skills = {
-                AGILITY = 99,
-            },
+            skills = { AGILITY = 99 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "AGILITY",
-            },
+            { type = "training", skill = "AGILITY" },
         },
         known_when = {
             {
@@ -160,83 +151,73 @@ return {
         priority = 2,
     },
 
+    -- training methods, one main method per level bracket
     {
         id = "agility.method.penguin",
-        main_method = true,
-        icon_item_id = 47925,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 30, 34 },
         members = true,
+        level_range = { 30, 34 },
+        main_method = true,
         title = "Penguin course",
+        icon_item_id = 47925,
         hook = "The penguin course offers a change of scenery for Agility training.",
-        why = "The clockwork suit lets you use the course on the iceberg, with a different rhythm from the mainland courses.",
-        how = { "After Cold War, take the clockwork suit back to the iceberg course." },
+        why = "The clockwork suit lets you use the course on the iceberg, with a different rhythm "
+            .. "from the mainland courses.",
+        how = {
+            "After Cold War, take the clockwork suit back to the iceberg course.",
+        },
         quest_how = {
             "Look into Cold War and its clockwork suit for access to the iceberg course.",
         },
         requirements = {
-            skills = {
-                AGILITY = 30,
-                CONSTRUCTION = 34,
-                CRAFTING = 30,
-                HUNTER = 10,
-                THIEVING = 15,
-            },
+            skills = { AGILITY = 30, CONSTRUCTION = 34, CRAFTING = 30, HUNTER = 10, THIEVING = 15 },
             quests = { "COLD_WAR" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "AGILITY",
-                level = 30,
-            },
+            { type = "level_reached", skill = "AGILITY", level = 30 },
         },
         priority = 2,
     },
 
     {
         id = "agility.method.barbarian",
-        main_method = true,
-        icon_item_id = 47925,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 35, 47 },
         members = true,
+        level_range = { 35, 47 },
+        main_method = true,
         title = "Barbarian Outpost course",
+        icon_item_id = 47925,
         hook = "The Barbarian Outpost offers a compact Agility course.",
-        why = "Its lap bonus rewards completing the whole circuit rather than repeating one obstacle.",
+        why = "Its lap bonus rewards completing the whole circuit rather than repeating one "
+            .. "obstacle.",
         how = {
             "Complete Alfred Grimhand's barcrawl, then try the course north-east of the outpost.",
         },
         requirements = {
-            skills = {
-                AGILITY = 35,
-            },
+            skills = { AGILITY = 35 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "AGILITY",
-                level = 35,
-            },
+            { type = "level_reached", skill = "AGILITY", level = 35 },
         },
         priority = 2,
     },
 
     {
         id = "agility.method.ape_atoll",
-        main_method = true,
-        icon_item_id = 1963,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 48, 51 },
         members = true,
+        level_range = { 48, 51 },
+        main_method = true,
         title = "Ape Atoll course",
+        icon_item_id = 1963,
         hook = "The Ape Atoll course offers another route for Agility experience.",
-        why = "A ninja monkey form is needed for the course, so it gives your greegree another use.",
+        why = "A ninja monkey form is needed for the course, so it gives your greegree another "
+            .. "use.",
         how = {
             "After Monkey Madness, look into a ninja monkey greegree and the course on Ape Atoll.",
         },
@@ -244,163 +225,147 @@ return {
             "Work towards Monkey Madness, then look into the ninja monkey form for the course.",
         },
         requirements = {
-            skills = {
-                AGILITY = 48,
-            },
+            skills = { AGILITY = 48 },
             quests = { "MONKEY_MADNESS" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "AGILITY",
-                level = 48,
-            },
+            { type = "level_reached", skill = "AGILITY", level = 48 },
         },
         priority = 2,
     },
 
     {
         id = "agility.method.wilderness",
-        main_method = true,
-        icon_item_id = 47925,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 52, 59 },
         members = true,
+        level_range = { 52, 59 },
+        main_method = true,
         title = "Wilderness course",
+        icon_item_id = 47925,
         hook = "The Wilderness course offers steady laps with a greater travel risk.",
-        why = "The course is deep in the Wilderness and obstacles can fail, so it is worth planning the trip before bringing valuables.",
-        how = { "Look for the course in the north-western Wilderness." },
+        why = "The course is deep in the Wilderness and obstacles can fail, so it is worth "
+            .. "planning the trip before bringing valuables.",
+        how = {
+            "Look for the course in the north-western Wilderness.",
+        },
         requirements = {
-            skills = {
-                AGILITY = 52,
-            },
+            skills = { AGILITY = 52 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "AGILITY",
-                level = 52,
-            },
+            { type = "level_reached", skill = "AGILITY", level = 52 },
         },
         priority = 2,
     },
 
     {
         id = "agility.method.bandos",
-        main_method = true,
-        icon_item_id = 47925,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 60, 64 },
         members = true,
+        level_range = { 60, 64 },
+        main_method = true,
         title = "Bandos throne-room course",
+        icon_item_id = 47925,
         hook = "Bandos's throne room offers a different style of Agility course.",
         why = "Grappling between its statues also gives some Ranged and Strength experience.",
         how = {
-            "After The Chosen Commander, bring a mithril grapple or an enhanced grappling hook to the throne room.",
+            "After The Chosen Commander, bring a mithril grapple or an enhanced grappling hook to "
+                .. "the throne room.",
         },
-        quest_how = { "Complete The Chosen Commander to open up Bandos's throne room." },
+        quest_how = {
+            "Complete The Chosen Commander to open up Bandos's throne room.",
+        },
         requirements = {
             skills = {
-                STRENGTH = 60,
                 AGILITY = 60,
-                RANGED = 60,
-                THIEVING = 46,
                 ATTACK = 15,
-                PRAYER = 30,
-                MINING = 17,
                 CRAFTING = 12,
                 FIREMAKING = 16,
-                MAGIC = 33,
                 FISHING = 36,
                 HERBLORE = 37,
+                MAGIC = 33,
+                MINING = 17,
+                PRAYER = 30,
+                RANGED = 60,
+                STRENGTH = 60,
+                THIEVING = 46,
             },
             quests = { "CHOSEN_COMMANDER" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "AGILITY",
-                level = 60,
-            },
+            { type = "level_reached", skill = "AGILITY", level = 60 },
         },
         priority = 2,
     },
 
     {
         id = "agility.method.oasis",
-        main_method = true,
-        icon_item_id = 47925,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 65, 69 },
         members = true,
+        level_range = { 65, 69 },
+        main_method = true,
         title = "Het's Oasis course",
+        icon_item_id = 47925,
         hook = "Het's Oasis offers a course close to a familiar travel hub.",
         why = "Full laps provide a repeatable training option without a long trip across Gielinor.",
-        how = { "Visit Het's Oasis near Al Kharid and look for the course starting point." },
+        how = {
+            "Visit Het's Oasis near Al Kharid and look for the course starting point.",
+        },
         requirements = {
-            skills = {
-                AGILITY = 65,
-            },
+            skills = { AGILITY = 65 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "AGILITY",
-                level = 65,
-            },
+            { type = "level_reached", skill = "AGILITY", level = 65 },
         },
         priority = 2,
     },
 
     {
         id = "agility.method.anachronia_sections",
-        main_method = true,
-        icon_item_id = 47925,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 70, 76 },
         members = true,
+        level_range = { 70, 76 },
+        main_method = true,
         title = "Anachronia course sections",
+        icon_item_id = 47925,
         hook = "Anachronia lets you train on a section of its larger course.",
-        why = "Partial routes offer experience before you have the levels for the whole island circuit, with a chance at codex pages.",
+        why = "Partial routes offer experience before you have the levels for the whole island "
+            .. "circuit, with a chance at codex pages.",
         how = {
             "Look for the course markings near Anachronia base camp and try an advanced section.",
         },
         requirements = {
-            skills = {
-                AGILITY = 70,
-            },
+            skills = { AGILITY = 70 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "AGILITY",
-                level = 70,
-            },
+            { type = "level_reached", skill = "AGILITY", level = 70 },
         },
         priority = 2,
     },
 
     {
         id = "agility.method.hefin",
-        main_method = true,
-        icon_item_id = 47925,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 77, 79 },
         members = true,
+        level_range = { 77, 79 },
+        main_method = true,
         title = "Hefin course",
+        icon_item_id = 47925,
         hook = "The Hefin course offers Agility laps without obstacle failures.",
-        why = "Its experience grows with your level, while occasional shortcuts can make a lap quicker.",
-        how = { "Visit the course in the Hefin district of Prifddinas." },
+        why = "Its experience grows with your level, while occasional shortcuts can make a lap "
+            .. "quicker.",
+        how = {
+            "Visit the course in the Hefin district of Prifddinas.",
+        },
         quest_how = {
             "Work towards Plague's End to open up Prifddinas and its training facilities.",
         },
@@ -408,195 +373,181 @@ return {
             skills = {
                 AGILITY = 77,
                 CONSTRUCTION = 75,
+                COOKING = 30,
                 CRAFTING = 75,
                 DUNGEONEERING = 75,
+                FLETCHING = 70,
                 HERBLORE = 75,
                 MINING = 75,
                 PRAYER = 75,
                 RANGED = 75,
                 SUMMONING = 75,
-                WOODCUTTING = 75,
-                COOKING = 30,
-                FLETCHING = 70,
                 THIEVING = 50,
+                WOODCUTTING = 75,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "AGILITY",
-                level = 77,
-            },
+            { type = "level_reached", skill = "AGILITY", level = 77 },
         },
         priority = 2,
     },
 
     {
         id = "agility.method.spirit_moths",
-        main_method = true,
-        icon_item_id = 12163,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 80, 84 },
         members = true,
+        level_range = { 80, 84 },
+        main_method = true,
         title = "Spirit moths",
+        icon_item_id = 12163,
         hook = "Barehanded spirit moths offer an Agility alternative to running laps.",
         why = "Catching them trades most of their usual charm drops for Agility experience.",
-        how = { "Search hollow trees in Highweald Forest, then try catching the moths barehanded." },
-        quest_how = { "Look into Heralds of Crimson to start exploring Havenhythe." },
+        how = {
+            "Search hollow trees in Highweald Forest, then try catching the moths barehanded.",
+        },
+        quest_how = {
+            "Look into Heralds of Crimson to start exploring Havenhythe.",
+        },
         requirements = {
             skills = {
                 AGILITY = 80,
-                HUNTER = 85,
+                CONSTRUCTION = 30,
                 CRAFTING = 51,
                 HERBLORE = 55,
+                HUNTER = 85,
                 MINING = 65,
-                SMITHING = 60,
-                CONSTRUCTION = 30,
                 SLAYER = 28,
+                SMITHING = 60,
             },
             quests = { "QUEST_WENDLE_HERALDS" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "AGILITY",
-                level = 80,
-            },
+            { type = "level_reached", skill = "AGILITY", level = 80 },
         },
         priority = 2,
     },
 
     {
         id = "agility.method.anachronia_laps",
-        main_method = true,
-        icon_item_id = 47925,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 85, 120 },
         members = true,
+        level_range = { 85, 120 },
+        main_method = true,
         title = "Full Anachronia laps",
+        icon_item_id = 47925,
         hook = "Full Anachronia laps combine Agility experience with codex-page rewards.",
-        why = "Completing the whole island circuit adds a substantial lap bonus. The route takes more attention while you learn it.",
-        how = { "Follow the course markings around the island and back to the starting point." },
+        why = "Completing the whole island circuit adds a substantial lap bonus. The route takes "
+            .. "more attention while you learn it.",
+        how = {
+            "Follow the course markings around the island and back to the starting point.",
+        },
         requirements = {
-            skills = {
-                AGILITY = 85,
-            },
+            skills = { AGILITY = 85 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "AGILITY",
-                level = 85,
-            },
+            { type = "level_reached", skill = "AGILITY", level = 85 },
         },
         priority = 2,
     },
 
+    -- alternative methods, offered alongside the main method for a level
     {
         id = "agility.alt.early_anachronia",
-        icon_item_id = 47925,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 30, 64 },
         members = true,
+        level_range = { 30, 64 },
         title = "Exploring the Anachronia course",
-        hook = "Anachronia offers smaller course sections before the full island route is possible.",
-        why = "You can learn part of the route and gather codex pages without completing an entire lap.",
+        icon_item_id = 47925,
+        hook = "Anachronia offers smaller course sections before the full island route is "
+            .. "possible.",
+        why = "You can learn part of the route and gather codex pages without completing an entire "
+            .. "lap.",
         how = {
             "Look for the lower-level section near base camp and follow the white course markings.",
         },
         requirements = {
-            skills = {
-                AGILITY = 30,
-            },
+            skills = { AGILITY = 30 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "AGILITY",
-            },
+            { type = "training", skill = "AGILITY" },
         },
         priority = 3,
     },
 
     {
         id = "agility.alt.werewolf",
-        icon_item_id = 47925,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 60, 84 },
         members = true,
+        level_range = { 60, 84 },
         title = "Werewolf course",
+        icon_item_id = 47925,
         hook = "The werewolf course offers a change from standard laps.",
         why = "Fetching and returning the stick is part of earning the full course reward.",
         how = {
-            "After Creature of Fenkenstrain, use the ring of charos to enter the course near Canifis.",
+            "After Creature of Fenkenstrain, use the ring of charos to enter the course near "
+                .. "Canifis.",
         },
         quest_how = {
             "Look into Creature of Fenkenstrain and its ring of charos to enter the course.",
         },
         requirements = {
-            skills = {
-                AGILITY = 60,
-                CRAFTING = 20,
-                THIEVING = 25,
-            },
+            skills = { AGILITY = 60, CRAFTING = 20, THIEVING = 25 },
             quests = { "CREATURE_OF_FENKENSTRAIN" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "AGILITY",
-            },
+            { type = "training", skill = "AGILITY" },
         },
         priority = 3,
     },
 
     {
         id = "agility.alt.throne_room",
-        icon_item_id = 47925,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 65, 76 },
         members = true,
+        level_range = { 65, 76 },
         title = "Empty Throne Room",
+        icon_item_id = 47925,
         hook = "The Empty Throne Room offers more relaxed Agility training.",
-        why = "Its manual cycles provide a limited pool of experience, making it a stepping stone rather than a permanent training spot.",
-        how = { "Look for the excavation beneath the Varrock Dig Site and try the manual cycles." },
+        why = "Its manual cycles provide a limited pool of experience, making it a stepping stone "
+            .. "rather than a permanent training spot.",
+        how = {
+            "Look for the excavation beneath the Varrock Dig Site and try the manual cycles.",
+        },
         requirements = {
-            skills = {
-                AGILITY = 65,
-            },
+            skills = { AGILITY = 65 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "AGILITY",
-            },
+            { type = "training", skill = "AGILITY" },
         },
         priority = 3,
     },
 
     {
         id = "agility.alt.serenity",
-        icon_item_id = 47925,
         kind = "method",
         skills = { "AGILITY" },
-        level_range = { 75, 94 },
         members = true,
+        level_range = { 75, 94 },
         title = "Serenity posts",
+        icon_item_id = 47925,
         hook = "Serenity posts offer a short, relaxed Agility routine.",
-        why = "They provide a limited amount of daily experience, with more from following the instructor's poses.",
-        how = { "Visit the posts in the Hefin district of Prifddinas." },
+        why = "They provide a limited amount of daily experience, with more from following the "
+            .. "instructor's poses.",
+        how = {
+            "Visit the posts in the Hefin district of Prifddinas.",
+        },
         quest_how = {
             "Work towards Plague's End to open up Prifddinas and its training facilities.",
         },
@@ -604,26 +555,23 @@ return {
             skills = {
                 AGILITY = 75,
                 CONSTRUCTION = 75,
+                COOKING = 30,
                 CRAFTING = 75,
                 DUNGEONEERING = 75,
+                FLETCHING = 70,
                 HERBLORE = 75,
                 MINING = 75,
                 PRAYER = 75,
                 RANGED = 75,
                 SUMMONING = 75,
-                WOODCUTTING = 75,
-                COOKING = 30,
-                FLETCHING = 70,
                 THIEVING = 50,
+                WOODCUTTING = 75,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "AGILITY",
-            },
+            { type = "training", skill = "AGILITY" },
         },
         priority = 3,
     },

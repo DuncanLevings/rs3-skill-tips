@@ -1,7 +1,7 @@
 -- the `state` object conditions read the player through. each answer comes straight from the
 -- client (or the bank snapshot), and anything that cant be read comes back nil.
 --
--- reminder from testing: Player functions are static, call them with a dot not a colon
+-- Player functions are static, so theyre called with a dot (Player.IsAvailable()), not a colon
 
 local skills = require("src/data/skills")
 local inventories = require("src/game/inventories")
@@ -36,7 +36,7 @@ function player_state.owns_category(category)
     return inventories.carrying_category(category) or owned_items.category_in_bank(category)
 end
 
--- varbits live under var.VarPlayer, theres no var.VarBit (checked in game)
+-- varbits live under var.VarPlayer, theres no separate var.VarBit
 function player_state.varbit(name)
     return read(function()
         return var.VarPlayer[name].value
@@ -56,7 +56,7 @@ function player_state.quest_name(quest)
     end)
 end
 
--- progress -2 means complete (checked in game)
+-- an achievement with progress -2 is complete
 function player_state.achievement_done(achievement)
     return read(function()
         return config.Achievement[achievement].progress == -2

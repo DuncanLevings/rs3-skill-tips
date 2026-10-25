@@ -1,4 +1,4 @@
--- real outfit/category collisions, upgraded tools and account-access gates from the probes.
+-- outfits whose pieces share item categories, upgraded tools and account-access gates.
 local lu = require("luaunit")
 local client = require("tests/support/client")
 

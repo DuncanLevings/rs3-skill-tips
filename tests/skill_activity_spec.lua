@@ -1,7 +1,7 @@
 local lu = require("luaunit")
 local client = require("tests/support/client")
 
--- the click patterns seen in game (docs/api-findings.md, check 6)
+-- the clicks the client sends for lamps, books and normal training
 local DIALOGUE_CONFIRM = { action_type = 30, verb = "Confirm: Firemaking", is_item = false }
 local RUB_LAMP = { action_type = 57, verb = "Rub", is_item = true }
 local MINE_ROCK = { action_type = 2, verb = "Mine", is_item = false }

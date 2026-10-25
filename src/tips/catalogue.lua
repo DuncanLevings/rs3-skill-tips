@@ -1,7 +1,9 @@
--- loads every tip file, checks each tip and indexes them by id and skill.
+-- loads every tip file, checks each tip against the schema and builds the lookups the rest of
+-- the plugin uses (by id, by skill, quest tips, and which items each tip cares about).
 --
 -- the client cant list folders, so new tip files get added to TIP_FILES by hand. a tip that
--- fails the schema is logged and skipped, the rest still load
+-- fails the schema is logged and skipped, the rest still load. everything is built once at
+-- load and never changes afterwards, so the lookups below are just table reads
 
 local schema = require("src/tips/schema")
 
@@ -28,19 +30,63 @@ local TIP_FILES = {
     "src/tips/skills/thieving",
     "src/tips/skills/prayer",
     "src/tips/skills/summoning",
-    "src/tips/artisan_shared",
     "src/tips/shared",
     "src/tips/quests",
 }
 
 local loaded = false
-local by_id = {}
-local by_skill = {}
+
+-- every valid tip in file order
 local ordered = {}
+
+-- tip id -> tip
+local by_id = {}
+
+-- skill name (or "ANY") -> tips listed under it
+local by_skill = {}
+
+-- skill name -> that skill's tips followed by the ANY tips, built the first time it's asked for
+local for_skill_cache = {}
+
+local quest_tips = {}
+
+-- item name / category -> ids of tips that owning it explains
+local ownership_index = { items = {}, categories = {} }
+
+-- sets of every item name and category any tip asks about
+local relevant_items = {}
+local relevant_categories = {}
 
 local function add_to_skill(skill, tip)
     by_skill[skill] = by_skill[skill] or {}
+
+    -- a tip can name the same skill twice (in skills and in its quest requirements)
+    for _, existing in ipairs(by_skill[skill]) do
+        if existing == tip then
+            return
+        end
+    end
+
     table.insert(by_skill[skill], tip)
+end
+
+local function add_to_ownership_index(tip)
+    local function add(map, key)
+        map[key] = map[key] or {}
+        table.insert(map[key], tip.id)
+    end
+
+    for _, condition in ipairs(tip.known_when or {}) do
+        if condition.type == "owns_any" then
+            for _, item in ipairs(condition.items) do
+                add(ownership_index.items, item)
+                relevant_items[item] = true
+            end
+        elseif condition.type == "owns_category" then
+            add(ownership_index.categories, condition.category)
+            relevant_categories[condition.category] = true
+        end
+    end
 end
 
 local function add_tip(tip, file)
@@ -59,26 +105,24 @@ local function add_tip(tip, file)
     by_id[tip.id] = tip
     ordered[#ordered + 1] = tip
 
-    local indexed = {}
-    local function index(skill)
-        if not indexed[skill] then
-            indexed[skill] = true
+    for _, skill in ipairs(tip.skills) do
+        add_to_skill(skill, tip)
+    end
+
+    -- a quest tip also belongs to every skill it needs, so training any of them can find it
+    if tip.kind == "quest" then
+        quest_tips[#quest_tips + 1] = tip
+
+        for skill in pairs(tip.requirements.skills) do
+            add_to_skill(skill, tip)
+        end
+
+        for skill in pairs(tip.requirements.any_skills or {}) do
             add_to_skill(skill, tip)
         end
     end
 
-    for _, skill in ipairs(tip.skills) do
-        index(skill)
-    end
-
-    if tip.kind == "quest" then
-        for skill in pairs(tip.requirements.skills) do
-            index(skill)
-        end
-        for skill in pairs(tip.requirements.any_skills or {}) do
-            index(skill)
-        end
-    end
+    add_to_ownership_index(tip)
 end
 
 function catalogue.load()
@@ -89,9 +133,7 @@ function catalogue.load()
     loaded = true
 
     for _, file in ipairs(TIP_FILES) do
-        local tips = require(file)
-
-        for _, tip in ipairs(tips or {}) do
+        for _, tip in ipairs(require(file) or {}) do
             add_tip(tip, file)
         end
     end
@@ -107,26 +149,26 @@ function catalogue.all()
     return ordered
 end
 
--- tips for one skill plus the ANY ones that fit every skill
+-- tips for one skill plus the ANY ones that fit every skill. treat the list as read only, its
+-- shared between callers
 function catalogue.for_skill(skill)
     catalogue.load()
-    local tips = {}
-    local seen = {}
 
-    local function append(tip)
-        if not seen[tip.id] then
-            tips[#tips + 1] = tip
-            seen[tip.id] = true
+    if for_skill_cache[skill] then
+        return for_skill_cache[skill]
+    end
+
+    local tips, seen = {}, {}
+    for _, list in ipairs({ by_skill[skill] or {}, by_skill.ANY or {} }) do
+        for _, tip in ipairs(list) do
+            if not seen[tip] then
+                seen[tip] = true
+                tips[#tips + 1] = tip
+            end
         end
     end
 
-    for _, tip in ipairs(by_skill[skill] or {}) do
-        append(tip)
-    end
-
-    for _, tip in ipairs(by_skill.ANY or {}) do
-        append(tip)
-    end
+    for_skill_cache[skill] = tips
 
     return tips
 end
@@ -134,68 +176,20 @@ end
 -- a quest can become ready from a combat or reward level, so these arent tied to one skill
 function catalogue.quest_tips()
     catalogue.load()
-    local tips = {}
-    for _, tip in ipairs(ordered) do
-        if tip.kind == "quest" then
-            tips[#tips + 1] = tip
-        end
-    end
-
-    return tips
+    return quest_tips
 end
 
--- every item config name and category any tip asks about. the bank snapshot only remembers
--- these, not the whole bank
+-- every item config name and category any tip asks about, as two sets. the bank snapshot
+-- only remembers these, never the whole bank
 function catalogue.relevant_items()
     catalogue.load()
-    local items = {}
-    local categories = {}
-
-    for _, tip in ipairs(ordered) do
-        for _, condition in ipairs(tip.known_when or {}) do
-            if condition.type == "owns_any" then
-                for _, item in ipairs(condition.items) do
-                    items[item] = true
-                end
-            elseif condition.type == "owns_category" then
-                categories[condition.category] = true
-            end
-        end
-    end
-
-    return items, categories
+    return relevant_items, relevant_categories
 end
 
-local ownership_index
-
--- item name -> ids of tips that owning it explains, same for categories. built once so an
--- inventory update only costs a table lookup per item instead of checking every tip
+-- { items = { NAME = { tip ids } }, categories = { [number] = { tip ids } } }. lets an
+-- inventory update turn each item it sees into tip ids with one table lookup
 function catalogue.ownership_index()
     catalogue.load()
-
-    if ownership_index then
-        return ownership_index
-    end
-
-    ownership_index = { items = {}, categories = {} }
-
-    local function add(map, key, tip_id)
-        map[key] = map[key] or {}
-        table.insert(map[key], tip_id)
-    end
-
-    for _, tip in ipairs(ordered) do
-        for _, condition in ipairs(tip.known_when or {}) do
-            if condition.type == "owns_any" then
-                for _, item in ipairs(condition.items) do
-                    add(ownership_index.items, item, tip.id)
-                end
-            elseif condition.type == "owns_category" then
-                add(ownership_index.categories, condition.category, tip.id)
-            end
-        end
-    end
-
     return ownership_index
 end
 

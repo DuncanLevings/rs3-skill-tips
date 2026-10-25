@@ -1,4 +1,9 @@
--- independently positioned, content-sized native lists with guarded row controls.
+-- a small movable window holding a list of tips, used for both pinned tips and recent tips.
+-- each row has an item icon, a title, an optional line of text and an action button.
+--
+-- the window sizes itself to its rows, remembers where the player put it, and rebuilds when
+-- its rows change or the game window is resized
+
 local progress = require("src/storage/tip_progress")
 local placement = require("src/ui/list_placement")
 local layout = require("src/ui/list_layout")
@@ -6,6 +11,7 @@ local event_owner = require("src/game/event_owner")
 local action_icon = require("src/ui/action_icon")
 local internals = require("src/ui/prettyui_internals")
 local item_icon = require("src/ui/item_icon")
+
 local compact_list = {}
 
 function compact_list.new(options)

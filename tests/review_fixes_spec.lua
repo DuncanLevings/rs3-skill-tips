@@ -1,4 +1,4 @@
--- one spec per bug found in the phase 2-5 review, so none of them can quietly come back
+-- one spec per fixed bug, so none of them can quietly come back
 
 local lu = require("luaunit")
 local client = require("tests/support/client")

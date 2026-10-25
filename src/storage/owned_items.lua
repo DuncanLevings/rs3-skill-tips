@@ -1,6 +1,6 @@
 -- per character snapshot of which tip-relevant items are in the bank.
 --
--- the bank only exists while its open (checked in game), so this remembers what was in it the
+-- the bank only exists while its open, so this remembers what was in it the
 -- last time the player looked. it only keeps items and categories that tips ask about, never
 -- the whole bank. bank_seen stays false until the first visit, tips about owning things wait
 -- for that

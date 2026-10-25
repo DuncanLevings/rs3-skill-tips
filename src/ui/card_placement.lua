@@ -1,11 +1,11 @@
 -- remembers where the player put the tip card and how big they made it.
 --
--- position is saved as a fraction of the free space (same idea as monster lookup's window), so
--- a card parked on the right stays on the right when the game window changes size.
+-- position is saved as a fraction of the free space, so a card parked on the right stays on
+-- the right when the game window changes size.
 --
--- the window's drag and resize hooks never fire for prettyui windows (checked in game), so
--- watch() looks at the card's position and size twice a second and saves once its stopped
--- changing. width and placement are remembered; height always fits the current tip
+-- the drag and resize hooks dont fire for prettyui windows, so watch() looks at the card's
+-- position and size twice a second and saves once its stopped changing. width and placement
+-- are remembered, height always fits the current tip
 
 local saved_table = require("src/storage/saved_table")
 

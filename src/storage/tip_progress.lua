@@ -1,7 +1,19 @@
--- per character memory of what happened to each tip: temporarily dismissed, or pinned for later.
+-- per character memory of what happened to each tip, saved in PersistentDB:
+--
+--   dismissed          tip id -> dismiss_elapsed when it was dismissed. hidden until
+--                      dismiss_hours of play have passed since
+--   dismiss_elapsed    seconds of play counted while the plugin runs, the dismissal clock
+--   known              tip ids the player already knows, from owning the item once
+--   starting_levels    skill -> level when the plugin first saw this character, main method
+--                      tips for brackets at or below it are skipped
+--   pinned             tip ids kept in the pinned tips window
+--   pending_level_ups  skill -> { old, new } levels gained since its last method tip
+--   recent_tips        the last 10 tips shown, newest first
+--   queued_quests      quest tip ids waiting for a quiet pause
 --
 -- "already shown this session" is kept in memory only, so a tip the player clicked Later on
--- can come back another day
+-- can come back another day. fields added after the first release just start empty in older
+-- saves, so the save version hasnt needed to change
 
 local skills = require("src/data/skills")
 local saved_table = require("src/storage/saved_table")
@@ -16,8 +28,11 @@ local VERSION = 1
 local current_character
 local progress
 local shown_this_session = {}
+
+-- dismissal clock: the last logic tick seen, and dismiss_elapsed at the last save
 local timer_owner, last_tick
 local checkpoint = 0
+
 -- things that want to know when pins or dismissals change (the ribbon window's pinned list)
 local listeners = {}
 
@@ -62,7 +77,7 @@ function tip_progress.stop_listening(name)
     listeners[name] = nil
 end
 
--- added to the version 1 save later, older saves just start with an empty queue
+-- a pending level up looks right: both levels whole numbers and the new one higher
 local function clean_pending(saved)
     local result = {}
     for skill, levels in pairs(type(saved) == "table" and saved or {}) do
@@ -114,7 +129,7 @@ local function clean_history(saved)
     return unique
 end
 
--- old boolean dismissals have no age, so start their new timer once on migration.
+-- older saves stored dismissals as true with no time, those start their timer now (once)
 local function clean_dismissals(saved, elapsed)
     local result, migrated = {}, false
     for tip_id, value in pairs(type(saved) == "table" and saved or {}) do
@@ -133,7 +148,8 @@ local function elapsed_value(value)
     return type(value) == "number" and value >= 0 and value < math.huge and value or 0
 end
 
--- additive field: keep valid baselines; saved zero is the explicit development preview sentinel.
+-- keeps valid starting levels. 0 is allowed, the development reset saves it so every
+-- bracket counts as new
 local function clean_starting_levels(saved)
     local result = {}
     for skill, level in pairs(type(saved) == "table" and saved or {}) do
@@ -200,7 +216,8 @@ function tip_progress.starting_level(skill)
     return ensure_loaded().starting_levels[skill]
 end
 
--- read only missing levels; invalid login values are retried at the next event.
+-- saves the current level for any skill that doesnt have a starting level yet. a level that
+-- cant be read yet is just tried again next time, captured levels are never changed
 function tip_progress.capture_starting_levels(state)
     if not current_character then
         return
@@ -220,7 +237,7 @@ function tip_progress.capture_starting_levels(state)
     end
 end
 
--- development reset uses zero, so even starter brackets can be previewed after a reload.
+-- development switch only: sets every starting level to 0 so all brackets show again
 function tip_progress.allow_existing_methods()
     if not current_character then
         return
@@ -237,7 +254,7 @@ function tip_progress.allow_existing_methods()
     end
 end
 
--- additive version-1 field; older saves simply have no learned tips yet.
+-- true once the player has owned an item that explains this tip
 function tip_progress.is_known(tip_id)
     return ensure_loaded().known[tip_id] == true
 end
@@ -276,7 +293,7 @@ function tip_progress.dismiss(tip_id)
     loaded.dismissed[tip_id] = loaded.dismiss_elapsed
     -- the dismissal timer replaces the session-only block for this specific tip.
     shown_this_session[tip_id] = nil
-    progress.pinned[tip_id] = nil
+    loaded.pinned[tip_id] = nil
     save()
 end
 
@@ -384,8 +401,21 @@ function tip_progress.reset_dismissed()
     save()
 end
 
--- count only time for the current character while the plugin is running. checkpoint
--- once a minute, and flush on character switch/stop; never write on every logic tick.
+-- development switch only: forgets which items the player has owned, pins and history stay
+function tip_progress.reset_known()
+    if not current_character then
+        return
+    end
+
+    local loaded = ensure_loaded()
+    if next(loaded.known) then
+        loaded.known = {}
+        save()
+    end
+end
+
+-- counts play time for the current character while the plugin runs. saves once a minute
+-- (and on character switch or stop) rather than on every logic tick
 function tip_progress.start()
     if timer_owner then
         return

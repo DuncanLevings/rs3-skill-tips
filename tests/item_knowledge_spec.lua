@@ -100,21 +100,37 @@ return function(root)
         app.stop()
     end
 
-    function suite:test_bank_update_reads_the_bank_once()
+    function suite:test_opening_the_bank_reads_it_in_one_call()
         local fake, app = world(root)
-        local items, categories = fake.load("src/tips/catalogue").relevant_items()
-        local one_snapshot = 0
-        for _ in pairs(items) do
-            one_snapshot = one_snapshot + 1
-        end
-        for _ in pairs(categories) do
-            one_snapshot = one_snapshot + 1
-        end
-
         fake.inventories[95] = {}
         fake.item_reads = 0
+        fake.fire("InventoryAdded", { inv = { id = 95 } })
+        -- one GetSlots, no per item GetTotal calls
+        lu.assertEquals(fake.item_reads, 1)
+        app.stop()
+    end
+
+    function suite:test_a_bank_click_only_reads_the_changed_slots()
+        local fake, app = world(root)
+        fake.inventories[95] = {}
+        fake.fire("InventoryAdded", { inv = { id = 95 } })
+        fake.item_reads = 0
         fake.fire("InventoryUpdated", { inv = { id = 95 }, slotsUpdated = { 1 } })
-        lu.assertEquals(fake.item_reads, one_snapshot)
+        lu.assertEquals(fake.item_reads, 1)
+        app.stop()
+    end
+
+    function suite:test_withdrawing_from_the_bank_updates_the_snapshot()
+        local fake, app = world(root)
+        local owned_items = fake.load("src/storage/owned_items")
+        fake.inventories[95] = { { item = "MINING_OREBOX_IRON", category = 4448 } }
+        fake.fire("InventoryAdded", { inv = { id = 95 } })
+        lu.assertTrue(owned_items.in_bank("MINING_OREBOX_IRON"))
+
+        fake.inventories[95] = {}
+        fake.fire("InventoryUpdated", { inv = { id = 95 }, slotsUpdated = { 1 } })
+        lu.assertFalse(owned_items.in_bank("MINING_OREBOX_IRON"))
+        lu.assertFalse(owned_items.category_in_bank(4448))
         app.stop()
     end
 
@@ -196,6 +212,38 @@ return function(root)
         lu.assertFalse(progress.is_known("invalid"))
         lu.assertTrue(progress.is_dismissed("hidden"))
         lu.assertTrue(progress.is_pinned("keep"))
+    end
+
+    function suite:test_development_ownership_reset_persists_without_dropping_other_progress()
+        local fake = client.new(root)
+        local progress = fake.load("src/storage/tip_progress")
+        progress.use_character("alice")
+        progress.mark_known({ "mining.ore_box" })
+        progress.pin("keep.pinned")
+        progress.dismiss("keep.dismissed")
+        progress.reset_known()
+        lu.assertFalse(progress.is_known("mining.ore_box"))
+        lu.assertTrue(progress.is_pinned("keep.pinned"))
+        lu.assertTrue(progress.is_dismissed("keep.dismissed"))
+        progress.use_character("bob")
+        progress.mark_known({ "bob.item" })
+        progress.use_character("alice")
+        lu.assertFalse(progress.is_known("mining.ore_box"))
+        progress.use_character("bob")
+        lu.assertTrue(progress.is_known("bob.item"))
+    end
+
+    function suite:test_still_owned_item_can_be_learned_again_after_development_reset()
+        local fake, app, progress = world(root)
+        fake.inventories[93] = { { item = "MINING_OREBOX_BRONZE", category = 0 } }
+        local knowledge = fake.load("src/coach/item_knowledge")
+        knowledge.observe()
+        lu.assertTrue(progress.is_known("mining.ore_box"))
+        progress.reset_known()
+        lu.assertFalse(progress.is_known("mining.ore_box"))
+        knowledge.observe()
+        lu.assertTrue(progress.is_known("mining.ore_box"))
+        app.stop()
     end
 
     function suite:test_stale_inventory_callback_and_logged_out_events_do_nothing()

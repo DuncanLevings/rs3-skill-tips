@@ -197,8 +197,21 @@ return function(root)
         local progress = fake.load("src/storage/tip_progress")
         progress.dismiss("mining.ore_box")
         fake.fire("SettingsLayerReady", { component = {} })
-        local reset = fake.views[1].buttons[#fake.views[1].buttons]
-        lu.assertEquals(reset.text, "Reset dismissals (development)")
+        local reset, ownership
+        for _, button in ipairs(fake.views[1].buttons) do
+            if button.text == "Reset dismissals (development)" then
+                reset = button
+            end
+            if button.text == "Reset learned ownership (development)" then
+                ownership = button
+            end
+        end
+        lu.assertNotNil(reset)
+        lu.assertNotNil(ownership)
+        progress.mark_known({ "mining.ore_box" })
+        ownership.action()
+        lu.assertFalse(progress.is_known("mining.ore_box"))
+        lu.assertTrue(progress.is_dismissed("mining.ore_box"))
         reset.action()
         lu.assertFalse(progress.is_dismissed("mining.ore_box"))
         lu.assertNotNil(fake.logs[#fake.logs]:find("dismissed=false", 1, true))

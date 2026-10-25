@@ -1,14 +1,21 @@
--- history of displayed tips, with pinning; no dismissal restore or replay.
+-- rows for the recent tips window: the last 10 tips shown, newest first, each with a pin
+-- button (greyed out once its pinned)
+
 local catalogue = require("src/tips/catalogue")
 local progress = require("src/storage/tip_progress")
+
 local recent_history = {}
 
 function recent_history.rows()
     local rows = {}
+
     for _, entry in ipairs(progress.recent_tips()) do
         local tip = catalogue.get(entry.id)
+
+        -- a tip removed in a later version just drops out of the list
         if tip then
             local pinned = progress.is_pinned(tip.id)
+
             rows[#rows + 1] = {
                 id = tip.id,
                 title = tip.title,
@@ -27,18 +34,6 @@ function recent_history.rows()
     end
 
     return rows
-end
-
-function recent_history.text()
-    local lines = {}
-    for _, entry in ipairs(progress.recent_tips()) do
-        local tip = catalogue.get(entry.id)
-        if tip then
-            lines[#lines + 1] = tip.title .. "<br>" .. tip.hook
-        end
-    end
-
-    return #lines > 0 and table.concat(lines, "<br><br>") or "No tips shown yet."
 end
 
 return recent_history

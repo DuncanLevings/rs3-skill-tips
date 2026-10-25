@@ -1,6 +1,11 @@
--- separate placement for the pinned side window; height always follows the rows.
+-- remembers where each list window was left, as a fraction of the free space so it stays
+-- on the same side when the game window changes size. the pinned list's height always
+-- follows its rows, the recent tips window also remembers its size
+
 local saved_table = require("src/storage/saved_table")
+
 local placement = {}
+
 local KEY = "skilling_coach_goals"
 
 local function ratio(value, fallback)

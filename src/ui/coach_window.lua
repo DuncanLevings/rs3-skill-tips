@@ -1,10 +1,14 @@
--- the ribbon is a launcher only. Pinned tips and recent tips are independent compact windows.
+-- the plugin's ribbon panel. its only a launcher with two buttons, pinned tips and recent
+-- tips open as their own small windows (compact_list) that the player can move around
+
 local catalogue = require("src/tips/catalogue")
 local progress = require("src/storage/tip_progress")
 local compact_list = require("src/ui/compact_list")
 local history = require("src/ui/recent_history")
 local event_owner = require("src/game/event_owner")
+
 local coach_window = {}
+
 local NAME = "skilling_coach_content"
 local owner, ribbon
 

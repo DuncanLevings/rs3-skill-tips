@@ -81,6 +81,10 @@ return function(root)
         w.engine.on_quiet()
         lu.assertEquals(#w.shown, 0)
         w.fake.player.levels[13] = 40
+        -- no level up event here, so it waits for the next slow scan
+        w.engine.on_quiet()
+        lu.assertEquals(#w.shown, 0)
+        w.advance(30)
         w.engine.on_quiet()
         lu.assertEquals(#w.shown, 1)
         lu.assertEquals(w.shown[1].tip.id, "test.quest")

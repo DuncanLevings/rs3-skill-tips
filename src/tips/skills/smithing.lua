@@ -1,29 +1,27 @@
--- useful items and unlocks, then main methods and alternatives in level order.
--- source access and recommendation windows: docs/artisan-coverage.md.
+-- smithing tips: useful items and unlocks first, then one main training method per level
+-- bracket, then alternative methods. src/tips/schema.lua explains every field
 
 return {
+    -- useful items and unlocks
     {
         id = "smithing.blacksmith_outfit",
-        icon_item = "WOF19_SKILL_SMITHING_HEAD",
         kind = "convenience",
         skills = { "SMITHING" },
         members = true,
+        min_training_level = 30,
         title = "Blacksmith's outfit",
+        icon_item = "WOF19_SKILL_SMITHING_HEAD",
         hook = "The blacksmith's outfit adds experience while forging and smelting.",
         why = "Each piece contributes, with an extra bonus for wearing the full set.",
-        how = { "Spend respect earned at the Artisans' Workshop on pieces from Egil." },
-        requirements = {
-            skills = {
-                SMITHING = 1,
-            },
+        how = {
+            "Spend respect earned at the Artisans' Workshop on pieces from Egil.",
         },
-        min_training_level = 30,
+        requirements = {
+            skills = { SMITHING = 1 },
+        },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "SMITHING",
-            },
+            { type = "training", skill = "SMITHING" },
         },
         known_when = {
             {
@@ -44,67 +42,54 @@ return {
 
     {
         id = "smithing.smelting_gauntlets",
-        icon_item = "GAUNTLETS_OF_GOLDSMITHING",
         kind = "convenience",
         skills = { "SMITHING" },
         members = true,
+        min_training_level = 30,
         title = "Smelting gauntlets",
+        icon_item = "GAUNTLETS_OF_GOLDSMITHING",
         hook = "Smelting gauntlets make longer smelting batches possible.",
         why = "Bars go straight to the metal bank, leaving less banking between batches.",
         how = {
             "After Family Crest, ask Avan in the Al Kharid mine to change your family gauntlets.",
         },
-        quest_how = { "Complete Family Crest, then ask about the different gauntlet enchantments." },
+        quest_how = {
+            "Complete Family Crest, then ask about the different gauntlet enchantments.",
+        },
         requirements = {
-            skills = {
-                SMITHING = 40,
-                CRAFTING = 40,
-                MINING = 40,
-                MAGIC = 59,
-            },
+            skills = { CRAFTING = 40, MAGIC = 59, MINING = 40, SMITHING = 40 },
             quests = { "FAMILY_CREST" },
         },
-        min_training_level = 30,
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "SMITHING",
-            },
+            { type = "training", skill = "SMITHING" },
         },
         known_when = {
-            {
-                type = "owns_any",
-                items = { "GAUNTLETS_OF_GOLDSMITHING" },
-            },
+            { type = "owns_any", items = { "GAUNTLETS_OF_GOLDSMITHING" } },
         },
         priority = 2,
     },
 
     {
         id = "smithing.autoheater",
-        icon_item = "SMITHING_COAL_HEAT_CONSUMER",
         kind = "convenience",
         skills = { "SMITHING" },
         members = true,
         title = "Smithing autoheater",
+        icon_item = "SMITHING_COAL_HEAT_CONSUMER",
         hook = "An autoheater keeps a smithing project moving when its heat runs out.",
-        why = "It uses coal from your metal bank to reheat the item automatically. The advanced version offers a stronger setting.",
+        why = "It uses coal from your metal bank to reheat the item automatically. The advanced "
+            .. "version offers a stronger setting.",
         how = {
-            "Look in the Dungeoneering rewards shop; the advanced upgrade comes from the Invention Guild.",
+            "Look in the Dungeoneering rewards shop; the advanced upgrade comes from the Invention "
+                .. "Guild.",
         },
         requirements = {
-            skills = {
-                SMITHING = 35,
-                DUNGEONEERING = 35,
-            },
+            skills = { DUNGEONEERING = 35, SMITHING = 35 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "SMITHING",
-            },
+            { type = "training", skill = "SMITHING" },
         },
         known_when = {
             {
@@ -117,29 +102,24 @@ return {
 
     {
         id = "smithing.hammer_tron",
-        icon_item = "INVENT_HAMMER",
         kind = "convenience",
         skills = { "SMITHING" },
         members = true,
+        min_training_level = 50,
         title = "Hammer-tron",
+        icon_item = "INVENT_HAMMER",
         hook = "A hammer-tron brings Invention perks to Smithing.",
         why = "It gains equipment experience as you smith and uses energy from your charge pack.",
         how = {
-            "Discover it at an Invention workbench. Enhanced and crystal hammers offer later upgrades.",
+            "Discover it at an Invention workbench. Enhanced and crystal hammers offer later "
+                .. "upgrades.",
         },
         requirements = {
-            skills = {
-                SMITHING = 1,
-                INVENTION = 22,
-            },
+            skills = { INVENTION = 22, SMITHING = 1 },
         },
-        min_training_level = 50,
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "SMITHING",
-            },
+            { type = "training", skill = "SMITHING" },
         },
         known_when = {
             {
@@ -163,32 +143,27 @@ return {
 
     {
         id = "smithing.crystal_hammer",
-        icon_item = "ELFCITY_CRYSTAL_HAMMER_100",
         kind = "convenience",
         skills = { "SMITHING" },
         members = true,
+        min_training_level = 60,
         title = "Crystal hammer",
+        icon_item = "ELFCITY_CRYSTAL_HAMMER_100",
         hook = "A crystal hammer offers a small chance to make extra smithing progress.",
         why = "Augmenting it also allows tool perks and equipment experience.",
         how = {
             "After Roving Elves, take a crystal tool seed to Ilfeen and ask about singing tools.",
         },
-        quest_how = { "Look into Roving Elves, then ask Ilfeen about singing crystal tools." },
+        quest_how = {
+            "Look into Roving Elves, then ask Ilfeen about singing crystal tools.",
+        },
         requirements = {
-            skills = {
-                SMITHING = 1,
-                AGILITY = 56,
-                RANGED = 25,
-            },
+            skills = { AGILITY = 56, RANGED = 25, SMITHING = 1 },
             quests = { "ROVING_ELVES" },
         },
-        min_training_level = 60,
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "SMITHING",
-            },
+            { type = "training", skill = "SMITHING" },
         },
         known_when = {
             {
@@ -206,133 +181,122 @@ return {
 
     {
         id = "smithing.efficiency",
-        icon_item_id = 2353,
         kind = "general",
         skills = { "SMITHING" },
         members = true,
         title = "Scroll of efficiency",
+        icon_item_id = 2353,
         hook = "The scroll of efficiency can stretch your supply of smithing bars.",
         why = "Learning it permanently gives a chance to save bars while smithing.",
-        how = { "Look for it in the Dungeoneering rewards shop." },
+        how = {
+            "Look for it in the Dungeoneering rewards shop.",
+        },
         requirements = {
-            skills = {
-                SMITHING = 55,
-                DUNGEONEERING = 55,
-            },
+            skills = { DUNGEONEERING = 55, SMITHING = 55 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "SMITHING",
-            },
+            { type = "training", skill = "SMITHING" },
         },
         priority = 2,
     },
 
     {
         id = "smithing.superheat_form",
-        icon_item_id = 554,
         kind = "general",
         skills = { "SMITHING" },
         members = true,
+        min_training_level = 80,
         title = "Superheat Form",
+        icon_item_id = 554,
         hook = "Superheat Form makes low-heat smithing less sluggish.",
         why = "The curse also speeds up smelting, at the cost of prayer points.",
-        how = { "After The Light Within, look for it among the Seren curses." },
-        quest_how = { "Look into The Light Within for access to its Seren spells and prayers." },
+        how = {
+            "After The Light Within, look for it among the Seren curses.",
+        },
+        quest_how = {
+            "Look into The Light Within for access to its Seren spells and prayers.",
+        },
         requirements = {
             skills = {
-                PRAYER = 91,
-                SMITHING = 65,
                 AGILITY = 80,
+                CONSTRUCTION = 75,
+                COOKING = 35,
                 CRAFTING = 80,
                 DIVINATION = 80,
-                HERBLORE = 80,
-                SLAYER = 80,
-                WOODCUTTING = 80,
-                CONSTRUCTION = 75,
-                FLETCHING = 70,
-                RANGED = 75,
-                FIREMAKING = 50,
-                MAGIC = 79,
-                THIEVING = 66,
-                RUNECRAFTING = 50,
-                SUMMONING = 75,
                 DUNGEONEERING = 75,
-                MINING = 75,
-                COOKING = 35,
-                STRENGTH = 64,
-                HUNTER = 51,
                 FARMING = 25,
+                FIREMAKING = 50,
+                FLETCHING = 70,
+                HERBLORE = 80,
+                HUNTER = 51,
+                MAGIC = 79,
+                MINING = 75,
+                PRAYER = 91,
+                RANGED = 75,
+                RUNECRAFTING = 50,
+                SLAYER = 80,
+                SMITHING = 65,
+                STRENGTH = 64,
+                SUMMONING = 75,
+                THIEVING = 66,
+                WOODCUTTING = 80,
             },
             quests = { "SEREN" },
         },
-        min_training_level = 80,
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "SMITHING",
-            },
+            { type = "training", skill = "SMITHING" },
         },
         priority = 2,
     },
 
     {
         id = "smithing.furnace_core",
-        icon_item = "SKILLING_OFFHAND_FURNACE",
         kind = "convenience",
         skills = { "SMITHING" },
         members = true,
-        title = "Orthen furnace core",
-        hook = "The Orthen furnace core offers a longer-term upgrade for your forge.",
-        why = "It removes Superheat Form prayer drain and can produce forge phoenixes while you smith.",
-        how = { "Look at its recipe in the masterwork section of an anvil." },
-        requirements = {
-            skills = {
-                SMITHING = 99,
-                ARCHAEOLOGY = 102,
-            },
-        },
         min_training_level = 99,
+        title = "Orthen furnace core",
+        icon_item = "SKILLING_OFFHAND_FURNACE",
+        hook = "The Orthen furnace core offers a longer-term upgrade for your forge.",
+        why = "It removes Superheat Form prayer drain and can produce forge phoenixes while you "
+            .. "smith.",
+        how = {
+            "Look at its recipe in the masterwork section of an anvil.",
+        },
+        requirements = {
+            skills = { ARCHAEOLOGY = 102, SMITHING = 99 },
+        },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "SMITHING",
-            },
+            { type = "training", skill = "SMITHING" },
         },
         known_when = {
-            {
-                type = "owns_any",
-                items = { "SKILLING_OFFHAND_FURNACE" },
-            },
+            { type = "owns_any", items = { "SKILLING_OFFHAND_FURNACE" } },
         },
         priority = 2,
     },
 
     {
         id = "smithing.cape",
-        icon_item = "SKILLCAPE_SMITHING",
         kind = "convenience",
         skills = { "SMITHING" },
         members = true,
         title = "Smithing cape",
+        icon_item = "SKILLCAPE_SMITHING",
         hook = "The Smithing cape offers extra progress after reheating.",
-        why = "Wearing it strengthens the first hammer strike after a reheat, including one from an autoheater.",
-        how = { "Buy it from Thurgo south of Port Sarim." },
+        why = "Wearing it strengthens the first hammer strike after a reheat, including one from "
+            .. "an autoheater.",
+        how = {
+            "Buy it from Thurgo south of Port Sarim.",
+        },
         requirements = {
-            skills = {
-                SMITHING = 99,
-            },
+            skills = { SMITHING = 99 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "SMITHING",
-            },
+            { type = "training", skill = "SMITHING" },
         },
         known_when = {
             {
@@ -354,368 +318,327 @@ return {
         priority = 2,
     },
 
+    -- training methods, one main method per level bracket
     {
         id = "smithing.method.iron",
-        main_method = true,
-        icon_item_id = 2351,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 10, 19 },
         members = false,
+        level_range = { 10, 19 },
+        main_method = true,
         title = "Iron equipment",
+        icon_item_id = 2351,
         hook = "Iron equipment offers a steady smithing project.",
-        why = "Upgrading existing equipment is another way to earn experience without starting every item from bars.",
+        why = "Upgrading existing equipment is another way to earn experience without starting "
+            .. "every item from bars.",
         how = {
-            "Check the forge for available projects and upgrades. Keeping the item hot helps it progress.",
+            "Check the forge for available projects and upgrades. Keeping the item hot helps it "
+                .. "progress.",
         },
         requirements = {
-            skills = {
-                SMITHING = 10,
-            },
+            skills = { SMITHING = 10 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "SMITHING",
-                level = 10,
-            },
+            { type = "level_reached", skill = "SMITHING", level = 10 },
         },
         priority = 2,
     },
 
     {
         id = "smithing.method.steel",
-        main_method = true,
-        icon_item_id = 2353,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 20, 29 },
         members = false,
+        level_range = { 20, 29 },
+        main_method = true,
         title = "Steel equipment",
+        icon_item_id = 2353,
         hook = "Steel equipment offers a steady smithing project.",
-        why = "Upgrading existing equipment is another way to earn experience without starting every item from bars.",
+        why = "Upgrading existing equipment is another way to earn experience without starting "
+            .. "every item from bars.",
         how = {
-            "Check the forge for available projects and upgrades. Keeping the item hot helps it progress.",
+            "Check the forge for available projects and upgrades. Keeping the item hot helps it "
+                .. "progress.",
         },
         requirements = {
-            skills = {
-                SMITHING = 20,
-            },
+            skills = { SMITHING = 20 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "SMITHING",
-                level = 20,
-            },
+            { type = "level_reached", skill = "SMITHING", level = 20 },
         },
         priority = 2,
     },
 
     {
         id = "smithing.method.mithril",
-        main_method = true,
-        icon_item_id = 2359,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 30, 39 },
         members = false,
+        level_range = { 30, 39 },
+        main_method = true,
         title = "Mithril equipment",
+        icon_item_id = 2359,
         hook = "Mithril equipment offers a steady smithing project.",
-        why = "Upgrading existing equipment is another way to earn experience without starting every item from bars.",
+        why = "Upgrading existing equipment is another way to earn experience without starting "
+            .. "every item from bars.",
         how = {
-            "Check the forge for available projects and upgrades. Keeping the item hot helps it progress.",
+            "Check the forge for available projects and upgrades. Keeping the item hot helps it "
+                .. "progress.",
         },
         requirements = {
-            skills = {
-                SMITHING = 30,
-            },
+            skills = { SMITHING = 30 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "SMITHING",
-                level = 30,
-            },
+            { type = "level_reached", skill = "SMITHING", level = 30 },
         },
         priority = 2,
     },
 
     {
         id = "smithing.method.adamant",
-        main_method = true,
-        icon_item_id = 2361,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 40, 49 },
         members = false,
+        level_range = { 40, 49 },
+        main_method = true,
         title = "Adamant equipment",
+        icon_item_id = 2361,
         hook = "Adamant equipment offers a steady smithing project.",
-        why = "Upgrading existing equipment is another way to earn experience without starting every item from bars.",
+        why = "Upgrading existing equipment is another way to earn experience without starting "
+            .. "every item from bars.",
         how = {
-            "Check the forge for available projects and upgrades. Keeping the item hot helps it progress.",
+            "Check the forge for available projects and upgrades. Keeping the item hot helps it "
+                .. "progress.",
         },
         requirements = {
-            skills = {
-                SMITHING = 40,
-            },
+            skills = { SMITHING = 40 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "SMITHING",
-                level = 40,
-            },
+            { type = "level_reached", skill = "SMITHING", level = 40 },
         },
         priority = 2,
     },
 
     {
         id = "smithing.method.rune",
-        main_method = true,
-        icon_item_id = 2363,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 50, 59 },
         members = false,
+        level_range = { 50, 59 },
+        main_method = true,
         title = "Rune equipment",
+        icon_item_id = 2363,
         hook = "Rune equipment offers a steady smithing project.",
-        why = "Upgrading existing equipment is another way to earn experience without starting every item from bars.",
+        why = "Upgrading existing equipment is another way to earn experience without starting "
+            .. "every item from bars.",
         how = {
-            "Check the forge for available projects and upgrades. Keeping the item hot helps it progress.",
+            "Check the forge for available projects and upgrades. Keeping the item hot helps it "
+                .. "progress.",
         },
         requirements = {
-            skills = {
-                SMITHING = 50,
-            },
+            skills = { SMITHING = 50 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "SMITHING",
-                level = 50,
-            },
+            { type = "level_reached", skill = "SMITHING", level = 50 },
         },
         priority = 2,
     },
 
     {
         id = "smithing.method.orikalkum",
-        main_method = true,
-        icon_item_id = 44838,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 60, 69 },
         members = true,
+        level_range = { 60, 69 },
+        main_method = true,
         title = "Orikalkum equipment",
+        icon_item_id = 44838,
         hook = "Orikalkum equipment offers a steady smithing project.",
-        why = "Upgrading existing equipment is another way to earn experience without starting every item from bars.",
+        why = "Upgrading existing equipment is another way to earn experience without starting "
+            .. "every item from bars.",
         how = {
-            "Check the forge for available projects and upgrades. Keeping the item hot helps it progress.",
+            "Check the forge for available projects and upgrades. Keeping the item hot helps it "
+                .. "progress.",
         },
         requirements = {
-            skills = {
-                SMITHING = 60,
-            },
+            skills = { SMITHING = 60 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "SMITHING",
-                level = 60,
-            },
+            { type = "level_reached", skill = "SMITHING", level = 60 },
         },
         priority = 2,
     },
 
     {
         id = "smithing.method.necronium",
-        main_method = true,
-        icon_item_id = 44840,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 70, 79 },
         members = true,
+        level_range = { 70, 79 },
+        main_method = true,
         title = "Necronium equipment",
+        icon_item_id = 44840,
         hook = "Necronium equipment offers a steady smithing project.",
-        why = "Upgrading existing equipment is another way to earn experience without starting every item from bars.",
+        why = "Upgrading existing equipment is another way to earn experience without starting "
+            .. "every item from bars.",
         how = {
-            "Check the forge for available projects and upgrades. Keeping the item hot helps it progress.",
+            "Check the forge for available projects and upgrades. Keeping the item hot helps it "
+                .. "progress.",
         },
         requirements = {
-            skills = {
-                SMITHING = 70,
-            },
+            skills = { SMITHING = 70 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "SMITHING",
-                level = 70,
-            },
+            { type = "level_reached", skill = "SMITHING", level = 70 },
         },
         priority = 2,
     },
 
     {
         id = "smithing.method.bane",
-        main_method = true,
-        icon_item_id = 44842,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 80, 89 },
         members = true,
+        level_range = { 80, 89 },
+        main_method = true,
         title = "Bane equipment",
+        icon_item_id = 44842,
         hook = "Bane equipment offers a steady smithing project.",
-        why = "Upgrading existing equipment is another way to earn experience without starting every item from bars.",
+        why = "Upgrading existing equipment is another way to earn experience without starting "
+            .. "every item from bars.",
         how = {
-            "Check the forge for available projects and upgrades. Keeping the item hot helps it progress.",
+            "Check the forge for available projects and upgrades. Keeping the item hot helps it "
+                .. "progress.",
         },
         requirements = {
-            skills = {
-                SMITHING = 80,
-            },
+            skills = { SMITHING = 80 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "SMITHING",
-                level = 80,
-            },
+            { type = "level_reached", skill = "SMITHING", level = 80 },
         },
         priority = 2,
     },
 
     {
         id = "smithing.method.elder_rune",
-        main_method = true,
-        icon_item_id = 44844,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 90, 99 },
         members = true,
+        level_range = { 90, 99 },
+        main_method = true,
         title = "Elder rune equipment",
+        icon_item_id = 44844,
         hook = "Elder rune equipment offers a steady smithing project.",
-        why = "Upgrading existing equipment is another way to earn experience without starting every item from bars.",
+        why = "Upgrading existing equipment is another way to earn experience without starting "
+            .. "every item from bars.",
         how = {
-            "Check the forge for available projects and upgrades. Keeping the item hot helps it progress.",
+            "Check the forge for available projects and upgrades. Keeping the item hot helps it "
+                .. "progress.",
         },
         requirements = {
-            skills = {
-                SMITHING = 90,
-            },
+            skills = { SMITHING = 90 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "SMITHING",
-                level = 90,
-            },
+            { type = "level_reached", skill = "SMITHING", level = 90 },
         },
         priority = 2,
     },
 
     {
         id = "smithing.method.primal",
-        main_method = true,
-        icon_item_id = 57435,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 100, 120 },
         members = true,
+        level_range = { 100, 120 },
+        main_method = true,
         title = "Primal equipment",
+        icon_item_id = 57435,
         hook = "Primal equipment offers a steady smithing project.",
-        why = "Upgrading existing equipment is another way to earn experience without starting every item from bars.",
+        why = "Upgrading existing equipment is another way to earn experience without starting "
+            .. "every item from bars.",
         how = {
-            "Check the forge for available projects and upgrades. Keeping the item hot helps it progress.",
+            "Check the forge for available projects and upgrades. Keeping the item hot helps it "
+                .. "progress.",
         },
         requirements = {
-            skills = {
-                SMITHING = 100,
-            },
+            skills = { SMITHING = 100 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "level_reached",
-                skill = "SMITHING",
-                level = 100,
-            },
+            { type = "level_reached", skill = "SMITHING", level = 100 },
         },
         priority = 2,
     },
 
+    -- alternative methods, offered alongside the main method for a level
     {
         id = "smithing.alt.smelting",
-        icon_item_id = 2353,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 20, 79 },
         members = false,
+        level_range = { 20, 79 },
         title = "Smelting bars",
+        icon_item_id = 2353,
         hook = "Smelting offers a slower alternative to forging, with bars you can use or sell.",
-        why = "Higher metal tiers become available as you level. Returns depend on the cost of their ores.",
-        how = { "Compare a small batch of ore and bar prices, then try the furnace." },
+        why = "Higher metal tiers become available as you level. Returns depend on the cost of "
+            .. "their ores.",
+        how = {
+            "Compare a small batch of ore and bar prices, then try the furnace.",
+        },
         requirements = {
-            skills = {
-                SMITHING = 20,
-            },
+            skills = { SMITHING = 20 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "SMITHING",
-            },
+            { type = "training", skill = "SMITHING" },
         },
         priority = 3,
     },
 
     {
         id = "smithing.alt.burial",
-        icon_item_id = 2361,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 40, 120 },
         members = true,
+        level_range = { 40, 120 },
         title = "Burial smithing",
+        icon_item_id = 2361,
         hook = "Burial smithing trades the finished equipment for extra experience.",
-        why = "It consumes the items, so there is nothing left to sell. Higher metal tiers keep this useful as you level.",
-        how = { "Look for the burial forge and anvil in the Artisans' Workshop." },
+        why = "It consumes the items, so there is nothing left to sell. Higher metal tiers keep "
+            .. "this useful as you level.",
+        how = {
+            "Look for the burial forge and anvil in the Artisans' Workshop.",
+        },
         requirements = {
-            skills = {
-                SMITHING = 40,
-            },
+            skills = { SMITHING = 40 },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "SMITHING",
-            },
+            { type = "training", skill = "SMITHING" },
         },
         priority = 3,
     },
 
     {
         id = "smithing.alt.corrupted",
-        icon_item_id = 44844,
         kind = "method",
         skills = { "SMITHING" },
-        level_range = { 89, 99 },
         members = true,
+        level_range = { 89, 99 },
         title = "Corrupted ore",
+        icon_item_id = 44844,
         hook = "Corrupted ore offers a relaxed way to use what you gather from Seren stones.",
-        why = "The ore stacks, so smelting needs little banking. Gathering it is part of the time investment.",
+        why = "The ore stacks, so smelting needs little banking. Gathering it is part of the time "
+            .. "investment.",
         how = {
             "Use a furnace in Prifddinas, especially when the Trahaearn Voice of Seren is active.",
         },
@@ -724,29 +647,26 @@ return {
         },
         requirements = {
             skills = {
-                SMITHING = 89,
                 AGILITY = 75,
                 CONSTRUCTION = 75,
+                COOKING = 30,
                 CRAFTING = 75,
                 DUNGEONEERING = 75,
+                FLETCHING = 70,
                 HERBLORE = 75,
                 MINING = 75,
                 PRAYER = 75,
                 RANGED = 75,
+                SMITHING = 89,
                 SUMMONING = 75,
-                WOODCUTTING = 75,
-                COOKING = 30,
-                FLETCHING = 70,
                 THIEVING = 50,
+                WOODCUTTING = 75,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
         triggers = {
-            {
-                type = "training",
-                skill = "SMITHING",
-            },
+            { type = "training", skill = "SMITHING" },
         },
         priority = 3,
     },

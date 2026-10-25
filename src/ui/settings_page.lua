@@ -1,4 +1,6 @@
--- native settings controls save immediately. Recent tips is read-only; reset is dev-only.
+-- the plugin's page in the Plugin Hub settings. every control saves straight away. the
+-- development section only appears with the development switch on
+
 local tip_card = require("src/ui/tip_card")
 local settings = require("src/storage/settings")
 local skills = require("src/data/skills")
@@ -6,7 +8,9 @@ local coach_window = require("src/ui/coach_window")
 local card_placement = require("src/ui/card_placement")
 local event_owner = require("src/game/event_owner")
 local internals = require("src/ui/prettyui_internals")
+
 local settings_page = {}
+
 local owner, view
 local NAME = "skilling_coach_settings"
 
@@ -88,7 +92,7 @@ local function populate(component, options)
     slider("cooldown_minutes", "Time between tips", 2, 60, " min")
     slider("session_cap", "Tips per session (0 = unlimited)", 0, 50)
     slider("combat_quiet_seconds", "Quiet time after combat", 0, 600, " sec")
-    slider("dismiss_hours", "Hide dismissed tips for", 0, 8, " hr of game time")
+    slider("dismiss_hours", "Hide dismissed tips for", 0, 8, " hr of play")
     current:AddText("Muted skills")
     local choices = {}
     local muted = settings.get("muted_skills")
@@ -152,6 +156,16 @@ local function populate(component, options)
                 options.reset_tips()
             end
         end)
+        if options.reset_known_items then
+            current:AddSimpleButton("Reset learned ownership (development)", function()
+                if alive() then
+                    options.reset_known_items()
+                end
+            end)
+            current:AddText(
+                "Still-owned items remain hidden. Remove test items and refresh your bank first."
+            )
+        end
     end
 end
 

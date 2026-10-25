@@ -1,12 +1,20 @@
--- pacing is session state, reset when the app changes character or restarts.
+-- how often cards are allowed to appear. each engine session (one character login) gets its
+-- own gate, so switching character starts the counts again.
+--
+-- a card can show when tips are on, combat ended long enough ago, the time between tips has
+-- passed and the session cap isnt reached
+
 local settings = require("src/storage/settings")
 local development = require("src/development")
+
 local pacing = {}
 
 function pacing.new()
     local last_shown, last_combat
-    local count = 0
+    local shown_count = 0
     local gate = {}
+
+    -- now is in seconds, from clock.now
     function gate.allows(now)
         if not settings.get("tips_enabled") then
             return false
@@ -16,22 +24,19 @@ function pacing.new()
             return false
         end
 
-        -- bypass only the between-tip delay; keep combat, session and eligibility guards.
-        if
-            not development.ENABLED
-            and last_shown
-            and now - last_shown < settings.get("cooldown_minutes") * 60
-        then
+        -- the development switch skips the time between tips, every other rule still applies
+        local cooldown = settings.get("cooldown_minutes") * 60
+        if not development.ENABLED and last_shown and now - last_shown < cooldown then
             return false
         end
 
         local cap = settings.get("session_cap")
-        return cap == 0 or count < cap
+        return cap == 0 or shown_count < cap
     end
 
     function gate.shown(now)
         last_shown = now
-        count = count + 1
+        shown_count = shown_count + 1
     end
 
     function gate.combat(now)
@@ -40,7 +45,7 @@ function pacing.new()
 
     function gate.reset()
         last_shown = nil
-        count = 0
+        shown_count = 0
     end
 
     return gate

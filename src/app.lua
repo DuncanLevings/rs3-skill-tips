@@ -1,8 +1,8 @@
--- owns startup and shutdown. every module that subscribes to something gets started and
--- stopped from here so theres one place to see what the plugin is hooked into.
+-- owns startup and shutdown. every module that subscribes to a client event gets started and
+-- stopped from here, so this is the one place to see everything the plugin is hooked into.
 --
--- it also keeps track of which character is logged in, saved progress and the bank snapshot
--- are per character and get switched over when that changes
+-- it also tracks which character is logged in. saved progress and the bank snapshot are per
+-- character, so they get switched over whenever that changes
 
 local event_owner = require("src/game/event_owner")
 local clock = require("src/game/clock")
@@ -16,13 +16,13 @@ local owned_items = require("src/storage/owned_items")
 local catalogue = require("src/tips/catalogue")
 local engine = require("src/coach/engine")
 local item_knowledge = require("src/coach/item_knowledge")
-local tip_card = require("src/ui/tip_card")
-local coach_window = require("src/ui/coach_window")
-local keybind = require("src/ui/keybind")
-local development = require("src/development")
 local eligibility = require("src/coach/eligibility")
 local conditions = require("src/coach/conditions")
+local tip_card = require("src/ui/tip_card")
+local coach_window = require("src/ui/coach_window")
 local settings_page = require("src/ui/settings_page")
+local keybind = require("src/ui/keybind")
+local development = require("src/development")
 
 local app = {}
 
@@ -43,7 +43,8 @@ local function start_engine()
     engine.start({ state = player_state, now = clock.now, show_card = show_card })
 end
 
--- local testing only: logs whats blocking the ore box card instead of guessing why it didnt show
+-- debug logging (development switch only): prints why the ore box card is or isnt allowed,
+-- handy for seeing which rule is holding a tip back
 local function report_ore_box(context)
     if not development.ENABLED or not current_character then
         return
@@ -65,10 +66,13 @@ local function report_ore_box(context)
     }, ", "))
 end
 
--- checked before every activity event as well as on server ticks, xp can beat the login poll
+-- runs on every server tick and before every activity event, since an xp drop can arrive
+-- before the tick that would notice a new login. cheap when nothing changed
 local function update_character()
     local character = character_key.current()
+
     if character == current_character then
+        -- a no-op once every skill has a starting level saved
         tip_progress.capture_starting_levels(player_state)
         return
     end
@@ -80,16 +84,40 @@ local function update_character()
     tip_progress.capture_starting_levels(player_state)
     owned_items.use_character(character)
     start_engine()
+
     -- learn from the saved bank snapshot before an open bank replaces it, the refresh then
     -- tells item_knowledge about the new one
     item_knowledge.observe()
     inventories.refresh_bank()
 end
 
+-- development switch only: brings dismissed tips back and skips the wait between tips
 local function reset_tips()
     tip_progress.reset_dismissed()
     engine.reset_pacing()
     report_ore_box("reset")
+end
+
+-- development switch only: forgets owned items so item tips can show again
+local function reset_known_items()
+    tip_progress.reset_known()
+    engine.reset_pacing()
+    report_ore_box("ownership reset")
+end
+
+-- development switch only: lets method tips for already unlocked brackets show again
+local function allow_existing_methods()
+    tip_progress.allow_existing_methods()
+    tip_progress.reset_dismissed()
+    engine.reset_pacing()
+end
+
+local function when_logged_in(handler)
+    return function(...)
+        if current_character then
+            handler(...)
+        end
+    end
 end
 
 function app.start()
@@ -105,61 +133,44 @@ function app.start()
     catalogue.load()
     clock.start()
     tip_progress.start()
-
     start_engine()
 
     activity_watch.start({
         before_activity = update_character,
-        on_training = function(skill)
-            -- nothing to compare against until a character is logged in
-            if current_character then
-                engine.on_training(skill)
-            end
-        end,
+        on_training = when_logged_in(engine.on_training),
         on_combat = engine.on_combat,
-        on_quiet = function()
-            if current_character then
-                engine.on_quiet()
+        on_quiet = when_logged_in(engine.on_quiet),
+        on_level_up = when_logged_in(engine.on_level_up),
+        on_backpack_full = when_logged_in(function(skill)
+            if skill == "MINING" then
+                report_ore_box("backpack full")
             end
-        end,
-        on_level_up = function(skill, old_level, new_level)
-            if current_character then
-                engine.on_level_up(skill, old_level, new_level)
-            end
-        end,
-        on_backpack_full = function(skill)
-            if current_character then
-                if skill == "MINING" then
-                    report_ore_box("backpack full")
-                end
 
-                engine.on_backpack_full(skill)
-            end
-        end,
+            engine.on_backpack_full(skill)
+        end),
     })
 
     update_character()
     inventories.start()
-    item_knowledge.start({ before_observe = update_character, state = player_state })
+    item_knowledge.start({ before_observe = update_character })
     report_ore_box("startup")
+
     character_events = event_owner.new(CHARACTER_SUBSCRIPTION)
     character_events.subscribe(Event.ServerLogic, update_character)
+
     coach_window.start()
     settings_page.start({
         reset_tips = development.ENABLED and reset_tips or nil,
-        allow_existing_methods = development.ENABLED and function()
-            tip_progress.allow_existing_methods()
-            tip_progress.reset_dismissed()
-            engine.reset_pacing()
-        end or nil,
+        reset_known_items = development.ENABLED and reset_known_items or nil,
+        allow_existing_methods = development.ENABLED and allow_existing_methods or nil,
     })
     keybind.start(coach_window.toggle)
 
     started = true
-
     log("Skill Tips started.")
 end
 
+-- stops everything in roughly the reverse order it started
 function app.stop()
     if not started then
         return
@@ -179,6 +190,7 @@ function app.stop()
     inventories.stop()
     tip_progress.stop()
     clock.stop()
+
     current_character = nil
     tip_progress.use_character(nil)
     owned_items.use_character(nil)

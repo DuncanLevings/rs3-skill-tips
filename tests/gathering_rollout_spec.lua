@@ -126,7 +126,8 @@ return function(root)
     end
 
     function suite:test_new_skills_use_the_existing_real_training_event_path()
-        for skill, number in pairs({ HUNTER = 21, DIVINATION = 25, ARCHAEOLOGY = 27, FARMING = 19 }) do
+        local skill_numbers = { HUNTER = 21, DIVINATION = 25, ARCHAEOLOGY = 27, FARMING = 19 }
+        for skill, number in pairs(skill_numbers) do
             local fake = client.new(root)
             fake.player.levels[number] = 30
             -- this scenario follows a character who started using the plugin at level one.
