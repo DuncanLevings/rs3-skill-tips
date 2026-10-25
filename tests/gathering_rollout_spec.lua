@@ -5,6 +5,9 @@ local client = require("tests/support/client")
 local function world(root, skill, level)
     local fake = client.new(root)
     local skills = fake.load("src/data/skills")
+    for _, name in pairs(skills.NAMES) do
+        fake.player.levels[skills.number(name)] = 120
+    end
     fake.player.levels[skills.number(skill)] = level
     fake.quests.PLAGUES_END = { hasFinishedQuest = true }
     local progress = fake.load("src/storage/tip_progress")
@@ -100,7 +103,7 @@ return function(root)
         end
     end
 
-    function suite:test_quest_locked_methods_defer_unknown_or_unfinished_access()
+    function suite:test_quest_methods_qualify_by_levels_with_unfinished_access()
         for _, case in ipairs({
             { "hunter.alt.red_chinchompas", "HUNTER", "EAGLES_PEAK" },
             { "farming.method.elder", "FARMING", "PLAGUES_END" },
@@ -110,10 +113,13 @@ return function(root)
             local eligibility = fake.load("src/coach/eligibility")
             local skills = fake.load("src/data/skills")
             local state = fake.load("src/game/player_state")
+            for skill, needed in pairs(tip.requirements.skills) do
+                fake.player.levels[skills.number(skill)] = needed
+            end
             fake.player.levels[skills.number(case[2])] = tip.level_range[1]
-            lu.assertFalse(eligibility.allows(tip, case[2], state))
+            lu.assertTrue(eligibility.allows(tip, case[2], state))
             fake.quests[case[3]] = { hasFinishedQuest = false }
-            lu.assertFalse(eligibility.allows(tip, case[2], state))
+            lu.assertTrue(eligibility.allows(tip, case[2], state))
             fake.quests[case[3]].hasFinishedQuest = true
             lu.assertTrue(eligibility.allows(tip, case[2], state))
         end

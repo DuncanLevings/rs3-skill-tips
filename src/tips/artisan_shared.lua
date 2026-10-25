@@ -14,23 +14,25 @@ return {
         how = {
             "It is a reward from Ode of the Devourer. Look at its Crafting and Fletching upgrades when you want to develop it further.",
         },
+        quest_how = {
+            "Work towards Ode of the Devourer to reach the Gate of Elidinis and its rewards.",
+        },
         requirements = {
             skills = {
-                CRAFTING = 1,
+                SLAYER = 10,
                 AGILITY = 25,
-                ARCHAEOLOGY = 86,
-                COOKING = 20,
-                MAGIC = 66,
+                CONSTRUCTION = 54,
                 NECROMANCY = 75,
                 PRAYER = 40,
-                CONSTRUCTION = 54,
-                SLAYER = 10,
+                MAGIC = 66,
+                CRAFTING = 1,
+                ARCHAEOLOGY = 86,
+                COOKING = 20,
             },
             quests = { "QUEST_AMASCUT" },
         },
         min_training_level = 80,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -43,12 +45,16 @@ return {
         },
         known_when = {
             {
-                type = "owns_any",
                 items = {
                     "ELIDINIS_BOSS_OFFERINGS_AMULET",
                     "ELIDINIS_BOSS_OFFERINGS_AMULET_UPGRADED_CRAFTING",
                     "ELIDINIS_BOSS_OFFERINGS_AMULET_UPGRADED_FLETCHING",
                 },
+                type = "owns_any",
+            },
+            {
+                type = "quest_done",
+                quest = "QUEST_AMASCUT",
             },
         },
         priority = 2,
@@ -64,17 +70,34 @@ return {
         hook = "The Artificer's measure offers a longer-term upgrade for crafting and building.",
         why = "This off-hand can improve material-saving effects and provide extra crafting or building experience.",
         how = { "Inspect its recipe and the Archaeology artefacts it brings together." },
+        quest_how = {
+            "Work towards Legacy of Seergaze and Plague's End, then inspect the Artificer's measure recipe.",
+        },
         requirements = {
             skills = {
+                DUNGEONEERING = 75,
                 CRAFTING = 99,
                 ARCHAEOLOGY = 102,
-                DUNGEONEERING = 35,
+                AGILITY = 75,
+                CONSTRUCTION = 75,
+                FIREMAKING = 40,
+                MAGIC = 49,
+                MINING = 75,
+                SLAYER = 31,
+                STRENGTH = 40,
+                THIEVING = 50,
+                HERBLORE = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
             },
             quests = { "LEGACY_OF_SEERGAZE", "PLAGUES_END" },
         },
         min_training_level = 80,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

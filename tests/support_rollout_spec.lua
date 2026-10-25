@@ -103,12 +103,12 @@ return function(root)
         end
     end
 
-    function suite:test_spirit_moths_wait_for_hunter_and_source_access()
+    function suite:test_spirit_moths_wait_for_hunter_but_can_point_to_the_quest()
         local fake, _, levels, quests, state = world(root)
         local tip = fake.load("src/tips/catalogue").get("agility.method.spirit_moths")
         local eligibility = fake.load("src/coach/eligibility")
         levels.AGILITY, levels.HUNTER = 80, 85
-        lu.assertFalse(eligibility.allows(tip, "AGILITY", state))
+        lu.assertTrue(eligibility.allows(tip, "AGILITY", state))
         quests.QUEST_WENDLE_HERALDS = true
         lu.assertTrue(eligibility.allows(tip, "AGILITY", state))
         levels.HUNTER = 84
@@ -191,16 +191,16 @@ return function(root)
         end
     end
 
-    function suite:test_cave_goblin_training_waits_for_city_access()
+    function suite:test_cave_goblin_training_points_towards_city_access()
         local fake, _, levels, quests, state = world(root)
         local catalogue = fake.load("src/tips/catalogue")
         local eligibility = fake.load("src/coach/eligibility")
         local tip = catalogue.get("thieving.method.cave_goblins")
         local city_quest = tip.requirements.quests[1]
         levels.THIEVING = 36
-        lu.assertFalse(eligibility.allows(tip, "THIEVING", state))
+        lu.assertTrue(eligibility.allows(tip, "THIEVING", state))
         quests[city_quest] = false
-        lu.assertFalse(eligibility.allows(tip, "THIEVING", state))
+        lu.assertTrue(eligibility.allows(tip, "THIEVING", state))
         quests[city_quest] = true
         lu.assertTrue(eligibility.allows(tip, "THIEVING", state))
         levels.THIEVING = 38

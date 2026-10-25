@@ -149,14 +149,18 @@ return {
         how = {
             "After A Guild of Our Own, speak to the safe-cracking trainer in the Thieves' Guild.",
         },
+        quest_how = {
+            "Work through the Thieves' Guild capers to A Guild of Our Own, then visit its reward shops.",
+        },
         requirements = {
             skills = {
                 THIEVING = 62,
+                AGILITY = 40,
+                HERBLORE = 46,
             },
             quests = { "CAPER_OUROWN" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -187,14 +191,18 @@ return {
         hook = "The master thief's lockpick offers a lasting upgrade for locks and chests.",
         why = "It cannot break, improves lock success and can be added to your tool belt.",
         how = { "Spend pilfer points at Dodgy Derek's Dirty Deals in the Thieves' Guild." },
+        quest_how = {
+            "Work through the Thieves' Guild capers to A Guild of Our Own, then visit its reward shops.",
+        },
         requirements = {
             skills = {
                 THIEVING = 62,
+                AGILITY = 40,
+                HERBLORE = 46,
             },
             quests = { "CAPER_OUROWN" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -220,14 +228,18 @@ return {
         hook = "The master thief's stethoscope frees a slot on safecracking trips.",
         why = "It works like an ordinary stethoscope, but can be kept on your tool belt.",
         how = { "Spend pilfer points at Dodgy Derek's Dirty Deals in the Thieves' Guild." },
+        quest_how = {
+            "Work through the Thieves' Guild capers to A Guild of Our Own, then visit its reward shops.",
+        },
         requirements = {
             skills = {
                 THIEVING = 62,
+                AGILITY = 40,
+                HERBLORE = 46,
             },
             quests = { "CAPER_OUROWN" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -331,17 +343,36 @@ return {
         hook = "A soul-in-a-box offers a small helping hand with pickpocketing.",
         why = "Its distracting soul improves your success chance nearby. The device is reusable and draws from your charge pack.",
         how = { "After Nomad's Elegy, discover and build it at an Invention workbench." },
+        quest_how = { "Work towards Nomad's Elegy to unlock the Invention device." },
         requirements = {
             skills = {
-                THIEVING = 1,
-                INVENTION = 24,
+                THIEVING = 54,
                 SMITHING = 80,
+                INVENTION = 24,
+                CONSTRUCTION = 75,
+                MINING = 75,
+                WOODCUTTING = 75,
+                HERBLORE = 49,
+                HUNTER = 65,
+                SUMMONING = 55,
+                RUNECRAFTING = 25,
+                ATTACK = 79,
+                STRENGTH = 79,
+                PRAYER = 70,
+                AGILITY = 46,
+                CRAFTING = 70,
+                FIREMAKING = 71,
+                MAGIC = 80,
+                FISHING = 36,
+                FLETCHING = 25,
+                HITPOINTS = 78,
+                DEFENCE = 72,
+                SLAYER = 69,
             },
             quests = { "NOMADS_ELEGY" },
         },
         min_training_level = 70,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -398,16 +429,28 @@ return {
         how = {
             "Look for its pieces through the Anachronia course, island exploration and Herby Werby rewards.",
         },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
                 THIEVING = 91,
-                AGILITY = 30,
-                CRAFTING = 10,
+                AGILITY = 75,
+                CRAFTING = 75,
+                CONSTRUCTION = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -435,14 +478,27 @@ return {
         how = {
             "Find one through high-level Darkmeyer thieving, or buy one on the Grand Exchange.",
         },
+        quest_how = {
+            "Work towards The Branches of Darkmeyer to explore Darkmeyer and this reward source.",
+        },
         requirements = {
             skills = {
                 THIEVING = 117,
+                AGILITY = 63,
+                CRAFTING = 64,
+                FARMING = 63,
+                FLETCHING = 70,
+                MAGIC = 70,
+                SLAYER = 67,
+                WOODCUTTING = 76,
+                MINING = 35,
+                CONSTRUCTION = 20,
+                FIREMAKING = 40,
+                STRENGTH = 40,
             },
             quests = { "BRANCHES_OF_DARKMEYER" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -631,14 +687,16 @@ return {
         how = {
             "After Death to the Dorgeshuun, look for pickpocketable citizens around Dorgesh-Kaan.",
         },
+        quest_how = { "Complete Death to the Dorgeshuun to explore Dorgesh-Kaan." },
         requirements = {
             skills = {
                 THIEVING = 36,
+                AGILITY = 23,
+                MINING = 17,
             },
             quests = { "DEATH_TO_THE_DORGESHUUN" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "level_reached",
@@ -773,6 +831,7 @@ return {
         hook = "Menaphite marketeers offer a simple pickpocketing option in Menaphos.",
         why = "They provide a change of location while you work towards access to safecracking.",
         how = { "Look in the Merchant district after opening access to Menaphos." },
+        quest_how = { "Start The Jack of Spades to open up Menaphos." },
         requirements = {
             skills = {
                 THIEVING = 46,
@@ -780,7 +839,6 @@ return {
             quests = { "OZAN3" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "level_reached",
@@ -1093,14 +1151,28 @@ return {
         how = {
             "Try a worker in a clan you have the level for, then explore what the other clans offer.",
         },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
                 THIEVING = 91,
+                AGILITY = 75,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

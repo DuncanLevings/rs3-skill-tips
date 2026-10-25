@@ -579,14 +579,26 @@ return {
         hook = "The Dream of Iaia offers relaxed Herblore experience between other activities.",
         why = "Its apothecary uses Anachronia base camp resources. Stored experience limits each visit.",
         how = { "After Extinction, look for the apothecary station in the Dream of Iaia." },
+        quest_how = {
+            "Work towards Extinction to open up the Dream of Iaia and its associated skilling activities.",
+        },
         requirements = {
             skills = {
                 HERBLORE = 75,
+                AGILITY = 65,
+                ARCHAEOLOGY = 74,
+                DIVINATION = 70,
+                MINING = 50,
+                SMITHING = 85,
+                MAGIC = 74,
+                SLAYER = 75,
+                CRAFTING = 85,
+                RUNECRAFTING = 85,
+                INVENTION = 85,
             },
             quests = { "EGW_FINALE" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -635,14 +647,28 @@ return {
         how = {
             "After Plague's End, inspect the Meilyr recipes; some later recipes need separate unlocks.",
         },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
                 HERBLORE = 91,
+                AGILITY = 75,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                MINING = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

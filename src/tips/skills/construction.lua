@@ -12,14 +12,22 @@ return {
         hook = "The constructor's outfit adds experience to your building projects.",
         why = "Each piece contributes, with an extra bonus for wearing the full set.",
         how = { "Level your Temple Trekking companions and claim their outfit rewards." },
+        quest_how = {
+            "Work towards The Darkness of Hallowvale to open the Burgh de Rott Ramble route.",
+        },
         requirements = {
             skills = {
                 CONSTRUCTION = 44,
+                AGILITY = 26,
+                CRAFTING = 32,
+                MAGIC = 33,
+                MINING = 20,
+                STRENGTH = 40,
+                THIEVING = 22,
             },
             quests = { "DARKNESS_OF_HALLOWVALE" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -121,15 +129,19 @@ return {
         hook = "A crystal saw can put some building projects within reach a little sooner.",
         why = "It gives an invisible Construction boost for supported furniture that needs a saw.",
         how = { "After The Eyes of Glouphrie, sing the crystal seed at Brimstail's singing bowl." },
+        quest_how = {
+            "Look into The Eyes of Glouphrie and its crystal seed reward, then visit Brimstail's singing bowl.",
+        },
         requirements = {
             skills = {
-                CONSTRUCTION = 1,
+                CONSTRUCTION = 5,
+                MAGIC = 46,
+                AGILITY = 25,
             },
             quests = { "EYES_OF_GLOUPHRIE" },
         },
         min_training_level = 40,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -442,6 +454,9 @@ return {
         how = {
             "After Let Them Eat Pie, speak to Copernicus Glyph near the Taverley Summoning shop.",
         },
+        quest_how = {
+            "Complete Let Them Eat Pie, then ask Copernicus Glyph near Taverley about God Statues.",
+        },
         requirements = {
             skills = {
                 CONSTRUCTION = 20,
@@ -449,7 +464,6 @@ return {
             quests = { "LET_THEM_EAT_PIE" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -496,6 +510,9 @@ return {
         hook = "Fort Forinthry combines Construction training with an account base you can improve.",
         why = "Buildings and upgrades provide lasting benefits, with more projects opening as you progress.",
         how = { "After New Foundations, check the construction plans at the fort." },
+        quest_how = {
+            "Start building Fort Forinthry through New Foundations, then explore its building plans.",
+        },
         requirements = {
             skills = {
                 CONSTRUCTION = 40,
@@ -503,7 +520,6 @@ return {
             quests = { "QUEST_FORT_INTRO" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

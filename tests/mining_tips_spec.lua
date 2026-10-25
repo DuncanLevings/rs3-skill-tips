@@ -105,9 +105,15 @@ return function(root)
         lu.assertFalse(eligibility.allows(cape, "MINING", state))
     end
 
-    function suite:test_corrupted_ore_waits_for_plagues_end()
+    function suite:test_corrupted_ore_points_to_plagues_end_once_its_skill_levels_are_met()
         local fake, engine, shown = setup(root, 89)
         fake.quests.PLAGUES_END = { hasFinishedQuest = false, name = "Plague's End" }
+        local tip = fake.load("src/tips/catalogue").get("mining.method.corrupted_ore")
+        local skills = fake.load("src/data/skills")
+        for skill, needed in pairs(tip.requirements.skills) do
+            fake.player.levels[skills.number(skill)] = needed
+        end
+        fake.player.levels[MINING] = 89
 
         engine.on_training("MINING")
 
@@ -115,7 +121,11 @@ return function(root)
         -- not done yet, but the tip still shows it as the goal to work towards
         local requirement_list = fake.load("src/ui/requirement_list")
         local missing = requirement_list.missing(shown[1].tip, fake.load("src/game/player_state"))
-        lu.assertEquals(missing, { "- Plague's End" })
+        lu.assertEquals(missing, {})
+        lu.assertStrContains(
+            requirement_list.steps(tip, fake.load("src/game/player_state"))[1],
+            "Plague's End"
+        )
     end
 
     return suite

@@ -12,6 +12,7 @@ return {
         hook = "The ring of fire and flame gloves reward a longer-term Firemaking challenge.",
         why = "Both boost Firemaking experience when worn; the gloves are a later step beyond the ring.",
         how = { "After All Fired Up, look at King Roald's beacon-lighting rewards." },
+        quest_how = { "Complete All Fired Up, then explore King Roald's beacon-lighting rewards." },
         requirements = {
             skills = {
                 FIREMAKING = 62,
@@ -19,7 +20,6 @@ return {
             quests = { "ALL_FIRED_UP" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -93,15 +93,17 @@ return {
         how = {
             "After Roving Elves, take a crystal tool seed to Ilfeen and ask about singing tools.",
         },
+        quest_how = { "Look into Roving Elves, then ask Ilfeen about singing crystal tools." },
         requirements = {
             skills = {
                 FIREMAKING = 1,
+                AGILITY = 56,
+                RANGED = 25,
             },
             quests = { "ROVING_ELVES" },
         },
         min_training_level = 60,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -132,14 +134,16 @@ return {
         hook = "A pitch can speeds up burning logs.",
         why = "It helps with bonfires and fire lines, and can be refilled rather than replaced.",
         how = { "After The Firemaker's Curse, try Char's training cave to earn and refill one." },
+        quest_how = { "Work towards The Firemaker's Curse, then explore Char's training cave." },
         requirements = {
             skills = {
                 FIREMAKING = 91,
+                AGILITY = 64,
+                HITPOINTS = 76,
             },
             quests = { "FIREMAKERS_CURSE" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -508,14 +512,26 @@ return {
         hook = "Anachronia egg care offers a more active alternative to burning bought logs.",
         why = "The activity supplies its own materials and awards tradeable resources as you work.",
         how = { "After Extinction, visit Prehistoric Potterington's activity on Anachronia." },
+        quest_how = {
+            "Work towards Extinction to open up the Dream of Iaia and its associated skilling activities.",
+        },
         requirements = {
             skills = {
                 FIREMAKING = 82,
+                AGILITY = 65,
+                ARCHAEOLOGY = 74,
+                DIVINATION = 70,
+                MINING = 50,
+                SMITHING = 85,
+                MAGIC = 74,
+                SLAYER = 75,
+                CRAFTING = 85,
+                RUNECRAFTING = 85,
+                INVENTION = 85,
             },
             quests = { "EGW_FINALE" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

@@ -111,23 +111,25 @@ return {
         how = {
             "Earn it from the Gate of Elidinis after Ode of the Devourer, or buy one on the Grand Exchange.",
         },
+        quest_how = {
+            "Work towards Ode of the Devourer to reach the Gate of Elidinis and its rewards.",
+        },
         requirements = {
             skills = {
+                SLAYER = 10,
                 AGILITY = 25,
-                ARCHAEOLOGY = 86,
                 CONSTRUCTION = 54,
-                COOKING = 20,
+                NECROMANCY = 75,
                 DIVINATION = 80,
                 MAGIC = 66,
-                NECROMANCY = 75,
+                ARCHAEOLOGY = 86,
                 PRAYER = 40,
-                SLAYER = 10,
+                COOKING = 20,
             },
             quests = { "QUEST_AMASCUT" },
         },
         min_training_level = 80,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -153,15 +155,35 @@ return {
         hook = "Chronicle Attraction offers fewer interruptions for catching fragments.",
         why = "This skilling prayer automatically catches supported fragments while active, at the cost of Prayer points.",
         how = { "After The Light Within, look for Chronicle Attraction among the Seren prayers." },
+        quest_how = { "Look into The Light Within for access to its Seren spells and prayers." },
         requirements = {
             skills = {
-                DIVINATION = 1,
                 PRAYER = 87,
+                DIVINATION = 80,
+                AGILITY = 80,
+                CRAFTING = 80,
+                HERBLORE = 80,
+                SLAYER = 80,
+                WOODCUTTING = 80,
+                CONSTRUCTION = 75,
+                FLETCHING = 70,
+                RANGED = 75,
+                FIREMAKING = 50,
+                MAGIC = 79,
+                THIEVING = 66,
+                RUNECRAFTING = 50,
+                SMITHING = 65,
+                SUMMONING = 75,
+                DUNGEONEERING = 75,
+                MINING = 75,
+                COOKING = 35,
+                STRENGTH = 64,
+                HUNTER = 51,
+                FARMING = 25,
             },
             quests = { "SEREN" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -183,15 +205,35 @@ return {
         how = {
             "After The Light Within, look for Prism of Dowsing on the Ancient Magicks spellbook.",
         },
+        quest_how = { "Look into The Light Within for access to its Seren spells and prayers." },
         requirements = {
             skills = {
-                DIVINATION = 1,
                 MAGIC = 86,
+                DIVINATION = 80,
+                AGILITY = 80,
+                CRAFTING = 80,
+                HERBLORE = 80,
+                PRAYER = 80,
+                SLAYER = 80,
+                WOODCUTTING = 80,
+                CONSTRUCTION = 75,
+                FLETCHING = 70,
+                RANGED = 75,
+                FIREMAKING = 50,
+                THIEVING = 66,
+                RUNECRAFTING = 50,
+                SMITHING = 65,
+                SUMMONING = 75,
+                DUNGEONEERING = 75,
+                MINING = 75,
+                COOKING = 35,
+                STRENGTH = 64,
+                HUNTER = 51,
+                FARMING = 25,
             },
             quests = { "SEREN" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -265,16 +307,18 @@ return {
         how = {
             "After The World Wakes, complete Howl's Floating Workshop and work towards restoring a Cres Framework, then offer it at the monolith.",
         },
+        quest_how = {
+            "Complete The World Wakes, then work towards Howl's Floating Workshop and a restored Cres Framework.",
+        },
         requirements = {
             skills = {
-                ARCHAEOLOGY = 98,
-                DIVINATION = 85,
                 INVENTION = 86,
+                DIVINATION = 85,
+                ARCHAEOLOGY = 98,
             },
             quests = { "WORLD_WAKES" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -647,13 +691,21 @@ return {
         how = {
             "Progress Heralds of Crimson to gain access to Divine Fall, then try charging a memory stone.",
         },
+        quest_how = { "Look into Heralds of Crimson to start exploring Havenhythe." },
         requirements = {
             skills = {
                 DIVINATION = 77,
+                CRAFTING = 51,
+                HERBLORE = 55,
+                MINING = 65,
+                SMITHING = 60,
+                CONSTRUCTION = 30,
+                HUNTER = 32,
+                SLAYER = 28,
             },
             quests = { "QUEST_WENDLE_HERALDS" },
         },
-        require_quests_complete = true,
+        require_all_levels = true,
         triggers = {
             {
                 type = "level_reached",

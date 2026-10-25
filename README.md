@@ -57,3 +57,7 @@ Your settings and card position are saved too. Skill Tips needs no permissions: 
 ## Credits
 
 Tip information is based on the [RuneScape Wiki](https://runescape.wiki), rewritten in our own words. See THIRD_PARTY_NOTICES.txt.
+
+Quest discoveries highlight useful account unlocks, including travel networks, spellbooks and combat abilities. Quest-dependent skill tips can point you towards the quest once you have the required skill levels.
+
+Selected account unlocks can appear slightly before their skill requirements are met, with a short list of levels still needed. Ordinary training-method tips keep their full requirements.

@@ -47,7 +47,6 @@ return {
 
     {
         id = "woodcutting.lumberjack_outfit",
-        require_quests_complete = true,
         kind = "convenience",
         skills = { "WOODCUTTING" },
         members = true,
@@ -57,7 +56,20 @@ return {
         why = "Each piece gives a little extra Woodcutting experience, with a bonus for the full "
             .. "set. The sentinel outfits keep this bonus later on.",
         how = { "Undead lumberjacks drop the pieces during Temple Trekking." },
-        requirements = { skills = { WOODCUTTING = 44 }, quests = { "IN_AID_OF_THE_MYREQUE" } },
+        quest_how = {
+            "Complete In Aid of the Myreque to unlock Temple Trekking and look for undead lumberjacks along its routes.",
+        },
+        requirements = {
+            skills = {
+                WOODCUTTING = 44,
+                CRAFTING = 25,
+                MAGIC = 7,
+                MINING = 15,
+                AGILITY = 25,
+            },
+            quests = { "IN_AID_OF_THE_MYREQUE" },
+        },
+        require_all_levels = true,
         triggers = { { type = "training", skill = "WOODCUTTING" } },
         known_when = {
             { type = "owns_category", category = 4158 },
@@ -459,7 +471,14 @@ return {
             "Uncharted Isles are reached from the Arc, which needs Impressing the Locals. The "
                 .. "Flag Fall miniquest helps you get back to an isle.",
         },
-        requirements = { skills = { WOODCUTTING = 96 }, quests = { "ELR0" } },
+        quest_how = { "Complete Impressing the Locals to start exploring the Arc." },
+        requirements = {
+            skills = {
+                WOODCUTTING = 96,
+            },
+            quests = { "ELR0" },
+        },
+        require_all_levels = true,
         triggers = { { type = "level_reached", skill = "WOODCUTTING", level = 96 } },
         priority = 3,
     },

@@ -51,15 +51,19 @@ return {
         hook = "Cooking gauntlets help more of your fish reach the plate.",
         why = "Wear them to reduce burning on supported fish, including sharks and rocktail.",
         how = { "After Family Crest, ask Caleb in Catherby to change your family gauntlets." },
+        quest_how = { "Complete Family Crest, then ask about the different gauntlet enchantments." },
         requirements = {
             skills = {
                 COOKING = 1,
+                CRAFTING = 40,
+                MINING = 40,
+                SMITHING = 40,
+                MAGIC = 59,
             },
             quests = { "FAMILY_CREST" },
         },
         min_training_level = 40,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -326,16 +330,18 @@ return {
         how = {
             "Look into Evil Bob's Catspaw through Archaeology, then harness its power at the monolith.",
         },
+        quest_how = {
+            "Complete Icthlarin's Little Helper, then look into Evil Bob's Catspaw through Archaeology.",
+        },
         requirements = {
             skills = {
-                COOKING = 1,
                 ARCHAEOLOGY = 99,
+                COOKING = 1,
             },
             quests = { "ICS_LITTLE_HELPER" },
         },
         min_training_level = 50,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

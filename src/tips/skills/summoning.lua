@@ -675,14 +675,28 @@ return {
         how = {
             "Try the obelisk in the Amlodd district and compare the journey with your usual route.",
         },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
                 SUMMONING = 75,
+                AGILITY = 75,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

@@ -186,15 +186,40 @@ return {
         hook = "The Runecrafter's Catalyst fragment slows pouch wear.",
         why = "Keep it with you to reduce repairs between rune-running trips. The combined fragment carries the effect too.",
         how = { "It is a reward from Sliske's Endgame." },
+        quest_how = { "Look into Sliske's Endgame and its lasting skilling rewards." },
         requirements = {
             skills = {
-                RUNECRAFTING = 1,
+                RUNECRAFTING = 50,
+                AGILITY = 80,
+                THIEVING = 66,
+                DIVINATION = 80,
+                MAGIC = 81,
+                SLAYER = 80,
+                SUMMONING = 75,
+                HERBLORE = 80,
+                CONSTRUCTION = 75,
+                CRAFTING = 80,
+                DUNGEONEERING = 75,
+                MINING = 75,
+                PRAYER = 80,
+                RANGED = 75,
+                WOODCUTTING = 80,
+                COOKING = 35,
+                FLETCHING = 70,
+                FIREMAKING = 71,
+                SMITHING = 70,
+                STRENGTH = 79,
+                HUNTER = 65,
+                FARMING = 25,
+                DEFENCE = 72,
+                ATTACK = 79,
+                FISHING = 36,
+                HITPOINTS = 78,
             },
             quests = { "SLISKES_ENDGAME" },
         },
         min_training_level = 50,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -203,12 +228,16 @@ return {
         },
         known_when = {
             {
-                type = "owns_any",
                 items = {
                     "QUEST_ENDGAME_SHARD_RUNECRAFTING",
                     "QUEST_ENDGAME_SHARD_COMBINED",
                     "RCU_POUCH_EXPANSIVE",
                 },
+                type = "owns_any",
+            },
+            {
+                type = "quest_done",
+                quest = "SLISKES_ENDGAME",
             },
         },
         priority = 2,
@@ -266,15 +295,30 @@ return {
         how = {
             "Discover its blueprint at an Invention workbench. Harmonic dust from Prifddinas goes into the upgrade.",
         },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
-                RUNECRAFTING = 81,
                 INVENTION = 82,
+                RUNECRAFTING = 81,
+                AGILITY = 75,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -306,22 +350,24 @@ return {
         how = {
             "Earn it from the Gate of Elidinis after Ode of the Devourer, or buy one on the Grand Exchange.",
         },
+        quest_how = {
+            "Work towards Ode of the Devourer to reach the Gate of Elidinis and its rewards.",
+        },
         requirements = {
             skills = {
-                RUNECRAFTING = 80,
+                SLAYER = 10,
                 AGILITY = 25,
-                ARCHAEOLOGY = 86,
-                COOKING = 20,
-                MAGIC = 66,
+                CONSTRUCTION = 54,
                 NECROMANCY = 75,
                 PRAYER = 40,
-                CONSTRUCTION = 54,
-                SLAYER = 10,
+                MAGIC = 66,
+                RUNECRAFTING = 80,
+                ARCHAEOLOGY = 86,
+                COOKING = 20,
             },
             quests = { "QUEST_AMASCUT" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -562,14 +608,19 @@ return {
         hook = "Crafting death runes combines training with higher-level magic supplies.",
         why = "Rune yield improves with your level and equipment. Pouches help make each trip count.",
         how = { "Inspect the altar route and supplies before trying a few trips." },
+        quest_how = { "Work towards Mourning's End Part II to gain access to the death altar." },
         requirements = {
             skills = {
                 RUNECRAFTING = 65,
+                COOKING = 30,
+                FLETCHING = 5,
+                RANGED = 60,
+                THIEVING = 50,
+                AGILITY = 56,
             },
             quests = { "MOURNINGS_END_PART_2" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "level_reached",
@@ -592,14 +643,23 @@ return {
         hook = "Crafting blood runes combines training with runes with a range of high-level magic uses.",
         why = "Rune yield improves with your level and equipment. Pouches help make each trip count.",
         how = { "Inspect the altar route and supplies before trying a few trips." },
+        quest_how = { "Work towards Legacy of Seergaze for access to the blood altar." },
         requirements = {
             skills = {
                 RUNECRAFTING = 77,
+                AGILITY = 29,
+                CONSTRUCTION = 20,
+                CRAFTING = 47,
+                FIREMAKING = 40,
+                MAGIC = 49,
+                MINING = 35,
+                SLAYER = 31,
+                STRENGTH = 40,
+                THIEVING = 22,
             },
             quests = { "LEGACY_OF_SEERGAZE" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "level_reached",
@@ -622,14 +682,33 @@ return {
         hook = "Soul runes offer an altar-crafting option at this stage.",
         why = "Charge the soul altar with essence, then craft runes from its stored charges. The charging step offers a more relaxed rhythm.",
         how = { "Visit the soul altar beneath the fountain in Menaphos' Imperial district." },
+        quest_how = {
+            "Work through the Menaphos story to 'Phite Club for access to the soul altar.",
+        },
         requirements = {
             skills = {
                 RUNECRAFTING = 90,
+                CRAFTING = 68,
+                RANGED = 50,
+                SLAYER = 35,
+                THIEVING = 70,
+                WOODCUTTING = 47,
+                AGILITY = 50,
+                FISHING = 72,
+                HUNTER = 73,
+                FIREMAKING = 50,
+                STRENGTH = 60,
+                FARMING = 25,
+                CONSTRUCTION = 64,
+                COOKING = 70,
+                MAGIC = 70,
+                PRAYER = 35,
+                MINING = 37,
+                HERBLORE = 10,
             },
             quests = { "PHITE_CLUB" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "level_reached",
@@ -654,6 +733,9 @@ return {
         how = {
             "Take the enchanted key from Making History to the time ruins on north-west Anachronia to anchor the altar.",
         },
+        quest_how = {
+            "Complete Making History, then take its enchanted key to the time ruins on north-west Anachronia.",
+        },
         requirements = {
             skills = {
                 RUNECRAFTING = 100,
@@ -661,7 +743,6 @@ return {
             quests = { "MAKING_HISTORY" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "level_reached",
@@ -683,15 +764,15 @@ return {
         hook = "Necromantic runes offer another altar-running route.",
         why = "They use impure essence, with more rune types becoming available as your Runecrafting level rises.",
         how = { "After Rune Mythos, visit the Necromantic Rune Temple in the City of Um." },
+        quest_how = { "Complete Rune Mythos to use the Necromantic Rune Temple in the City of Um." },
         requirements = {
             skills = {
-                RUNECRAFTING = 20,
                 NECROMANCY = 24,
+                RUNECRAFTING = 20,
             },
             quests = { "QUEST_NECROMANCY_ORIGINS" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

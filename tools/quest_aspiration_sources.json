@@ -1,0 +1,3513 @@
+{
+  "reviewed_on": "2026-10-24",
+  "limits": {
+    "max_missing_skills": 4,
+    "max_level_gap": 8,
+    "max_total_gap": 20
+  },
+  "existing_opt_ins": [
+    "quest.ancient_magicks",
+    "quest.fairy_rings",
+    "quest.lunar_magic",
+    "quest.prifddinas",
+    "quest.soul_split",
+    "quest.world_wakes"
+  ],
+  "additions": {
+    "quest.avas_recovery": {
+      "quest": "Animal Magnetism",
+      "skills": {
+        "skills": {
+          "CRAFTING": 19,
+          "RANGED": 50,
+          "SLAYER": 18,
+          "THIEVING": 15,
+          "WOODCUTTING": 35
+        }
+      },
+      "aspiration": true,
+      "notes": "50 Ranged is needed for the accumulator/recovery passive; the quest itself starts at 30. Major permanent account convenience.",
+      "source_revision": 37182747
+    },
+    "quest.devotion": {
+      "quest": "One Piercing Note",
+      "skills": {
+        "skills": {
+          "PRAYER": 43
+        }
+      },
+      "aspiration": true,
+      "notes": "Devotion currently needs only 1 Defence and comes from this F2P quest, not a God Wars drop. 43 Prayer is relevance for the full set of protection prayers, not a quest/ability requirement.",
+      "source_revision": 37162705
+    },
+    "quest.salve": {
+      "quest": "Haunted Mine",
+      "skills": {
+        "skills": {
+          "AGILITY": 15,
+          "CRAFTING": 35
+        }
+      },
+      "aspiration": false,
+      "notes": "Useful situational equipment; full eligibility rather than an aspiration.",
+      "source_revision": 37182711
+    },
+    "quest.salve_enhanced": {
+      "quest": "Lair of Tarn Razorlor (miniquest)",
+      "skills": {
+        "skills": {
+          "AGILITY": 15,
+          "CRAFTING": 35,
+          "SLAYER": 40
+        }
+      },
+      "aspiration": false,
+      "notes": "40 Slayer is a real miniquest requirement, not a Slayer training tip. Equipment upgrade stays strict.",
+      "source_revision": 37182572
+    },
+    "quest.piety": {
+      "quest": "King's Ransom",
+      "skills": {
+        "skills": {
+          "AGILITY": 36,
+          "ATTACK": 30,
+          "CRAFTING": 25,
+          "DEFENCE": 70,
+          "HERBLORE": 18,
+          "PRAYER": 70,
+          "SMITHING": 30
+        }
+      },
+      "aspiration": true,
+      "notes": "70 Prayer and Defence are Piety use requirements. Knight Waves completion is an additional step; the quest alone does not grant Piety.",
+      "source_revision": 37185342
+    },
+    "quest.ectophial": {
+      "quest": "Ghosts Ahoy",
+      "skills": {
+        "skills": {
+          "AGILITY": 25,
+          "COOKING": 20
+        }
+      },
+      "aspiration": false,
+      "notes": "Smaller destination-specific convenience; strict eligibility.",
+      "source_revision": 37182728
+    },
+    "quest.trollheim": {
+      "quest": "Eadgar's Ruse",
+      "skills": {
+        "skills": {
+          "AGILITY": 15,
+          "HERBLORE": 31,
+          "MAGIC": 61,
+          "THIEVING": 30
+        }
+      },
+      "aspiration": false,
+      "notes": "61 Magic is the teleport use level, not merely the quest requirement. Destination-specific utility stays strict.",
+      "source_revision": 37182732
+    },
+    "quest.gliders": {
+      "quest": "The Grand Tree",
+      "skills": {
+        "skills": {
+          "AGILITY": 25
+        }
+      },
+      "aspiration": false,
+      "notes": "Smaller travel unlock; strict eligibility.",
+      "source_revision": 37182667
+    },
+    "quest.spirit_trees": {
+      "quest": "Tree Gnome Village",
+      "skills": {
+        "skills": {},
+        "any_skills": {
+          "AGILITY": 20,
+          "ATTACK": 30,
+          "RANGED": 30,
+          "MAGIC": 30,
+          "NECROMANCY": 30
+        }
+      },
+      "aspiration": false,
+      "notes": "The quest has no skill requirement. Either travel experience (20 Agility) or an established offensive skill (30) is editorial timing; no invented mandatory combat level. Strict discovery.",
+      "source_revision": 37182669
+    },
+    "quest.house_tablets": {
+      "quest": "Love Story",
+      "skills": {
+        "skills": {
+          "CONSTRUCTION": 68,
+          "COOKING": 62,
+          "CRAFTING": 67,
+          "FIREMAKING": 42,
+          "FISHING": 62,
+          "MAGIC": 77,
+          "SMITHING": 68
+        }
+      },
+      "aspiration": false,
+      "notes": "Convenient extension rather than a major leveling aspiration. Swan Song remains only its real prerequisite, never a monkfish recommendation.",
+      "source_revision": 37175215
+    },
+    "quest.staff_free_rings": {
+      "quest": "A Fairy Tale III - Battle at Ork's Rift",
+      "skills": {
+        "skills": {
+          "CRAFTING": 36,
+          "FARMING": 54,
+          "HERBLORE": 57,
+          "THIEVING": 51,
+          "WOODCUTTING": 36
+        }
+      },
+      "aspiration": true,
+      "notes": "Permanent travel/farming convenience. Weed-free patches require talking to Martin and gardeners after the quest; not an automatic claim that existing weeds vanish.",
+      "source_revision": 37197081
+    },
+    "quest.kingdom": {
+      "quest": "Throne of Miscellania",
+      "skills": {
+        "skills": {
+          "CRAFTING": 40,
+          "FLETCHING": 25,
+          "WOODCUTTING": 40
+        }
+      },
+      "aspiration": true,
+      "notes": "Major ongoing account resource system. Current quest requirements only list The Fremennik Trials; old optional work-task levels are not fabricated as universal gates.",
+      "source_revision": 37182650
+    },
+    "quest.kingdom_expansion": {
+      "quest": "Royal Trouble",
+      "skills": {
+        "skills": {
+          "AGILITY": 40,
+          "CRAFTING": 40,
+          "FLETCHING": 25,
+          "SLAYER": 40,
+          "WOODCUTTING": 40
+        }
+      },
+      "aspiration": false,
+      "notes": "Incremental upgrade to an existing system; strict eligibility.",
+      "source_revision": 37182702
+    },
+    "quest.troll_herb_patch": {
+      "quest": "My Arm's Big Adventure",
+      "skills": {
+        "skills": {
+          "AGILITY": 15,
+          "FARMING": 29,
+          "HERBLORE": 31,
+          "THIEVING": 30,
+          "WOODCUTTING": 10
+        }
+      },
+      "aspiration": false,
+      "notes": "Single-patch convenience; useful but kept strict rather than encouraging a separate leveling target.",
+      "source_revision": 37186852
+    },
+    "quest.extra_runes": {
+      "quest": "Hero's Welcome",
+      "skills": {
+        "skills": {
+          "CRAFTING": 61,
+          "DEFENCE": 40,
+          "DIVINATION": 60,
+          "FIREMAKING": 49,
+          "FLETCHING": 25,
+          "HERBLORE": 5,
+          "MAGIC": 65,
+          "MINING": 67,
+          "RUNECRAFTING": 50,
+          "SLAYER": 62,
+          "SMITHING": 67,
+          "WOODCUTTING": 55
+        }
+      },
+      "aspiration": false,
+      "notes": "50 Runecrafting is editorial relevance, not a quest requirement. Modest passive improvement stays strict.",
+      "source_revision": 37162099
+    },
+    "quest.sunspear": {
+      "quest": "River of Blood",
+      "skills": {
+        "skills": {
+          "AGILITY": 63,
+          "ATTACK": 78,
+          "CONSTRUCTION": 79,
+          "CRAFTING": 64,
+          "DEFENCE": 75,
+          "FARMING": 63,
+          "FIREMAKING": 76,
+          "FLETCHING": 75,
+          "HERBLORE": 80,
+          "HITPOINTS": 80,
+          "HUNTER": 76,
+          "MAGIC": 78,
+          "MINING": 72,
+          "RANGED": 78,
+          "RUNECRAFTING": 35,
+          "SLAYER": 78,
+          "SMITHING": 54,
+          "STRENGTH": 75,
+          "THIEVING": 22,
+          "WOODCUTTING": 76
+        }
+      },
+      "aspiration": true,
+      "notes": "Real quest use levels in Attack, Magic and Ranged all remain enforced; not an either/or substitute for the quest requirements.",
+      "source_revision": 37152960
+    },
+    "quest.animate_dead": {
+      "quest": "City of Senntisten",
+      "skills": {
+        "skills": {
+          "AGILITY": 58,
+          "ARCHAEOLOGY": 74,
+          "DIVINATION": 70,
+          "MAGIC": 84,
+          "MINING": 50,
+          "SLAYER": 75,
+          "SMITHING": 50
+        }
+      },
+      "aspiration": true,
+      "notes": "84 Magic is Animate Dead use level; no fabricated minimum Defence level. Other spell levels are not claimed to be immediately available.",
+      "source_revision": 37161897
+    },
+    "quest.passive_vigour": {
+      "quest": "Extinction",
+      "skills": {
+        "skills": {
+          "AGILITY": 65,
+          "ARCHAEOLOGY": 74,
+          "ATTACK": 62,
+          "CRAFTING": 85,
+          "DIVINATION": 70,
+          "DUNGEONEERING": 62,
+          "INVENTION": 85,
+          "MAGIC": 74,
+          "MINING": 50,
+          "RUNECRAFTING": 85,
+          "SLAYER": 75,
+          "SMITHING": 85
+        }
+      },
+      "aspiration": true,
+      "notes": "The ring requires 62 Attack and Dungeoneering and must still be obtained; the gem consumes it. This is a combat account benefit, not a Dungeoneering tip.",
+      "source_revision": 37173769
+    },
+    "quest.puzzle_box": {
+      "quest": "Succession",
+      "skills": {
+        "skills": {
+          "ARCHAEOLOGY": 40,
+          "DIVINATION": 40,
+          "FARMING": 50,
+          "MINING": 60,
+          "SMITHING": 60
+        }
+      },
+      "aspiration": true,
+      "notes": "Tier 5 must already be unlocked to start Succession; final quest opens tier 6. No claim that Succession currently unlocks Dive, which is now naturally available at 30 Agility.",
+      "source_revision": 37178061
+    },
+    "quest.ancient_incantations": {
+      "quest": "Tomes of the Warlock",
+      "skills": {
+        "skills": {
+          "AGILITY": 25,
+          "ARCHAEOLOGY": 86,
+          "COOKING": 20,
+          "MAGIC": 66,
+          "NECROMANCY": 75,
+          "PRAYER": 40
+        }
+      },
+      "aspiration": true,
+      "notes": "75 Necromancy is the quest minimum, covering Greater Bone Shield at 73. Darkness still needs 86; copy explicitly presents it as a later option. 3,000 vessel souls is non-skill progression, not inferred as met.",
+      "source_revision": 37153068
+    },
+    "quest.bone_shield": {
+      "quest": "Rune Mythos",
+      "skills": {
+        "skills": {
+          "DEFENCE": 37,
+          "NECROMANCY": 25
+        }
+      },
+      "aspiration": true,
+      "notes": "25 Necromancy is Lesser Bone Shield use level. 37 Defence is contextual relevance for the named Reflect ability, not a requirement to toggle Bone Shield. Not an unreachable level-one starter.",
+      "source_revision": 37161989
+    },
+    "quest.elite_dungeon_defence": {
+      "quest": "Curse of the Black Stone",
+      "skills": {
+        "skills": {
+          "AGILITY": 12,
+          "WOODCUTTING": 34
+        },
+        "any_skills": {
+          "ATTACK": 75,
+          "RANGED": 75,
+          "MAGIC": 75,
+          "NECROMANCY": 75
+        }
+      },
+      "aspiration": true,
+      "notes": "75 in an offensive skill is editorial relevance, not a hard dungeon/quest requirement. Reduction is not claimed for Zamorak/ED4. No Dungeoneering training content.",
+      "source_revision": 37152723
+    },
+    "quest.zaros_shard": {
+      "quest": "Fate of the Gods",
+      "skills": {
+        "skills": {
+          "AGILITY": 73,
+          "DIVINATION": 75,
+          "MAGIC": 79,
+          "SLAYER": 76,
+          "SUMMONING": 67
+        }
+      },
+      "aspiration": false,
+      "notes": "Situational equipment convenience in the original God Wars Dungeon; strict eligibility.",
+      "source_revision": 37180246
+    },
+    "quest.endgame_skilling": {
+      "quest": "Sliske's Endgame",
+      "skills": {
+        "skills": {
+          "AGILITY": 80,
+          "ATTACK": 79,
+          "CONSTRUCTION": 75,
+          "COOKING": 35,
+          "CRAFTING": 80,
+          "DEFENCE": 72,
+          "DIVINATION": 80,
+          "DUNGEONEERING": 75,
+          "FARMING": 25,
+          "FIREMAKING": 71,
+          "FISHING": 36,
+          "FLETCHING": 70,
+          "HERBLORE": 80,
+          "HITPOINTS": 78,
+          "HUNTER": 65,
+          "MAGIC": 81,
+          "MINING": 75,
+          "PRAYER": 80,
+          "RANGED": 75,
+          "RUNECRAFTING": 50,
+          "SLAYER": 80,
+          "SMITHING": 70,
+          "STRENGTH": 79,
+          "SUMMONING": 75,
+          "THIEVING": 66,
+          "WOODCUTTING": 80
+        }
+      },
+      "aspiration": true,
+      "notes": "Substantial account-wide skilling bundle; full mandatory quest-chain levels retained. No combat tactics or temporary boost purchases.",
+      "source_revision": 37170280
+    },
+    "quest.fort": {
+      "quest": "New Foundations",
+      "skills": {
+        "skills": {
+          "CONSTRUCTION": 15
+        }
+      },
+      "aspiration": false,
+      "notes": "15 Construction is editorial interest/relevance, not a quest start requirement. Beginner facility discovery remains strict.",
+      "source_revision": 37173770
+    },
+    "quest.menaphos": {
+      "quest": "The Jack of Spades",
+      "skills": {
+        "skills": {},
+        "any_skills": {
+          "THIEVING": 46,
+          "WOODCUTTING": 47,
+          "FISHING": 52
+        }
+      },
+      "aspiration": true,
+      "notes": "Method use levels are editorial city relevance, not entry requirements. Closest one qualifying skill, not all three, determines aspirations.",
+      "source_revision": 37153043
+    },
+    "quest.arc": {
+      "quest": "Impressing the Locals",
+      "skills": {
+        "skills": {},
+        "any_skills": {
+          "MINING": 90,
+          "WOODCUTTING": 90,
+          "FISHING": 90,
+          "HUNTER": 90,
+          "FARMING": 86
+        }
+      },
+      "aspiration": true,
+      "notes": "Relevant island resource levels are editorial timing, not fabricated quest entry gates. Only one gathering path is needed.",
+      "source_revision": 37152852
+    },
+    "quest.ungael_rituals": {
+      "quest": "Requiem for a Dragon",
+      "skills": {
+        "skills": {
+          "AGILITY": 25,
+          "ARCHAEOLOGY": 86,
+          "CONSTRUCTION": 54,
+          "COOKING": 20,
+          "MAGIC": 66,
+          "NECROMANCY": 80,
+          "PRAYER": 40,
+          "SLAYER": 10
+        }
+      },
+      "aspiration": true,
+      "notes": "80 Necromancy is actual ritual-site access. Required Grove tier 1 (50 Construction) and Botanist workbench tier 1 (54) are accounted for. Thalmund/tradeable bars do not create an 80 Smithing gate.",
+      "source_revision": 37152958
+    },
+    "quest.menaphos_boons": {
+      "quest": "Eclipse of the Heart",
+      "skills": {
+        "skills": {
+          "AGILITY": 65,
+          "ARCHAEOLOGY": 86,
+          "CONSTRUCTION": 64,
+          "COOKING": 70,
+          "CRAFTING": 68,
+          "FARMING": 25,
+          "FIREMAKING": 50,
+          "FISHING": 72,
+          "HERBLORE": 10,
+          "HUNTER": 73,
+          "MAGIC": 70,
+          "MINING": 37,
+          "NECROMANCY": 90,
+          "PRAYER": 40,
+          "RANGED": 50,
+          "SLAYER": 87,
+          "STRENGTH": 60,
+          "THIEVING": 70,
+          "WOODCUTTING": 47
+        }
+      },
+      "aspiration": true,
+      "notes": "Major late-game account effects, not XP-lamp/boss-only advice. Full prerequisites, including required Fort buildings, retained.",
+      "source_revision": 37173772
+    },
+    "quest.havenhythe": {
+      "quest": "Heralds of Crimson",
+      "skills": {
+        "skills": {
+          "CONSTRUCTION": 30,
+          "CRAFTING": 51,
+          "HERBLORE": 55,
+          "HUNTER": 32,
+          "MINING": 65,
+          "SLAYER": 28,
+          "SMITHING": 60
+        }
+      },
+      "aspiration": true,
+      "notes": "Substantial region access; no claim that every resource or boss reward is immediately usable at the quest minimums.",
+      "source_revision": 37208797
+    },
+    "quest.asylum_ring": {
+      "quest": "Broken Home",
+      "skills": {
+        "skills": {
+          "DEFENCE": 85
+        }
+      },
+      "aspiration": false,
+      "notes": "85 Defence is a wear requirement. All designated replay challenges and an under-37-minute replay are needed; quest completion alone does not award this ring. Strict pre-quest discovery, not an inferred challenge-unlock state.",
+      "source_revision": 37164332
+    },
+    "quest.lunar_utilities": {
+      "quest": "Dream Mentor",
+      "skills": {
+        "skills": {
+          "CRAFTING": 61,
+          "DEFENCE": 40,
+          "FIREMAKING": 49,
+          "FLETCHING": 25,
+          "HERBLORE": 5,
+          "MAGIC": 77,
+          "MINING": 60,
+          "WOODCUTTING": 55
+        }
+      },
+      "aspiration": true,
+      "notes": "77 Magic is Superglass Make use; Spellbook Swap remains a later 96 Magic option. The current quest Requirements row has no old 85 combat requirement; use current source, not historical guides.",
+      "source_revision": 37188234
+    },
+    "quest.holy_wrench": {
+      "quest": "Rum Deal",
+      "skills": {
+        "skills": {
+          "CRAFTING": 42,
+          "FARMING": 40,
+          "FISHING": 50,
+          "PRAYER": 47,
+          "SLAYER": 42
+        }
+      },
+      "aspiration": false,
+      "notes": "Durable utility item, not a consumable XP booster; full eligibility rather than an aspiration.",
+      "source_revision": 37208586
+    },
+    "quest.tokkul_zo": {
+      "quest": "The Elder Kiln",
+      "skills": {
+        "skills": {
+          "AGILITY": 60,
+          "MAGIC": 75,
+          "MINING": 40
+        }
+      },
+      "aspiration": false,
+      "notes": "Convenient ring destinations, strict eligibility. No minigame training recommendation.",
+      "source_revision": 37153024
+    },
+    "quest.seren_skilling": {
+      "quest": "The Light Within",
+      "skills": {
+        "skills": {
+          "AGILITY": 80,
+          "CONSTRUCTION": 75,
+          "COOKING": 35,
+          "CRAFTING": 80,
+          "DIVINATION": 80,
+          "DUNGEONEERING": 75,
+          "FARMING": 25,
+          "FIREMAKING": 50,
+          "FLETCHING": 70,
+          "HERBLORE": 80,
+          "HUNTER": 51,
+          "MAGIC": 79,
+          "MINING": 75,
+          "PRAYER": 80,
+          "RANGED": 75,
+          "RUNECRAFTING": 50,
+          "SLAYER": 80,
+          "SMITHING": 65,
+          "STRENGTH": 64,
+          "SUMMONING": 75,
+          "THIEVING": 66,
+          "WOODCUTTING": 80
+        }
+      },
+      "aspiration": true,
+      "notes": "The full quest chain and 80 Prayer gate cover the named prayers. Higher-Magic spells are future options, not claimed immediately usable.",
+      "source_revision": 37211991
+    }
+  },
+  "index_sources": {
+    "Quest unlocks": {
+      "title": "Quests/Rewards",
+      "revision": 36812543
+    },
+    "Post-quest rewards": {
+      "title": "Post-quest rewards",
+      "revision": 36808351
+    }
+  },
+  "reviewed_reward_rows": 373,
+  "quest_sources": {
+    "'Phite Club": {
+      "title": "'Phite Club",
+      "revision": 37161895,
+      "skills": {},
+      "quests": [
+        "Animal Magnetism",
+        "Crocodile Tears",
+        "Dealing with Scabaras",
+        "Desert Treasure",
+        "Do No Evil",
+        "Missing My Mummy",
+        "Our Man in the North",
+        "Recipe for Disaster: Freeing King Awowogei",
+        "Shadow of the Storm",
+        "Smoking Kills",
+        "Spirits of the Elid",
+        "The Feud",
+        "The Jack of Spades"
+      ],
+      "requirements_text": "Quests:'Phite ClubOur Man in the NorthThe Feud Do No EvilAnimal Magnetism… Shadow of the Storm… Desert Treasure… Smoking Kills… Missing My Mummy… Dealing with Scabaras… Recipe for Disaster: Freeing King Awowogei… Fully restore Senliten from the 'Missing My Mummy' quest Bring Leela to Senliten's tomb Full completion of Missing My Mummy… Crocodile TearsThe Jack of Spades… Spirits of the Elid Missing My Mummy… Dealing with Scabaras… Bring Leela to Senliten's tomb Fully restore Senliten from the 'Missing My Mummy' quest Full completion of Missing My Mummy…"
+    },
+    "A Fairy Tale I - Growing Pains": {
+      "title": "A Fairy Tale I - Growing Pains",
+      "revision": 37158666,
+      "skills": {},
+      "quests": [
+        "Lost City",
+        "Nature Spirit",
+        "Priest in Peril",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:A Fairy Tale I - Growing PainsLost City Nature SpiritPriest in Peril The Restless Ghost Ability to enter Morytania"
+    },
+    "A Fairy Tale II - Cure a Queen": {
+      "title": "A Fairy Tale II - Cure a Queen",
+      "revision": 37176490,
+      "skills": {
+        "FARMING": 49,
+        "HERBLORE": 57,
+        "THIEVING": 40
+      },
+      "quests": [
+        "A Fairy Tale I - Growing Pains",
+        "Lost City",
+        "Nature Spirit",
+        "Priest in Peril",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:A Fairy Tale II - Cure a QueenA Fairy Tale I - Growing PainsLost City Nature SpiritPriest in Peril The Restless Ghost Ability to enter Morytania 49 Farming Farming 57 Herblore Herblore 40 Thieving Thieving"
+    },
+    "A Fairy Tale III - Battle at Ork's Rift": {
+      "title": "A Fairy Tale III - Battle at Ork's Rift",
+      "revision": 37197081,
+      "skills": {
+        "CRAFTING": 36,
+        "FARMING": 54,
+        "THIEVING": 51
+      },
+      "quests": [
+        "A Fairy Tale I - Growing Pains",
+        "A Fairy Tale II - Cure a Queen",
+        "Lost City",
+        "Nature Spirit",
+        "Priest in Peril",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:A Fairy Tale III - Battle at Ork's RiftA Fairy Tale II - Cure a QueenA Fairy Tale I - Growing PainsLost City Nature SpiritPriest in Peril The Restless Ghost Ability to enter Morytania 36 Crafting Crafting 54 Farming Farming 51 Thieving Thieving"
+    },
+    "A Guild of Our Own (miniquest)": {
+      "title": "A Guild of Our Own (miniquest)",
+      "revision": 37153127,
+      "skills": {
+        "AGILITY": 40,
+        "HERBLORE": 46,
+        "THIEVING": 62
+      },
+      "quests": [
+        "Buyers and Cellars",
+        "From Tiny Acorns (miniquest)",
+        "Lost Her Marbles (miniquest)",
+        "The Feud"
+      ],
+      "requirements_text": "Quests:A Guild of Our Own (miniquest)Lost Her Marbles (miniquest)From Tiny Acorns (miniquest)Buyers and Cellars Partial completion of The Feud 40 Agility Agility 46 Herblore Herblore 62 Thieving Thieving"
+    },
+    "All Fired Up": {
+      "title": "All Fired Up",
+      "revision": 37182756,
+      "skills": {
+        "FIREMAKING": 43
+      },
+      "quests": [
+        "Priest in Peril"
+      ],
+      "requirements_text": "Quests:All Fired UpPriest in Peril 43 Firemaking Firemaking"
+    },
+    "As a First Resort": {
+      "title": "As a First Resort",
+      "revision": 37161858,
+      "skills": {
+        "HUNTER": 48,
+        "FIREMAKING": 51,
+        "WOODCUTTING": 58
+      },
+      "quests": [],
+      "requirements_text": "Quests:As a First ResortNone 48 Hunter Hunter 51 Firemaking Firemaking 58 Woodcutting Woodcutting Ironmen: Partial completion of Big Chompy Bird Hunting To get the spears: Having started Haunted Mine for access to the Abandoned Mine for a bronze spear on level 2 or The Lost Tribe for bone spear or 33 quest points for Scavvo's Rune Store access in Champions' Guild or Tai Bwo Wannai Trio for Tamayu's Spear Stall or 99 Attack Attack OR 99 Strength Strength OR a combined 130 levels in Attack and Strength for Warriors' Guild access"
+    },
+    "Azzanadra's Quest": {
+      "title": "Azzanadra's Quest",
+      "revision": 37161693,
+      "skills": {
+        "AGILITY": 58,
+        "ARCHAEOLOGY": 58,
+        "DIVINATION": 70
+      },
+      "quests": [
+        "Desperate Creatures",
+        "Desperate Measures",
+        "Desperate Times",
+        "Raksha, the Shadow Colossus",
+        "The Needle Skips",
+        "The Vault of Shadows",
+        "There's No Place Like Home...",
+        "You Are It"
+      ],
+      "requirements_text": "Quests:Azzanadra's QuestThe Vault of Shadows Raksha, the Shadow Colossus Anachronia base camp tutorial Desperate CreaturesDesperate MeasuresDesperate TimesThe Needle Skips You Are ItThere's No Place Like Home... Anachronia base camp tutorial 58 Agility Agility 58 Archaeology Archaeology 70 Divination Divination"
+    },
+    "Beneath Cursed Tides": {
+      "title": "Beneath Cursed Tides",
+      "revision": 37152681,
+      "skills": {
+        "ATTACK": 30,
+        "COOKING": 30,
+        "FIREMAKING": 30,
+        "MAGIC": 30,
+        "MINING": 30,
+        "SMITHING": 30,
+        "STRENGTH": 30,
+        "WOODCUTTING": 30
+      },
+      "quests": [],
+      "requirements_text": "Quests:Beneath Cursed TidesNone 30 Attack Attack 30 Cooking Cooking 30 Firemaking Firemaking 30 Magic Magic 30 Mining Mining 30 Smithing Smithing 30 Strength Strength 30 Woodcutting Woodcutting"
+    },
+    "City of Senntisten": {
+      "title": "City of Senntisten",
+      "revision": 37161897,
+      "skills": {
+        "ARCHAEOLOGY": 74,
+        "MAGIC": 74,
+        "SLAYER": 75
+      },
+      "quests": [
+        "Azzanadra's Quest",
+        "Battle of the Monolith",
+        "Desperate Creatures",
+        "Desperate Measures",
+        "Desperate Times",
+        "Raksha, the Shadow Colossus",
+        "The Vault of Shadows"
+      ],
+      "requirements_text": "Quests:City of SenntistenBattle of the MonolithAzzanadra's QuestThe Vault of Shadows Raksha, the Shadow Colossus Anachronia base camp tutorial Desperate CreaturesDesperate MeasuresDesperate Times… Anachronia base camp tutorial 74 Archaeology Archaeology 74 Magic Magic 75 Slayer Slayer"
+    },
+    "Cold War": {
+      "title": "Cold War",
+      "revision": 37200375,
+      "skills": {
+        "AGILITY": 30,
+        "CONSTRUCTION": 34,
+        "CRAFTING": 30,
+        "HUNTER": 10,
+        "THIEVING": 15
+      },
+      "quests": [],
+      "requirements_text": "Quests:Cold WarNone 30 Agility Agility 34 Construction Construction 30 Crafting Crafting 10 Hunter Hunter 15 Thieving Thieving or access to Zanaris (to acquire cowbells) Ironmen: 20 Mining Mining 20 Smithing Smithing (to smelt steel bar for clockwork) 23 Fishing Fishing (to catch a raw cod) 60 Woodcutting Woodcutting (to chop mahogany logs for the plank) Alternatively, Carnillean Rising rewards 10 mahogany planks Mahogany logs or mahogany planks may also be obtained as drops from various sources"
+    },
+    "Creature of Fenkenstrain": {
+      "title": "Creature of Fenkenstrain",
+      "revision": 37182723,
+      "skills": {
+        "CRAFTING": 20,
+        "THIEVING": 25
+      },
+      "quests": [
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:Creature of FenkenstrainThe Restless Ghost Ability to enter Morytania 20 Crafting Crafting 25 Thieving Thieving Ironmen: 20 Mining Mining 20 Smithing Smithing (to make a silver bar)"
+    },
+    "Dead and Buried": {
+      "title": "Dead and Buried",
+      "revision": 37168551,
+      "skills": {},
+      "quests": [
+        "Murder on the Border",
+        "New Foundations",
+        "Unwelcome Guests"
+      ],
+      "requirements_text": "Quests:Dead and BuriedUnwelcome GuestsMurder on the BorderNew Foundations Build Town Hall (Tier 1) Build Command Centre (Tier 1) Build Workshop (Tier 1) Build Chapel (Tier 1) Ironmen: 50 Woodcutting Woodcutting (to chop acadia logs for the planks)"
+    },
+    "Death to the Dorgeshuun": {
+      "title": "Death to the Dorgeshuun",
+      "revision": 37153387,
+      "skills": {
+        "AGILITY": 23,
+        "THIEVING": 23
+      },
+      "quests": [
+        "The Lost Tribe"
+      ],
+      "requirements_text": "Quests:Death to the DorgeshuunThe Lost Tribe 23 Agility Agility 23 Thieving Thieving"
+    },
+    "Desert Treasure": {
+      "title": "Desert Treasure",
+      "revision": 37216614,
+      "skills": {
+        "FIREMAKING": 50,
+        "MAGIC": 50,
+        "SLAYER": 10,
+        "THIEVING": 53
+      },
+      "quests": [
+        "Death Plateau",
+        "The Dig Site",
+        "Troll Stronghold"
+      ],
+      "requirements_text": "Quests:Desert TreasureThe Dig Site Troll StrongholdDeath Plateau Ability to enter Morytania 50 Firemaking Firemaking 50 Magic Magic 10 Slayer Slayer 53 Thieving Thieving Ironmen: This is not required if you obtain the magic logs as a drop instead. 80 Woodcutting Woodcutting"
+    },
+    "Desperate Measures": {
+      "title": "Desperate Measures",
+      "revision": 37152739,
+      "skills": {
+        "AGILITY": 50,
+        "ARCHAEOLOGY": 50
+      },
+      "quests": [
+        "Desperate Times",
+        "The Needle Skips",
+        "There's No Place Like Home...",
+        "You Are It"
+      ],
+      "requirements_text": "Quests:Desperate MeasuresDesperate TimesThe Needle Skips You Are ItThere's No Place Like Home... Anachronia base camp tutorial 50 Agility Agility 50 Archaeology Archaeology"
+    },
+    "Dream Mentor": {
+      "title": "Dream Mentor",
+      "revision": 37188234,
+      "skills": {},
+      "quests": [
+        "Lost City",
+        "Lunar Diplomacy",
+        "The Fremennik Trials"
+      ],
+      "requirements_text": "Quests:Dream MentorLunar DiplomacyThe Fremennik Trials Lost City"
+    },
+    "Eagles' Peak": {
+      "title": "Eagles' Peak",
+      "revision": 37182689,
+      "skills": {
+        "HUNTER": 27
+      },
+      "quests": [],
+      "requirements_text": "Quests:Eagles' PeakNone 27 Hunter Hunter"
+    },
+    "Evil Dave's Big Day Out": {
+      "title": "Evil Dave's Big Day Out",
+      "revision": 37161767,
+      "skills": {
+        "AGILITY": 30,
+        "COOKING": 30,
+        "HERBLORE": 30,
+        "MAGIC": 30
+      },
+      "quests": [
+        "Cook's Assistant",
+        "Demon Slayer",
+        "Gertrude's Cat",
+        "Recipe for Disaster: Another Cook's Quest",
+        "Recipe for Disaster: Freeing Evil Dave",
+        "Shadow of the Storm",
+        "The Golem"
+      ],
+      "requirements_text": "Quests:Evil Dave's Big Day OutRecipe for Disaster: Freeing Evil DaveRecipe for Disaster: Another Cook's QuestCook's Assistant Gertrude's Cat Shadow of the StormDemon Slayer The Golem 30 Agility Agility 30 Cooking Cooking 30 Herblore Herblore 30 Magic Magic"
+    },
+    "Extinction": {
+      "title": "Extinction",
+      "revision": 37173769,
+      "skills": {},
+      "quests": [
+        "Azzanadra's Quest",
+        "Battle of the Monolith",
+        "City of Senntisten",
+        "Desperate Measures",
+        "Desperate Times",
+        "Eye of Het I",
+        "Eye of Het II",
+        "Sins of the Father",
+        "The Needle Skips",
+        "There's No Place Like Home...",
+        "You Are It"
+      ],
+      "requirements_text": "Quests:ExtinctionSins of the FatherDesperate MeasuresDesperate TimesThe Needle Skips You Are ItThere's No Place Like Home... Anachronia base camp tutorial Eye of Het IIEye of Het ICity of SenntistenBattle of the MonolithAzzanadra's Quest…"
+    },
+    "Family Crest": {
+      "title": "Family Crest",
+      "revision": 37182710,
+      "skills": {
+        "CRAFTING": 40,
+        "MINING": 40,
+        "SMITHING": 40,
+        "MAGIC": 59
+      },
+      "quests": [],
+      "requirements_text": "Quests:Family CrestNone 40 Crafting Crafting 40 Mining Mining 40 Smithing Smithing 59 Magic Magic (or a deathtouched dart) Ironmen: These are not required if you obtain the items required as a drop instead. 45 Cooking Cooking (to cook fish, swordfish requires the highest level) 50 Fishing Fishing (to catch raw fish, raw swordfish requires the highest level)"
+    },
+    "Flag Fall (miniquest)": {
+      "title": "Flag Fall (miniquest)",
+      "revision": 37152801,
+      "skills": {},
+      "quests": [
+        "Impressing the Locals"
+      ],
+      "requirements_text": "Quests:Flag Fall (miniquest)Impressing the Locals"
+    },
+    "Heralds of Crimson": {
+      "title": "Heralds of Crimson",
+      "revision": 37208797,
+      "skills": {
+        "CRAFTING": 51,
+        "HERBLORE": 55,
+        "MINING": 65,
+        "SMITHING": 60
+      },
+      "quests": [
+        "Hearts of Sanguine",
+        "Secrets of Amberfell",
+        "Visions of Havenhythe"
+      ],
+      "requirements_text": "Quests:Heralds of CrimsonSecrets of AmberfellHearts of SanguineVisions of Havenhythe 51 Crafting Crafting 55 Herblore Herblore 65 Mining Mining 60 Smithing Smithing"
+    },
+    "Icthlarin's Little Helper": {
+      "title": "Icthlarin's Little Helper",
+      "revision": 37182643,
+      "skills": {},
+      "quests": [
+        "Diamond in the Rough",
+        "Gertrude's Cat",
+        "Stolen Hearts"
+      ],
+      "requirements_text": "Quests:Icthlarin's Little HelperGertrude's Cat Diamond in the RoughStolen Hearts"
+    },
+    "Impressing the Locals": {
+      "title": "Impressing the Locals",
+      "revision": 37152852,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Impressing the LocalsNone None"
+    },
+    "In Aid of the Myreque": {
+      "title": "In Aid of the Myreque",
+      "revision": 37188310,
+      "skills": {
+        "CRAFTING": 25,
+        "MAGIC": 7,
+        "MINING": 15
+      },
+      "quests": [
+        "In Search of the Myreque",
+        "Nature Spirit",
+        "Priest in Peril",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:In Aid of the MyrequeIn Search of the MyrequeNature SpiritPriest in Peril The Restless Ghost Ability to enter Morytania 25 Crafting Crafting 7 Magic Magic 15 Mining Mining Ironmen: 30 Mining Mining 30 Smithing Smithing (to get a mithril bar)"
+    },
+    "King of the Dwarves": {
+      "title": "King of the Dwarves",
+      "revision": 37152864,
+      "skills": {
+        "MINING": 68,
+        "SMITHING": 70,
+        "STRENGTH": 77
+      },
+      "quests": [
+        "Between a Rock...",
+        "Death Plateau",
+        "Druidic Ritual",
+        "Dwarf Cannon",
+        "Eadgar's Ruse",
+        "Fishing Contest",
+        "Forgettable Tale of a Drunken Dwarf",
+        "Forgiveness of a Chaos Dwarf",
+        "Jungle Potion",
+        "My Arm's Big Adventure",
+        "The Giant Dwarf",
+        "Troll Stronghold"
+      ],
+      "requirements_text": "Quests:King of the DwarvesForgiveness of a Chaos DwarfForgettable Tale of a Drunken DwarfThe Giant Dwarf Fishing Contest Between a Rock...Dwarf Cannon Fishing Contest My Arm's Big AdventureEadgar's RuseDruidic Ritual Troll StrongholdDeath Plateau Rescue Mad Eadgar from the Troll Stronghold area Jungle Potion 68 Mining Mining 70 Smithing Smithing 77 Strength Strength"
+    },
+    "Legacy of Seergaze": {
+      "title": "Legacy of Seergaze",
+      "revision": 37216629,
+      "skills": {
+        "AGILITY": 29,
+        "CONSTRUCTION": 20,
+        "CRAFTING": 47,
+        "FIREMAKING": 40,
+        "MAGIC": 49,
+        "MINING": 35,
+        "SLAYER": 31
+      },
+      "quests": [
+        "In Aid of the Myreque",
+        "In Search of the Myreque",
+        "Nature Spirit",
+        "Priest in Peril",
+        "The Darkness of Hallowvale",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:Legacy of SeergazeThe Darkness of HallowvaleIn Aid of the MyrequeIn Search of the MyrequeNature SpiritPriest in Peril The Restless Ghost Ability to enter Morytania 29 Agility Agility 20 Construction Construction 47 Crafting Crafting 40 Firemaking Firemaking 49 Magic Magic 35 Mining Mining 31 Slayer Slayer Ironmen: Partial completion of Shades of Mort'ton (to make teak pyre logs)"
+    },
+    "Let Them Eat Pie": {
+      "title": "Let Them Eat Pie",
+      "revision": 37153488,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Let Them Eat PieNone None"
+    },
+    "Lunar Diplomacy": {
+      "title": "Lunar Diplomacy",
+      "revision": 37200928,
+      "skills": {
+        "CRAFTING": 61,
+        "DEFENCE": 40,
+        "FIREMAKING": 49,
+        "HERBLORE": 5,
+        "MAGIC": 65,
+        "MINING": 60,
+        "WOODCUTTING": 55
+      },
+      "quests": [
+        "Lost City",
+        "The Fremennik Trials"
+      ],
+      "requirements_text": "Quests:Lunar DiplomacyThe Fremennik Trials Lost City 61 Crafting Crafting 40 Defence Defence 49 Firemaking Firemaking 5 Herblore Herblore 65 Magic Magic 60 Mining Mining 55 Woodcutting Woodcutting"
+    },
+    "Making History": {
+      "title": "Making History",
+      "revision": 37216628,
+      "skills": {},
+      "quests": [
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:Making HistoryThe Restless Ghost Ability to enter Morytania Ironmen: 24 Crafting Crafting (if making your own sapphire amulet)"
+    },
+    "Monkey Madness": {
+      "title": "Monkey Madness",
+      "revision": 37211313,
+      "skills": {},
+      "quests": [
+        "The Grand Tree",
+        "Tree Gnome Village"
+      ],
+      "requirements_text": "Quests:Monkey MadnessThe Grand Tree Tree Gnome Village"
+    },
+    "Mourning's End Part II": {
+      "title": "Mourning's End Part II",
+      "revision": 37199348,
+      "skills": {},
+      "quests": [
+        "Big Chompy Bird Hunting",
+        "Biohazard",
+        "Mourning's End Part I",
+        "Regicide",
+        "Roving Elves",
+        "Sheep Herder",
+        "Underground Pass",
+        "Waterfall Quest"
+      ],
+      "requirements_text": "Quests:Mourning's End Part IIMourning's End Part IRoving ElvesRegicideUnderground PassBiohazard… Waterfall Quest Sheep Herder Big Chompy Bird Hunting"
+    },
+    "Necromancy!": {
+      "title": "Necromancy!",
+      "revision": 37173763,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Necromancy!None None"
+    },
+    "New Foundations": {
+      "title": "New Foundations",
+      "revision": 37173770,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:New FoundationsNone None"
+    },
+    "Nomad's Elegy": {
+      "title": "Nomad's Elegy",
+      "revision": 37168658,
+      "skills": {
+        "CONSTRUCTION": 75,
+        "MINING": 75,
+        "WOODCUTTING": 75
+      },
+      "quests": [
+        "A Void Dance",
+        "Another Slice of H.A.M.",
+        "Carnillean Rising",
+        "Death to the Dorgeshuun",
+        "Dishonour among Thieves",
+        "Enter the Abyss (miniquest)",
+        "Fishing Contest",
+        "Goblin Diplomacy",
+        "Hazeel Cult",
+        "Heart of Stone",
+        "Holy Grail",
+        "Imp Catcher",
+        "Jungle Potion",
+        "King's Ransom",
+        "Land of the Goblins",
+        "Merlin's Crystal",
+        "Missing, Presumed Death",
+        "Murder Mystery",
+        "Nomad's Requiem",
+        "One Small Favour",
+        "Quiet Before the Swarm",
+        "Recruitment Drive",
+        "Rune Memories",
+        "Rune Mysteries",
+        "Shilo Village",
+        "The Blood Pact",
+        "The Chosen Commander",
+        "The Fremennik Trials",
+        "The Giant Dwarf",
+        "The Mighty Fall",
+        "The Void Stares Back",
+        "Throne of Miscellania",
+        "Wanted!"
+      ],
+      "requirements_text": "Quests:Nomad's ElegyDishonour among ThievesHazeel Cult Missing, Presumed Death Ability to enter Morytania Nomad's RequiemKing's RansomHoly GrailMerlin's Crystal Murder Mystery One Small FavourShilo VillageJungle Potion Complete the Knight Waves in Camelot Complete the Soul Wars tutorial Heart of StoneCarnillean RisingThe Blood Pact Hazeel Cult Rune MemoriesRune Mysteries The Mighty FallThe Chosen CommanderLand of the GoblinsAnother Slice of H.A.M.Death to the Dorgeshuun… Goblin Diplomacy The Giant Dwarf Fishing Contest Missing, Presumed Death Throne of MiscellaniaThe Fremennik Trials The Void Stares BackA Void DanceQuiet Before the SwarmImp Catcher Wanted!Recruitment Drive Enter the Abyss (miniquest) Ability to enter Morytania 75 Construction Construction 75 Mining Mining 75 Woodcutting Woodcutting"
+    },
+    "Ode of the Devourer": {
+      "title": "Ode of the Devourer",
+      "revision": 37173777,
+      "skills": {},
+      "quests": [
+        "Ancient Awakening",
+        "Battle of Forinthry",
+        "Dead and Buried",
+        "Diamond in the Rough",
+        "Ghosts Ahoy",
+        "Kili Row",
+        "Necromancy!",
+        "Requiem for a Dragon",
+        "Rune Mythos",
+        "Soul Searching",
+        "Stolen Hearts",
+        "The Jack of Spades",
+        "The Spirit of War",
+        "Tomes of the Warlock",
+        "Unwelcome Guests",
+        "Vessel of the Harbinger"
+      ],
+      "requirements_text": "Quests:Ode of the DevourerRequiem for a DragonBattle of ForinthryAncient AwakeningDead and BuriedUnwelcome Guests… Build Grove cabin (Tier 1) Build Botanist's Workbench (Tier 1) Tomes of the WarlockThe Spirit of WarVessel of the HarbingerRune Mythos… Ghosts Ahoy… 3,000 City of Um vessel souls The Jack of SpadesDiamond in the RoughStolen Hearts Kili RowNecromancy! Collect a set of necromancer robes from Sostratus Soul SearchingNecromancy!"
+    },
+    "One of a Kind": {
+      "title": "One of a Kind",
+      "revision": 37211094,
+      "skills": {
+        "DIVINATION": 40,
+        "DUNGEONEERING": 67,
+        "MAGIC": 81,
+        "SUMMONING": 74
+      },
+      "quests": [
+        "A Tail of Two Cats",
+        "Diamond in the Rough",
+        "Gertrude's Cat",
+        "Holy Grail",
+        "Icthlarin's Little Helper",
+        "Merlin's Crystal",
+        "Missing, Presumed Death",
+        "The World Wakes"
+      ],
+      "requirements_text": "Quests:One of a KindA Tail of Two CatsIcthlarin's Little HelperGertrude's Cat Diamond in the Rough… Holy GrailMerlin's Crystal The World Wakes Missing, Presumed Death 40 Divination Divination 67 Dungeoneering Dungeoneering 81 Magic Magic 74 Summoning Summoning"
+    },
+    "Plague's End": {
+      "title": "Plague's End",
+      "revision": 37188285,
+      "skills": {
+        "AGILITY": 75,
+        "CONSTRUCTION": 75,
+        "CRAFTING": 75,
+        "DUNGEONEERING": 75,
+        "HERBLORE": 75,
+        "MINING": 75,
+        "PRAYER": 75,
+        "RANGED": 75,
+        "SUMMONING": 75,
+        "WOODCUTTING": 75
+      },
+      "quests": [
+        "Big Chompy Bird Hunting",
+        "Biohazard",
+        "Catapult Construction",
+        "Making History",
+        "Mourning's End Part I",
+        "Mourning's End Part II",
+        "Plague City",
+        "Regicide",
+        "Roving Elves",
+        "Sheep Herder",
+        "The Restless Ghost",
+        "Underground Pass",
+        "Waterfall Quest",
+        "Within the Light"
+      ],
+      "requirements_text": "Quests:Plague's EndWithin the LightMourning's End Part IIMourning's End Part IRoving ElvesRegicide… Waterfall Quest Sheep Herder Big Chompy Bird Hunting Catapult ConstructionRegicideUnderground PassBiohazardPlague City Making HistoryThe Restless Ghost Ability to enter Morytania 75 Agility Agility 75 Construction Construction 75 Crafting Crafting 75 Dungeoneering Dungeoneering 75 Herblore Herblore 75 Mining Mining 75 Prayer Prayer 75 Ranged Ranged 75 Summoning Summoning 75 Woodcutting Woodcutting"
+    },
+    "Regicide": {
+      "title": "Regicide",
+      "revision": 37182656,
+      "skills": {
+        "AGILITY": 56
+      },
+      "quests": [
+        "Biohazard",
+        "Plague City",
+        "Underground Pass"
+      ],
+      "requirements_text": "Quests:RegicideUnderground PassBiohazardPlague City 56 Agility Agility"
+    },
+    "Roving Elves": {
+      "title": "Roving Elves",
+      "revision": 37210976,
+      "skills": {},
+      "quests": [
+        "Biohazard",
+        "Plague City",
+        "Regicide",
+        "Underground Pass",
+        "Waterfall Quest"
+      ],
+      "requirements_text": "Quests:Roving ElvesRegicideUnderground PassBiohazardPlague City Waterfall Quest"
+    },
+    "Rune Mythos": {
+      "title": "Rune Mythos",
+      "revision": 37161989,
+      "skills": {
+        "NECROMANCY": 24
+      },
+      "quests": [
+        "Necromancy!"
+      ],
+      "requirements_text": "Quests:Rune MythosNecromancy! 24 Necromancy Necromancy"
+    },
+    "Sliske's Endgame": {
+      "title": "Sliske's Endgame",
+      "revision": 37170280,
+      "skills": {},
+      "quests": [
+        "A Tail of Two Cats",
+        "Children of Mah",
+        "Dishonour among Thieves",
+        "Heart of Stone",
+        "Hero's Welcome",
+        "Holy Grail",
+        "Kindred Spirits",
+        "Lunar Diplomacy",
+        "Missing, Presumed Death",
+        "Nomad's Elegy",
+        "Nomad's Requiem",
+        "One of a Kind",
+        "The Death of Chivalry",
+        "The Light Within",
+        "The Mighty Fall",
+        "The Void Stares Back",
+        "The World Wakes",
+        "Throne of Miscellania"
+      ],
+      "requirements_text": "Quests:Sliske's EndgameThe Death of Chivalry One of a KindA Tail of Two Cats… Holy Grail… The World Wakes Missing, Presumed Death Nomad's ElegyDishonour among Thieves… Nomad's Requiem… Heart of Stone… The Mighty Fall… Throne of Miscellania… The Void Stares Back… Kindred SpiritsMissing, Presumed Death Hero's WelcomeLunar Diplomacy… Access to the Ancient Cavern from Barbarian Training Children of MahThe Light Within… Dishonour among Thieves…"
+    },
+    "Smoking Kills": {
+      "title": "Smoking Kills",
+      "revision": 37211385,
+      "skills": {
+        "CRAFTING": 25,
+        "SLAYER": 35
+      },
+      "quests": [
+        "Diamond in the Rough",
+        "Gertrude's Cat",
+        "Icthlarin's Little Helper",
+        "Stolen Hearts",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:Smoking KillsThe Restless Ghost Icthlarin's Little HelperGertrude's Cat Diamond in the RoughStolen Hearts 25 Crafting Crafting 35 Slayer Slayer"
+    },
+    "The Branches of Darkmeyer": {
+      "title": "The Branches of Darkmeyer",
+      "revision": 37207965,
+      "skills": {
+        "AGILITY": 63,
+        "CRAFTING": 64,
+        "FARMING": 63,
+        "FLETCHING": 70,
+        "MAGIC": 70,
+        "SLAYER": 67,
+        "WOODCUTTING": 76
+      },
+      "quests": [
+        "In Aid of the Myreque",
+        "In Search of the Myreque",
+        "Legacy of Seergaze",
+        "Nature Spirit",
+        "The Darkness of Hallowvale"
+      ],
+      "requirements_text": "Quests:The Branches of DarkmeyerLegacy of SeergazeThe Darkness of HallowvaleIn Aid of the MyrequeIn Search of the MyrequeNature Spirit… 63 Agility Agility 64 Crafting Crafting 63 Farming Farming 70 Fletching Fletching 70 Magic Magic 67 Slayer Slayer 76 Woodcutting Woodcutting"
+    },
+    "The Chosen Commander": {
+      "title": "The Chosen Commander",
+      "revision": 37197061,
+      "skills": {
+        "AGILITY": 46,
+        "STRENGTH": 46,
+        "THIEVING": 46
+      },
+      "quests": [
+        "Another Slice of H.A.M.",
+        "Death to the Dorgeshuun",
+        "Fishing Contest",
+        "Goblin Diplomacy",
+        "Land of the Goblins",
+        "The Giant Dwarf",
+        "The Lost Tribe"
+      ],
+      "requirements_text": "Quests:The Chosen CommanderLand of the GoblinsAnother Slice of H.A.M.Death to the DorgeshuunThe Lost Tribe Goblin Diplomacy The Giant Dwarf Fishing Contest 46 Agility Agility 46 Strength Strength 46 Thieving Thieving"
+    },
+    "The Darkness of Hallowvale": {
+      "title": "The Darkness of Hallowvale",
+      "revision": 37179690,
+      "skills": {
+        "AGILITY": 26,
+        "CONSTRUCTION": 5,
+        "CRAFTING": 32,
+        "MAGIC": 33,
+        "MINING": 20,
+        "STRENGTH": 40,
+        "THIEVING": 22
+      },
+      "quests": [
+        "In Aid of the Myreque",
+        "In Search of the Myreque",
+        "Nature Spirit",
+        "Priest in Peril",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:The Darkness of HallowvaleIn Aid of the MyrequeIn Search of the MyrequeNature SpiritPriest in Peril The Restless Ghost Ability to enter Morytania 26 Agility Agility 5 Construction Construction 32 Crafting Crafting 33 Magic Magic 20 Mining Mining 40 Strength Strength 22 Thieving Thieving Standard spells equipped or the ability to cast Spellbook Swap"
+    },
+    "The Dig Site": {
+      "title": "The Dig Site",
+      "revision": 37182662,
+      "skills": {
+        "AGILITY": 10,
+        "HERBLORE": 10,
+        "THIEVING": 25
+      },
+      "quests": [],
+      "requirements_text": "Quests:The Dig SiteNone 10 Agility Agility 10 Herblore Herblore 25 Thieving Thieving"
+    },
+    "The Eyes of Glouphrie": {
+      "title": "The Eyes of Glouphrie",
+      "revision": 37159579,
+      "skills": {
+        "CONSTRUCTION": 5,
+        "MAGIC": 46
+      },
+      "quests": [
+        "The Grand Tree"
+      ],
+      "requirements_text": "Quests:The Eyes of GlouphrieThe Grand Tree 5 Construction Construction 46 Magic Magic"
+    },
+    "The Firemaker's Curse": {
+      "title": "The Firemaker's Curse",
+      "revision": 37154544,
+      "skills": {
+        "AGILITY": 64,
+        "CONSTITUTION": 76,
+        "FIREMAKING": 74
+      },
+      "quests": [],
+      "requirements_text": "Quests:The Firemaker's CurseNone 64 Agility Agility 76 Constitution Constitution 74 Firemaking Firemaking"
+    },
+    "The Jack of Spades": {
+      "title": "The Jack of Spades",
+      "revision": 37153043,
+      "skills": {},
+      "quests": [
+        "Diamond in the Rough",
+        "Stolen Hearts"
+      ],
+      "requirements_text": "Quests:The Jack of SpadesDiamond in the RoughStolen Hearts"
+    },
+    "The Light Within": {
+      "title": "The Light Within",
+      "revision": 37211991,
+      "skills": {
+        "AGILITY": 80,
+        "CRAFTING": 80,
+        "DIVINATION": 80,
+        "HERBLORE": 80,
+        "PRAYER": 80,
+        "SLAYER": 80,
+        "WOODCUTTING": 80
+      },
+      "quests": [
+        "Catapult Construction",
+        "Desert Treasure",
+        "Devious Minds",
+        "Fate of the Gods",
+        "Making History",
+        "Meeting History",
+        "Missing, Presumed Death",
+        "Plague's End",
+        "The Curse of Arrav",
+        "The Temple at Senntisten",
+        "The World Wakes",
+        "Within the Light"
+      ],
+      "requirements_text": "Quests:The Light WithinMeeting HistoryMaking History… The Temple at SenntistenDevious Minds… Desert Treasure… The Curse of Arrav… 125 Kudos Plague's EndWithin the Light… Catapult Construction… Making History… The World Wakes Fate of the GodsMissing, Presumed Death 80 Agility Agility 80 Crafting Crafting 80 Divination Divination 80 Herblore Herblore 80 Prayer Prayer 80 Slayer Slayer 80 Woodcutting Woodcutting Ironmen: Quests:As a First ResortNone 89 Crafting Crafting (for a crystal flask to make the grand defence potion) 81 Mining Mining (for mining Crystal-flecked sandstone to make a crystal flask)"
+    },
+    "The Temple at Senntisten": {
+      "title": "The Temple at Senntisten",
+      "revision": 37173437,
+      "skills": {
+        "PRAYER": 50
+      },
+      "quests": [
+        "Creature of Fenkenstrain",
+        "Death Plateau",
+        "Defender of Varrock",
+        "Desert Treasure",
+        "Devious Minds",
+        "Diamond in the Rough",
+        "Family Crest",
+        "Garden of Tranquillity",
+        "Gertrude's Cat",
+        "Icthlarin's Little Helper",
+        "Missing My Mummy",
+        "Recruitment Drive",
+        "Shield of Arrav",
+        "Stolen Hearts",
+        "Temple of Ikov",
+        "The Curse of Arrav",
+        "The Dig Site",
+        "The Golem",
+        "The Knight's Sword",
+        "The Restless Ghost",
+        "The Tale of the Muspah",
+        "Troll Stronghold",
+        "What Lies Below",
+        "What's Mine is Yours"
+      ],
+      "requirements_text": "Quests:The Temple at SenntistenDevious MindsRecruitment Drive What's Mine is Yours Ability to enter Morytania Desert TreasureThe Dig Site Troll StrongholdDeath Plateau Ability to enter Morytania The Curse of ArravThe Tale of the Muspah Missing My MummyIcthlarin's Little HelperGertrude's Cat Diamond in the RoughStolen Hearts The Golem Diamond in the Rough… Defender of VarrockShield of Arrav The Knight's Sword Family Crest What Lies Below Claim Kudos from Historian Minas in Varrock Museum for completing Shield of Arrav Temple of Ikov Ability to access Trollheim Partial completion of Troll Stronghold… Fully restore Senliten from the 'Missing My Mummy' quest Full completion of Missing My MummyPartial completion of Garden of TranquillityCreature of FenkenstrainThe Restless Ghost Ability to enter Morytania 125 Kudos 50 Prayer Prayer"
+    },
+    "The World Wakes": {
+      "title": "The World Wakes",
+      "revision": 37153063,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:The World WakesNone None"
+    },
+    "Animal Magnetism": {
+      "title": "Animal Magnetism",
+      "revision": 37182747,
+      "skills": {
+        "CRAFTING": 19,
+        "RANGED": 30,
+        "SLAYER": 18,
+        "THIEVING": 15,
+        "WOODCUTTING": 35
+      },
+      "quests": [
+        "Ernest the Chicken",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:Animal MagnetismThe Restless Ghost Ernest the Chicken Ability to enter Morytania 19 Crafting Crafting 30 Ranged Ranged 18 Slayer Slayer 15 Thieving Thieving 35 Woodcutting Woodcutting Ironmen: 10 Smithing Smithing (to smelt iron bars)"
+    },
+    "Crocodile Tears": {
+      "title": "Crocodile Tears",
+      "revision": 37161893,
+      "skills": {
+        "AGILITY": 30,
+        "FISHING": 72,
+        "HUNTER": 73,
+        "WOODCUTTING": 47
+      },
+      "quests": [
+        "Contact!",
+        "Creature of Fenkenstrain",
+        "Dealing with Scabaras",
+        "Diamond in the Rough",
+        "Garden of Tranquillity",
+        "Gertrude's Cat",
+        "Icthlarin's Little Helper",
+        "Missing My Mummy",
+        "Spirits of the Elid",
+        "Stolen Hearts",
+        "The Golem",
+        "The Jack of Spades",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:Crocodile TearsThe Jack of SpadesDiamond in the RoughStolen Hearts Spirits of the Elid Missing My MummyIcthlarin's Little HelperGertrude's Cat Diamond in the Rough… The Golem Diamond in the Rough… Dealing with ScabarasContact!Icthlarin's Little Helper… Bring Leela to Senliten's tomb Fully restore Senliten from the 'Missing My Mummy' quest Full completion of Missing My MummyPartial completion of Garden of TranquillityCreature of FenkenstrainThe Restless Ghost Ability to enter Morytania 30 Agility Agility 72 Fishing Fishing 73 Hunter Hunter 47 Woodcutting Woodcutting"
+    },
+    "Dealing with Scabaras": {
+      "title": "Dealing with Scabaras",
+      "revision": 37152729,
+      "skills": {
+        "AGILITY": 50,
+        "FIREMAKING": 21,
+        "STRENGTH": 60,
+        "THIEVING": 60
+      },
+      "quests": [
+        "Contact!",
+        "Diamond in the Rough",
+        "Gertrude's Cat",
+        "Icthlarin's Little Helper",
+        "Stolen Hearts"
+      ],
+      "requirements_text": "Quests:Dealing with ScabarasContact!Icthlarin's Little HelperGertrude's Cat Diamond in the RoughStolen Hearts 50 Agility Agility 21 Firemaking Firemaking 60 Strength Strength 60 Thieving Thieving If Contact! was completed prior to the addition of Stolen Hearts and Diamond in the Rough, they must be completed before Dealing with Scabaras can be started."
+    },
+    "Do No Evil": {
+      "title": "Do No Evil",
+      "revision": 37203056,
+      "skills": {
+        "CONSTRUCTION": 64,
+        "CRAFTING": 68,
+        "MAGIC": 70,
+        "RANGED": 50,
+        "THIEVING": 70
+      },
+      "quests": [
+        "Animal Magnetism",
+        "Contact!",
+        "Cook's Assistant",
+        "Creature of Fenkenstrain",
+        "Dealing with Scabaras",
+        "Death Plateau",
+        "Demon Slayer",
+        "Desert Treasure",
+        "Diamond in the Rough",
+        "Ernest the Chicken",
+        "Garden of Tranquillity",
+        "Gertrude's Cat",
+        "Icthlarin's Little Helper",
+        "Missing My Mummy",
+        "Monkey Madness",
+        "Recipe for Disaster: Another Cook's Quest",
+        "Recipe for Disaster: Freeing King Awowogei",
+        "Shadow of the Storm",
+        "Smoking Kills",
+        "Stolen Hearts",
+        "The Dig Site",
+        "The Golem",
+        "The Grand Tree",
+        "The Restless Ghost",
+        "Tree Gnome Village",
+        "Troll Stronghold"
+      ],
+      "requirements_text": "Quests:Do No EvilAnimal MagnetismThe Restless Ghost Ernest the Chicken Ability to enter Morytania Shadow of the StormDemon Slayer The Golem Desert TreasureThe Dig Site Troll StrongholdDeath Plateau Ability to enter Morytania Smoking KillsThe Restless Ghost Icthlarin's Little HelperGertrude's Cat Diamond in the RoughStolen Hearts Missing My MummyIcthlarin's Little Helper… The Golem Diamond in the Rough… Dealing with ScabarasContact!Icthlarin's Little Helper… Recipe for Disaster: Freeing King AwowogeiRecipe for Disaster: Another Cook's QuestCook's Assistant Monkey MadnessThe Grand Tree Tree Gnome Village Fully restore Senliten from the 'Missing My Mummy' quest Bring Leela to Senliten's tomb Full completion of Missing My MummyPartial completion of Garden of TranquillityCreature of FenkenstrainThe Restless Ghost Ability to enter Morytania 64 Construction Construction 68 Crafting Crafting 70 Magic Magic 50 Ranged Ranged 70 Thieving Thieving"
+    },
+    "Missing My Mummy": {
+      "title": "Missing My Mummy",
+      "revision": 37164176,
+      "skills": {
+        "CONSTRUCTION": 35,
+        "COOKING": 35,
+        "CRAFTING": 35,
+        "MAGIC": 35,
+        "PRAYER": 35
+      },
+      "quests": [
+        "Diamond in the Rough",
+        "Gertrude's Cat",
+        "Icthlarin's Little Helper",
+        "Stolen Hearts",
+        "The Golem"
+      ],
+      "requirements_text": "Quests:Missing My MummyIcthlarin's Little HelperGertrude's Cat Diamond in the RoughStolen Hearts The Golem Diamond in the Rough… 35 Construction Construction 35 Cooking Cooking 35 Crafting Crafting 35 Magic Magic 35 Prayer Prayer"
+    },
+    "Our Man in the North": {
+      "title": "Our Man in the North",
+      "revision": 37161894,
+      "skills": {},
+      "quests": [
+        "Animal Magnetism",
+        "Crocodile Tears",
+        "Dealing with Scabaras",
+        "Desert Treasure",
+        "Do No Evil",
+        "Missing My Mummy",
+        "Recipe for Disaster: Freeing King Awowogei",
+        "Shadow of the Storm",
+        "Smoking Kills",
+        "Spirits of the Elid",
+        "The Feud",
+        "The Jack of Spades"
+      ],
+      "requirements_text": "Quests:Our Man in the NorthThe Feud Do No EvilAnimal Magnetism… Shadow of the Storm… Desert Treasure… Smoking Kills… Missing My Mummy… Dealing with Scabaras… Recipe for Disaster: Freeing King Awowogei… Fully restore Senliten from the 'Missing My Mummy' quest Bring Leela to Senliten's tomb Full completion of Missing My Mummy… Crocodile TearsThe Jack of Spades… Spirits of the Elid Missing My Mummy… Dealing with Scabaras… Bring Leela to Senliten's tomb Fully restore Senliten from the 'Missing My Mummy' quest Full completion of Missing My Mummy…"
+    },
+    "Recipe for Disaster: Freeing King Awowogei": {
+      "title": "Recipe for Disaster: Freeing King Awowogei",
+      "revision": 37153517,
+      "skills": {
+        "AGILITY": 48,
+        "COOKING": 70
+      },
+      "quests": [
+        "Cook's Assistant",
+        "Monkey Madness",
+        "Recipe for Disaster: Another Cook's Quest",
+        "The Grand Tree",
+        "Tree Gnome Village"
+      ],
+      "requirements_text": "Quests:Recipe for Disaster: Freeing King AwowogeiRecipe for Disaster: Another Cook's QuestCook's Assistant Monkey MadnessThe Grand Tree Tree Gnome Village 48 Agility Agility 70 Cooking Cooking"
+    },
+    "Shadow of the Storm": {
+      "title": "Shadow of the Storm",
+      "revision": 37182734,
+      "skills": {
+        "CRAFTING": 30
+      },
+      "quests": [
+        "Demon Slayer",
+        "The Golem"
+      ],
+      "requirements_text": "Quests:Shadow of the StormDemon Slayer The Golem 30 Crafting Crafting"
+    },
+    "Spirits of the Elid": {
+      "title": "Spirits of the Elid",
+      "revision": 37182743,
+      "skills": {
+        "MAGIC": 33,
+        "MINING": 37,
+        "RANGED": 37,
+        "THIEVING": 37
+      },
+      "quests": [],
+      "requirements_text": "Quests:Spirits of the ElidNone 33 Magic Magic 37 Mining Mining 37 Ranged Ranged 37 Thieving Thieving Standard spells equipped or the ability to cast Spellbook Swap"
+    },
+    "The Feud": {
+      "title": "The Feud",
+      "revision": 37182645,
+      "skills": {
+        "THIEVING": 30
+      },
+      "quests": [],
+      "requirements_text": "Quests:The FeudNone 30 Thieving Thieving"
+    },
+    "Lost City": {
+      "title": "Lost City",
+      "revision": 37178262,
+      "skills": {
+        "CRAFTING": 31,
+        "WOODCUTTING": 36
+      },
+      "quests": [],
+      "requirements_text": "Quests:Lost CityNone 31 Crafting Crafting 36 Woodcutting Woodcutting"
+    },
+    "Nature Spirit": {
+      "title": "Nature Spirit",
+      "revision": 37188687,
+      "skills": {},
+      "quests": [
+        "Priest in Peril",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:Nature SpiritPriest in Peril The Restless Ghost Ability to enter Morytania Ironmen: 18 Crafting Crafting 20 Mining Mining or 22 Divination Divination (to obtain a silver ore) 20 Smithing Smithing (to smelt a silver bar)"
+    },
+    "Priest in Peril": {
+      "title": "Priest in Peril",
+      "revision": 37182659,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Priest in PerilNone None"
+    },
+    "The Restless Ghost": {
+      "title": "The Restless Ghost",
+      "revision": 37163933,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:The Restless GhostNone None"
+    },
+    "Buyers and Cellars": {
+      "title": "Buyers and Cellars",
+      "revision": 37152699,
+      "skills": {
+        "THIEVING": 5
+      },
+      "quests": [],
+      "requirements_text": "Quests:Buyers and CellarsNone 5 Thieving Thieving"
+    },
+    "From Tiny Acorns (miniquest)": {
+      "title": "From Tiny Acorns (miniquest)",
+      "revision": 37166724,
+      "skills": {
+        "THIEVING": 24
+      },
+      "quests": [
+        "Buyers and Cellars"
+      ],
+      "requirements_text": "Quests:From Tiny Acorns (miniquest)Buyers and Cellars 24 Thieving Thieving"
+    },
+    "Lost Her Marbles (miniquest)": {
+      "title": "Lost Her Marbles (miniquest)",
+      "revision": 37152875,
+      "skills": {
+        "THIEVING": 41
+      },
+      "quests": [
+        "Buyers and Cellars",
+        "From Tiny Acorns (miniquest)"
+      ],
+      "requirements_text": "Quests:Lost Her Marbles (miniquest)From Tiny Acorns (miniquest)Buyers and Cellars 41 Thieving Thieving"
+    },
+    "Big Chompy Bird Hunting": {
+      "title": "Big Chompy Bird Hunting",
+      "revision": 37182718,
+      "skills": {
+        "COOKING": 30,
+        "FLETCHING": 5,
+        "RANGED": 30
+      },
+      "quests": [],
+      "requirements_text": "Quests:Big Chompy Bird HuntingNone 30 Cooking Cooking 5 Fletching Fletching 30 Ranged Ranged"
+    },
+    "Haunted Mine": {
+      "title": "Haunted Mine",
+      "revision": 37182711,
+      "skills": {
+        "AGILITY": 15,
+        "CRAFTING": 35
+      },
+      "quests": [],
+      "requirements_text": "Quests:Haunted MineAbility to enter Morytania 15 Agility Agility 35 Crafting Crafting"
+    },
+    "Tai Bwo Wannai Trio": {
+      "title": "Tai Bwo Wannai Trio",
+      "revision": 37182658,
+      "skills": {
+        "AGILITY": 15,
+        "COOKING": 30,
+        "FISHING": 5
+      },
+      "quests": [
+        "Jungle Potion"
+      ],
+      "requirements_text": "Quests:Tai Bwo Wannai TrioJungle Potion 15 Agility Agility 30 Cooking Cooking 5 Fishing Fishing Ironmen: 65 Fishing Fishing (for catching raw karambwan - This is only required if you burn the karambwan given during the quest) 34 Herblore Herblore (for making agility potion) To get the spear: 33 quest points for Champions' Guild access OR 99 Attack Attack OR 99 Strength Strength OR a combined 130 levels in Attack and Strength for Warriors' Guild access"
+    },
+    "The Lost Tribe": {
+      "title": "The Lost Tribe",
+      "revision": 37182751,
+      "skills": {
+        "AGILITY": 13,
+        "MINING": 17,
+        "THIEVING": 13
+      },
+      "quests": [],
+      "requirements_text": "Quests:The Lost TribeNone 13 Agility Agility 17 Mining Mining 13 Thieving Thieving"
+    },
+    "Desperate Creatures": {
+      "title": "Desperate Creatures",
+      "revision": 37178514,
+      "skills": {},
+      "quests": [
+        "Desperate Measures",
+        "Desperate Times",
+        "The Needle Skips",
+        "There's No Place Like Home...",
+        "You Are It"
+      ],
+      "requirements_text": "Quests:Desperate CreaturesDesperate MeasuresDesperate TimesThe Needle Skips You Are ItThere's No Place Like Home... Anachronia base camp tutorial"
+    },
+    "Desperate Times": {
+      "title": "Desperate Times",
+      "revision": 37152740,
+      "skills": {
+        "DIVINATION": 50,
+        "MINING": 50,
+        "SMITHING": 50
+      },
+      "quests": [
+        "The Needle Skips",
+        "There's No Place Like Home...",
+        "You Are It"
+      ],
+      "requirements_text": "Quests:Desperate TimesThe Needle Skips You Are ItThere's No Place Like Home... 50 Divination Divination 50 Mining Mining 50 Smithing Smithing"
+    },
+    "Raksha, the Shadow Colossus": {
+      "title": "Raksha, the Shadow Colossus",
+      "revision": 37200830,
+      "skills": {},
+      "quests": [],
+      "requirements_text": ""
+    },
+    "The Needle Skips": {
+      "title": "The Needle Skips",
+      "revision": 37199663,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:The Needle SkipsNone None"
+    },
+    "The Vault of Shadows": {
+      "title": "The Vault of Shadows",
+      "revision": 37179706,
+      "skills": {
+        "ARCHAEOLOGY": 58,
+        "DIVINATION": 60
+      },
+      "quests": [],
+      "requirements_text": "Quests:The Vault of ShadowsNone 58 Archaeology Archaeology 60 Divination Divination Time Served or An ancient timepiece to complete Time Served All eight shadow anchors powered or Under the effect of Protection of Zaros (only required for one step)"
+    },
+    "There's No Place Like Home...": {
+      "title": "There's No Place Like Home...",
+      "revision": 37182530,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:There's No Place Like Home...None None"
+    },
+    "You Are It": {
+      "title": "You Are It",
+      "revision": 37174986,
+      "skills": {},
+      "quests": [
+        "There's No Place Like Home..."
+      ],
+      "requirements_text": "Quests:You Are ItThere's No Place Like Home..."
+    },
+    "Battle of the Monolith": {
+      "title": "Battle of the Monolith",
+      "revision": 37161698,
+      "skills": {},
+      "quests": [
+        "Azzanadra's Quest",
+        "Desperate Creatures",
+        "Desperate Measures",
+        "Desperate Times",
+        "Raksha, the Shadow Colossus",
+        "The Needle Skips",
+        "The Vault of Shadows",
+        "You Are It"
+      ],
+      "requirements_text": "Quests:Battle of the MonolithAzzanadra's QuestThe Vault of Shadows Raksha, the Shadow Colossus Anachronia base camp tutorial Desperate CreaturesDesperate MeasuresDesperate TimesThe Needle Skips You Are It… Anachronia base camp tutorial"
+    },
+    "Murder on the Border": {
+      "title": "Murder on the Border",
+      "revision": 37175467,
+      "skills": {},
+      "quests": [
+        "New Foundations"
+      ],
+      "requirements_text": "Quests:Murder on the BorderNew Foundations Build Town Hall (Tier 1) Build Command Centre (Tier 1) Build Workshop (Tier 1) Build Chapel (Tier 1) Ironmen: 20 Woodcutting Woodcutting (To chop willow logs for the planks)"
+    },
+    "Unwelcome Guests": {
+      "title": "Unwelcome Guests",
+      "revision": 37161191,
+      "skills": {
+        "CONSTRUCTION": 50,
+        "SLAYER": 10
+      },
+      "quests": [
+        "Murder on the Border",
+        "New Foundations"
+      ],
+      "requirements_text": "Quests:Unwelcome GuestsMurder on the BorderNew Foundations Build Town Hall (Tier 1) Build Command Centre (Tier 1) Build Workshop (Tier 1) Build Chapel (Tier 1) 50 Construction Construction 10 Slayer Slayer Ironmen: 40 Woodcutting Woodcutting (If chopping maple logs for the planks)"
+    },
+    "Death Plateau": {
+      "title": "Death Plateau",
+      "revision": 37182696,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Death PlateauNone None"
+    },
+    "Troll Stronghold": {
+      "title": "Troll Stronghold",
+      "revision": 37182727,
+      "skills": {
+        "AGILITY": 15,
+        "THIEVING": 30
+      },
+      "quests": [
+        "Death Plateau"
+      ],
+      "requirements_text": "Quests:Troll StrongholdDeath Plateau 15 Agility Agility 30 Thieving Thieving"
+    },
+    "The Fremennik Trials": {
+      "title": "The Fremennik Trials",
+      "revision": 37182654,
+      "skills": {
+        "CRAFTING": 40,
+        "FLETCHING": 25,
+        "WOODCUTTING": 40
+      },
+      "quests": [],
+      "requirements_text": "Quests:The Fremennik TrialsNone 40 Crafting Crafting 25 Fletching Fletching 40 Woodcutting Woodcutting Ironmen: A means of obtaining a raw shark. Any of the following work: In Aid of the Myreque for Temple Trekking 32 Slayer Slayer for Mogre 68 Fishing Fishing for swarm fishing spots in the Deep Sea Fishing hub 74 Summoning Summoning for granite lobster 72 Thieving Thieving for the Ardougne Castle chests 76 Divination Divination and Swan Song for transmuting Monkfish"
+    },
+    "Cook's Assistant": {
+      "title": "Cook's Assistant",
+      "revision": 37201167,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Cook's AssistantNone None"
+    },
+    "Demon Slayer": {
+      "title": "Demon Slayer",
+      "revision": 37152735,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Demon SlayerNone None"
+    },
+    "Gertrude's Cat": {
+      "title": "Gertrude's Cat",
+      "revision": 37182697,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Gertrude's CatNone None"
+    },
+    "Recipe for Disaster: Another Cook's Quest": {
+      "title": "Recipe for Disaster: Another Cook's Quest",
+      "revision": 37163407,
+      "skills": {
+        "COOKING": 10
+      },
+      "quests": [
+        "Cook's Assistant"
+      ],
+      "requirements_text": "Quests:Recipe for Disaster: Another Cook's QuestCook's Assistant 10 Cooking Cooking"
+    },
+    "Recipe for Disaster: Freeing Evil Dave": {
+      "title": "Recipe for Disaster: Freeing Evil Dave",
+      "revision": 37161766,
+      "skills": {
+        "COOKING": 25
+      },
+      "quests": [
+        "Cook's Assistant",
+        "Demon Slayer",
+        "Gertrude's Cat",
+        "Recipe for Disaster: Another Cook's Quest",
+        "Shadow of the Storm",
+        "The Golem"
+      ],
+      "requirements_text": "Quests:Recipe for Disaster: Freeing Evil DaveRecipe for Disaster: Another Cook's QuestCook's Assistant Gertrude's Cat Shadow of the StormDemon Slayer The Golem 25 Cooking Cooking"
+    },
+    "The Golem": {
+      "title": "The Golem",
+      "revision": 37182644,
+      "skills": {
+        "CRAFTING": 20,
+        "THIEVING": 25
+      },
+      "quests": [],
+      "requirements_text": "Quests:The GolemNone 20 Crafting Crafting 25 Thieving Thieving"
+    },
+    "Eye of Het I": {
+      "title": "Eye of Het I",
+      "revision": 37173765,
+      "skills": {
+        "AGILITY": 65
+      },
+      "quests": [
+        "Azzanadra's Quest",
+        "Battle of the Monolith",
+        "City of Senntisten",
+        "Desperate Creatures",
+        "Desperate Measures",
+        "Raksha, the Shadow Colossus",
+        "The Vault of Shadows"
+      ],
+      "requirements_text": "Quests:Eye of Het ICity of SenntistenBattle of the MonolithAzzanadra's QuestThe Vault of Shadows Raksha, the Shadow Colossus Anachronia base camp tutorial Desperate CreaturesDesperate Measures… 65 Agility Agility"
+    },
+    "Eye of Het II": {
+      "title": "Eye of Het II",
+      "revision": 37173766,
+      "skills": {},
+      "quests": [
+        "Azzanadra's Quest",
+        "Battle of the Monolith",
+        "City of Senntisten",
+        "Desperate Creatures",
+        "Eye of Het I",
+        "Raksha, the Shadow Colossus",
+        "The Vault of Shadows"
+      ],
+      "requirements_text": "Quests:Eye of Het IIEye of Het ICity of SenntistenBattle of the MonolithAzzanadra's QuestThe Vault of Shadows Raksha, the Shadow Colossus … Desperate Creatures…"
+    },
+    "Sins of the Father": {
+      "title": "Sins of the Father",
+      "revision": 37152987,
+      "skills": {
+        "CRAFTING": 85,
+        "RUNECRAFTING": 85,
+        "SMITHING": 85,
+        "INVENTION": 85
+      },
+      "quests": [
+        "Desperate Measures",
+        "Desperate Times",
+        "The Needle Skips",
+        "There's No Place Like Home...",
+        "You Are It"
+      ],
+      "requirements_text": "Quests:Sins of the FatherDesperate MeasuresDesperate TimesThe Needle Skips You Are ItThere's No Place Like Home... Anachronia base camp tutorial 85 Crafting Crafting or 85 Runecrafting Runecrafting or 85 Smithing Smithing or 85 Invention Invention"
+    },
+    "Hearts of Sanguine": {
+      "title": "Hearts of Sanguine",
+      "revision": 37202158,
+      "skills": {},
+      "quests": [
+        "Visions of Havenhythe"
+      ],
+      "requirements_text": "Quests:Hearts of SanguineVisions of Havenhythe"
+    },
+    "Secrets of Amberfell": {
+      "title": "Secrets of Amberfell",
+      "revision": 37198041,
+      "skills": {
+        "CONSTRUCTION": 30,
+        "HERBLORE": 35,
+        "HUNTER": 32,
+        "SLAYER": 28
+      },
+      "quests": [
+        "Hearts of Sanguine",
+        "Visions of Havenhythe"
+      ],
+      "requirements_text": "Quests:Secrets of AmberfellHearts of SanguineVisions of Havenhythe 30 Construction Construction 35 Herblore Herblore 32 Hunter Hunter 28 Slayer Slayer"
+    },
+    "Visions of Havenhythe": {
+      "title": "Visions of Havenhythe",
+      "revision": 37193723,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Visions of HavenhytheNone None"
+    },
+    "Diamond in the Rough": {
+      "title": "Diamond in the Rough",
+      "revision": 37152742,
+      "skills": {},
+      "quests": [
+        "Stolen Hearts"
+      ],
+      "requirements_text": "Quests:Diamond in the RoughStolen Hearts"
+    },
+    "Stolen Hearts": {
+      "title": "Stolen Hearts",
+      "revision": 37153478,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Stolen HeartsNone None"
+    },
+    "In Search of the Myreque": {
+      "title": "In Search of the Myreque",
+      "revision": 37182648,
+      "skills": {
+        "AGILITY": 25
+      },
+      "quests": [
+        "Nature Spirit",
+        "Priest in Peril",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:In Search of the MyrequeNature SpiritPriest in Peril The Restless Ghost Ability to enter Morytania 25 Agility Agility"
+    },
+    "Between a Rock...": {
+      "title": "Between a Rock...",
+      "revision": 37182647,
+      "skills": {
+        "MINING": 40,
+        "SMITHING": 50
+      },
+      "quests": [
+        "Dwarf Cannon",
+        "Fishing Contest"
+      ],
+      "requirements_text": "Quests:Between a Rock...Dwarf Cannon Fishing Contest 40 Mining Mining 50 Smithing Smithing"
+    },
+    "Druidic Ritual": {
+      "title": "Druidic Ritual",
+      "revision": 37152762,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Druidic RitualNone None"
+    },
+    "Dwarf Cannon": {
+      "title": "Dwarf Cannon",
+      "revision": 37182754,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Dwarf CannonNone None"
+    },
+    "Eadgar's Ruse": {
+      "title": "Eadgar's Ruse",
+      "revision": 37182732,
+      "skills": {
+        "HERBLORE": 31
+      },
+      "quests": [
+        "Death Plateau",
+        "Druidic Ritual",
+        "Troll Stronghold"
+      ],
+      "requirements_text": "Quests:Eadgar's RuseDruidic Ritual Troll StrongholdDeath Plateau Rescue Mad Eadgar from the Troll Stronghold area 31 Herblore Herblore"
+    },
+    "Fishing Contest": {
+      "title": "Fishing Contest",
+      "revision": 37182731,
+      "skills": {
+        "FISHING": 10
+      },
+      "quests": [],
+      "requirements_text": "Quests:Fishing ContestNone 10 Fishing Fishing"
+    },
+    "Forgettable Tale of a Drunken Dwarf": {
+      "title": "Forgettable Tale of a Drunken Dwarf",
+      "revision": 37182639,
+      "skills": {
+        "COOKING": 22,
+        "FARMING": 17
+      },
+      "quests": [
+        "Fishing Contest",
+        "The Giant Dwarf"
+      ],
+      "requirements_text": "Quests:Forgettable Tale of a Drunken DwarfThe Giant Dwarf Fishing Contest 22 Cooking Cooking 17 Farming Farming"
+    },
+    "Forgiveness of a Chaos Dwarf": {
+      "title": "Forgiveness of a Chaos Dwarf",
+      "revision": 37152805,
+      "skills": {
+        "FIREMAKING": 61,
+        "HUNTER": 61,
+        "STRENGTH": 69
+      },
+      "quests": [
+        "Between a Rock...",
+        "Dwarf Cannon",
+        "Fishing Contest",
+        "Forgettable Tale of a Drunken Dwarf",
+        "The Giant Dwarf"
+      ],
+      "requirements_text": "Quests:Forgiveness of a Chaos DwarfForgettable Tale of a Drunken DwarfThe Giant Dwarf Fishing Contest Between a Rock...Dwarf Cannon Fishing Contest 61 Firemaking Firemaking 61 Hunter Hunter 69 Strength Strength"
+    },
+    "Jungle Potion": {
+      "title": "Jungle Potion",
+      "revision": 37152860,
+      "skills": {
+        "HERBLORE": 3
+      },
+      "quests": [],
+      "requirements_text": "Quests:Jungle PotionNone 3 Herblore Herblore"
+    },
+    "My Arm's Big Adventure": {
+      "title": "My Arm's Big Adventure",
+      "revision": 37186852,
+      "skills": {
+        "FARMING": 29,
+        "WOODCUTTING": 10
+      },
+      "quests": [
+        "Death Plateau",
+        "Druidic Ritual",
+        "Eadgar's Ruse",
+        "Jungle Potion",
+        "Troll Stronghold"
+      ],
+      "requirements_text": "Quests:My Arm's Big AdventureEadgar's RuseDruidic Ritual Troll StrongholdDeath Plateau Rescue Mad Eadgar from the Troll Stronghold area Jungle Potion 29 Farming Farming 10 Woodcutting Woodcutting"
+    },
+    "The Giant Dwarf": {
+      "title": "The Giant Dwarf",
+      "revision": 37182642,
+      "skills": {
+        "CRAFTING": 12,
+        "FIREMAKING": 16,
+        "MAGIC": 33,
+        "THIEVING": 14
+      },
+      "quests": [],
+      "requirements_text": "Quests:The Giant DwarfNone 12 Crafting Crafting 16 Firemaking Firemaking 33 Magic Magic 14 Thieving Thieving Standard spells equipped or the ability to cast Spellbook Swap Weigh less than 30 kg Ironmen: 20 Mining Mining (to mine coal) 10 Smithing Smithing (to smelt iron bar)"
+    },
+    "The Grand Tree": {
+      "title": "The Grand Tree",
+      "revision": 37182667,
+      "skills": {
+        "AGILITY": 25
+      },
+      "quests": [],
+      "requirements_text": "Quests:The Grand TreeNone 25 Agility Agility"
+    },
+    "Tree Gnome Village": {
+      "title": "Tree Gnome Village",
+      "revision": 37182669,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Tree Gnome VillageNone None"
+    },
+    "Biohazard": {
+      "title": "Biohazard",
+      "revision": 37182701,
+      "skills": {},
+      "quests": [
+        "Plague City"
+      ],
+      "requirements_text": "Quests:BiohazardPlague City"
+    },
+    "Mourning's End Part I": {
+      "title": "Mourning's End Part I",
+      "revision": 37182640,
+      "skills": {
+        "RANGED": 60,
+        "THIEVING": 50
+      },
+      "quests": [
+        "Big Chompy Bird Hunting",
+        "Biohazard",
+        "Plague City",
+        "Regicide",
+        "Roving Elves",
+        "Sheep Herder",
+        "Underground Pass",
+        "Waterfall Quest"
+      ],
+      "requirements_text": "Quests:Mourning's End Part IRoving ElvesRegicideUnderground PassBiohazardPlague City Waterfall Quest Sheep Herder Big Chompy Bird Hunting 60 Ranged Ranged 50 Thieving Thieving Ironmen: 60 Woodcutting Woodcutting (to cut mahogany logs from a mahogany tree, unless obtained from another source such as Managing Miscellania)"
+    },
+    "Sheep Herder": {
+      "title": "Sheep Herder",
+      "revision": 37182749,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Sheep HerderNone None"
+    },
+    "Underground Pass": {
+      "title": "Underground Pass",
+      "revision": 37182666,
+      "skills": {
+        "RANGED": 25
+      },
+      "quests": [
+        "Biohazard",
+        "Plague City"
+      ],
+      "requirements_text": "Quests:Underground PassBiohazardPlague City 25 Ranged Ranged"
+    },
+    "Waterfall Quest": {
+      "title": "Waterfall Quest",
+      "revision": 37153090,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Waterfall QuestNone None"
+    },
+    "A Void Dance": {
+      "title": "A Void Dance",
+      "revision": 37163347,
+      "skills": {
+        "CONSTRUCTION": 47,
+        "HERBLORE": 49,
+        "HUNTER": 46,
+        "MINING": 47,
+        "SUMMONING": 48,
+        "THIEVING": 54,
+        "WOODCUTTING": 52
+      },
+      "quests": [
+        "Enter the Abyss (miniquest)",
+        "Imp Catcher",
+        "Quiet Before the Swarm",
+        "Recruitment Drive",
+        "Wanted!"
+      ],
+      "requirements_text": "Quests:A Void DanceQuiet Before the SwarmImp Catcher Wanted!Recruitment Drive Enter the Abyss (miniquest) Ability to enter Morytania 47 Construction Construction 49 Herblore Herblore 46 Hunter Hunter 47 Mining Mining 48 Summoning Summoning 54 Thieving Thieving 52 Woodcutting Woodcutting"
+    },
+    "Another Slice of H.A.M.": {
+      "title": "Another Slice of H.A.M.",
+      "revision": 37161592,
+      "skills": {
+        "ATTACK": 15,
+        "PRAYER": 25
+      },
+      "quests": [
+        "Death to the Dorgeshuun",
+        "Goblin Diplomacy",
+        "The Giant Dwarf",
+        "The Lost Tribe"
+      ],
+      "requirements_text": "Quests:Another Slice of H.A.M.Death to the DorgeshuunThe Lost Tribe Goblin Diplomacy The Giant Dwarf 15 Attack Attack 25 Prayer Prayer"
+    },
+    "Carnillean Rising": {
+      "title": "Carnillean Rising",
+      "revision": 37152702,
+      "skills": {
+        "CONSTRUCTION": 31,
+        "THIEVING": 33,
+        "QUEST POINTS": 50
+      },
+      "quests": [
+        "Hazeel Cult",
+        "The Blood Pact"
+      ],
+      "requirements_text": "Quests:Carnillean RisingThe Blood Pact Hazeel Cult 31 Construction Construction 33 Thieving Thieving 50 quest points quest points"
+    },
+    "Dishonour among Thieves": {
+      "title": "Dishonour among Thieves",
+      "revision": 37169602,
+      "skills": {
+        "AGILITY": 30,
+        "THIEVING": 30
+      },
+      "quests": [
+        "Hazeel Cult",
+        "Missing, Presumed Death"
+      ],
+      "requirements_text": "Quests:Dishonour among ThievesHazeel Cult Missing, Presumed Death Ability to enter Morytania 30 Agility Agility 30 Thieving Thieving"
+    },
+    "Enter the Abyss (miniquest)": {
+      "title": "Enter the Abyss (miniquest)",
+      "revision": 37175024,
+      "skills": {
+        "RUNECRAFTING": 5
+      },
+      "quests": [],
+      "requirements_text": "Quests:Enter the Abyss (miniquest)None 5 Runecrafting Runecrafting"
+    },
+    "Goblin Diplomacy": {
+      "title": "Goblin Diplomacy",
+      "revision": 37161794,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Goblin DiplomacyNone None"
+    },
+    "Hazeel Cult": {
+      "title": "Hazeel Cult",
+      "revision": 37182705,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Hazeel CultNone None"
+    },
+    "Heart of Stone": {
+      "title": "Heart of Stone",
+      "revision": 37161803,
+      "skills": {
+        "MAGIC": 35,
+        "RUNECRAFTING": 25
+      },
+      "quests": [
+        "Carnillean Rising",
+        "Hazeel Cult",
+        "Rune Memories",
+        "Rune Mysteries",
+        "The Blood Pact"
+      ],
+      "requirements_text": "Quests:Heart of StoneCarnillean RisingThe Blood Pact Hazeel Cult Rune MemoriesRune Mysteries 35 Magic Magic 25 Runecrafting Runecrafting"
+    },
+    "Holy Grail": {
+      "title": "Holy Grail",
+      "revision": 37182712,
+      "skills": {
+        "ATTACK": 30
+      },
+      "quests": [
+        "Merlin's Crystal"
+      ],
+      "requirements_text": "Quests:Holy GrailMerlin's Crystal 30 Attack Attack"
+    },
+    "Imp Catcher": {
+      "title": "Imp Catcher",
+      "revision": 37152851,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Imp CatcherNone None"
+    },
+    "King's Ransom": {
+      "title": "King's Ransom",
+      "revision": 37185342,
+      "skills": {},
+      "quests": [
+        "Holy Grail",
+        "Jungle Potion",
+        "Merlin's Crystal",
+        "Murder Mystery",
+        "One Small Favour",
+        "Shilo Village"
+      ],
+      "requirements_text": "Quests:King's RansomHoly GrailMerlin's Crystal Murder Mystery One Small FavourShilo VillageJungle Potion"
+    },
+    "Land of the Goblins": {
+      "title": "Land of the Goblins",
+      "revision": 37214462,
+      "skills": {
+        "AGILITY": 36,
+        "FISHING": 36,
+        "HERBLORE": 37,
+        "PRAYER": 30,
+        "THIEVING": 36
+      },
+      "quests": [
+        "Another Slice of H.A.M.",
+        "Death to the Dorgeshuun",
+        "Fishing Contest",
+        "Goblin Diplomacy",
+        "The Giant Dwarf",
+        "The Lost Tribe"
+      ],
+      "requirements_text": "Quests:Land of the GoblinsAnother Slice of H.A.M.Death to the DorgeshuunThe Lost Tribe Goblin Diplomacy The Giant Dwarf Fishing Contest 36 Agility Agility 36 Fishing Fishing 37 Herblore Herblore 30 Prayer Prayer 36 Thieving Thieving"
+    },
+    "Merlin's Crystal": {
+      "title": "Merlin's Crystal",
+      "revision": 37182716,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Merlin's CrystalNone None"
+    },
+    "Missing, Presumed Death": {
+      "title": "Missing, Presumed Death",
+      "revision": 37209315,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Missing, Presumed DeathNone None"
+    },
+    "Murder Mystery": {
+      "title": "Murder Mystery",
+      "revision": 37153408,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Murder MysteryNone None"
+    },
+    "Nomad's Requiem": {
+      "title": "Nomad's Requiem",
+      "revision": 37168583,
+      "skills": {
+        "CONSTRUCTION": 60,
+        "HUNTER": 65,
+        "MAGIC": 75,
+        "MINING": 66,
+        "PRAYER": 70
+      },
+      "quests": [
+        "Holy Grail",
+        "Jungle Potion",
+        "King's Ransom",
+        "Merlin's Crystal",
+        "Murder Mystery",
+        "One Small Favour",
+        "Shilo Village"
+      ],
+      "requirements_text": "Quests:Nomad's RequiemKing's RansomHoly GrailMerlin's Crystal Murder Mystery One Small FavourShilo VillageJungle Potion Complete the Knight Waves in Camelot Complete the Soul Wars tutorial 60 Construction Construction 65 Hunter Hunter 75 Magic Magic 66 Mining Mining 70 Prayer Prayer"
+    },
+    "One Small Favour": {
+      "title": "One Small Favour",
+      "revision": 37182691,
+      "skills": {
+        "AGILITY": 36,
+        "CRAFTING": 25,
+        "HERBLORE": 18,
+        "SMITHING": 30
+      },
+      "quests": [
+        "Druidic Ritual",
+        "Jungle Potion",
+        "Shilo Village"
+      ],
+      "requirements_text": "Quests:One Small FavourShilo VillageJungle Potion 36 Agility Agility 25 Crafting Crafting 18 Herblore Herblore 30 Smithing Smithing The quest Druidic Ritual must be completed to speak with Sanfew about One Small Favour Ironmen: 20 Herblore Herblore (to clean grimy harralander) 20 Mining Mining (to mine coal for steel bars)"
+    },
+    "Quiet Before the Swarm": {
+      "title": "Quiet Before the Swarm",
+      "revision": 37161837,
+      "skills": {
+        "ATTACK": 35,
+        "STRENGTH": 42
+      },
+      "quests": [
+        "Enter the Abyss (miniquest)",
+        "Imp Catcher",
+        "Recruitment Drive",
+        "Wanted!"
+      ],
+      "requirements_text": "Quests:Quiet Before the SwarmImp Catcher Wanted!Recruitment Drive Enter the Abyss (miniquest) Ability to enter Morytania 35 Attack Attack 42 Strength Strength"
+    },
+    "Recruitment Drive": {
+      "title": "Recruitment Drive",
+      "revision": 37182740,
+      "skills": {
+        "HERBLORE": 3
+      },
+      "quests": [],
+      "requirements_text": "Quests:Recruitment DriveNone 3 Herblore Herblore"
+    },
+    "Rune Memories": {
+      "title": "Rune Memories",
+      "revision": 37153462,
+      "skills": {},
+      "quests": [
+        "Rune Mysteries"
+      ],
+      "requirements_text": "Quests:Rune MemoriesRune Mysteries"
+    },
+    "Rune Mysteries": {
+      "title": "Rune Mysteries",
+      "revision": 37162525,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Rune MysteriesNone Standard spells equipped or the ability to cast Spellbook Swap"
+    },
+    "Shilo Village": {
+      "title": "Shilo Village",
+      "revision": 37182735,
+      "skills": {
+        "AGILITY": 32,
+        "CRAFTING": 20
+      },
+      "quests": [
+        "Jungle Potion"
+      ],
+      "requirements_text": "Quests:Shilo VillageJungle Potion 32 Agility Agility 20 Crafting Crafting"
+    },
+    "The Blood Pact": {
+      "title": "The Blood Pact",
+      "revision": 37153014,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:The Blood PactNone None"
+    },
+    "The Mighty Fall": {
+      "title": "The Mighty Fall",
+      "revision": 37161867,
+      "skills": {
+        "ATTACK": 79,
+        "CONSTITUTION": 78,
+        "DEFENCE": 72,
+        "SLAYER": 69,
+        "STRENGTH": 79
+      },
+      "quests": [
+        "Another Slice of H.A.M.",
+        "Death to the Dorgeshuun",
+        "Fishing Contest",
+        "Goblin Diplomacy",
+        "Land of the Goblins",
+        "Missing, Presumed Death",
+        "The Chosen Commander",
+        "The Giant Dwarf",
+        "The Lost Tribe"
+      ],
+      "requirements_text": "Quests:The Mighty FallThe Chosen CommanderLand of the GoblinsAnother Slice of H.A.M.Death to the DorgeshuunThe Lost Tribe Goblin Diplomacy The Giant Dwarf Fishing Contest Missing, Presumed Death 79 Attack Attack 78 Constitution Constitution 72 Defence Defence 69 Slayer Slayer 79 Strength Strength"
+    },
+    "The Void Stares Back": {
+      "title": "The Void Stares Back",
+      "revision": 37200026,
+      "skills": {
+        "ATTACK": 78,
+        "CONSTRUCTION": 70,
+        "CRAFTING": 70,
+        "DEFENCE": 25,
+        "FIREMAKING": 71,
+        "MAGIC": 80,
+        "SMITHING": 70,
+        "STRENGTH": 78,
+        "SUMMONING": 55
+      },
+      "quests": [
+        "A Void Dance",
+        "Enter the Abyss (miniquest)",
+        "Imp Catcher",
+        "Quiet Before the Swarm",
+        "Recruitment Drive",
+        "Wanted!"
+      ],
+      "requirements_text": "Quests:The Void Stares BackA Void DanceQuiet Before the SwarmImp Catcher Wanted!Recruitment Drive Enter the Abyss (miniquest) Ability to enter Morytania 78 Attack Attack 70 Construction Construction 70 Crafting Crafting 25 Defence Defence 71 Firemaking Firemaking 80 Magic Magic 70 Smithing Smithing 78 Strength Strength 55 Summoning Summoning"
+    },
+    "Throne of Miscellania": {
+      "title": "Throne of Miscellania",
+      "revision": 37182650,
+      "skills": {},
+      "quests": [
+        "The Fremennik Trials"
+      ],
+      "requirements_text": "Quests:Throne of MiscellaniaThe Fremennik Trials"
+    },
+    "Wanted!": {
+      "title": "Wanted!",
+      "revision": 37206827,
+      "skills": {
+        "QUEST POINTS": 33
+      },
+      "quests": [
+        "Enter the Abyss (miniquest)",
+        "Recruitment Drive"
+      ],
+      "requirements_text": "Quests:Wanted!Recruitment Drive Enter the Abyss (miniquest) Ability to enter Morytania 33 quest points quest points"
+    },
+    "Ancient Awakening": {
+      "title": "Ancient Awakening",
+      "revision": 37152666,
+      "skills": {
+        "NECROMANCY": 50
+      },
+      "quests": [
+        "Dead and Buried",
+        "Murder on the Border",
+        "Necromancy!",
+        "New Foundations",
+        "Unwelcome Guests"
+      ],
+      "requirements_text": "Quests:Ancient AwakeningDead and BuriedUnwelcome GuestsMurder on the BorderNew Foundations Build Town Hall (Tier 1) Build Command Centre (Tier 1) Build Workshop (Tier 1) Build Chapel (Tier 1) 50 Necromancy Necromancy"
+    },
+    "Battle of Forinthry": {
+      "title": "Battle of Forinthry",
+      "revision": 37175497,
+      "skills": {
+        "NECROMANCY": 60
+      },
+      "quests": [
+        "Ancient Awakening",
+        "Dead and Buried",
+        "Murder on the Border",
+        "Necromancy!",
+        "New Foundations",
+        "Unwelcome Guests"
+      ],
+      "requirements_text": "Quests:Battle of ForinthryAncient AwakeningDead and BuriedUnwelcome GuestsMurder on the BorderNew Foundations Build Town Hall (Tier 1) Build Command Centre (Tier 1) Build Workshop (Tier 1) Build Chapel (Tier 1) Build Grove cabin (Tier 1) Build Botanist's Workbench (Tier 1) 60 Necromancy Necromancy"
+    },
+    "Ghosts Ahoy": {
+      "title": "Ghosts Ahoy",
+      "revision": 37182728,
+      "skills": {
+        "AGILITY": 25,
+        "COOKING": 20
+      },
+      "quests": [
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:Ghosts AhoyThe Restless Ghost Ability to enter Morytania 25 Agility Agility 20 Cooking Cooking"
+    },
+    "Kili Row": {
+      "title": "Kili Row",
+      "revision": 37152862,
+      "skills": {
+        "NECROMANCY": 20
+      },
+      "quests": [
+        "Necromancy!"
+      ],
+      "requirements_text": "Quests:Kili RowNecromancy! Collect a set of necromancer robes from Sostratus 20 Necromancy Necromancy"
+    },
+    "Requiem for a Dragon": {
+      "title": "Requiem for a Dragon",
+      "revision": 37152958,
+      "skills": {},
+      "quests": [
+        "Ancient Awakening",
+        "Battle of Forinthry",
+        "Dead and Buried",
+        "Diamond in the Rough",
+        "Ghosts Ahoy",
+        "Kili Row",
+        "Murder on the Border",
+        "Necromancy!",
+        "Rune Mythos",
+        "Stolen Hearts",
+        "The Jack of Spades",
+        "The Restless Ghost",
+        "The Spirit of War",
+        "Tomes of the Warlock",
+        "Unwelcome Guests",
+        "Vessel of the Harbinger"
+      ],
+      "requirements_text": "Quests:Requiem for a DragonBattle of ForinthryAncient AwakeningDead and BuriedUnwelcome GuestsMurder on the Border… Build Grove cabin (Tier 1) Build Botanist's Workbench (Tier 1) Tomes of the WarlockThe Spirit of WarVessel of the HarbingerRune MythosNecromancy! Ghosts AhoyThe Restless Ghost Ability to enter Morytania 3,000 City of Um vessel souls The Jack of SpadesDiamond in the RoughStolen Hearts Kili RowNecromancy! Collect a set of necromancer robes from Sostratus Ironmen: To obtain greater ensouled bars, unless bought from Thalmund's Wares: 80 Smithing Smithing 80 Necromancy Necromancy"
+    },
+    "Soul Searching": {
+      "title": "Soul Searching",
+      "revision": 37152993,
+      "skills": {},
+      "quests": [
+        "Necromancy!"
+      ],
+      "requirements_text": "Quests:Soul SearchingNecromancy!"
+    },
+    "The Spirit of War": {
+      "title": "The Spirit of War",
+      "revision": 37153055,
+      "skills": {
+        "NECROMANCY": 65
+      },
+      "quests": [
+        "Ghosts Ahoy",
+        "Necromancy!",
+        "Rune Mythos",
+        "The Restless Ghost",
+        "Vessel of the Harbinger"
+      ],
+      "requirements_text": "Quests:The Spirit of WarVessel of the HarbingerRune MythosNecromancy! Ghosts AhoyThe Restless Ghost Ability to enter Morytania 3,000 City of Um vessel souls 65 Necromancy Necromancy"
+    },
+    "Tomes of the Warlock": {
+      "title": "Tomes of the Warlock",
+      "revision": 37153068,
+      "skills": {
+        "ARCHAEOLOGY": 86,
+        "MAGIC": 66,
+        "NECROMANCY": 75
+      },
+      "quests": [
+        "Diamond in the Rough",
+        "Ghosts Ahoy",
+        "Necromancy!",
+        "Rune Mythos",
+        "Stolen Hearts",
+        "The Jack of Spades",
+        "The Restless Ghost",
+        "The Spirit of War",
+        "Vessel of the Harbinger"
+      ],
+      "requirements_text": "Quests:Tomes of the WarlockThe Spirit of WarVessel of the HarbingerRune MythosNecromancy! Ghosts AhoyThe Restless Ghost Ability to enter Morytania 3,000 City of Um vessel souls The Jack of SpadesDiamond in the RoughStolen Hearts 86 Archaeology Archaeology 66 Magic Magic 75 Necromancy Necromancy"
+    },
+    "Vessel of the Harbinger": {
+      "title": "Vessel of the Harbinger",
+      "revision": 37162004,
+      "skills": {
+        "NECROMANCY": 46,
+        "PRAYER": 40
+      },
+      "quests": [
+        "Ghosts Ahoy",
+        "Necromancy!",
+        "Rune Mythos",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:Vessel of the HarbingerRune MythosNecromancy! Ghosts AhoyThe Restless Ghost Ability to enter Morytania 46 Necromancy Necromancy 40 Prayer Prayer"
+    },
+    "A Tail of Two Cats": {
+      "title": "A Tail of Two Cats",
+      "revision": 37182744,
+      "skills": {},
+      "quests": [
+        "Diamond in the Rough",
+        "Gertrude's Cat",
+        "Icthlarin's Little Helper",
+        "Stolen Hearts"
+      ],
+      "requirements_text": "Quests:A Tail of Two CatsIcthlarin's Little HelperGertrude's Cat Diamond in the RoughStolen Hearts"
+    },
+    "Catapult Construction": {
+      "title": "Catapult Construction",
+      "revision": 37153399,
+      "skills": {
+        "CONSTRUCTION": 44,
+        "FLETCHING": 42
+      },
+      "quests": [
+        "Biohazard",
+        "Plague City",
+        "Regicide",
+        "Underground Pass"
+      ],
+      "requirements_text": "Quests:Catapult ConstructionRegicideUnderground PassBiohazardPlague City 44 Construction Construction 42 Fletching Fletching Ironmen: 30 Smithing Smithing (to smith mithril nails) 60 Woodcutting Woodcutting (to cut Mahogany trees) Alternatively, Carnillean Rising rewards 10 mahogany planks."
+    },
+    "Plague City": {
+      "title": "Plague City",
+      "revision": 37152931,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Plague CityNone None"
+    },
+    "Within the Light": {
+      "title": "Within the Light",
+      "revision": 37167103,
+      "skills": {
+        "AGILITY": 69,
+        "FLETCHING": 70,
+        "RANGED": 75,
+        "WOODCUTTING": 75
+      },
+      "quests": [
+        "Big Chompy Bird Hunting",
+        "Mourning's End Part I",
+        "Mourning's End Part II",
+        "Regicide",
+        "Roving Elves",
+        "Sheep Herder",
+        "Underground Pass",
+        "Waterfall Quest"
+      ],
+      "requirements_text": "Quests:Within the LightMourning's End Part IIMourning's End Part IRoving ElvesRegicideUnderground Pass… Waterfall Quest Sheep Herder Big Chompy Bird Hunting 69 Agility Agility 70 Fletching Fletching 75 Ranged Ranged 75 Woodcutting Woodcutting"
+    },
+    "Children of Mah": {
+      "title": "Children of Mah",
+      "revision": 37178931,
+      "skills": {},
+      "quests": [
+        "Dishonour among Thieves",
+        "Fate of the Gods",
+        "Hazeel Cult",
+        "Meeting History",
+        "Missing, Presumed Death",
+        "Plague's End",
+        "The Light Within",
+        "The Temple at Senntisten",
+        "The World Wakes"
+      ],
+      "requirements_text": "Quests:Children of MahThe Light WithinMeeting History… The Temple at Senntisten… Plague's End… The World Wakes Fate of the Gods… Dishonour among ThievesHazeel Cult Missing, Presumed Death Ability to enter Morytania"
+    },
+    "Hero's Welcome": {
+      "title": "Hero's Welcome",
+      "revision": 37162099,
+      "skills": {
+        "DIVINATION": 60,
+        "MINING": 67,
+        "SLAYER": 62,
+        "SMITHING": 67
+      },
+      "quests": [
+        "Lost City",
+        "Lunar Diplomacy",
+        "The Fremennik Trials"
+      ],
+      "requirements_text": "Quests:Hero's WelcomeLunar DiplomacyThe Fremennik Trials Lost City Access to the Ancient Cavern from Barbarian Training 60 Divination Divination 67 Mining Mining 62 Slayer Slayer 67 Smithing Smithing"
+    },
+    "Kindred Spirits": {
+      "title": "Kindred Spirits",
+      "revision": 37161806,
+      "skills": {
+        "AGILITY": 60,
+        "CRAFTING": 60,
+        "HERBLORE": 60,
+        "SMITHING": 60
+      },
+      "quests": [
+        "Missing, Presumed Death"
+      ],
+      "requirements_text": "Quests:Kindred SpiritsMissing, Presumed Death 60 Agility Agility 60 Crafting Crafting 60 Herblore Herblore 60 Smithing Smithing"
+    },
+    "The Death of Chivalry": {
+      "title": "The Death of Chivalry",
+      "revision": 37169639,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:The Death of ChivalryNone None"
+    },
+    "Devious Minds": {
+      "title": "Devious Minds",
+      "revision": 37186856,
+      "skills": {
+        "FLETCHING": 50,
+        "RUNECRAFTING": 50,
+        "SMITHING": 65
+      },
+      "quests": [
+        "Recruitment Drive",
+        "What's Mine is Yours"
+      ],
+      "requirements_text": "Quests:Devious MindsRecruitment Drive What's Mine is Yours Ability to enter Morytania 50 Fletching Fletching 50 Runecrafting Runecrafting 65 Smithing Smithing"
+    },
+    "Fate of the Gods": {
+      "title": "Fate of the Gods",
+      "revision": 37180246,
+      "skills": {
+        "AGILITY": 73,
+        "DIVINATION": 75,
+        "MAGIC": 79,
+        "SLAYER": 76,
+        "SUMMONING": 67
+      },
+      "quests": [
+        "Missing, Presumed Death"
+      ],
+      "requirements_text": "Quests:Fate of the GodsMissing, Presumed Death 73 Agility Agility 75 Divination Divination 79 Magic Magic 76 Slayer Slayer 67 Summoning Summoning"
+    },
+    "Meeting History": {
+      "title": "Meeting History",
+      "revision": 37161820,
+      "skills": {
+        "HERBLORE": 3
+      },
+      "quests": [
+        "Making History",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:Meeting HistoryMaking HistoryThe Restless Ghost Ability to enter Morytania 3 Herblore Herblore"
+    },
+    "The Curse of Arrav": {
+      "title": "The Curse of Arrav",
+      "revision": 37182709,
+      "skills": {
+        "AGILITY": 61,
+        "MINING": 64,
+        "RANGED": 64,
+        "SLAYER": 37,
+        "STRENGTH": 64,
+        "SUMMONING": 41,
+        "THIEVING": 66
+      },
+      "quests": [
+        "Creature of Fenkenstrain",
+        "Death Plateau",
+        "Defender of Varrock",
+        "Diamond in the Rough",
+        "Family Crest",
+        "Garden of Tranquillity",
+        "Gertrude's Cat",
+        "Icthlarin's Little Helper",
+        "Missing My Mummy",
+        "Shield of Arrav",
+        "Stolen Hearts",
+        "Temple of Ikov",
+        "The Golem",
+        "The Knight's Sword",
+        "The Restless Ghost",
+        "The Tale of the Muspah",
+        "Troll Stronghold",
+        "What Lies Below"
+      ],
+      "requirements_text": "Quests:The Curse of ArravThe Tale of the Muspah Missing My MummyIcthlarin's Little HelperGertrude's Cat Diamond in the RoughStolen Hearts The Golem Diamond in the Rough… Defender of VarrockShield of Arrav The Knight's Sword Family Crest What Lies Below Claim Kudos from Historian Minas in Varrock Museum for completing Shield of Arrav Temple of Ikov Ability to access Trollheim Partial completion of Troll StrongholdDeath Plateau Fully restore Senliten from the 'Missing My Mummy' quest Full completion of Missing My MummyPartial completion of Garden of TranquillityCreature of FenkenstrainThe Restless Ghost Ability to enter Morytania 61 Agility Agility 64 Mining Mining 64 Ranged Ranged 37 Slayer Slayer 64 Strength Strength 41 Summoning Summoning 66 Thieving Thieving Ironmen: To make mithril grapple unless obtained as a drop 59 Fletching Fletching To make a ring of life unless obtained as a drop or as reward from the novice quest The Lost Tribe 57 Magic Magic 43 Crafting Crafting"
+    },
+    "Defender of Varrock": {
+      "title": "Defender of Varrock",
+      "revision": 37161650,
+      "skills": {
+        "AGILITY": 51,
+        "HUNTER": 51,
+        "MINING": 59,
+        "SMITHING": 54
+      },
+      "quests": [
+        "Family Crest",
+        "Shield of Arrav",
+        "The Knight's Sword",
+        "What Lies Below"
+      ],
+      "requirements_text": "Quests:Defender of VarrockShield of Arrav The Knight's Sword Family Crest What Lies Below Claim Kudos from Historian Minas in Varrock Museum for completing Shield of Arrav 51 Agility Agility 51 Hunter Hunter 59 Mining Mining 54 Smithing Smithing"
+    },
+    "Garden of Tranquillity": {
+      "title": "Garden of Tranquillity",
+      "revision": 37182637,
+      "skills": {
+        "FARMING": 25
+      },
+      "quests": [
+        "Creature of Fenkenstrain",
+        "The Restless Ghost"
+      ],
+      "requirements_text": "Quests:Garden of TranquillityCreature of FenkenstrainThe Restless Ghost Ability to enter Morytania 25 Farming Farming"
+    },
+    "Shield of Arrav": {
+      "title": "Shield of Arrav",
+      "revision": 37182737,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Shield of ArravNone None"
+    },
+    "Temple of Ikov": {
+      "title": "Temple of Ikov",
+      "revision": 37182704,
+      "skills": {
+        "RANGED": 40,
+        "THIEVING": 42
+      },
+      "quests": [],
+      "requirements_text": "Quests:Temple of IkovNone 40 Ranged Ranged 42 Thieving Thieving"
+    },
+    "The Knight's Sword": {
+      "title": "The Knight's Sword",
+      "revision": 37182684,
+      "skills": {
+        "MINING": 10
+      },
+      "quests": [],
+      "requirements_text": "Quests:The Knight's SwordNone 10 Mining Mining Ironmen: 10 Cooking Cooking (to cook a redberry pie) 10 Smithing Smithing (to smelt an iron bar)"
+    },
+    "The Tale of the Muspah": {
+      "title": "The Tale of the Muspah",
+      "revision": 37168305,
+      "skills": {
+        "FIREMAKING": 6,
+        "MAGIC": 10,
+        "MINING": 8,
+        "WOODCUTTING": 10
+      },
+      "quests": [],
+      "requirements_text": "Quests:The Tale of the MuspahNone 6 Firemaking Firemaking 10 Magic Magic 8 Mining Mining 10 Woodcutting Woodcutting"
+    },
+    "What Lies Below": {
+      "title": "What Lies Below",
+      "revision": 37182695,
+      "skills": {
+        "RUNECRAFTING": 35
+      },
+      "quests": [],
+      "requirements_text": "Quests:What Lies BelowNone 35 Runecrafting Runecrafting"
+    },
+    "What's Mine is Yours": {
+      "title": "What's Mine is Yours",
+      "revision": 37202659,
+      "skills": {
+        "SMITHING": 5
+      },
+      "quests": [],
+      "requirements_text": "Quests:What's Mine is YoursNone 5 Smithing Smithing"
+    },
+    "Ernest the Chicken": {
+      "title": "Ernest the Chicken",
+      "revision": 37153377,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Ernest the ChickenNone None, but watch out for those trees in the manor grounds."
+    },
+    "Contact!": {
+      "title": "Contact!",
+      "revision": 37186904,
+      "skills": {},
+      "quests": [
+        "Diamond in the Rough",
+        "Gertrude's Cat",
+        "Icthlarin's Little Helper",
+        "Stolen Hearts"
+      ],
+      "requirements_text": "Quests:Contact!Icthlarin's Little HelperGertrude's Cat Diamond in the RoughStolen Hearts If Icthlarin's Little Helper was completed prior to the addition of Stolen Hearts and Diamond in the Rough, they must be completed before Contact! can be started (or completed)."
+    },
+    "One Piercing Note": {
+      "title": "One Piercing Note",
+      "revision": 37162705,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:One Piercing NoteNone None"
+    },
+    "Lair of Tarn Razorlor (miniquest)": {
+      "title": "Lair of Tarn Razorlor (miniquest)",
+      "revision": 37182572,
+      "skills": {
+        "SLAYER": 40
+      },
+      "quests": [
+        "Haunted Mine"
+      ],
+      "requirements_text": "Quests:Lair of Tarn Razorlor (miniquest)Haunted MineAbility to enter Morytania 40 Slayer Slayer"
+    },
+    "Knight Waves training ground": {
+      "title": "Knight Waves training ground",
+      "revision": 37164602,
+      "skills": {},
+      "quests": [],
+      "requirements_text": ""
+    },
+    "Love Story": {
+      "title": "Love Story",
+      "revision": 37175215,
+      "skills": {
+        "CONSTRUCTION": 68,
+        "CRAFTING": 67,
+        "MAGIC": 77,
+        "SMITHING": 68
+      },
+      "quests": [
+        "Swan Song"
+      ],
+      "requirements_text": "Quests:Love StorySwan Song 68 Construction Construction 67 Crafting Crafting 77 Magic Magic 68 Smithing Smithing"
+    },
+    "Royal Trouble": {
+      "title": "Royal Trouble",
+      "revision": 37182702,
+      "skills": {
+        "AGILITY": 40,
+        "SLAYER": 40
+      },
+      "quests": [
+        "The Fremennik Trials",
+        "Throne of Miscellania"
+      ],
+      "requirements_text": "Quests:Royal TroubleThrone of MiscellaniaThe Fremennik Trials 40 Agility Agility 40 Slayer Slayer"
+    },
+    "River of Blood": {
+      "title": "River of Blood",
+      "revision": 37152960,
+      "skills": {
+        "ATTACK": 78,
+        "CONSTITUTION": 80,
+        "FIREMAKING": 76,
+        "FLETCHING": 75,
+        "HERBLORE": 80,
+        "MAGIC": 78,
+        "MINING": 72,
+        "RANGED": 78
+      },
+      "quests": [
+        "All Fired Up",
+        "Defender of Varrock",
+        "Family Crest",
+        "In Aid of the Myreque",
+        "Legacy of Seergaze",
+        "Priest in Peril",
+        "Shield of Arrav",
+        "The Branches of Darkmeyer",
+        "The Darkness of Hallowvale",
+        "The Knight's Sword",
+        "The Lord of Vampyrium",
+        "What Lies Below"
+      ],
+      "requirements_text": "Quests:River of BloodThe Lord of VampyriumThe Branches of DarkmeyerLegacy of SeergazeThe Darkness of HallowvaleIn Aid of the Myreque… Defender of VarrockShield of Arrav The Knight's Sword Family Crest What Lies Below Claim Kudos from Historian Minas in Varrock Museum for completing Shield of Arrav All Fired UpPriest in Peril 78 Attack Attack 80 Constitution Constitution 76 Firemaking Firemaking 75 Fletching Fletching 80 Herblore Herblore 78 Magic Magic 72 Mining Mining 78 Ranged Ranged"
+    },
+    "Succession": {
+      "title": "Succession",
+      "revision": 37178061,
+      "skills": {
+        "MINING": 60,
+        "SMITHING": 60
+      },
+      "quests": [
+        "Civil War I (miniquest)",
+        "Civil War II (miniquest)",
+        "Civil War III (miniquest)",
+        "Daughter of Chaos"
+      ],
+      "requirements_text": "Quests:SuccessionCivil War III (miniquest)Civil War II (miniquest)Civil War I (miniquest)Daughter of Chaos Unlock Infernal Puzzle Box Tier 5 60 Mining Mining 60 Smithing Smithing"
+    },
+    "Civil War III (miniquest)": {
+      "title": "Civil War III (miniquest)",
+      "revision": 37152711,
+      "skills": {
+        "FARMING": 50
+      },
+      "quests": [
+        "Civil War I (miniquest)",
+        "Civil War II (miniquest)",
+        "Daughter of Chaos"
+      ],
+      "requirements_text": "Quests:Civil War III (miniquest)Civil War II (miniquest)Civil War I (miniquest)Daughter of Chaos 50 Farming Farming"
+    },
+    "Curse of the Black Stone": {
+      "title": "Curse of the Black Stone",
+      "revision": 37152723,
+      "skills": {
+        "AGILITY": 12,
+        "WOODCUTTING": 34
+      },
+      "quests": [
+        "Impressing the Locals"
+      ],
+      "requirements_text": "Quests:Curse of the Black StoneImpressing the Locals 12 Agility Agility 34 Woodcutting Woodcutting The following are not required to start the quest, but must be done to complete it: Completion of the Temple of Aminishi (any mode) Completion of the Dragonkin Laboratory (any mode) Completion of the Shadow Reef (any mode)"
+    },
+    "Eclipse of the Heart": {
+      "title": "Eclipse of the Heart",
+      "revision": 37173772,
+      "skills": {
+        "AGILITY": 65,
+        "NECROMANCY": 90
+      },
+      "quests": [
+        "'Phite Club",
+        "Battle of Forinthry",
+        "Beneath Scabaras' Sands",
+        "Crocodile Tears",
+        "Do No Evil",
+        "Kili Row",
+        "Necromancy!",
+        "Ode of the Devourer",
+        "Our Man in the North",
+        "Pharaoh's Folly",
+        "Requiem for a Dragon",
+        "Soul Searching",
+        "The Feud",
+        "Tomes of the Warlock"
+      ],
+      "requirements_text": "Quests:Eclipse of the HeartPharaoh's FollyBeneath Scabaras' Sands'Phite ClubOur Man in the NorthThe Feud Do No Evil… Crocodile Tears… Ode of the DevourerRequiem for a DragonBattle of Forinthry… Tomes of the Warlock… Kili Row… Soul SearchingNecromancy! 65 Agility Agility 90 Necromancy Necromancy"
+    },
+    "Broken Home": {
+      "title": "Broken Home",
+      "revision": 37164332,
+      "skills": {},
+      "quests": [],
+      "requirements_text": "Quests:Broken HomeNone None"
+    },
+    "Swan Song": {
+      "title": "Swan Song",
+      "revision": 37159590,
+      "skills": {
+        "COOKING": 62,
+        "CRAFTING": 40,
+        "FIREMAKING": 42,
+        "FISHING": 62,
+        "MAGIC": 66,
+        "SMITHING": 45
+      },
+      "quests": [],
+      "requirements_text": "Quests:Swan SongNone 62 Cooking Cooking 40 Crafting Crafting 42 Firemaking Firemaking 62 Fishing Fishing 66 Magic Magic 45 Smithing Smithing"
+    },
+    "The Lord of Vampyrium": {
+      "title": "The Lord of Vampyrium",
+      "revision": 37153046,
+      "skills": {
+        "ATTACK": 75,
+        "CONSTITUTION": 75,
+        "CONSTRUCTION": 79,
+        "DEFENCE": 75,
+        "HUNTER": 76,
+        "SLAYER": 78,
+        "STRENGTH": 75
+      },
+      "quests": [
+        "In Aid of the Myreque",
+        "In Search of the Myreque",
+        "Legacy of Seergaze",
+        "The Branches of Darkmeyer",
+        "The Darkness of Hallowvale"
+      ],
+      "requirements_text": "Quests:The Lord of VampyriumThe Branches of DarkmeyerLegacy of SeergazeThe Darkness of HallowvaleIn Aid of the MyrequeIn Search of the Myreque… 75 Attack Attack 75 Constitution Constitution 79 Construction Construction 75 Defence Defence 76 Hunter Hunter 78 Slayer Slayer 75 Strength Strength"
+    },
+    "Civil War I (miniquest)": {
+      "title": "Civil War I (miniquest)",
+      "revision": 37152709,
+      "skills": {},
+      "quests": [
+        "Daughter of Chaos"
+      ],
+      "requirements_text": "Quests:Civil War I (miniquest)Daughter of Chaos"
+    },
+    "Civil War II (miniquest)": {
+      "title": "Civil War II (miniquest)",
+      "revision": 37152710,
+      "skills": {},
+      "quests": [
+        "Civil War I (miniquest)",
+        "Daughter of Chaos"
+      ],
+      "requirements_text": "Quests:Civil War II (miniquest)Civil War I (miniquest)Daughter of Chaos"
+    },
+    "Daughter of Chaos": {
+      "title": "Daughter of Chaos",
+      "revision": 37152726,
+      "skills": {
+        "ARCHAEOLOGY": 40,
+        "DIVINATION": 40
+      },
+      "quests": [],
+      "requirements_text": "Quests:Daughter of ChaosNone 40 Archaeology Archaeology 40 Divination Divination"
+    },
+    "Beneath Scabaras' Sands": {
+      "title": "Beneath Scabaras' Sands",
+      "revision": 37173764,
+      "skills": {
+        "SLAYER": 87
+      },
+      "quests": [
+        "'Phite Club",
+        "Battle of Forinthry",
+        "Crocodile Tears",
+        "Do No Evil",
+        "Kili Row",
+        "Necromancy!",
+        "Ode of the Devourer",
+        "Our Man in the North",
+        "Requiem for a Dragon",
+        "Soul Searching",
+        "The Feud",
+        "Tomes of the Warlock"
+      ],
+      "requirements_text": "Quests:Beneath Scabaras' Sands'Phite ClubOur Man in the NorthThe Feud Do No Evil… Crocodile Tears… Ode of the DevourerRequiem for a DragonBattle of Forinthry… Tomes of the Warlock… Kili Row… Soul SearchingNecromancy! 87 Slayer Slayer"
+    },
+    "Pharaoh's Folly": {
+      "title": "Pharaoh's Folly",
+      "revision": 37173767,
+      "skills": {},
+      "quests": [
+        "'Phite Club",
+        "Ancient Awakening",
+        "Animal Magnetism",
+        "Battle of Forinthry",
+        "Beneath Scabaras' Sands",
+        "Crocodile Tears",
+        "Dealing with Scabaras",
+        "Desert Treasure",
+        "Do No Evil",
+        "Kili Row",
+        "Missing My Mummy",
+        "Necromancy!",
+        "Ode of the Devourer",
+        "Our Man in the North",
+        "Recipe for Disaster: Freeing King Awowogei",
+        "Requiem for a Dragon",
+        "Shadow of the Storm",
+        "Smoking Kills",
+        "Soul Searching",
+        "Spirits of the Elid",
+        "The Feud",
+        "The Jack of Spades",
+        "The Spirit of War",
+        "Tomes of the Warlock"
+      ],
+      "requirements_text": "Quests:Pharaoh's FollyBeneath Scabaras' Sands'Phite ClubOur Man in the NorthThe Feud Do No EvilAnimal Magnetism… Shadow of the Storm… Desert Treasure… Smoking Kills… Missing My Mummy… Dealing with Scabaras… Recipe for Disaster: Freeing King Awowogei… Fully restore Senliten from the 'Missing My Mummy' quest Bring Leela to Senliten's tomb Full completion of Missing My Mummy… Crocodile TearsThe Jack of Spades… Spirits of the Elid Missing My Mummy… Dealing with Scabaras… Bring Leela to Senliten's tomb Fully restore Senliten from the 'Missing My Mummy' quest Full completion of Missing My Mummy… Ode of the DevourerRequiem for a DragonBattle of ForinthryAncient Awakening… Build Grove cabin (Tier 1) Build Botanist's Workbench (Tier 1) Tomes of the WarlockThe Spirit of War… The Jack of Spades… Kili RowNecromancy! Collect a set of necromancer robes from Sostratus Soul SearchingNecromancy!"
+    },
+    "Rum Deal": {
+      "title": "Rum Deal",
+      "revision": 37208586,
+      "skills": {
+        "CRAFTING": 42,
+        "FARMING": 40,
+        "FISHING": 50,
+        "PRAYER": 47,
+        "SLAYER": 42
+      },
+      "quests": [],
+      "requirements_text": "Quests:Rum DealAbility to enter Morytania 42 Crafting Crafting 40 Farming Farming 50 Fishing Fishing 47 Prayer Prayer 42 Slayer Slayer"
+    },
+    "The Elder Kiln": {
+      "title": "The Elder Kiln",
+      "revision": 37153024,
+      "skills": {
+        "AGILITY": 60,
+        "MAGIC": 75,
+        "MINING": 40
+      },
+      "quests": [],
+      "requirements_text": "Quests:The Elder KilnNone 60 Agility Agility 75 Magic Magic 40 Mining Mining"
+    }
+  },
+  "reward_sources": {
+    "Devotion": {
+      "title": "Devotion",
+      "revision": 37167177,
+      "url": "https://runescape.wiki/w/Devotion"
+    },
+    "Ava's accumulator": {
+      "title": "Ava's accumulator",
+      "revision": 37157947,
+      "url": "https://runescape.wiki/w/Ava's_accumulator"
+    },
+    "Salve amulet": {
+      "title": "Salve amulet",
+      "revision": 37020234,
+      "url": "https://runescape.wiki/w/Salve_amulet"
+    },
+    "Salve amulet (e)": {
+      "title": "Salve amulet (e)",
+      "revision": 36963096,
+      "url": "https://runescape.wiki/w/Salve_amulet_(e)"
+    },
+    "Piety": {
+      "title": "Piety",
+      "revision": 36892217,
+      "url": "https://runescape.wiki/w/Piety"
+    },
+    "Ectophial": {
+      "title": "Ectophial",
+      "revision": 37013678,
+      "url": "https://runescape.wiki/w/Ectophial"
+    },
+    "Ring of vigour": {
+      "title": "Ring of vigour",
+      "revision": 37054163,
+      "url": "https://runescape.wiki/w/Ring_of_vigour"
+    },
+    "Infernal Puzzle Box": {
+      "title": "Infernal Puzzle Box",
+      "revision": 37131004,
+      "url": "https://runescape.wiki/w/Infernal_Puzzle_Box"
+    },
+    "Dive": {
+      "title": "Dive",
+      "revision": 37125347,
+      "url": "https://runescape.wiki/w/Dive"
+    },
+    "Animate Dead": {
+      "title": "Animate Dead",
+      "revision": 37025549,
+      "url": "https://runescape.wiki/w/Animate_Dead"
+    },
+    "Darkness": {
+      "title": "Darkness",
+      "revision": 37186071,
+      "url": "https://runescape.wiki/w/Darkness"
+    },
+    "Greater Bone Shield": {
+      "title": "Greater Bone Shield",
+      "revision": 37032200,
+      "url": "https://runescape.wiki/w/Greater_Bone_Shield"
+    },
+    "Lesser Bone Shield": {
+      "title": "Lesser Bone Shield",
+      "revision": 37032199,
+      "url": "https://runescape.wiki/w/Lesser_Bone_Shield"
+    },
+    "TokKul-Zo": {
+      "title": "TokKul-Zo",
+      "revision": 37215276,
+      "url": "https://runescape.wiki/w/TokKul-Zo"
+    },
+    "The Elder Kiln": {
+      "title": "The Elder Kiln",
+      "revision": 37153024,
+      "url": "https://runescape.wiki/w/The_Elder_Kiln"
+    },
+    "Asylum surgeon's ring": {
+      "title": "Asylum surgeon's ring",
+      "revision": 37168586,
+      "url": "https://runescape.wiki/w/Asylum_surgeon's_ring"
+    },
+    "Shard of Zaros": {
+      "title": "Shard of Zaros",
+      "revision": 37020533,
+      "url": "https://runescape.wiki/w/Shard_of_Zaros"
+    },
+    "Holy wrench": {
+      "title": "Holy wrench",
+      "revision": 37015476,
+      "url": "https://runescape.wiki/w/Holy_wrench"
+    },
+    "Rum Deal": {
+      "title": "Rum Deal",
+      "revision": 37208586,
+      "url": "https://runescape.wiki/w/Rum_Deal"
+    },
+    "Managing Miscellania": {
+      "title": "Managing Miscellania",
+      "revision": 37161839,
+      "url": "https://runescape.wiki/w/Managing_Miscellania"
+    },
+    "Ungael ritual site": {
+      "title": "Ungael ritual site",
+      "revision": 37156299,
+      "url": "https://runescape.wiki/w/Ungael_ritual_site"
+    },
+    "Sunspear (melee)": {
+      "title": "Sunspear (melee)",
+      "revision": 37073823,
+      "url": "https://runescape.wiki/w/Sunspear_(melee)"
+    },
+    "Book of the dead": {
+      "title": "Book of Death",
+      "revision": 37214359,
+      "url": "https://runescape.wiki/w/Book_of_Death"
+    },
+    "Combat level": {
+      "title": "Combat level",
+      "revision": 37182070,
+      "url": "https://runescape.wiki/w/Combat_level"
+    },
+    "Superglass Make": {
+      "title": "Superglass Make",
+      "revision": 36882025,
+      "url": "https://runescape.wiki/w/Superglass_Make"
+    },
+    "Spellbook Swap": {
+      "title": "Spellbook Swap",
+      "revision": 37170535,
+      "url": "https://runescape.wiki/w/Spellbook_Swap"
+    },
+    "Grove cabin": {
+      "title": "Grove",
+      "revision": 37187274,
+      "url": "https://runescape.wiki/w/Grove"
+    },
+    "Botanist's Workbench": {
+      "title": "Botanist's Workbench",
+      "revision": 37177903,
+      "url": "https://runescape.wiki/w/Botanist's_Workbench"
+    },
+    "Logs": {
+      "title": "Logs",
+      "revision": 37174563,
+      "url": "https://runescape.wiki/w/Logs"
+    },
+    "Coins": {
+      "title": "Coins",
+      "revision": 37132270,
+      "url": "https://runescape.wiki/w/Coins"
+    },
+    "Trollheim Teleport": {
+      "title": "Trollheim Teleport",
+      "revision": 37090991,
+      "url": "https://runescape.wiki/w/Trollheim_Teleport"
+    },
+    "Resonance": {
+      "title": "Resonance",
+      "revision": 37172149,
+      "url": "https://runescape.wiki/w/Resonance"
+    },
+    "Reflect": {
+      "title": "Reflect",
+      "revision": 37167176,
+      "url": "https://runescape.wiki/w/Reflect"
+    }
+  },
+  "exclusions": {
+    "Dive": "No longer quest-locked; current natural 30 Agility unlock. Do not recommend Succession for it.",
+    "Swan Song": "User rejected monkfish as an account unlock. Retained only where genuinely required by another quest.",
+    "Slayer and Dungeoneering": "No training tips or files. Real requirements in those skills still apply to other quest rewards.",
+    "XP/cosmetics/consumables": "No XP-only quest cards, cosmetic/pet-only cards, obsolete equipment, recurring consumable boosts or minigame-training recommendations.",
+    "Post-quest followups": "Cards describe quests and any required follow-up accurately; they suppress when the target quest is complete. No unknown replay-challenge, passive-unlock or talent state is fabricated."
+  }
+}

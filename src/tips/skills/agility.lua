@@ -172,14 +172,20 @@ return {
         hook = "The penguin course offers a change of scenery for Agility training.",
         why = "The clockwork suit lets you use the course on the iceberg, with a different rhythm from the mainland courses.",
         how = { "After Cold War, take the clockwork suit back to the iceberg course." },
+        quest_how = {
+            "Look into Cold War and its clockwork suit for access to the iceberg course.",
+        },
         requirements = {
             skills = {
                 AGILITY = 30,
+                CONSTRUCTION = 34,
+                CRAFTING = 30,
+                HUNTER = 10,
+                THIEVING = 15,
             },
             quests = { "COLD_WAR" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "level_reached",
@@ -234,6 +240,9 @@ return {
         how = {
             "After Monkey Madness, look into a ninja monkey greegree and the course on Ape Atoll.",
         },
+        quest_how = {
+            "Work towards Monkey Madness, then look into the ninja monkey form for the course.",
+        },
         requirements = {
             skills = {
                 AGILITY = 48,
@@ -241,7 +250,6 @@ return {
             quests = { "MONKEY_MADNESS" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "level_reached",
@@ -294,16 +302,25 @@ return {
         how = {
             "After The Chosen Commander, bring a mithril grapple or an enhanced grappling hook to the throne room.",
         },
+        quest_how = { "Complete The Chosen Commander to open up Bandos's throne room." },
         requirements = {
             skills = {
+                STRENGTH = 60,
                 AGILITY = 60,
                 RANGED = 60,
-                STRENGTH = 60,
+                THIEVING = 46,
+                ATTACK = 15,
+                PRAYER = 30,
+                MINING = 17,
+                CRAFTING = 12,
+                FIREMAKING = 16,
+                MAGIC = 33,
+                FISHING = 36,
+                HERBLORE = 37,
             },
             quests = { "CHOSEN_COMMANDER" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "level_reached",
@@ -384,14 +401,28 @@ return {
         hook = "The Hefin course offers Agility laps without obstacle failures.",
         why = "Its experience grows with your level, while occasional shortcuts can make a lap quicker.",
         how = { "Visit the course in the Hefin district of Prifddinas." },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
                 AGILITY = 77,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "level_reached",
@@ -414,15 +445,21 @@ return {
         hook = "Barehanded spirit moths offer an Agility alternative to running laps.",
         why = "Catching them trades most of their usual charm drops for Agility experience.",
         how = { "Search hollow trees in Highweald Forest, then try catching the moths barehanded." },
+        quest_how = { "Look into Heralds of Crimson to start exploring Havenhythe." },
         requirements = {
             skills = {
                 AGILITY = 80,
                 HUNTER = 85,
+                CRAFTING = 51,
+                HERBLORE = 55,
+                MINING = 65,
+                SMITHING = 60,
+                CONSTRUCTION = 30,
+                SLAYER = 28,
             },
             quests = { "QUEST_WENDLE_HERALDS" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "level_reached",
@@ -502,14 +539,18 @@ return {
         how = {
             "After Creature of Fenkenstrain, use the ring of charos to enter the course near Canifis.",
         },
+        quest_how = {
+            "Look into Creature of Fenkenstrain and its ring of charos to enter the course.",
+        },
         requirements = {
             skills = {
                 AGILITY = 60,
+                CRAFTING = 20,
+                THIEVING = 25,
             },
             quests = { "CREATURE_OF_FENKENSTRAIN" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -556,14 +597,28 @@ return {
         hook = "Serenity posts offer a short, relaxed Agility routine.",
         why = "They provide a limited amount of daily experience, with more from following the instructor's poses.",
         how = { "Visit the posts in the Hefin district of Prifddinas." },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
                 AGILITY = 75,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

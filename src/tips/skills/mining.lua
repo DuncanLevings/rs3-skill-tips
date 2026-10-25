@@ -45,7 +45,6 @@ return {
 
     {
         id = "mining.golden_mining_suit",
-        require_quests_complete = true,
         kind = "convenience",
         skills = { "MINING" },
         members = true,
@@ -56,7 +55,29 @@ return {
         why = "Each piece gives a little extra Mining experience, with a bonus for the full set. "
             .. "The golem outfits keep this bonus later on.",
         how = { "Get it from the Lava Flow Mine in Keldagrim, open after King of the Dwarves." },
-        requirements = { skills = { MINING = 68 }, quests = { "KING_OF_THE_DWARVES" } },
+        quest_how = {
+            "Work towards King of the Dwarves to enter the Lava Flow Mine and earn its outfit.",
+        },
+        requirements = {
+            skills = {
+                MINING = 68,
+                SMITHING = 70,
+                STRENGTH = 77,
+                FISHING = 10,
+                HERBLORE = 31,
+                AGILITY = 15,
+                THIEVING = 30,
+                COOKING = 22,
+                FARMING = 29,
+                CRAFTING = 12,
+                FIREMAKING = 61,
+                MAGIC = 33,
+                HUNTER = 61,
+                WOODCUTTING = 10,
+            },
+            quests = { "KING_OF_THE_DWARVES" },
+        },
+        require_all_levels = true,
         triggers = { { type = "training", skill = "MINING" } },
         known_when = {
             { type = "owns_category", category = 4155 },
@@ -172,7 +193,6 @@ return {
     {
         id = "mining.pontifex_ring",
         require_all_levels = true,
-        require_quests_complete = true,
         kind = "convenience",
         skills = { "MINING" },
         members = true,
@@ -186,7 +206,19 @@ return {
             "Restore it at an archaeologist's workbench with level 58 Archaeology, after "
                 .. "Azzanadra's Quest.",
         },
-        requirements = { skills = { ARCHAEOLOGY = 58 }, quests = { "AZZANADRA" } },
+        quest_how = {
+            "Look into Azzanadra's Quest, then restore the Pontifex observation ring at an archaeologist's workbench.",
+        },
+        requirements = {
+            skills = {
+                ARCHAEOLOGY = 58,
+                AGILITY = 58,
+                DIVINATION = 70,
+                MINING = 50,
+                SMITHING = 50,
+            },
+            quests = { "AZZANADRA" },
+        },
         triggers = { { type = "training", skill = "MINING" } },
         known_when = {
             {
@@ -396,7 +428,28 @@ return {
             "Mine the Seren stones in the Trahaearn district of Prifddinas. You'll need "
                 .. "Plague's End done to get into the city.",
         },
-        requirements = { skills = { MINING = 89 }, quests = { "PLAGUES_END" } },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
+        requirements = {
+            skills = {
+                MINING = 89,
+                AGILITY = 75,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
+            },
+            quests = { "PLAGUES_END" },
+        },
+        require_all_levels = true,
         triggers = { { type = "level_reached", skill = "MINING", level = 89 } },
         priority = 2,
     },
@@ -436,7 +489,14 @@ return {
             "Uncharted Isles are reached from the Arc, which needs the Impressing the Locals "
                 .. "quest.",
         },
-        requirements = { skills = { MINING = 97 }, quests = { "ELR0" } },
+        quest_how = { "Complete Impressing the Locals to start exploring the Arc." },
+        requirements = {
+            skills = {
+                MINING = 97,
+            },
+            quests = { "ELR0" },
+        },
+        require_all_levels = true,
         triggers = { { type = "level_reached", skill = "MINING", level = 97 } },
         priority = 2,
     },

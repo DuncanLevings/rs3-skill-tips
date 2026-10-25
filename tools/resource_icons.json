@@ -534,7 +534,8 @@
     "554": {
       "name": "Fire rune",
       "source": "https://runescape.wiki/w/Fire_rune",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "revision": 37194620
     },
     "1745": {
       "name": "Green dragon leather",
@@ -749,7 +750,8 @@
     "563": {
       "name": "Law rune",
       "source": "https://runescape.wiki/w/Law_rune",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "revision": 37194641
     },
     "560": {
       "name": "Death rune",
@@ -824,7 +826,8 @@
     "526": {
       "name": "Bones",
       "source": "https://runescape.wiki/w/Bones",
-      "verified_on": "2026-10-24"
+      "verified_on": "2026-10-24",
+      "revision": 37177466
     },
     "12158": {
       "name": "Gold charm",
@@ -840,6 +843,102 @@
       "name": "Codex page",
       "source": "https://runescape.wiki/w/Codex_page",
       "verified_on": "2026-10-24"
+    },
+    "9075": {
+      "name": "Astral rune",
+      "source": "https://runescape.wiki/w/Astral_rune",
+      "verified_on": "2026-10-24",
+      "revision": 37194628
+    },
+    "772": {
+      "name": "Dramen staff",
+      "source": "https://runescape.wiki/w/Dramen_staff",
+      "verified_on": "2026-10-24",
+      "revision": 37166396
+    },
+    "6099": {
+      "name": "Crystal teleport seed",
+      "source": "https://runescape.wiki/w/Crystal_teleport_seed",
+      "verified_on": "2026-10-24",
+      "revision": 37074145
+    },
+    "30929": {
+      "name": "Dragon Rider amulet",
+      "source": "https://runescape.wiki/w/Dragon_Rider_amulet",
+      "verified_on": "2026-10-24",
+      "revision": 37157074
+    },
+    "10499": {
+      "name": "Ava's accumulator",
+      "source": "https://runescape.wiki/w/Ava's_accumulator",
+      "verified_on": "2026-10-24",
+      "revision": 37157947
+    },
+    "4081": {
+      "name": "Salve amulet",
+      "source": "https://runescape.wiki/w/Salve_amulet",
+      "verified_on": "2026-10-24",
+      "revision": 37020234
+    },
+    "10588": {
+      "name": "Salve amulet (e)",
+      "source": "https://runescape.wiki/w/Salve_amulet_(e)",
+      "verified_on": "2026-10-24",
+      "revision": 36963096
+    },
+    "4251": {
+      "name": "Ectophial",
+      "source": "https://runescape.wiki/w/Ectophial",
+      "verified_on": "2026-10-24",
+      "revision": 37013678
+    },
+    "995": {
+      "name": "Coins",
+      "source": "https://runescape.wiki/w/Coins",
+      "verified_on": "2026-10-24",
+      "revision": 37132270
+    },
+    "37264": {
+      "name": "Sunspear (melee)",
+      "source": "https://runescape.wiki/w/Sunspear_(melee)",
+      "verified_on": "2026-10-24",
+      "revision": 37073823
+    },
+    "19669": {
+      "name": "Ring of vigour",
+      "source": "https://runescape.wiki/w/Ring_of_vigour",
+      "verified_on": "2026-10-24",
+      "revision": 37054163
+    },
+    "53443": {
+      "name": "Infernal Puzzle Box",
+      "source": "https://runescape.wiki/w/Infernal_Puzzle_Box",
+      "verified_on": "2026-10-24",
+      "revision": 37131004
+    },
+    "31075": {
+      "name": "Shard of Zaros",
+      "source": "https://runescape.wiki/w/Shard_of_Zaros",
+      "verified_on": "2026-10-24",
+      "revision": 37020533
+    },
+    "32525": {
+      "name": "Asylum surgeon's ring",
+      "source": "https://runescape.wiki/w/Asylum_surgeon's_ring",
+      "verified_on": "2026-10-24",
+      "revision": 37168586
+    },
+    "6714": {
+      "name": "Holy wrench",
+      "source": "https://runescape.wiki/w/Holy_wrench",
+      "verified_on": "2026-10-24",
+      "revision": 37015476
+    },
+    "23643": {
+      "name": "TokKul-Zo",
+      "source": "https://runescape.wiki/w/TokKul-Zo",
+      "verified_on": "2026-10-24",
+      "revision": 37215276
     }
   }
 }

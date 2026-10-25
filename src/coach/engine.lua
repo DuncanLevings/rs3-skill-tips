@@ -7,6 +7,7 @@ local ranking = require("src/coach/ranking")
 local catch_up = require("src/coach/catch_up")
 local pacing = require("src/coach/pacing")
 local progress = require("src/storage/tip_progress")
+local quest_readiness = require("src/coach/quest_readiness")
 local engine = {}
 local session
 
@@ -129,7 +130,7 @@ function engine.on_level_up(skill, old_level, new_level)
         progress.queue_level_up(skill, old_level, new_level)
         for _, tip in ipairs(catalogue.quest_tips()) do
             if
-                tip.requirements.skills[skill]
+                (tip.requirements.skills[skill] or (tip.requirements.any_skills or {})[skill])
                 and eligibility.quest_ready(tip, session.deps.state)
                 and not progress.is_dismissed(tip.id)
                 and not progress.is_pinned(tip.id)
@@ -163,7 +164,7 @@ function engine.on_quiet()
         return
     end
 
-    local candidates = {}
+    local candidates, aspirations = {}, {}
     for id in pairs(progress.queued_quests()) do
         local tip = catalogue.get(id)
         if
@@ -172,11 +173,12 @@ function engine.on_quiet()
             and triggers.matches(tip, { kind = "quest_ready" })
             and eligibility.allows(tip, nil, state)
         then
-            candidates[#candidates + 1] = tip
+            local pool = quest_readiness.assess(tip, state).fully_met and candidates or aspirations
+            pool[#pool + 1] = tip
         end
     end
 
-    local tip = ranking.best(candidates, nil, nil)
+    local tip = ranking.best(#candidates > 0 and candidates or aspirations, nil, nil)
     if tip then
         show(tip)
     end

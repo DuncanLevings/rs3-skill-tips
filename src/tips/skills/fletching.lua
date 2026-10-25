@@ -52,15 +52,17 @@ return {
         how = {
             "After Roving Elves, take a crystal tool seed to Ilfeen and ask about singing tools.",
         },
+        quest_how = { "Look into Roving Elves, then ask Ilfeen about singing crystal tools." },
         requirements = {
             skills = {
                 FLETCHING = 1,
+                AGILITY = 56,
+                RANGED = 25,
             },
             quests = { "ROVING_ELVES" },
         },
         min_training_level = 60,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -86,16 +88,19 @@ return {
         hook = "The Ranger's Workroom gives your fletching a useful home base.",
         why = "Its upgrades can save materials, produce extra items and improve experience while you work there.",
         how = { "After Dead and Buried, inspect the building plans at Fort Forinthry." },
+        quest_how = {
+            "Work through the Fort Forinthry story to Dead and Buried, then inspect the Ranger's Workroom plans.",
+        },
         requirements = {
             skills = {
                 FLETCHING = 1,
                 CONSTRUCTION = 50,
+                SLAYER = 10,
             },
             quests = { "QUEST_FORT_RAPTOR" },
         },
         min_training_level = 50,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -115,15 +120,22 @@ return {
         hook = "A fenshell knife offers a chance to save fletching resources.",
         why = "It also speeds up carving Fenmoor Totems, making it a useful reward to work towards.",
         how = { "Look for it in the reward bundles from Mossteeth in Fenmoor." },
+        quest_how = { "Look into Heralds of Crimson to start exploring Havenhythe." },
         requirements = {
             skills = {
                 FLETCHING = 65,
                 WOODCUTTING = 65,
+                CRAFTING = 51,
+                HERBLORE = 55,
+                MINING = 65,
+                SMITHING = 60,
+                CONSTRUCTION = 30,
+                HUNTER = 32,
+                SLAYER = 28,
             },
             quests = { "QUEST_WENDLE_HERALDS" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -430,15 +442,22 @@ return {
         hook = "Fenmoor Totems combine gathering with longer fletching projects.",
         why = "Chop petrified wood and carve totems for experience and reward bundles. More totem tiers open as you level.",
         how = { "Speak to Mossteeth in Fenmoor to get started." },
+        quest_how = { "Look into Heralds of Crimson to start exploring Havenhythe." },
         requirements = {
             skills = {
                 FLETCHING = 65,
                 WOODCUTTING = 65,
+                CRAFTING = 51,
+                HERBLORE = 55,
+                MINING = 65,
+                SMITHING = 60,
+                CONSTRUCTION = 30,
+                HUNTER = 32,
+                SLAYER = 28,
             },
             quests = { "QUEST_WENDLE_HERALDS" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -459,14 +478,26 @@ return {
         hook = "The Dream of Iaia offers relaxed Fletching experience between other activities.",
         why = "The station uses Anachronia base camp resources rather than a backpack of logs. Stored experience limits each visit.",
         how = { "After Extinction, look for the fletching station in the Dream of Iaia." },
+        quest_how = {
+            "Work towards Extinction to open up the Dream of Iaia and its associated skilling activities.",
+        },
         requirements = {
             skills = {
                 FLETCHING = 75,
+                AGILITY = 65,
+                ARCHAEOLOGY = 74,
+                DIVINATION = 70,
+                MINING = 50,
+                SMITHING = 85,
+                MAGIC = 74,
+                SLAYER = 75,
+                CRAFTING = 85,
+                RUNECRAFTING = 85,
+                INVENTION = 85,
             },
             quests = { "EGW_FINALE" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -513,14 +544,26 @@ return {
         hook = "Zygomite Carestyling offers a laid-back change from bankstanding.",
         why = "Groom scruffy zygomites for tempered fungal shafts, without buying a batch of logs first.",
         how = { "After Extinction, visit Prehistoric Potterington's activity on Anachronia." },
+        quest_how = {
+            "Work towards Extinction to open up the Dream of Iaia and its associated skilling activities.",
+        },
         requirements = {
             skills = {
                 FLETCHING = 82,
+                AGILITY = 65,
+                ARCHAEOLOGY = 74,
+                DIVINATION = 70,
+                MINING = 50,
+                SMITHING = 85,
+                MAGIC = 74,
+                SLAYER = 75,
+                CRAFTING = 85,
+                RUNECRAFTING = 85,
+                INVENTION = 85,
             },
             quests = { "EGW_FINALE" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

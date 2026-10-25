@@ -41,6 +41,43 @@ local function is_level(value)
 end
 
 local function check_text_fields(tip, problems)
+    if tip.aspiration ~= nil then
+        local policy = tip.aspiration
+        if tip.kind ~= "quest" or type(policy) ~= "table" then
+            problems[#problems + 1] = "aspiration needs limits on a quest tip"
+        else
+            for field, maximum in pairs({
+                max_missing_skills = 29,
+                max_level_gap = 120,
+                max_total_gap = 3480,
+            }) do
+                local value = policy[field]
+                if math.type(value) ~= "integer" or value < 1 or value > maximum then
+                    problems[#problems + 1] = "invalid aspiration limit " .. field
+                end
+            end
+        end
+        if not is_text(tip.aspiration_hook) then
+            problems[#problems + 1] = "aspiration needs an aspiration_hook"
+        end
+    elseif tip.aspiration_hook ~= nil then
+        problems[#problems + 1] = "aspiration_hook needs aspiration limits"
+    end
+    if tip.quest_how ~= nil then
+        if type(tip.quest_how) ~= "table" or #tip.quest_how == 0 then
+            problems[#problems + 1] = "quest_how must list discovery steps"
+        else
+            for _, step in ipairs(tip.quest_how) do
+                if not is_text(step) then
+                    problems[#problems + 1] = "quest_how steps must be text"
+                end
+            end
+        end
+        local quests = type(tip.requirements) == "table" and tip.requirements.quests
+        if type(quests) ~= "table" or #quests == 0 then
+            problems[#problems + 1] = "quest_how needs quest requirements"
+        end
+    end
     if tip.main_method ~= nil and (type(tip.main_method) ~= "boolean" or tip.kind ~= "method") then
         problems[#problems + 1] = "main_method must be a boolean on a method tip"
     end
@@ -130,6 +167,22 @@ local function check_requirements(tip, problems)
         end
     end
 
+    if requirements.any_skills ~= nil then
+        if
+            tip.kind ~= "quest"
+            or type(requirements.any_skills) ~= "table"
+            or next(requirements.any_skills) == nil
+        then
+            problems[#problems + 1] = "any_skills needs alternatives on a quest tip"
+        else
+            for name, level in pairs(requirements.any_skills) do
+                if not skills.is_skill(name) or not is_level(level) then
+                    problems[#problems + 1] = "bad alternative skill requirement " .. tostring(name)
+                end
+            end
+        end
+    end
+
     for _, quest in ipairs(requirements.quests or {}) do
         if not is_text(quest) then
             problems[#problems + 1] = "quest requirements must be quest config names"
@@ -208,7 +261,14 @@ function schema.problems(tip)
         end
 
         local required = (type(tip.requirements) == "table" and tip.requirements.skills) or {}
-        if type(required) ~= "table" or next(required) == nil then
+        local alternatives = type(tip.requirements) == "table" and tip.requirements.any_skills
+        if
+            type(required) ~= "table"
+            or (
+                next(required) == nil
+                and not (type(alternatives) == "table" and next(alternatives) ~= nil)
+            )
+        then
             problems[#problems + 1] = "quest tips need all skill requirements"
         end
 

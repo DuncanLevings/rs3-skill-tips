@@ -80,12 +80,12 @@ end
 local function sections(tip, state)
     local steps = {}
 
-    for _, step in ipairs(tip.how) do
+    for _, step in ipairs(requirement_list.steps(tip, state)) do
         steps[#steps + 1] = step
     end
 
     local list = {
-        { text = tip.hook, colour = theme.TEXT },
+        { text = requirement_list.hook(tip, state), colour = theme.TEXT },
         { text = tip.why, colour = theme.TEXT_SOFT },
         { text = table.concat(steps, "\n"), colour = theme.TEXT_SOFT },
     }
@@ -94,7 +94,7 @@ local function sections(tip, state)
 
     if #missing > 0 then
         list[#list + 1] = {
-            text = "Needs:\n" .. table.concat(missing, "\n"),
+            text = requirement_list.label(tip, state) .. "\n" .. table.concat(missing, "\n"),
             colour = theme.TEXT_WARNING,
         }
     end

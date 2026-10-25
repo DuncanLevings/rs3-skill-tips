@@ -217,9 +217,9 @@ return function(root)
             levels[skill] = needed
         end
         finished = false
-        lu.assertFalse(eligibility.allows(tip, "MINING", state))
+        lu.assertTrue(eligibility.allows(tip, "MINING", state))
         finished = nil
-        lu.assertFalse(eligibility.allows(tip, "MINING", state))
+        lu.assertTrue(eligibility.allows(tip, "MINING", state))
     end
 
     function suite:test_reward_and_cross_skill_gates()
@@ -252,7 +252,7 @@ return function(root)
                 levels[skill] = needed
             end
             for _, quest in ipairs((tip.requirements or {}).quests or {}) do
-                quests[quest] = true
+                quests[quest] = false
             end
             local active = tip.skills[1]
             levels[active] = levels[active] or 80
@@ -284,7 +284,7 @@ return function(root)
                     lu.assertFalse(eligibility.allows(tip, active, state), id)
                     quests[quest] = nil
                     lu.assertFalse(eligibility.allows(tip, active, state), id)
-                    quests[quest] = true
+                    quests[quest] = false
                 end
             end
         end

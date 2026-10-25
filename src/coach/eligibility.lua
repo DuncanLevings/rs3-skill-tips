@@ -3,6 +3,7 @@ local conditions = require("src/coach/conditions")
 local settings = require("src/storage/settings")
 local progress = require("src/storage/tip_progress")
 local owned_items = require("src/storage/owned_items")
+local quest_readiness = require("src/coach/quest_readiness")
 local eligibility = {}
 
 local KIND_SETTINGS = {
@@ -19,6 +20,9 @@ function eligibility.stage(tip)
         for _, required in pairs((tip.requirements or {}).skills or {}) do
             level = math.max(level, required)
         end
+        for _, required in pairs((tip.requirements or {}).any_skills or {}) do
+            level = math.max(level, required)
+        end
     end
 
     level = math.max(level, tip.min_training_level or 1)
@@ -31,14 +35,7 @@ function eligibility.quest_ready(tip, state)
         return false
     end
 
-    for skill, needed in pairs(tip.requirements.skills) do
-        local level = state.level(skill)
-        if not level or level < needed then
-            return false
-        end
-    end
-
-    return true
+    return quest_readiness.assess(tip, state).eligible
 end
 
 function eligibility.allows(tip, skill, state)
@@ -78,7 +75,21 @@ function eligibility.allows(tip, skill, state)
         -- join at the player's current progress, not with advice for a bracket already unlocked.
         -- starter brackets count too; alternatives are never filtered here.
         local starting = progress.starting_level(skill)
-        if tip.main_method and starting and tip.level_range[1] <= starting then
+        local quest_discovery = false
+        if tip.quest_how then
+            for _, quest in ipairs((tip.requirements or {}).quests or {}) do
+                if state.quest_done(quest) == false then
+                    quest_discovery = true
+                end
+            end
+        end
+        -- a known unfinished quest makes this a new opportunity, even in an old bracket.
+        if
+            tip.main_method
+            and starting
+            and tip.level_range[1] <= starting
+            and not quest_discovery
+        then
             return false
         end
 
@@ -106,7 +117,7 @@ function eligibility.allows(tip, skill, state)
     end
 
     -- diary rewards need the whole skill set, not just the skill being trained.
-    if tip.require_all_levels then
+    if tip.require_all_levels and tip.kind ~= "quest" then
         for required_skill, needed in pairs((tip.requirements or {}).skills or {}) do
             local level = state.level(required_skill)
             if not level or level < needed then

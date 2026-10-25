@@ -16,6 +16,7 @@ return {
         how = {
             "The Waiko Reward Shop sells the pieces for chimes and taijitu after Impressing the Locals.",
         },
+        quest_how = { "Complete Impressing the Locals to start exploring the Arc." },
         requirements = {
             skills = {
                 HUNTER = 1,
@@ -24,7 +25,6 @@ return {
         },
         min_training_level = 30,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -111,15 +111,40 @@ return {
         hook = "The Hunter's Catalyst fragment can save time resetting traps.",
         why = "Its effect resets supported traps when they fail to catch a creature, leaving less to set up again.",
         how = { "It's a reward from Sliske's Endgame." },
+        quest_how = { "Look into Sliske's Endgame and its lasting skilling rewards." },
         requirements = {
             skills = {
-                HUNTER = 1,
+                HUNTER = 65,
+                AGILITY = 80,
+                THIEVING = 66,
+                DIVINATION = 80,
+                MAGIC = 81,
+                SLAYER = 80,
+                SUMMONING = 75,
+                HERBLORE = 80,
+                CONSTRUCTION = 75,
+                CRAFTING = 80,
+                DUNGEONEERING = 75,
+                MINING = 75,
+                PRAYER = 80,
+                RANGED = 75,
+                WOODCUTTING = 80,
+                COOKING = 35,
+                FLETCHING = 70,
+                FIREMAKING = 71,
+                RUNECRAFTING = 50,
+                SMITHING = 70,
+                STRENGTH = 79,
+                FARMING = 25,
+                DEFENCE = 72,
+                ATTACK = 79,
+                FISHING = 36,
+                HITPOINTS = 78,
             },
             quests = { "SLISKES_ENDGAME" },
         },
         min_training_level = 50,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -128,8 +153,12 @@ return {
         },
         known_when = {
             {
-                type = "owns_any",
                 items = { "QUEST_ENDGAME_SHARD_HUNTER", "QUEST_ENDGAME_SHARD_COMBINED" },
+                type = "owns_any",
+            },
+            {
+                type = "quest_done",
+                quest = "SLISKES_ENDGAME",
             },
         },
         priority = 2,
@@ -533,13 +562,16 @@ return {
         how = {
             "Use box traps at a skillchompa colony that suits your Hunter level. Eagles' Peak unlocks box trapping.",
         },
+        quest_how = {
+            "Complete Eagles' Peak to unlock box trapping, then try a colony suited to your Hunter level.",
+        },
         requirements = {
             skills = {
                 HUNTER = 27,
             },
             quests = { "EAGLES_PEAK" },
         },
-        require_quests_complete = true,
+        require_all_levels = true,
         triggers = {
             {
                 type = "level_reached",
@@ -591,13 +623,16 @@ return {
         how = {
             "Complete Eagles' Peak to unlock box traps, then hunt them in the Feldip Hunter area.",
         },
+        quest_how = {
+            "Complete Eagles' Peak to unlock box trapping, then try a colony suited to your Hunter level.",
+        },
         requirements = {
             skills = {
                 HUNTER = 63,
             },
             quests = { "EAGLES_PEAK" },
         },
-        require_quests_complete = true,
+        require_all_levels = true,
         triggers = {
             {
                 type = "level_reached",
@@ -707,13 +742,16 @@ return {
         how = {
             "After Regicide, look for grenwalls in Isafdar and bring box traps with raw pawya meat as bait.",
         },
+        quest_how = { "Work towards Regicide and Eagles' Peak, then try box trapping in Isafdar." },
         requirements = {
             skills = {
                 HUNTER = 77,
+                AGILITY = 56,
+                RANGED = 25,
             },
             quests = { "REGICIDE", "EAGLES_PEAK" },
         },
-        require_quests_complete = true,
+        require_all_levels = true,
         triggers = {
             {
                 type = "level_reached",
@@ -853,13 +891,14 @@ return {
         how = {
             "After Impressing the Locals, take tortle traps on an Uncharted Isles voyage and look for a colony.",
         },
+        quest_how = { "Complete Impressing the Locals to start exploring the Arc." },
         requirements = {
             skills = {
                 HUNTER = 96,
             },
             quests = { "ELR0" },
         },
-        require_quests_complete = true,
+        require_all_levels = true,
         triggers = {
             {
                 type = "level_reached",

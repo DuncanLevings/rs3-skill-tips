@@ -133,14 +133,14 @@ return function(root)
         lu.assertFalse(eligibility.allows(tip, "RUNECRAFTING", state))
     end
 
-    function suite:test_fenmoor_waits_for_source_access_and_both_skills()
+    function suite:test_fenmoor_waits_for_both_skills_and_points_to_source_quest()
         local fake, _, levels, quests, state = world(root)
         local tip = fake.load("src/tips/catalogue").get("fletching.alt.fenmoor")
         local eligibility = fake.load("src/coach/eligibility")
         levels.FLETCHING, levels.WOODCUTTING = 65, 65
-        lu.assertFalse(eligibility.allows(tip, "FLETCHING", state))
+        lu.assertTrue(eligibility.allows(tip, "FLETCHING", state))
         quests.QUEST_WENDLE_HERALDS = false
-        lu.assertFalse(eligibility.allows(tip, "FLETCHING", state))
+        lu.assertTrue(eligibility.allows(tip, "FLETCHING", state))
         quests.QUEST_WENDLE_HERALDS = true
         lu.assertTrue(eligibility.allows(tip, "FLETCHING", state))
         levels.WOODCUTTING = 64
@@ -149,17 +149,17 @@ return function(root)
         lu.assertFalse(eligibility.allows(tip, "FLETCHING", state))
     end
 
-    function suite:test_shared_boss_reward_checks_the_active_artisan_skill()
+    function suite:test_shared_quest_reward_checks_active_skill_and_completion()
         local fake, _, levels, quests, state = world(root)
         local tip = fake.load("src/tips/catalogue").get("shared.amulet_of_offerings")
         local eligibility = fake.load("src/coach/eligibility")
-        quests.QUEST_AMASCUT = true
+        quests.QUEST_AMASCUT = false
         levels.CRAFTING, levels.FLETCHING = 80, 79
         lu.assertTrue(eligibility.allows(tip, "CRAFTING", state))
         lu.assertFalse(eligibility.allows(tip, "FLETCHING", state))
         levels.FLETCHING = 80
         lu.assertTrue(eligibility.allows(tip, "FLETCHING", state))
-        quests.QUEST_AMASCUT = nil
+        quests.QUEST_AMASCUT = true
         lu.assertFalse(eligibility.allows(tip, "CRAFTING", state))
     end
 

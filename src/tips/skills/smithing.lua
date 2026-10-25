@@ -54,15 +54,18 @@ return {
         how = {
             "After Family Crest, ask Avan in the Al Kharid mine to change your family gauntlets.",
         },
+        quest_how = { "Complete Family Crest, then ask about the different gauntlet enchantments." },
         requirements = {
             skills = {
-                SMITHING = 1,
+                SMITHING = 40,
+                CRAFTING = 40,
+                MINING = 40,
+                MAGIC = 59,
             },
             quests = { "FAMILY_CREST" },
         },
         min_training_level = 30,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -170,15 +173,17 @@ return {
         how = {
             "After Roving Elves, take a crystal tool seed to Ilfeen and ask about singing tools.",
         },
+        quest_how = { "Look into Roving Elves, then ask Ilfeen about singing crystal tools." },
         requirements = {
             skills = {
                 SMITHING = 1,
+                AGILITY = 56,
+                RANGED = 25,
             },
             quests = { "ROVING_ELVES" },
         },
         min_training_level = 60,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -235,16 +240,36 @@ return {
         hook = "Superheat Form makes low-heat smithing less sluggish.",
         why = "The curse also speeds up smelting, at the cost of prayer points.",
         how = { "After The Light Within, look for it among the Seren curses." },
+        quest_how = { "Look into The Light Within for access to its Seren spells and prayers." },
         requirements = {
             skills = {
-                SMITHING = 1,
                 PRAYER = 91,
+                SMITHING = 65,
+                AGILITY = 80,
+                CRAFTING = 80,
+                DIVINATION = 80,
+                HERBLORE = 80,
+                SLAYER = 80,
+                WOODCUTTING = 80,
+                CONSTRUCTION = 75,
+                FLETCHING = 70,
+                RANGED = 75,
+                FIREMAKING = 50,
+                MAGIC = 79,
+                THIEVING = 66,
+                RUNECRAFTING = 50,
+                SUMMONING = 75,
+                DUNGEONEERING = 75,
+                MINING = 75,
+                COOKING = 35,
+                STRENGTH = 64,
+                HUNTER = 51,
+                FARMING = 25,
             },
             quests = { "SEREN" },
         },
         min_training_level = 80,
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -694,14 +719,29 @@ return {
         how = {
             "Use a furnace in Prifddinas, especially when the Trahaearn Voice of Seren is active.",
         },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
                 SMITHING = 89,
+                AGILITY = 75,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

@@ -146,14 +146,16 @@ return {
         how = {
             "They're a reward from A Fairy Tale I - Growing Pains. Try them on an herb or allotment run.",
         },
+        quest_how = { "Look into A Fairy Tale I - Growing Pains for the magic secateurs reward." },
         requirements = {
             skills = {
                 FARMING = 1,
+                CRAFTING = 31,
+                WOODCUTTING = 36,
             },
             quests = { "FAIRY_TALE_I" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -162,8 +164,12 @@ return {
         },
         known_when = {
             {
-                type = "owns_any",
                 items = { "FAIRY_ENCHANTED_SECATEURS" },
+                type = "owns_any",
+            },
+            {
+                type = "quest_done",
+                quest = "FAIRY_TALE_I",
             },
         },
         priority = 2,
@@ -181,14 +187,20 @@ return {
         how = {
             "Claim it after A Fairy Tale III - Battle at Ork's Rift, then replace your regular watering can.",
         },
+        quest_how = {
+            "Work towards A Fairy Tale III - Battle at Ork's Rift and its farming unlocks.",
+        },
         requirements = {
             skills = {
-                FARMING = 1,
+                FARMING = 54,
+                CRAFTING = 36,
+                THIEVING = 51,
+                WOODCUTTING = 36,
+                HERBLORE = 57,
             },
             quests = { "FAIRY_TALE_III" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -197,8 +209,12 @@ return {
         },
         known_when = {
             {
-                type = "owns_any",
                 items = { "FT3_WATERING_CAN" },
+                type = "owns_any",
+            },
+            {
+                type = "quest_done",
+                quest = "FAIRY_TALE_III",
             },
         },
         priority = 2,
@@ -216,11 +232,40 @@ return {
         how = {
             "It's a reward from Sliske's Endgame and can be combined with the other Catalyst fragments.",
         },
+        quest_how = { "Look into Sliske's Endgame and its lasting skilling rewards." },
         requirements = {
             quests = { "SLISKES_ENDGAME" },
+            skills = {
+                AGILITY = 80,
+                THIEVING = 66,
+                DIVINATION = 80,
+                MAGIC = 81,
+                SLAYER = 80,
+                SUMMONING = 75,
+                HERBLORE = 80,
+                CONSTRUCTION = 75,
+                CRAFTING = 80,
+                DUNGEONEERING = 75,
+                MINING = 75,
+                PRAYER = 80,
+                RANGED = 75,
+                WOODCUTTING = 80,
+                COOKING = 35,
+                FLETCHING = 70,
+                FIREMAKING = 71,
+                RUNECRAFTING = 50,
+                SMITHING = 70,
+                STRENGTH = 79,
+                HUNTER = 65,
+                FARMING = 25,
+                DEFENCE = 72,
+                ATTACK = 79,
+                FISHING = 36,
+                HITPOINTS = 78,
+            },
         },
+        require_all_levels = true,
         min_training_level = 50,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -229,8 +274,12 @@ return {
         },
         known_when = {
             {
-                type = "owns_any",
                 items = { "QUEST_ENDGAME_SHARD_FARMING", "QUEST_ENDGAME_SHARD_COMBINED" },
+                type = "owns_any",
+            },
+            {
+                type = "quest_done",
+                quest = "SLISKES_ENDGAME",
             },
         },
         priority = 2,
@@ -270,15 +319,35 @@ return {
         hook = "Rapid Growth can shorten the wait for supported crops.",
         why = "The Seren spell advances a crop by a growth stage, with limits on how often it can affect each patch.",
         how = { "After The Light Within, look for Rapid Growth on the Ancient Magicks spellbook." },
+        quest_how = { "Look into The Light Within for access to its Seren spells and prayers." },
         requirements = {
             skills = {
-                FARMING = 1,
                 MAGIC = 88,
+                FARMING = 25,
+                AGILITY = 80,
+                CRAFTING = 80,
+                DIVINATION = 80,
+                HERBLORE = 80,
+                PRAYER = 80,
+                SLAYER = 80,
+                WOODCUTTING = 80,
+                CONSTRUCTION = 75,
+                FLETCHING = 70,
+                RANGED = 75,
+                FIREMAKING = 50,
+                THIEVING = 66,
+                RUNECRAFTING = 50,
+                SMITHING = 65,
+                SUMMONING = 75,
+                DUNGEONEERING = 75,
+                MINING = 75,
+                COOKING = 35,
+                STRENGTH = 64,
+                HUNTER = 51,
             },
             quests = { "SEREN" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -354,15 +423,21 @@ return {
         how = {
             "After A Fairy Tale III, work towards Queen Mab's Moonstone through the Armadylean I collection and offer it at the monolith.",
         },
+        quest_how = {
+            "Work towards A Fairy Tale III - Battle at Ork's Rift and its farming unlocks.",
+        },
         requirements = {
             skills = {
-                ARCHAEOLOGY = 81,
                 FARMING = 59,
+                ARCHAEOLOGY = 81,
+                CRAFTING = 36,
+                THIEVING = 51,
+                WOODCUTTING = 36,
+                HERBLORE = 57,
             },
             quests = { "FAIRY_TALE_III" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -603,13 +678,29 @@ return {
         hook = "Prifddinas' elder tree patch offers another health-check reward for a farm run.",
         why = "Add it to your regular farm runs for another health-check reward. Elder saplings can be expensive.",
         how = { "After Plague's End, visit the elder tree patch in the Crwys district." },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
                 FARMING = 90,
+                AGILITY = 75,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
             },
             quests = { "PLAGUES_END" },
         },
-        require_quests_complete = true,
+        require_all_levels = true,
         triggers = {
             {
                 type = "level_reached",
@@ -635,13 +726,24 @@ return {
         how = {
             "After Beneath Cursed Tides, speak to Wizard Myrtle in front of the Wizards' Tower entrance to return to Tutorial Island.",
         },
+        quest_how = {
+            "Complete Beneath Cursed Tides, then speak to Wizard Myrtle outside the Wizards' Tower to return.",
+        },
         requirements = {
             skills = {
                 FARMING = 1,
+                ATTACK = 30,
+                COOKING = 30,
+                FIREMAKING = 30,
+                MAGIC = 30,
+                MINING = 30,
+                SMITHING = 30,
+                STRENGTH = 30,
+                WOODCUTTING = 30,
             },
             quests = { "BENEATH_CURSED_TIDES" },
         },
-        require_quests_complete = true,
+        require_all_levels = true,
         triggers = {
             {
                 type = "level_reached",
@@ -869,13 +971,14 @@ return {
         hook = "Rumberry bushes offer active Farming without waiting for crop growth.",
         why = "Foraging produces berries and occasional seeds for Arc progress.",
         how = { "After Impressing the Locals, visit the bushes in the south-west of Tuai Leit." },
+        quest_how = { "Complete Impressing the Locals to start exploring the Arc." },
         requirements = {
             skills = {
                 FARMING = 86,
             },
             quests = { "ELR0" },
         },
-        require_quests_complete = true,
+        require_all_levels = true,
         triggers = {
             {
                 type = "level_reached",
@@ -899,13 +1002,16 @@ return {
         how = {
             "After Impressing the Locals and Flag Fall, look for an island with clusters and claim it so you can return.",
         },
+        quest_how = {
+            "Complete Impressing the Locals and Flag Fall, then explore the Uncharted Isles for a colony to claim.",
+        },
         requirements = {
             skills = {
                 FARMING = 94,
             },
             quests = { "ELR0", "ELR_FLAG" },
         },
-        require_quests_complete = true,
+        require_all_levels = true,
         triggers = {
             {
                 type = "level_reached",

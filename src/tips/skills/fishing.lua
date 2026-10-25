@@ -92,7 +92,6 @@ return {
     {
         id = "fishing.crystal_fishing_rod",
         require_all_levels = true,
-        require_quests_complete = true,
         kind = "convenience",
         skills = { "FISHING" },
         members = true,
@@ -102,8 +101,27 @@ return {
         why = "It does the job of a fishing rod, fly fishing rod and barbarian rod in one, with a "
             .. "better success chance than all of them.",
         how = { "It's one of the crystal tools of Prifddinas." },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
-            skills = { FISHING = 93, AGILITY = 90, RANGED = 90, STRENGTH = 90 },
+            skills = {
+                FISHING = 93,
+                STRENGTH = 90,
+                AGILITY = 90,
+                RANGED = 90,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
+            },
             quests = { "PLAGUES_END" },
         },
         triggers = { { type = "training", skill = "FISHING" } },
@@ -259,10 +277,30 @@ return {
                 .. "and a grapple shortcut needing 90 Agility, Ranged and Strength gets you up "
                 .. "the waterfall.",
         },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
-            skills = { FISHING = 93, AGILITY = 90, RANGED = 90, STRENGTH = 90 },
+            skills = {
+                FISHING = 93,
+                STRENGTH = 90,
+                AGILITY = 90,
+                RANGED = 90,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
+            },
             quests = { "PLAGUES_END" },
         },
+        require_all_levels = true,
         triggers = { { type = "level_reached", skill = "FISHING", level = 93 } },
         priority = 2,
     },
@@ -301,7 +339,14 @@ return {
         why = "The spot never moves or disappears, so with signs of the porter or a fury shark "
             .. "outfit you can leave it running for ages.",
         how = { "Fish it at the Reflection Pool in the south of the City of Um." },
-        requirements = { skills = { FISHING = 66 }, quests = { "QUEST_NECROMANCY_TUTORIAL" } },
+        quest_how = { "Start Necromancy! to explore the City of Um and its Reflection Pool." },
+        requirements = {
+            skills = {
+                FISHING = 66,
+            },
+            quests = { "QUEST_NECROMANCY_TUTORIAL" },
+        },
+        require_all_levels = true,
         triggers = { { type = "level_reached", skill = "FISHING", level = 66 } },
         priority = 3,
     },
@@ -339,7 +384,14 @@ return {
         how = {
             "Get contracts from the Whaler in the Arc, which needs Impressing the Locals.",
         },
-        requirements = { skills = { FISHING = 90 }, quests = { "ELR0" } },
+        quest_how = { "Complete Impressing the Locals to start exploring the Arc." },
+        requirements = {
+            skills = {
+                FISHING = 90,
+            },
+            quests = { "ELR0" },
+        },
+        require_all_levels = true,
         triggers = { { type = "level_reached", skill = "FISHING", level = 90 } },
         priority = 3,
     },
@@ -358,7 +410,14 @@ return {
             "Uncharted Isles are reached from the Arc, which needs Impressing the Locals. The "
                 .. "Flag Fall miniquest helps you get back to an isle.",
         },
-        requirements = { skills = { FISHING = 96 }, quests = { "ELR0" } },
+        quest_how = { "Complete Impressing the Locals to start exploring the Arc." },
+        requirements = {
+            skills = {
+                FISHING = 96,
+            },
+            quests = { "ELR0" },
+        },
+        require_all_levels = true,
         triggers = { { type = "level_reached", skill = "FISHING", level = 96 } },
         priority = 3,
     },

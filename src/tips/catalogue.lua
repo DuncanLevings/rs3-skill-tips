@@ -75,6 +75,9 @@ local function add_tip(tip, file)
         for skill in pairs(tip.requirements.skills) do
             index(skill)
         end
+        for skill in pairs(tip.requirements.any_skills or {}) do
+            index(skill)
+        end
     end
 end
 
@@ -108,13 +111,21 @@ end
 function catalogue.for_skill(skill)
     catalogue.load()
     local tips = {}
+    local seen = {}
+
+    local function append(tip)
+        if not seen[tip.id] then
+            tips[#tips + 1] = tip
+            seen[tip.id] = true
+        end
+    end
 
     for _, tip in ipairs(by_skill[skill] or {}) do
-        tips[#tips + 1] = tip
+        append(tip)
     end
 
     for _, tip in ipairs(by_skill.ANY or {}) do
-        tips[#tips + 1] = tip
+        append(tip)
     end
 
     return tips

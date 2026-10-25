@@ -195,14 +195,28 @@ return {
         hook = "Cleansing crystals offer Prayer training with little banking.",
         why = "The ritual takes longer than an active bone-offering route, but lets you train in place with a more relaxed rhythm.",
         how = { "Speak to a Hefin monk inside the Prifddinas cathedral." },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
                 PRAYER = 75,
+                AGILITY = 75,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "level_reached",
@@ -280,15 +294,17 @@ return {
         how = {
             "After New Foundations, inspect the chapel and its building plans at Fort Forinthry.",
         },
+        quest_how = {
+            "Start building Fort Forinthry through New Foundations, then explore its building plans.",
+        },
         requirements = {
             skills = {
-                PRAYER = 1,
                 CONSTRUCTION = 15,
+                PRAYER = 1,
             },
             quests = { "QUEST_FORT_INTRO" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -311,6 +327,9 @@ return {
         how = {
             "After Let Them Eat Pie, speak to Copernicus Glyph near the Taverley Summoning shop.",
         },
+        quest_how = {
+            "Complete Let Them Eat Pie, then ask Copernicus Glyph near Taverley about God Statues.",
+        },
         requirements = {
             skills = {
                 PRAYER = 1,
@@ -318,7 +337,6 @@ return {
             quests = { "LET_THEM_EAT_PIE" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

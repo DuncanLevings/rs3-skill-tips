@@ -16,6 +16,8 @@ runner:runSuiteByInstances({
     { "TestActivityWatch", require("tests/activity_watch_spec")(root) },
     { "TestPhase5UI", require("tests/phase5_ui_spec")(root) },
     { "TestQuestPilot", require("tests/quest_pilot_spec")(root) },
+    { "TestQuestDiscovery", require("tests/quest_discovery_spec")(root) },
+    { "TestQuestAspirations", require("tests/quest_aspirations_spec")(root) },
     { "TestQuestTips", require("tests/quest_tips_spec")(root) },
     { "TestApp", require("tests/app_spec")(root) },
     { "TestSchema", require("tests/schema_spec")(root) },

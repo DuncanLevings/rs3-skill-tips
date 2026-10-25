@@ -210,15 +210,29 @@ return {
         how = {
             "After Plague's End, take a dragon mattock and harmonic dust to Lady Ithell in Prifddinas.",
         },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
-                ARCHAEOLOGY = 70,
                 CRAFTING = 75,
+                ARCHAEOLOGY = 70,
+                AGILITY = 75,
+                CONSTRUCTION = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -337,14 +351,20 @@ return {
         how = {
             "Combine the cosmic focus from Desperate Measures with the cosmic pyramid from the Desperate for Artefacts collection.",
         },
+        quest_how = {
+            "Look into Desperate Measures and its cosmic focus, then the Desperate for Artefacts collection.",
+        },
         requirements = {
             skills = {
                 ARCHAEOLOGY = 90,
+                AGILITY = 50,
+                DIVINATION = 50,
+                MINING = 50,
+                SMITHING = 50,
             },
             quests = { "DM" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -372,14 +392,29 @@ return {
         how = {
             "Earn Guildmaster status, then look into combining your mattocks with an energised meteorite shard at the monolith.",
         },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
                 ARCHAEOLOGY = 99,
+                AGILITY = 75,
+                CONSTRUCTION = 75,
+                CRAFTING = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",

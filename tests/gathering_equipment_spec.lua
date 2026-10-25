@@ -157,9 +157,9 @@ return function(root)
             end
             if case[4] then
                 quests[case[4]] = nil
-                lu.assertFalse(eligibility.allows(tip, case[2], state))
+                lu.assertTrue(eligibility.allows(tip, case[2], state))
                 quests[case[4]] = false
-                lu.assertFalse(eligibility.allows(tip, case[2], state))
+                lu.assertTrue(eligibility.allows(tip, case[2], state))
             end
         end
     end

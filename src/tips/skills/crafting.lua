@@ -289,14 +289,28 @@ return {
         hook = "Ithell harps offer relaxed Crafting experience without buying batch supplies.",
         why = "Playing also gathers harmonic dust for crystal equipment. Retune the harp when it drifts out of tune.",
         how = { "Visit the harps in the Ithell district of Prifddinas." },
+        quest_how = {
+            "Work towards Plague's End to open up Prifddinas and its training facilities.",
+        },
         requirements = {
             skills = {
                 CRAFTING = 75,
+                AGILITY = 75,
+                CONSTRUCTION = 75,
+                DUNGEONEERING = 75,
+                HERBLORE = 75,
+                MINING = 75,
+                PRAYER = 75,
+                RANGED = 75,
+                SUMMONING = 75,
+                WOODCUTTING = 75,
+                COOKING = 30,
+                FLETCHING = 70,
+                THIEVING = 50,
             },
             quests = { "PLAGUES_END" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
@@ -319,15 +333,20 @@ return {
         how = {
             "After As a First Resort, look into red sandstone near Oo'glog and its robust glass machine.",
         },
+        quest_how = {
+            "Complete As a First Resort to unlock Oo'glog's sandstone and robust glass facilities.",
+        },
         requirements = {
             skills = {
                 CRAFTING = 89,
                 MINING = 81,
+                HUNTER = 48,
+                FIREMAKING = 51,
+                WOODCUTTING = 58,
             },
             quests = { "AS_A_FIRST_RESORT" },
         },
         require_all_levels = true,
-        require_quests_complete = true,
         triggers = {
             {
                 type = "training",
